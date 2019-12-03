@@ -37,7 +37,7 @@
                         <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="${cp }/resources/images/logo/nan.png" alt="logo images">
+                                    <img src="${cp }/resources/images/logo/nm.png" alt="logo images" style="width: 200px;height: 200px;">
                                 </a>
                             </div>
                         </div>
