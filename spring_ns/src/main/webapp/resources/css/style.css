@@ -2820,12 +2820,6 @@ nav.main__menu__nav {
 .slider__fixed--height {
   height: 800px; }
 
-.slide.bg-image--1 {
-  -webkit-animation: prrtzoomin 10s ease-in infinite;
-  animation: prrtzoomin 10s ease-in infinite;
-  transition: all .3s ease-in-out;
-  overflow: hidden; }
-
 @keyframes prrtzoomin {
   0% {
     background-size: 100% 100%; }
