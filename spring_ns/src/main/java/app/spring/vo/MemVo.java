@@ -1,4 +1,4 @@
-package app.spring.sw.vo;
+package app.spring.vo;
 
 public class MemVo {
 	private  String m_phone;

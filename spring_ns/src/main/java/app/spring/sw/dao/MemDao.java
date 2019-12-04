@@ -4,7 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import app.spring.sw.vo.MemVo;
+import app.spring.vo.MemVo;
 
 @Repository
 public class MemDao {

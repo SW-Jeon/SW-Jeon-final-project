@@ -1,4 +1,4 @@
-package app.spring.hs.vo;
+package app.spring.vo;
 
 public class DetailVo {
 	private int d_num;

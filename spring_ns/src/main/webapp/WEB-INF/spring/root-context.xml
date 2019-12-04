@@ -22,6 +22,7 @@
 	<!--2. SqlSessionFactory (dataSource 주입)  ->  SqlSessionFactoryBean 클래스  -->
  	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
  			<property name="dataSource" ref="dataSource"/>
+ 			<property name="configLocation" value="classpath:/app/spring/mybatis/config/mybatis-config.xml"/>
  	 </bean>
  	 
 	<!--3. SqlSession 설정( SqlSessionFactory 주입) ->  SqlSessionTemplete 클래스  -->
