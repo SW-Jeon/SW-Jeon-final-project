@@ -10,8 +10,7 @@
 	<annotation-driven />
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	
+
 	<!-- //////////////////////////////////////////////////////////////  타일즈 관련 설정  ///////////////////////////////////////////////////////// -->
 	<beans:bean  class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
 		<beans:property name="definitions">
@@ -33,7 +32,8 @@
 <context:component-scan base-package="app.spring" />
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	
-	
+	<context:component-scan base-package="app.spring.nm" />
+	<context:component-scan base-package="app.spring.sw"/>
 	
 	
 </beans:beans>

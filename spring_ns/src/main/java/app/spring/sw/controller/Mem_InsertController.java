@@ -11,10 +11,10 @@ import app.spring.sw.vo.MemVo;
 @Controller
 public class Mem_InsertController {
 	@Autowired private MemService service;
-	
-	@RequestMapping(value="/insert",method=RequestMethod.POST)
+
+	@RequestMapping(value="/nm/insert",method=RequestMethod.POST)
 	public String insert(MemVo vo){
 		System.out.println("test");
 		return ".main";
-	}
+}
 }
