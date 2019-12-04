@@ -13,7 +13,7 @@ public class Mem_InsertController {
 	@Autowired private MemService service;
 	
 
-	@RequestMapping(value="/nm/insert",method=RequestMethod.POST)
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
 	public String insert(MemVo vo){
 		try {
 			//service를 통해 vo객체의 insert메소드를 실행한다.
