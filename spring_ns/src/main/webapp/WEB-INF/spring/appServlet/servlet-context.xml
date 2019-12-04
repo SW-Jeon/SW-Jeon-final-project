@@ -14,9 +14,10 @@
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="2"/>
 	</beans:bean>
 	
-	<context:component-scan base-package="app.spring.nm" />
+	<context:component-scan base-package="app.spring.hs.controller" />
 	
 	<!-- //////////////////////////////////////////////////////////////  타일즈 관련 설정  ///////////////////////////////////////////////////////// -->
 	<beans:bean  class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >

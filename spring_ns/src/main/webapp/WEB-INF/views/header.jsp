@@ -30,10 +30,10 @@
           <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action="${pageContext.request.contextPath }/findlist" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Search...">
+                <input type="text" class="form-control form-control-lg" placeholder="Search..." name="addr">
               </div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary"><i class="zmdi zmdi-account-o">검색하세요!</i></button>
