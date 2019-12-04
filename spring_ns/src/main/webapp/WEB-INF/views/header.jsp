@@ -4,7 +4,7 @@
 	 <!-- Navigation -->
 	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container">
-			<div class="col-lg-7 col-sm-4 col-md-8 order-1 order-lg-1">
+			<div class="col-lg-5 col-sm-4 col-md-5 order-1 order-lg-1">
 				<div class="logo">
 					<a href="${cp}/"> <img src="${cp }/resources/images/logo/nmsk.png" alt="logo images"style="width: 300px; height: 300px;"></a>
 				</div>

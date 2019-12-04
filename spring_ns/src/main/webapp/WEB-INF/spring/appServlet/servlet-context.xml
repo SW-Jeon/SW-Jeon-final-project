@@ -33,7 +33,7 @@
 	</beans:bean>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	
-	<context:component-scan base-package="app.spring.nm" />
+	<context:component-scan base-package="app.spring.nm.controller" />
 	<context:component-scan base-package="app.spring.sw"/>
 	
 	

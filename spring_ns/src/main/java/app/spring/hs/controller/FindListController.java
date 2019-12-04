@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import app.spring.hs.service.DetailService;
-import app.spring.hs.vo.DetailVo;
+import app.spring.vo.DetailVo;
 
 
 @Controller

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.spring.hs.dao.DetailDao;
-import app.spring.hs.vo.DetailVo;
+import app.spring.vo.DetailVo;
 
 @Service
 public class DetailService {

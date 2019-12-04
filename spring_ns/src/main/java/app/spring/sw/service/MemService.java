@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.spring.sw.dao.MemDao;
-import app.spring.sw.vo.MemVo;
+import app.spring.vo.MemVo;
 
 @Service
 public class MemService {

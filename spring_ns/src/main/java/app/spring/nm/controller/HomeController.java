@@ -1,4 +1,4 @@
-package app.spring.nm;
+package app.spring.nm.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

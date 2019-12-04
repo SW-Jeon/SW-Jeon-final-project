@@ -5,8 +5,8 @@
   
   <configuration>
   		<typeAliases>
-  				<typeAlias type="app.spring.sw.vo.MemVo" alias="mem"/>
-  				<typeAlias type="app.spring.hs.vo.DetailVo" alias="detailmap"/>
+  				<typeAlias type="app.spring.vo.MemVo" alias="mem"/>
+  				<typeAlias type="app.spring.vo.DetailVo" alias="detailmap"/>
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>

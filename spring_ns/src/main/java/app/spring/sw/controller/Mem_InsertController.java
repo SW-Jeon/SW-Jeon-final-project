@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.MemService;
-import app.spring.sw.vo.MemVo;
+import app.spring.vo.MemVo;
 
 @Controller
 public class Mem_InsertController {
