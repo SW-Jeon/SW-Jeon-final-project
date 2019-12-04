@@ -18,7 +18,6 @@
 			<property name="username" value="root"/>
 			<property name="password" value="java1234"/>
 	</bean>
-	
 	<!--2. SqlSessionFactory (dataSource 주입)  ->  SqlSessionFactoryBean 클래스  -->
  	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
  			<property name="dataSource" ref="dataSource"/>

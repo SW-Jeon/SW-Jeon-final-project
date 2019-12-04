@@ -58,7 +58,7 @@
                 </ul>
                 <div class="accountbox__inner tab-content" id="myTabContent">
                     <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
-                        <form action="${cp }/login"  method="post">
+                        <form action="${cp }/login"  method="post" >
                             <div class="single-input">
                                 <input class="cr-round--lg" type="text" placeholder="Email">
                             </div>
