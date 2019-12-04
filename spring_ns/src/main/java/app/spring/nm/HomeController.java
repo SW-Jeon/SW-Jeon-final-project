@@ -14,7 +14,7 @@ public class HomeController {
 	public String home(HttpServletRequest req){
 		String cp=req.getContextPath();
 		req.getSession().getServletContext().setAttribute("cp", cp);
-		return "home";
+		return ".main";
 
 	}
 }
