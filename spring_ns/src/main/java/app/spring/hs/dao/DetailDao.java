@@ -12,7 +12,7 @@ import app.spring.vo.DetailVo;
 @Repository
 public class DetailDao {
 	@Autowired private SqlSessionTemplate sqlSessionTemplate;
-	private final String NAMESPACE="app.mybatis.mapper.DetailMapper";
+	private final String NAMESPACE="app.spring.mybatis.mapper.DetailMapper";
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		this.sqlSessionTemplate = sqlSessionTemplate;
 	}
