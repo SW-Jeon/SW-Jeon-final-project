@@ -20,5 +20,5 @@ public class DetailService {
 	public List<DetailVo> findlist(String name){
 		return dao.findlist(name);
 	}
-	
+
 }
