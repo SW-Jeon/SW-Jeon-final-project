@@ -34,7 +34,7 @@
           <form action="${cp }/findlist" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="Search..." name="addr">
+                <input type="text" class="form-control form-control-lg" placeholder="Search..." name="d_addr">
               </div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary"><i class="zmdi zmdi-account-o">검색하세요!</i></button>
@@ -106,3 +106,9 @@
             </div>
         </div>
         <!-- //Login Form -->
+
+<script type="text/javascript">
+	
+
+</script>
+  
