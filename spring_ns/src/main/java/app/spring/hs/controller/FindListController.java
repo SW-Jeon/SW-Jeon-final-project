@@ -20,7 +20,6 @@ public class FindListController {
 		ModelAndView mv=new ModelAndView(".api.api");
 		mv.addObject("list",list);
 		mv.addObject("d_addr",d_addr);
-		System.out.println(list);
 		return mv;
 	}
 }
