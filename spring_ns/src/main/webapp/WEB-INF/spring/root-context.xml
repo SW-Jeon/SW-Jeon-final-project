@@ -14,6 +14,7 @@
 	<!--1. dataSource 설정  -->
  	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" >
  			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+ 			<!-- mysql 연동시 인코딩 언어 유니코드변환 필요 -->
 			<property name="url" value="jdbc:mysql://192.168.0.20:3306/sample01?useUnicode=true&amp;characterEncoding=UTF-8"/>
 			<property name="username" value="root"/>
 			<property name="password" value="java1234"/>
