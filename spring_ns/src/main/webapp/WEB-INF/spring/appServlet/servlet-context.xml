@@ -17,8 +17,6 @@
 		<beans:property name="order" value="2"/>
 	</beans:bean>
 	
-	
-	
 	<!-- //////////////////////////////////////////////////////////////  타일즈 관련 설정  ///////////////////////////////////////////////////////// -->
 	<beans:bean  class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
 		<beans:property name="definitions">
@@ -34,8 +32,9 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	
 	<context:component-scan base-package="app.spring.nm.controller" />
+	<context:component-scan base-package="app.spring.hs" />
 	<context:component-scan base-package="app.spring.sw"/>
-	<context:component-scan base-package="app.spring.hs"/>
+
 	
 	
 </beans:beans>

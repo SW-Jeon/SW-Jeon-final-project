@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import app.spring.hs.service.DetailService;
 import app.spring.vo.DetailVo;
 
-
 @Controller
 public class FindListController {
 	@Autowired private DetailService service;
@@ -23,10 +22,8 @@ public class FindListController {
 		ModelAndView mv=new ModelAndView(".api.api");
 		mv.addObject("list",list);
 		mv.addObject("addr",addr);
-		
-		
-		
+		System.out.println(list);
 		return mv;
-		
 	}
 }
+		
