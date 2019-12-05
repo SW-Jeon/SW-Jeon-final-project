@@ -3,8 +3,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.MemMapper">
 	
+	<!-- 회원가입 -->
   	<insert  id="insert" parameterType="mem">
-  		insert into mem values(#{m_phone},#{m_name},#{m_mail},#{m_pwd})
+  		insert into mem values(#{m_phone},#{m_name},#{m_mail},#{m_pwd},1)
   	</insert>
+  	
+  	<!-- 회원 정보수정 -->
+  	<update id="update" parameterType="mem">
+  		update mem set  m_name=#{m_name}, m_mail=#{m_mail}, m_pwd=#{m_pwd} where m_phone=#{m_phone}
+  	</update>
+  	
+  	<!--  회원탈퇴 -->
+  	<delete id="delete" parameterType="string">
+  		update mem set  m_status=2 where m_phone=#{m_phone} 
+  	</delete>
 
+	<!-- 회원조회 -->
+	<select id="getInfo" parameterType="string" resultType="mem">
+		select * from mem where m_phone=#{m_phone} 
+	</select>
+ 	
+ 	<!-- 회원전체조회 -->
+ 	<select id="listAll" resultType="mem">
+ 		select * from mem
+ 	</select>
+ 
 </mapper>

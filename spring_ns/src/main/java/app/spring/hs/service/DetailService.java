@@ -14,11 +14,11 @@ public class DetailService {
 	public void setDao(DetailDao dao) {
 		this.dao = dao;
 	}
-	public DetailVo finds(String name){
-		return dao.finds(name);
+	public DetailVo finds(String d_sname){
+		return dao.finds(d_sname);
 	}
-	public List<DetailVo> findlist(String name){
-		return dao.findlist(name);
+	public List<DetailVo> findlist(String d_sname){
+		return dao.findlist(d_sname);
 	}
 
 }
