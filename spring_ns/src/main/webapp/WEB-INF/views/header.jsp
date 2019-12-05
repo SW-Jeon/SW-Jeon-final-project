@@ -90,7 +90,7 @@
                                 <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름" required="required">
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일" required="required">
+                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일">
                             </div>
                             <div class="single-input">
                                 <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="Password" required="required">
