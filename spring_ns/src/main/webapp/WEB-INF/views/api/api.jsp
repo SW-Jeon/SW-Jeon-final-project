@@ -10,11 +10,11 @@
 </head>
 <body>
 
-<div id="map" style="width:100%;height:450px;"></div>
-<input type="hidden" name="addr" value="${addr }">
+<div id="map" style="left:15%; width:70%;height:450px;"></div>
+<input type="hidden" name="addr" value="${d_addr }">
 <c:forEach var="vo" items="${list }">
-<input type="hidden" name="info" value="${vo.addr }">
-<input type="hidden" name="koko" value="${vo.name }">
+<input type="hidden" name="info" value="${vo.d_addr }">
+<input type="hidden" name="koko" value="${vo.d_sname }">
 </c:forEach>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 <script>
@@ -38,12 +38,10 @@ var gap =new Array();
 gap=info;
 var koko1=new Array();
 koko1=koko;
-if (addr.value=="") {
  mapOption = {
   center: new kakao.maps.LatLng(33.450701, 126.570667), 
         level: 4          
  };
-}
 // 지도 만들기
 map = new kakao.maps.Map(mapContainer, mapOption);
 var imageSrc="${pageContext.request.contextPath}/resources/images/5.png",
@@ -59,6 +57,7 @@ var imageSrc="${pageContext.request.contextPath}/resources/images/5.png",
   if (status === kakao.maps.services.Status.OK) {
 	  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 	  markerPosition = new kakao.maps.LatLng(result[0].y, result[0].x);
+	  map.setCenter(markerPosition);
    
    // 받은 좌표값으로 마커 생성
    var marker = new kakao.maps.Marker({

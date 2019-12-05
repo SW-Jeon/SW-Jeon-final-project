@@ -8,6 +8,7 @@
   				<typeAlias type="app.spring.vo.MemVo" alias="mem"/>
   				<typeAlias type="app.spring.vo.DetailVo" alias="detailmap"/>
   				<typeAlias type="app.spring.vo.BusinessVo" alias="business"/>
+  				<typeAlias type="app.spring.vo.ReviewVo" alias="review"/>
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>
