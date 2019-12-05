@@ -12,19 +12,15 @@ import app.spring.vo.DetailVo;
 
 @Controller
 public class FindListController {
-
 	@Autowired private DetailService service;
+	
 	@RequestMapping("/findlist")
-	public ModelAndView findlist(String addr){
-		List<DetailVo> list=service.findlist(addr);
+	public ModelAndView findlist(String d_addr){
+		List<DetailVo> list=service.findlist(d_addr);
 		ModelAndView mv=new ModelAndView(".api.api");
 		mv.addObject("list",list);
-		mv.addObject("addr",addr);
+		mv.addObject("d_addr",d_addr);
 		System.out.println(list);
-
 		return mv;
-
 	}
-
 }
-		
