@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import app.spring.vo.BusinessVo;
 
+
 @Repository
 public class BusinessDao {
 	@Autowired private SqlSessionTemplate sqlSessionTemplate;
