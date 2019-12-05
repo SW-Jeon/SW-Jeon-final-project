@@ -4,20 +4,34 @@
 	 <!-- Navigation -->
 	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container">
-			<div class="col-lg-5 col-sm-4 col-md-5 order-1 order-lg-1">
+			<div class="col-lg-4 col-sm-4 col-md-5 order-1 order-lg-1">
 				<div class="logo">
-					<a href="${cp}/"> <img src="${cp }/resources/images/logo/nmsk.png" alt="logo images"style="width: 300px; height: 300px;"></a>
+					<a href="${cp}/"><img src="${cp }/resources/images/logo/nmsk.png" alt="logo images" style="width: 300px; height: 300px;"></a>
 				</div>
 			</div>
-			<div class="col-lg-100 col-sm-4 col-md-4 order-1 order-lg-3">
-					<div class="header__right d-flex justify-content-end">
-						<div class="log__in">
-							<div class="col-12 col-md-30">
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger" href="#"><i class ="zmdizmdi-account-o">Sign In!</i></a>
+		<c:choose>	
+			<c:when test="${empty sessionScope.m_phone}">
+				<div class="col-lg-6 col-sm-4 col-md-1 order-1 order-lg-1" >
+						<div class="header__right d-flex justify-content-end"  >
+							<div class="log__in" >
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
+									<i class ="zmdi zmdi-account-o" style="color: white;"> Sign In</i>
+								</a>
 							</div>
 						</div>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
+					<div class="header__right d-flex justify-content-end"  >
+						<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout"><i class ="fa fa-address-card-o"> 로그아웃</i></a>
 					</div>
-			</div>
+				</div>
+				<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
+						<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUpdate"><i class ="fa fa-address-card-o"> 정보 수정</i></a>
+				</div>		
+			</c:otherwise>
+		</c:choose>
 		</div>	
 	</nav>
 
@@ -25,19 +39,15 @@
   <div class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-
-        </div>
-        <div class="col-md-50 col-lg-10 col-xl-7 mx-auto">
+      <div class="row ">
+        <div class="col-md-30 col-lg-15 col-xl-7 mx-auto">
           <form action="${cp }/findlist" method="post">
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
+            <div class="form-row"  style="width: 800px; padding: 20px;">
+              <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="Search..." name="d_addr">
               </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary"><i class="zmdi zmdi-account-o">검색하세요!</i></button>
+              <div class="col-lg-3.5 col-md-offset-3">
+                <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
               </div>
             </div>
           </form>
@@ -59,16 +69,17 @@
                 </ul>
                 <div class="accountbox__inner tab-content" id="myTabContent">
                     <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
-                        <form action="${cp }/login"  method="post" >
+                        <form action="${cp }/memLogin"  method="post" >
                             <div class="single-input">
-                                <input class="cr-round--lg" type="text" placeholder="Email">
+                                <input class="cr-round--lg" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요." required="required">
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="password" placeholder="Password">
+                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요." required="required">
                             </div>
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Go</span></button>
                             </div>
+                          </form>  
                             <div class="accountbox-login__others">
                                 <h6><a href="#">비밀번호 찾기</a></h6>
                                 <div class="social-icons">
@@ -79,10 +90,10 @@
                                     </ul>
                                 </div>
                             </div>
-                        </form>
+                      
                     </div>
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }/insert" method="post">
+                        <form action="${cp }/memInsert" method="post">
                             <div class="single-input">
                                 <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호" required="required">
                             </div>
@@ -95,7 +106,6 @@
                             <div class="single-input">
                                 <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="Password" required="required">
                             </div>               
-                          
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Sign Up</span></button>
                             </div>

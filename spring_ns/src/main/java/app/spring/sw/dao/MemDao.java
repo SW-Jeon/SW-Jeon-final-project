@@ -30,11 +30,11 @@ public class MemDao {
 		
 		//회원조회
 		public MemVo getInfo(String m_phone){
-			return sqlSessionTemplate.selectOne(NAMESPACE+"getInfo",m_phone);
+			return sqlSessionTemplate.selectOne(NAMESPACE+".getInfo",m_phone);
 		}
 		
 		//전체조회
 		public  List<MemVo> listAll(){
-			return sqlSessionTemplate.selectList(NAMESPACE+"listAll");
+			return sqlSessionTemplate.selectList(NAMESPACE+".listAll");
 		}
 }

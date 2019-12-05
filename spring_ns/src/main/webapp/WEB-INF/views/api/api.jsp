@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="map" style="width:100%;height:450px;"></div>
+<div id="map" style="left:15%; width:70%;height:450px;"></div>
 <input type="hidden" name="addr" value="${d_addr }">
 <c:forEach var="vo" items="${list }">
 <input type="hidden" name="info" value="${vo.d_addr }">
