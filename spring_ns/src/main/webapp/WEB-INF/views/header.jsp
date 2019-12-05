@@ -4,20 +4,25 @@
 	 <!-- Navigation -->
 	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container">
-			<div class="col-lg-5 col-sm-4 col-md-5 order-1 order-lg-1">
+			<div class="col-lg-4 col-sm-4 col-md-5 order-1 order-lg-1">
 				<div class="logo">
 					<a href="${cp}/"> <img src="${cp }/resources/images/logo/nmsk.png" alt="logo images"style="width: 300px; height: 300px;"></a>
 				</div>
 			</div>
-			<div class="col-lg-100 col-sm-4 col-md-4 order-1 order-lg-3">
+			<div class="col-lg-6 col-sm-4 col-md-offset-3 order-1 order-lg-1">
 					<div class="header__right d-flex justify-content-end">
 						<div class="log__in">
-							<div class="col-12 col-md-30">
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger" href="#"><i class ="zmdizmdi-account-o">Sign In!</i></a>
-							</div>
+					
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger" href="#"><i class ="zmdizmdi-account-o">Sign In</i></a>
+					
 						</div>
 					</div>
 			</div>
+			<div class="col-lg-2 col-sm-4 col-md-offset-3 order-1 order-lg-1">
+				<div class="memUpdate">
+					<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUdate"><i class ="zmdizmdi-account-o">정보 수정</i></a>
+				</div>
+			</div>	
 		</div>	
 	</nav>
 
@@ -95,7 +100,6 @@
                             <div class="single-input">
                                 <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="Password" required="required">
                             </div>               
-                          
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Sign Up</span></button>
                             </div>
