@@ -3,7 +3,7 @@
 <!-- memUpdate -->
 
      <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }/insert" method="post">
+                        <form action="${cp }memUpdate" method="post">
                             <div class="single-input">
                                 <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호" readonly="readonly">
                             </div>
@@ -22,4 +22,4 @@
                             </div>
                         </form>
                     </div>
-                    <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
+         <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>

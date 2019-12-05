@@ -2,6 +2,7 @@ package app.spring.sw.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,7 +14,7 @@ public class MemController {
 	@Autowired private MemService service;
 
 	//회원가입
-	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	@RequestMapping(value="/memInsert",method=RequestMethod.POST)
 	public String insert(MemVo vo){
 		try {
 			service.insert(vo);
@@ -24,18 +25,34 @@ public class MemController {
 		}
 	}
 	
-	//회원정보수정
-	@RequestMapping(value="/delete",method=RequestMethod.GET)
+	//회원탈퇴
+	@RequestMapping(value="/memDelete",method=RequestMethod.GET)
 	public String delete(String m_phone){
 		try{
 			service.delete(m_phone);
 			return ".main";
 		}catch(Exception e){
 			e.printStackTrace();
-			return ".n";
+			return "";
 		}
 	}
-	//회원탈퇴
+	//회원수정
+	@RequestMapping(value="/memUpdate",method=RequestMethod.GET)
+	public String updateForm(String m_phone,Model model){
+		try{
+			service.getInfo(m_phone);
+			model.addAttribute("code","success");
+		} catch (Exception e) {
+			model.addAttribute("code","fail");
+			e.printStackTrace();
+		}
+		return ".swMem.memUpdate";
+	}
+	
+	public String  update(MemVo vo){
+		service.update(vo);
+		return ".main";
+	}
 	
 	//회원조회
 }
