@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 import app.spring.hs.service.DetailService;
 import app.spring.vo.DetailVo;
 
-
 @Controller
 public class FindListController {
 
