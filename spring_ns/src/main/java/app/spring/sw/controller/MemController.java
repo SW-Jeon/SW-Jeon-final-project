@@ -21,7 +21,7 @@ public class MemController {
 			return ".main";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return ".main";
+			return "";
 		}
 	}
 	
@@ -50,8 +50,13 @@ public class MemController {
 	}
 	
 	public String  update(MemVo vo){
+	try{
 		service.update(vo);
 		return ".main";
+	} catch (Exception e) {
+		e.printStackTrace();
+		return "";
+	}
 	}
 	
 	//회원조회
