@@ -6,21 +6,32 @@
 		<div class="container">
 			<div class="col-lg-4 col-sm-4 col-md-5 order-1 order-lg-1">
 				<div class="logo">
-					<a href="${cp}/"> <img src="${cp }/resources/images/logo/nmsk.png" alt="logo images"style="width: 300px; height: 300px;"></a>
+					<a href="${cp}/"><img src="${cp }/resources/images/logo/nmsk.png" alt="logo images" style="width: 300px; height: 300px;"></a>
 				</div>
 			</div>
-			<div class="col-lg-6 col-sm-4 col-md-1 order-1 order-lg-1" style="float: right;">
-					<div class="header__right d-flex justify-content-end"  >
-						<div class="log__in" >
-							<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;"><i class ="zmdi zmdi-account-o" style="color: white;"> Sign In</i></a>
+		<c:choose>	
+			<c:when test="${empty sessionScope.m_phone}">
+				<div class="col-lg-6 col-sm-4 col-md-1 order-1 order-lg-1" >
+						<div class="header__right d-flex justify-content-end"  >
+							<div class="log__in" >
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
+									<i class ="zmdi zmdi-account-o" style="color: white;"> Sign In</i>
+								</a>
+							</div>
 						</div>
-					</div>
-			</div>
-			<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
-				<div class="memUpdate">
-					<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUpdate"><i class ="fa fa-address-card-o"> 정보 수정</i></a>
 				</div>
-			</div>	
+			</c:when>
+			<c:otherwise>
+				<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
+					<div class="header__right d-flex justify-content-end"  >
+						<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout"><i class ="fa fa-address-card-o"> 로그아웃</i></a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
+						<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUpdate"><i class ="fa fa-address-card-o"> 정보 수정</i></a>
+				</div>		
+			</c:otherwise>
+		</c:choose>
 		</div>	
 	</nav>
 
@@ -58,16 +69,17 @@
                 </ul>
                 <div class="accountbox__inner tab-content" id="myTabContent">
                     <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
-                        <form action="${cp }/login"  method="post" >
+                        <form action="${cp }/memLogin"  method="post" >
                             <div class="single-input">
-                                <input class="cr-round--lg" type="text" placeholder="Email">
+                                <input class="cr-round--lg" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요." required="required">
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="password" placeholder="Password">
+                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요." required="required">
                             </div>
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Go</span></button>
                             </div>
+                          </form>  
                             <div class="accountbox-login__others">
                                 <h6><a href="#">비밀번호 찾기</a></h6>
                                 <div class="social-icons">
@@ -78,7 +90,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </form>
+                      
                     </div>
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <form action="${cp }/memInsert" method="post">
