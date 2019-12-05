@@ -20,4 +20,5 @@ public class DetailDao {
 	public List<DetailVo> findlist(String d_sname){
 		return sqlSessionTemplate.selectList(NAMESPACE+".findlist",d_sname);
 	}
+	
 }
