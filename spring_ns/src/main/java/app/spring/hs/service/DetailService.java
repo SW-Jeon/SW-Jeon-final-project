@@ -7,13 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.spring.hs.dao.DetailDao;
-<<<<<<< HEAD
 import app.spring.vo.DetailVo;
-=======
-import app.spring.hs.vo.DetailVo;
-
-
->>>>>>> branch 'hs' of https://github.com/SW-Jeon/final-project.git
 
 @Service
 public class DetailService {
