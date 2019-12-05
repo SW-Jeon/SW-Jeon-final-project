@@ -28,8 +28,9 @@
       <div class="row">
         <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+
         </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <div class="col-md-50 col-lg-10 col-xl-7 mx-auto">
           <form action="${cp }/findlist" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
