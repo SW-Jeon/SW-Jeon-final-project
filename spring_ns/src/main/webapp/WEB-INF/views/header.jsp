@@ -9,18 +9,16 @@
 					<a href="${cp}/"> <img src="${cp }/resources/images/logo/nmsk.png" alt="logo images"style="width: 300px; height: 300px;"></a>
 				</div>
 			</div>
-			<div class="col-lg-6 col-sm-4 col-md-offset-3 order-1 order-lg-1">
-					<div class="header__right d-flex justify-content-end">
-						<div class="log__in">
-					
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger" href="#"><i class ="zmdizmdi-account-o">Sign In</i></a>
-					
+			<div class="col-lg-6 col-sm-4 col-md-1 order-1 order-lg-1" style="float: right;">
+					<div class="header__right d-flex justify-content-end"  >
+						<div class="log__in" >
+							<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;"><i class ="zmdi zmdi-account-o" style="color: white;"> Sign In</i></a>
 						</div>
 					</div>
 			</div>
-			<div class="col-lg-2 col-sm-4 col-md-offset-3 order-1 order-lg-1">
+			<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
 				<div class="memUpdate">
-					<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUdate"><i class ="zmdizmdi-account-o">정보 수정</i></a>
+					<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUpdate"><i class ="fa fa-address-card-o"> 정보 수정</i></a>
 				</div>
 			</div>	
 		</div>	
@@ -30,19 +28,15 @@
   <div class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-
-        </div>
-        <div class="col-md-50 col-lg-10 col-xl-7 mx-auto">
+      <div class="row ">
+        <div class="col-md-30 col-lg-15 col-xl-7 mx-auto">
           <form action="${cp }/findlist" method="post">
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
+            <div class="form-row"  style="width: 800px; padding: 20px;">
+              <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="Search..." name="d_addr">
               </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary"><i class="zmdi zmdi-account-o">검색하세요!</i></button>
+              <div class="col-lg-3.5 col-md-offset-3">
+                <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
               </div>
             </div>
           </form>
@@ -87,7 +81,7 @@
                         </form>
                     </div>
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }/insert" method="post">
+                        <form action="${cp }/memInsert" method="post">
                             <div class="single-input">
                                 <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호" required="required">
                             </div>
