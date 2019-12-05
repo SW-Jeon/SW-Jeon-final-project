@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="app.mybatis.mapper.DetailMapper">
+<mapper namespace="app.spring.mybatis.mapper.DetailMapper">
 	<select id="findlist" parameterType="String" resultType="detailmap">
-		select d_addr,d_sname from detail where substr(d_addr,4,2)=#{d_sname}
+		select d_addr,d_sname from detail where substr(d_addr,4,2)=#{name}
 	</select>
 </mapper>

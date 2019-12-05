@@ -13,8 +13,8 @@
 <div id="map" style="width:100%;height:450px;"></div>
 <input type="hidden" name="addr" value="${addr }">
 <c:forEach var="vo" items="${list }">
-<input type="hidden" name="info" value="${vo.addr }">
-<input type="hidden" name="koko" value="${vo.name }">
+<input type="text" name="info" value="${vo.d_addr }">
+<input type="text" name="koko" value="${vo.d_sname }">
 </c:forEach>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 <script>
@@ -42,7 +42,8 @@ var gap =new Array();
 gap=info;
 var koko1=new Array();
 koko1=koko;
-
+alert(gap);
+alert(koko1);
 
 
 if (addr.value=="") {

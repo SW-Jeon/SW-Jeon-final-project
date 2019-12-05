@@ -34,6 +34,7 @@
 	
 	<context:component-scan base-package="app.spring.nm.controller" />
 	<context:component-scan base-package="app.spring.sw"/>
+	<context:component-scan base-package="app.spring.hs"/>
 	
 	
 </beans:beans>
