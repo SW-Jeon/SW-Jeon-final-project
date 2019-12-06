@@ -12,11 +12,12 @@ public class DetailVo {
 	private String d_time;
 	private String d_phone;
 	private String d_addr;
+	private int d_hit;
 	
 	public DetailVo(){}
 
 	public DetailVo(int d_num, String a_id, int b_num, String d_sname, String d_pic, String d_kind, String d_park,
-			String d_holi, String d_time, String d_phone, String d_addr) {
+			String d_holi, String d_time, String d_phone, String d_addr, int d_hit) {
 		super();
 		this.d_num = d_num;
 		this.a_id = a_id;
@@ -29,8 +30,9 @@ public class DetailVo {
 		this.d_time = d_time;
 		this.d_phone = d_phone;
 		this.d_addr = d_addr;
+		this.d_hit = d_hit;
 	}
-	
+
 	public int getD_num() {
 		return d_num;
 	}
@@ -117,5 +119,13 @@ public class DetailVo {
 
 	public void setD_addr(String d_addr) {
 		this.d_addr = d_addr;
+	}
+
+	public int getD_hit() {
+		return d_hit;
+	}
+
+	public void setD_hit(int d_hit) {
+		this.d_hit = d_hit;
 	}
 }

@@ -5,15 +5,28 @@ public class MemVo {
 	private  String m_name;
 	private  String m_mail;
 	private  String m_pwd;
-	
+	private  String m_status;
 	public MemVo(){}
 
-	public MemVo(String m_phone, String m_name, String m_mail, String m_pwd) {
+	
+
+	public MemVo(String m_phone, String m_name, String m_mail, String m_pwd, String m_status) {
 		super();
 		this.m_phone = m_phone;
 		this.m_name = m_name;
 		this.m_mail = m_mail;
 		this.m_pwd = m_pwd;
+		this.m_status = m_status;
+	}
+
+
+
+	public String getM_status() {
+		return m_status;
+	}
+
+	public void setM_status(String m_status) {
+		this.m_status = m_status;
 	}
 
 	public String getM_phone() {
