@@ -10,24 +10,30 @@
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
+		<h3 class="text-info text-center">리스트</h3>
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th>#</th>
-						<th>Product</th>
-						<th>Payment Taken</th>
-						<th>Status</th>
+						<th>전화번호</th>
+						<th>이름</th>
+						<th>이메일</th>
+						<th>비밀번호</th>
+						<th>수정</th>
 					</tr>
 				</thead>
+		    <c:forEach var="vo" items="${list }">		
 				<tbody>
-					<tr class="table-warning">
-						<td>3</td>
-						<td>TB - Monthly</td>
-						<td>03/04/2012</td>
-						<td>Pending</td>
+					<tr class="table-danger">
+						<td>${ vo.m_phone}</td>
+						<td>${ vo.m_name}</td>
+						<td>${ vo.m_mail}</td>
+						<td>${ vo.m_pwd}</td>
+						<td><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">수정</a></td>
 					</tr>
 				</tbody>
+			</c:forEach>
 			</table>
+				<button class="btn btn-primary" onclick="location.href='${cp }/' ">홈으로</button>
 		</div>
 	</div>
 </div>

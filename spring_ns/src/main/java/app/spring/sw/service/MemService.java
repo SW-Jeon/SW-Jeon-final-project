@@ -36,4 +36,9 @@ public class MemService {
 		public  List<MemVo> listAll(){
 			return mDao.listAll();
 		}
+		
+		//회원아이디찾기
+		public int getPhone(String m_phone){
+			return mDao.getPhone(m_phone);
+		}
 }
