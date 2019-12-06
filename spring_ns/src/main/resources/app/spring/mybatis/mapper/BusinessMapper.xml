@@ -12,7 +12,7 @@
 	<delete id="delete" parameterType="int">
 		delete from business where b_num=#{b_num}
 	</delete>
-	
+	<!--  사업자 개인 조회 -->
 	<select id="getInfo" parameterType="int" resultType="business">
 		select * from business where b_num=#{b_num}
 	</select>

@@ -19,8 +19,9 @@ public class DetailDao {
 		return sqlSessionTemplate.selectOne(NAMESPACE+".finds",d_sname);
 	}
 	public List<DetailVo> findlist(String d_sname){
-		return sqlSessionTemplate.selectList(NAMESPACE+".findlist",d_sname);
+		return  sqlSessionTemplate.selectList(NAMESPACE+".findlist",d_sname);
 	}
+
 	public List<DetailVo> finddetail(String d_sname){
 		return sqlSessionTemplate.selectList(NAMESPACE+".finddetail",d_sname);
 	}
@@ -28,4 +29,7 @@ public class DetailDao {
 		return sqlSessionTemplate.selectList(NAMESPACE+".findimg",d_sname);
 	}
 	
+	public int insert(DetailVo vo){
+		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",vo);
+	}
 }

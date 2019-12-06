@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="app.spring.mybatis.mapper.MqMapper">
+  	<!-- 회원 문의 등록 -->
+  	<insert id="insert" parameterType="mq">
+  		insert into mq values(0,#{m_phone},#{mq_content},now(),null,1)
+  	</insert>
+  	
+  	<!-- 회원 문의 삭제 -->
+  	<delete id="delete" parameterType="int">
+  		delete from mq where mq_num=#{bq_num}
+  	</delete>
+  	
+  	<!--  회원 문의 답변 후 상태-->
+  	<update id="update" parameterType="mq">
+  		update mq set mq_state=2,mq_reply=#{mq_reply} where =#{mq_num}
+  	</update>
+  	
+  	<!--  회원 문의 개인 조회 --> 
+  	<select id="getInfo" parameterType="int" resultType="mq">
+  		select * from mq where mq_num=#{mq_num}
+  	</select>
+  	
+  	<!-- 회원 문의 전체 조회 -->
+  	<select id="listAll" resultType="mq">
+  		select* from mq
+  	</select>
+  </mapper>

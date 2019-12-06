@@ -23,11 +23,14 @@ public class DetailService {
 	public List<DetailVo> findlist(String d_sname){
 		return dao.findlist(d_sname);
 	}
+
 	public List<DetailVo> finddetail(String d_sname){
 		return dao.finddetail(d_sname);
 	}
 	public List<FindimgVo> findimg(String d_sname){
 		return dao.findimg(d_sname);
 	}
+
+
 
 }
