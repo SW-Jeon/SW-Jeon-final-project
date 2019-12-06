@@ -79,19 +79,31 @@ var imageSrc="${cp}/resources/images/logo/111.png",
    
    //alert(gap[0]+","+gap[1]);
    
+   
+   var moinfo='<div style="width:250px;text-align:center;padding:5px 0;"><p style="font-size:2em;color:black;">'+koko1[index]+"</P><br>  종류:"+hoho1[index]+'</div>';
    var infowindow = new kakao.maps.InfoWindow({
-    	
-	   content: '<div style="width:250px;text-align:center;padding:5px 0;"><p style="font-size:2em;color:black;">'+koko1[index]+"</P><br>  종류:"+hoho1[index]+'</div>'
+   	
+	   content: moinfo
     	
    });
    
-   infowindow.open(map,marker);
-   
-   kakao.maps.event.addListener(marker, 'click', function() {
+   kakao.maps.event.addListener(marker, 'mouseover', function() {
 	   
-	   location.href="${cp}/";
+	   infowindow.open(map,marker);
+	  
+	   
+	   //location.href="${cp}/";
 	});
-   
+	kakao.maps.event.addListener(marker, 'mouseout', function() {
+	   
+	   
+	   infowindow.close();
+	   //location.href="${cp}/";
+	});
+	 kakao.maps.event.addListener(marker, 'click', function() {
+		   
+		  location.href="${cp}/detailpage?name="+koko1[index];
+		});
    
    
   }
