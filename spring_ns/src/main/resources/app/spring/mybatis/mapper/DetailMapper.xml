@@ -3,6 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.DetailMapper">
+	<insert id="insert" parameterType="detailmap">
+		insert into detail values(0,#{a_id},#{b_num},#{d_name},#{d_kind},#{d_pic},#{d_park},#{d_holi},#{d_time},#{d_phone},#{d_addr},0,)
+	</insert>
+
 	<select id="findlist" parameterType="String" resultType="detailmap">
 		select d_addr,d_sname,d_kind from detail where substr(d_addr,4,2)=#{d_sname}
 	</select>

@@ -22,5 +22,8 @@ public class DetailService {
 	public List<DetailVo> findlist(String d_sname){
 		return dao.findlist(d_sname);
 	}
-
+	//업체 정보 등록
+	public int insert(DetailVo vo){
+		return dao.insert(vo);
+	}
 }
