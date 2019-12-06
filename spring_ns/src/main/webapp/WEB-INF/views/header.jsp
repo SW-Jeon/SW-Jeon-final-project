@@ -28,7 +28,7 @@
 					</div>
 				</div>
 				<div class="col-lg-2 col-sm-4 col-md-3 order-1 order-lg-1">
-						<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUpdate"><i class ="fa fa-address-card-o"> 정보 수정</i></a>
+						<a class="btn btn-block btn-lg btn-danger"  href="${cp}/memUpdate?m_phone=${m_phone}"><i class ="fa fa-address-card-o"> 정보 수정</i></a>
 				</div>		
 			</c:otherwise>
 		</c:choose>

@@ -1,5 +1,7 @@
 package app.spring.sw.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,57 +13,71 @@ import app.spring.vo.MemVo;
 
 @Controller
 public class MemController {
-	@Autowired private MemService service;
+	@Autowired
+	private MemService service;
 
-	//회원가입
-	@RequestMapping(value="/memInsert",method=RequestMethod.POST)
-	public String insert(MemVo vo,Model model){
+	// 회원가입
+	@RequestMapping(value = "/memInsert", method = RequestMethod.POST)
+	public String insert(MemVo vo, Model model) {
 		try {
 			service.insert(vo);
 			return ".main";
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
 		}
 	}
-	
-	//회원탈퇴
-	@RequestMapping(value="/memDelete",method=RequestMethod.GET)
-	public String delete(String m_phone,Model model){
-		try{
-			service.delete(m_phone);
+
+	// 회원탈퇴
+	@RequestMapping(value = "/memDelete", method = RequestMethod.GET)
+	public String delete(String m_phone, Model model) {
+		try {
+			model.addAttribute("vo", service.delete(m_phone));
 			return ".main";
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
 		}
 	}
-	//회원수정
-	@RequestMapping(value="/memUpdate",method=RequestMethod.GET)
-	public String updateForm(String m_phone,Model model){
-		try{
-			service.getInfo(m_phone);
+
+	// 회원수정
+	@RequestMapping(value = "/memUpdate", method = RequestMethod.GET )
+	public String updateForm(String m_phone, Model model) {
+		try {
+			MemVo vo=service.getInfo(m_phone);
+			model.addAttribute("vo", vo);
 			return ".swMem.memUpdate";
 		} catch (Exception e) {
 			e.printStackTrace();
-			model.addAttribute("code","fail");
+			model.addAttribute("code", "fail");
 			return ".swMem.result";
 		}
-		
 	}
-	
-	public String  update(MemVo vo,Model model){
-	try{
-		service.update(vo);
-		return ".main";
-	} catch (Exception e) {
-		e.printStackTrace();
-		model.addAttribute("code","fail");
-		return ".swMem.result";
+	@RequestMapping(value = "/memUpdate", method = RequestMethod.POST )
+	public String update(MemVo vo, Model model) {
+		try {
+			model.addAttribute("vo", service.update(vo));
+			return ".main";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
 	}
+
+	// 회원조회
+	@RequestMapping(value = "/memList", method = RequestMethod.GET )
+	public String list(Model model) {
+		try {
+			List<MemVo> list=service.listAll();
+			model.addAttribute("list", list);
+			return ".swMem.list";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
 	}
-	
-	//회원조회
 }
