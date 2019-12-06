@@ -2,24 +2,28 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- memUpdate -->
 
-     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }memUpdate" method="post">
-                            <div class="single-input">
-                                <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호" readonly="readonly">
-                            </div>
-                             <div class="single-input">
-                                <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름"  value="${vo.m_name}">
-                            </div>
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일" value="${vo.m_mail}">
-                            </div>
-                            <div class="single-input">
-                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="Password"  value="${vo.m_mail}">
-                            </div>               
-                          
-                            <div class="single-input">
-                                <button type="submit" class="food__btn"><span>Sign Up</span></button>
-                            </div>
-                        </form>
-                    </div>
-         <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
+         
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-info text-center">
+				회원정보 수정
+			</h3>
+			<form role="form">
+				<div class="form-group">
+					<label for="Mail">Email address</label><input type="email" class="form-control" name="m_phone"  placeholder="전화번호" readonly="readonly">
+				</div>
+				<div class="form-group">
+					<label for="Mail">Email address</label><input type="email" class="form-control" name="m_name" placeholder="이름"  value="${vo.m_name}">
+				</div>
+				<div class="form-group">
+					<label for="Mail">Email address</label><input type="email" class="form-control" name="m_mail" placeholder="이메일" value="${vo.m_mail}">
+				</div>
+				<div class="form-group">
+					 <label for="Password">Password</label><input type="password" class="form-control" name="m_pwd"  placeholder="Password"  value="${vo.m_mail}">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

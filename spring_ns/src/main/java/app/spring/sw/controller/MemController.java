@@ -15,25 +15,27 @@ public class MemController {
 
 	//회원가입
 	@RequestMapping(value="/memInsert",method=RequestMethod.POST)
-	public String insert(MemVo vo){
+	public String insert(MemVo vo,Model model){
 		try {
 			service.insert(vo);
 			return ".main";
-		} catch (Exception e) {
+		}catch(Exception e){
 			e.printStackTrace();
-			return "";
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
 		}
 	}
 	
 	//회원탈퇴
 	@RequestMapping(value="/memDelete",method=RequestMethod.GET)
-	public String delete(String m_phone){
+	public String delete(String m_phone,Model model){
 		try{
 			service.delete(m_phone);
 			return ".main";
 		}catch(Exception e){
 			e.printStackTrace();
-			return "";
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
 		}
 	}
 	//회원수정
@@ -41,21 +43,23 @@ public class MemController {
 	public String updateForm(String m_phone,Model model){
 		try{
 			service.getInfo(m_phone);
-			model.addAttribute("code","success");
+			return ".swMem.memUpdate";
 		} catch (Exception e) {
-			model.addAttribute("code","fail");
 			e.printStackTrace();
+			model.addAttribute("code","fail");
+			return ".swMem.result";
 		}
-		return ".swMem.memUpdate";
+		
 	}
 	
-	public String  update(MemVo vo){
+	public String  update(MemVo vo,Model model){
 	try{
 		service.update(vo);
 		return ".main";
 	} catch (Exception e) {
 		e.printStackTrace();
-		return "";
+		model.addAttribute("code","fail");
+		return ".swMem.result";
 	}
 	}
 	
