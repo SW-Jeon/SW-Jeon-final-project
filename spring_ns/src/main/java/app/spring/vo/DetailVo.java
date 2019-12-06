@@ -5,7 +5,6 @@ public class DetailVo {
 	private String a_id;
 	private int b_num;
 	private String d_sname;
-	private String d_pic;
 	private String d_kind;
 	private String d_park;
 	private String d_holi;
@@ -16,14 +15,14 @@ public class DetailVo {
 	
 	public DetailVo(){}
 
-	public DetailVo(int d_num, String a_id, int b_num, String d_sname, String d_pic, String d_kind, String d_park,
+	public DetailVo(int d_num, String a_id, int b_num, String d_sname, String d_kind, String d_park,
 			String d_holi, String d_time, String d_phone, String d_addr, int d_hit) {
 		super();
 		this.d_num = d_num;
 		this.a_id = a_id;
 		this.b_num = b_num;
 		this.d_sname = d_sname;
-		this.d_pic = d_pic;
+		
 		this.d_kind = d_kind;
 		this.d_park = d_park;
 		this.d_holi = d_holi;
@@ -65,13 +64,7 @@ public class DetailVo {
 		this.d_sname = d_sname;
 	}
 
-	public String getD_pic() {
-		return d_pic;
-	}
 
-	public void setD_pic(String d_pic) {
-		this.d_pic = d_pic;
-	}
 
 	public String getD_kind() {
 		return d_kind;
