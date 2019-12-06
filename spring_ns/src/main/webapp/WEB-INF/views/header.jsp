@@ -93,7 +93,7 @@
                       
                     </div>
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }/memInsert" method="post">
+                        <form action="${cp }/memInsert" method="post" onsubmit="return valiData()" name="frm1">
                             <div class="single-input">
                                 <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호" required="required">
                             </div>
@@ -107,7 +107,7 @@
                                 <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="Password" required="required">
                             </div>               
                             <div class="single-input">
-                                <button type="submit" class="food__btn"><span>Sign Up</span></button>
+                                <button type="submit" class="food__btn" ><span>Sign Up</span></button>
                             </div>
                         </form>
                     </div>
@@ -118,7 +118,12 @@
         <!-- //Login Form -->
 
 <script type="text/javascript">
-	
+	//아이디(phone) 영문,숫자 5~8자이상
+	//비밀번호는 영문+숫자 8자이상
+	function valiData(){
+		var m_phone=document.frm1.m_phone;
+		
+	}
 
 </script>
   

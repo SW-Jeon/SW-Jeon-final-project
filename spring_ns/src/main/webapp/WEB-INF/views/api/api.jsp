@@ -44,7 +44,7 @@ koko1=koko;
  };
 // 지도 만들기
 map = new kakao.maps.Map(mapContainer, mapOption);
-var imageSrc="${pageContext.request.contextPath}/resources/images/5.png",
+var imageSrc="${cp}/resources/images/logo/111.png",
 	imageSize=new kakao.maps.Size(66,69),
 	imageOption={offset:new kakao.maps.Point(27,69)};
  // 주소로 좌표변환 객체 생성
