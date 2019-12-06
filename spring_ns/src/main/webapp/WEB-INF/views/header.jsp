@@ -71,10 +71,10 @@
                     <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
                         <form action="${cp }/memLogin"  method="post" >
                             <div class="single-input">
-                                <input class="cr-round--lg" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요." required="required">
+                                <input class="cr-round--lg" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요."  required>
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요." required="required">
+                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요."  required>
                             </div>
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Go</span></button>
@@ -93,18 +93,22 @@
                       
                     </div>
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }/memInsert" method="post" onsubmit="return valiData()" name="frm1">
+                        <form action="${cp }/memInsert" method="post">
                             <div class="single-input">
-                                <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호" required="required">
+                                <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호"  
+                                oninvalid="this.setCustomValidity('전화번호를 입력하세요.') " required>
                             </div>
                              <div class="single-input">
-                                <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름" required="required">
+                                <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름"  
+                                  oninvalid="this.setCustomValidity('이름을 입력하세요.') " required>
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일">
+                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일"
+                                  oninvalid="this.setCustomValidity('이메일을 입력하세요.') " required>
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="Password" required="required">
+                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호" 
+                                  oninvalid="this.setCustomValidity('비밀번호를 입력하세요.') " required>
                             </div>               
                             <div class="single-input">
                                 <button type="submit" class="food__btn" ><span>Sign Up</span></button>
@@ -120,10 +124,6 @@
 <script type="text/javascript">
 	//아이디(phone) 영문,숫자 5~8자이상
 	//비밀번호는 영문+숫자 8자이상
-	function valiData(){
-		var m_phone=document.frm1.m_phone;
-		
-	}
 
 </script>
   
