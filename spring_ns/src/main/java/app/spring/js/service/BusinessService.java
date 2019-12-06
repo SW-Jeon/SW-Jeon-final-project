@@ -20,7 +20,6 @@ public class BusinessService {
 		return bDao.delete(b_num);
 	}
 	// 사업자 검색
-	
 	public BusinessVo getInfo(int b_num){
 		return bDao.getInfo(b_num);
 	}
