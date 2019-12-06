@@ -24,11 +24,11 @@ public class BqDao {
 	public int update(BqVo vo){
 		return sqlSessionTemplate.update(NAMESPACE + ".update",vo);
 	}
-	//사업자 개인 조회
+	//사업자 개인 문의 조회
 	public BqVo getInfo(int bq_num){
 		return sqlSessionTemplate.selectOne(NAMESPACE + ".getInfo",bq_num);
 	}
-	//사업자 전체 조회
+	//사업자 전체 문의 조회
 	public List<BqVo> listAll(){
 		return sqlSessionTemplate.selectList(NAMESPACE+".listAll");
 	}

@@ -23,11 +23,11 @@ public class BqService {
 	public int update(BqVo vo){
 		return bqDao.update(vo);
 	}
-	//회원조회
+	//사업자 문의 조회
 	public BqVo getInfo(int bq_num){
 		return bqDao.getInfo(bq_num);
 	}
-	//전체 조회
+	//사업자 전체  문의 조회
 	public List<BqVo> listAll(){
 		return bqDao.listAll();
 	}
