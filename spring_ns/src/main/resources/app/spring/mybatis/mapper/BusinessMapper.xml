@@ -3,8 +3,23 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="app.spring.mybatis.mapper.BusinessMapper">
   	
+  	<!-- 사업자 정보 등록 -->
   	<insert id="insert" parameterType="business">
   		insert into business values(0,#{b_bnum},#{b_phone},#{b_name})
   	</insert>
-
+  	
+	<!-- 사업자 정보 삭제 -->	
+	<delete id="delete" parameterType="int">
+		delete from business where b_num=#{b_num}
+	</delete>
+	
+	<select id="getInfo" parameterType="int" resultType="business">
+		select * from business where b_num=#{b_num}
+	</select>
+	
+	<!-- 사업자 전체 조회 -->
+	<select id="listAll" resultType="business">
+		select * from business
+	</select>
+	
   </mapper>

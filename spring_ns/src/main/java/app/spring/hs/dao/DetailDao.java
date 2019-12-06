@@ -14,14 +14,11 @@ public class DetailDao {
 
 	private final String NAMESPACE="app.spring.mybatis.mapper.DetailMapper";
 
-
-	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
-		this.sqlSessionTemplate = sqlSessionTemplate;
+	public DetailVo finds(String d_sname){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".finds",d_sname);
 	}
-	public DetailVo finds(String name){
-		return sqlSessionTemplate.selectOne(NAMESPACE+".finds",name);
+	public List<DetailVo> findlist(String d_sname){
+		return sqlSessionTemplate.selectList(NAMESPACE+".findlist",d_sname);
 	}
-	public List<DetailVo> findlist(String name){
-		return sqlSessionTemplate.selectList(NAMESPACE+".findlist",name);
-	}
+	
 }
