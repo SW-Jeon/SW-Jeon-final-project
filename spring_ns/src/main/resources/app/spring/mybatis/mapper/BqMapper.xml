@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="app.spring.mybatis.mapper.BqMapper">
+  	<!-- 사업자 문의 등록 -->
+  	<insert id="insert" parameterType="bq">
+  		insert into bq values(0,#{d_num},#{bq_content},now(),null,1)
+  	</insert>
+  	
+  	<!-- 사업자 문의 삭제 -->
+  	<delete id="delete" parameterType="int">
+  		delete from bq where bq_num=#{bq_num}
+  	</delete>
+  	
+  	<!--  사업자 문의 답변 후 상태-->
+  	<update id="update" parameterType="bq">
+  		update bq set bq_state=2,bq_reply=#{bq_reply} where bq_num=#{bq_num}
+  	</update>
+  	
+  	<!--  사업자 문의 개인 조회 --> 
+  	<select id="getInfo" parameterType="int" resultType="bq">
+  		select * from bq where bq_num=#{bq_num}
+  	</select>
+  	
+  	<!-- 사업자 문의 전체 조회 -->
+  	<select id="listAll" resultType="bq">
+  		select* from bq
+  	</select>
+  </mapper>

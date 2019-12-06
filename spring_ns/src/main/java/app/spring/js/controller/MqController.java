@@ -1,5 +1,5 @@
 package app.spring.js.controller;
 
-public class ReviewController {
+public class MqController {
 
 }

@@ -33,8 +33,15 @@ public class MemDao {
 			return sqlSessionTemplate.selectOne(NAMESPACE+".getInfo",m_phone);
 		}
 		
+		
 		//전체조회
 		public  List<MemVo> listAll(){
 			return sqlSessionTemplate.selectList(NAMESPACE+".listAll");
 		}
+		
+		//회원아이디찾기
+		public int getPhone(String m_phone){
+			return sqlSessionTemplate.selectOne(NAMESPACE+".getPhone",m_phone);
+		}
+		
 }

@@ -19,6 +19,12 @@ public class BusinessController {
 		
 	}
 	
+	@RequestMapping(value="/yg/test",method=RequestMethod.GET)
+	public String road(BusinessVo vo){
+		return "/yg/editor";
+		
+	}
+	
 	@RequestMapping(value="/pj/business",method=RequestMethod.POST)
 	public String insert(BusinessVo vo){
 		try{

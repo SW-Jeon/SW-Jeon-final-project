@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import app.spring.vo.DetailVo;
+import app.spring.vo.FindimgVo;
 
 
 @Repository
@@ -18,7 +19,17 @@ public class DetailDao {
 		return sqlSessionTemplate.selectOne(NAMESPACE+".finds",d_sname);
 	}
 	public List<DetailVo> findlist(String d_sname){
-		return sqlSessionTemplate.selectList(NAMESPACE+".findlist",d_sname);
+		return  sqlSessionTemplate.selectList(NAMESPACE+".findlist",d_sname);
+	}
+
+	public List<DetailVo> finddetail(String d_sname){
+		return sqlSessionTemplate.selectList(NAMESPACE+".finddetail",d_sname);
+	}
+	public List<FindimgVo> findimg(String d_sname){
+		return sqlSessionTemplate.selectList(NAMESPACE+".findimg",d_sname);
 	}
 	
+	public int insert(DetailVo vo){
+		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",vo);
+	}
 }
