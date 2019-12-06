@@ -15,6 +15,8 @@
 <c:forEach var="vo" items="${list }">
 <input type="hidden" name="info" value="${vo.d_addr }">
 <input type="hidden" name="koko" value="${vo.d_sname }">
+<input type="hidden" name="hoho" value="${vo.d_kind }">
+
 </c:forEach>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 <script>
@@ -31,6 +33,11 @@ for(var i=0;i<document.getElementsByName("koko").length;i++){
 	
 	koko[i]=document.getElementsByName("koko")[i].value;
 }
+var hoho=new Array();
+for(var i=0;i<document.getElementsByName("hoho").length;i++){
+	
+	hoho[i]=document.getElementsByName("hoho")[i].value;
+}
 //var koko=document.getElementById("koko");
 var mapOption;
 var map;
@@ -38,6 +45,8 @@ var gap =new Array();
 gap=info;
 var koko1=new Array();
 koko1=koko;
+var hoho1=new Array();
+hoho1=hoho;
  mapOption = {
   center: new kakao.maps.LatLng(33.450701, 126.570667), 
         level: 4          
@@ -72,7 +81,7 @@ var imageSrc="${cp}/resources/images/logo/111.png",
    
    var infowindow = new kakao.maps.InfoWindow({
     	
-	   content: '<div style="width:150px;text-align:center;padding:5px 0;">'+koko1[index]+'</div>'
+	   content: '<div style="width:250px;text-align:center;padding:5px 0;"><p style="font-size:2em;color:black;">'+koko1[index]+"</P><br>  종류:"+hoho1[index]+'</div>'
     	
    });
    
