@@ -28,7 +28,7 @@
    <!-- Modernizer js -->
  <script src="${cp }/resources/js/vendor/modernizr-3.5.0.min.js"></script>
 <style type="text/css">
-	#content{height: 1200px;}
+	#content{min-height: 1200px;}
 </style>
 </head>
 
