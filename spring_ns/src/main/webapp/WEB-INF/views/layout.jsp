@@ -9,7 +9,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-<title>layout.jsp</title>
+<title>NangMan</title>
 	
   <!-- Bootstrap core CSS -->
   <link href="${cp }/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
