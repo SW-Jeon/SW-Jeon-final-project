@@ -47,7 +47,7 @@
 	<div class="container">
 		<div class="col-lg-4 col-sm-4 col-md-6 " >
 			<div class="logo">
-				<a href="${cp}/"><img src="${cp }/resources/images/logo/nmsk.png" alt="logo images" style="width: 300px; height: 300px;"></a>
+				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/nmsk.png" alt="logo images" style="width: 300px; height: 300px;"></a>
 			</div>
 		</div>
         <div class="col-md-6 col-lg-15 col-xl-7 text-right">

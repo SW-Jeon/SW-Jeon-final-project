@@ -11,7 +11,7 @@
 		<div style="width: 980px;height: 200px;position: absolute; left: 0px;" id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 			<ul>
-				<li><img src="${cp }/resources/images/test/${im.p_pic }"></li>
+				<li><img src="${cp }/resources/maincss/images/test/${im.p_pic }"></li>
 			</ul>
 			</c:forEach>
 		</div>
