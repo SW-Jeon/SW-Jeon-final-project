@@ -1,14 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-</head>
-<body>
 
 <div id="map" style="left:15%; width:70%;height:450px;"></div>
 <input type="hidden" name="addr" value="${d_addr }">
@@ -53,7 +44,7 @@ hoho1=hoho;
  };
 // 지도 만들기
 map = new kakao.maps.Map(mapContainer, mapOption);
-var imageSrc="${cp}/resources/images/logo/111.png",
+var imageSrc="${cp}/resources/maincss/images/logo/111.png",
 	imageSize=new kakao.maps.Size(66,69),
 	imageOption={offset:new kakao.maps.Point(27,69)};
  // 주소로 좌표변환 객체 생성
@@ -111,6 +102,3 @@ var imageSrc="${cp}/resources/images/logo/111.png",
  });
 </script>
 
-
-</body>
-</html> 
