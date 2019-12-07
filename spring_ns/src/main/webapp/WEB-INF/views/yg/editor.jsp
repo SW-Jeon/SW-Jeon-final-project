@@ -20,6 +20,6 @@ var oEditors = [];
 </script>
 </head>
 <body>
-<textarea name="ir1" id="ir1" rows="10" cols="100">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>
+<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>
 </body>
 </html>
