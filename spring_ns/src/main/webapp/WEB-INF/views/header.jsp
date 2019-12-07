@@ -5,7 +5,6 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
 	</button>
-
 	<div class="collapse navbar-collapse" id="navbarColor01">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link" href="${cp}/">Home<span class="sr-only">(current)</span></a></li>
@@ -13,10 +12,9 @@
 			<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
 		</ul>
-		
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
-				<div class="col-lg-6 col-sm-4 col-md-1 order-1 order-lg-1" >
+				<div class="col-lg-6 col-sm-4 col-md-2 order-1 order-lg-1" >
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in" >
 								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
@@ -65,7 +63,7 @@
       </div>
 </nav>
 
-<!-- Login Form -->
+<!-- Login Form  모달창 -->
         <div class="accountbox-wrapper">
             <div class="accountbox text-left">
                 <ul class="nav accountbox__filters" id="myTab" role="tablist">
@@ -76,7 +74,9 @@
                         <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">회원가입</a>
                     </li>
                 </ul>
-                <div class="accountbox__inner tab-content" id="myTabContent">
+                
+             <!-- 로그인 -->   
+                <div class="accountbox__inner tab-content" id="myTabContent" >
                     <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
                         <form action="${cp }/memLogin"  method="post" >
                             <div class="single-input">
@@ -90,9 +90,11 @@
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Go</span></button>
                             </div>
-                          </form>  
+                          </form> 
+                           
+                  <!--  회원 전화번호나 비밀번호찾기 -->        
                             <div class="accountbox-login__others">
-                                <h6><a href="#">비밀번호 찾기</a></h6>
+                                <h6><a href="${cp }/swMem/findPhone" data-toggle="modal" data-target="#findPhone">전화번호 찾기</a> | <a href="${cp }/swMem/findPwd">비밀번호 찾기</a></h6>
                                 <div class="social-icons">
                                     <ul>
                                         <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
@@ -101,8 +103,9 @@
                                     </ul>
                                 </div>
                             </div>
-                      
                     </div>
+                    
+                <!-- 회원가입 창 -->
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <form action="${cp }/memInsert" method="post">
                             <div class="single-input">
@@ -131,6 +134,30 @@
             </div>
         </div>
 <!-- //Login Form -->
+
+<!--  회원 비밀번호 찾기 모달창 -->
+<div class="modal fade" id="findPhone" tabindex="-1" role="dialog" aria-labelledby="findPhone" aria-hidden="true" >
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="findPhone">전화번호 찾기</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+				<form	method="post" action="${cp }/swMem/findPhone">
+						<div class="single-input">
+                                <input class="cr-round--lg" type="password"  name="m_name"  placeholder="이름입력"  required
+                                oninvalid="this.setCustomValidity('이름을 입력해주세요.')"  onchange="this.setCustomValidity('')">
+                        </div>    
+                        <div class="modal-footer">
+								<button type="submit" class="btn btn-primary">찾기</button>
+								<button type="reset" class="btn btn-danger" data-dismiss="modal">닫기</button>
+						</div>           
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 	//아이디(phone) 영문,숫자 5~8자이상
