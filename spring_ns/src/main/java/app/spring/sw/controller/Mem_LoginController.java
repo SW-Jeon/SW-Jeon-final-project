@@ -36,4 +36,28 @@ public class Mem_LoginController {
             session.invalidate();
             return "redirect:/";  
         }	
+        
+        //전화번호 찾기
+        @RequestMapping(value="/swMem/findPhone",method=RequestMethod.GET)
+        public String findPhoneForm(){
+        	return ".swMem.findPhone";
+        }
+        
+        @RequestMapping(value="/swMem/findPhone",method=RequestMethod.POST)
+        public String findPhone(String m_phone,String m_name,String m_mail,HttpSession session,Model model,MemVo vo){
+        	String phone=service.getPhone(vo);
+        	Object name=session.getAttribute(m_name);
+        	Object mail=session.getAttribute(m_mail);
+        	//String name=vo.getM_name();
+        	//String mail=vo.getM_mail();
+        	System.out.println(mail);
+        	
+        	if (name.equals(m_name) && mail.equals(m_mail)){
+        		session.setAttribute("phone", phone);
+        		model.addAttribute("code", "find");
+        	}else  {
+        		model.addAttribute("code", "fail");
+        	}
+        	return ".swMem.findPhoneOk";
+        }
 }

@@ -40,8 +40,8 @@ public class MemDao {
 		}
 		
 		//회원아이디찾기
-		public int getPhone(String m_phone){
-			return sqlSessionTemplate.selectOne(NAMESPACE+".getPhone",m_phone);
+		public String getPhone(MemVo vo){
+			return sqlSessionTemplate.selectOne(NAMESPACE+".getPhone",vo);
 		}
 		
 }

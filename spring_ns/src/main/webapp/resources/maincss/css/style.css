@@ -553,6 +553,22 @@ a:active {
 .clearfix:after {
   clear: both; }
 
+a#scrollUp {
+  background: #ffffff;
+  color: #303030;
+  bottom: 40px;
+  right: 40px;
+  border-radius: 100px;
+  height: 45px;
+  width: 45px;
+  font-size: 25px;
+  text-align: center;
+  padding: 9px 0;
+  box-shadow: 0 0 15px 0px rgba(50, 50, 50, 0.2); }
+  a#scrollUp:hover {
+    background: #d50c0d;
+    color: #fff; }
+
 .color--theme {
   color: #d50c0d; }
 
