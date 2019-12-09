@@ -34,10 +34,12 @@ function getLocation() {
 
 <div class="col-md-4" style="text-align: center;">
 	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
-	<span style="font-size: 30px">${i.d_sname }</span><br>
-	<span style="color: grey">${i.d_addr }<br>
+	<div style="width: 300px;">
+	<span style="font-size: 30px; text-align: left;" align="left">${i.d_sname }</span><br>
+	<span style="color: grey; text-align: left;">${i.d_addr }<br>
 	${i.d_kind }<br>
 	${i.d_time }</span>
+	</div>
 </div>
 <div class="col-md-4" style="text-align: center;">
 	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
