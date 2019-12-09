@@ -55,14 +55,14 @@ h1 { font-size: 1.5em; margin: 10px; }
 <h1>리뷰 작성하기</h1>
 <form method="post" action="${cp }/pj/review" enctype="multipart/form-data">
 	후기<br>
-	<textarea rows="5" cols="50" name="content " style="resize:none;"></textarea><br>
+	<textarea rows="5" cols="50" name="r_content " style="resize:none;"></textarea><br>
 	
-<fieldset class="rating">
-    <input type="radio"  id="star5" name="rating" value="5" onclick="button_click(this);" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-    <input type="radio" id="star4" name="rating" value="4"  onclick="button_click(this);"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-    <input type="radio" id="star3" name="rating" value="3" onclick="button_click(this);" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    <input type="radio" id="star2" name="rating" value="2" onclick="button_click(this);" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-    <input type="radio" id="star1" name="rating" value="1" onclick="button_click(this);" /><label class = "full" for="star1" title="Sucks big time - 1 star"  ></label>    
+<fieldset class="rating" >
+    <input type="radio"  id="star5" name="r_score" value="5"  /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4" name="r_score" value="4"  /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3" name="r_score" value="3"  /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2" name="r_score" value="2"  /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1" name="r_score" value="1"  /><label class = "full" for="star1" title="Sucks big time - 1 star"  ></label>    
 </fieldset>
 <br>
 <br>
