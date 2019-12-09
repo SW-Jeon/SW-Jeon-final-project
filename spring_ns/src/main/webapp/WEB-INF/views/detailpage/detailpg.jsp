@@ -15,7 +15,7 @@
 	width: 370px;
 	padding: 0px;
 	margin: 0px;
-	left: 0px;
+	left: 100px;
 }
 
 table {
@@ -50,11 +50,11 @@ table {
 			href="javascript:next()"><img
 			src="${cp }/resources/images/test/button2.png" id="next"></a>
 		<div
-			style="width: 2660px; height: 400px; position: absolute; left: 0px; top: -42px; position: relative;"
+			style="width: 2660px; height: 400px; left: 0px; top: -42px; position: relative;"
 			id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
-					<div>
+					<div style="left:200px;">
 						<li style="margin-left: 10px" name="lili"><img
 							src="${cp }/resources/images/test/${im.p_pic }"></li>
 					</div>
