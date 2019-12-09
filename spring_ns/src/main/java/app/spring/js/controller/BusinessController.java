@@ -21,7 +21,7 @@ public class BusinessController {
 	
 	@RequestMapping(value="/yg/test",method=RequestMethod.GET)
 	public String road(BusinessVo vo){
-		return "/yg/editor";
+		return ".yg.searchList";
 		
 	}
 	

@@ -18,6 +18,6 @@
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/DetailMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/BusinessMapper.xml"/>
- 
+  			<mapper resource="app/spring/mybatis/mapper/SelectListMapper.xml"/>
   		</mappers>		
   </configuration> 
