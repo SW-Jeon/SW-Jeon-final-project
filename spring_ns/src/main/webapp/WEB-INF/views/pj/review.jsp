@@ -53,9 +53,10 @@ h1 { font-size: 1.5em; margin: 10px; }
 </head>
 <body>
 <h1>리뷰 작성하기</h1>
-<form method="post" action="${cp }/pj/review">
+<form method="post" action="${cp }/pj/review" enctype="multipart/form-data">
 	후기<br>
 	<textarea rows="5" cols="50" name="content " style="resize:none;"></textarea><br>
+	
 <fieldset class="rating">
     <input type="radio"  id="star5" name="rating" value="5" onclick="button_click(this);" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
     <input type="radio" id="star4" name="rating" value="4"  onclick="button_click(this);"/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -63,8 +64,15 @@ h1 { font-size: 1.5em; margin: 10px; }
     <input type="radio" id="star2" name="rating" value="2" onclick="button_click(this);" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
     <input type="radio" id="star1" name="rating" value="1" onclick="button_click(this);" /><label class = "full" for="star1" title="Sucks big time - 1 star"  ></label>    
 </fieldset>
+<br>
+<br>
+<br>
+파일 첨부<br>
+		<input multiple="multiple" type="file" name="file1" /><br>
 
 
+
+		<input type="submit" 	>
 </form>
 </body>
 <script type="text/javascript">
@@ -74,61 +82,9 @@ h1 { font-size: 1.5em; margin: 10px; }
 	for( var i=0; i<radio.legnth; i++){
 		if( radio[i].checked){
 			alert(radio[i].value);
-			
 			break;
 		}
 	}
-	var file_name = $(input).val();
-
-    var ext = file_name.slice(file_name.lastIndexOf(".") + 1).toLowerCase();
-
-    if (!(ext == "gif" || ext == "jpg" || ext == "jpeg" || ext == "png")) {
-        alert("이미지파일 (.jpg, .jpeg, .png, .gif ) 만 업로드 가능합니다.");
-        return false;
-    }
-
-    var file, img;
-    var _URL = window.URL || window.webkitURL;
-    var cnt = $("#div_" + type + " .image").length;
-    if((file = input.files[0])) {
-        var $temp = $(input).clone();
-
-        img = new Image();
-        img.src = _URL.createObjectURL(file);
-
-        img.onload = function(e) {
-
-            var width = this.width;
-            var height = this.height;
-
-            var clas = '';
-            if(width > height) {
-                clas = 'wl';
-            }
-            else if (width < height){
-                clas = 'hl';
-            }
-
-            var $img = $("<div class='image'></div>");
-            $img.append("<div class='image_wrap'><img src='" + img.src + "'/ ></div>");
-
-            window.EXIF.getData(file, function () {
-                var orientation = EXIF.getTag(this, "Orientation");
-
-                if(orientation) {
-                    $img.find('img').addClass(clas).css('transform','translate(-50%, -50%) ' + rotation[orientation]);
-                }
-            });
-
-            $img.append("<div class='image_txt image_del' data-type='" + type + "' data-id='0'>삭제</div>");
-            $("#div_" + type).append($img);
-            $("#frm-" + type).append($temp.attr('id','add_' + type + '_' + cnt).attr('name', type + '_upload'));
-            getImageCount(type);
-            if(max == $("#div_" + type + " image").length) {
-                $("#btn_" + type).hide();
-            }
-        }
-    }
 }
 </script>
 </html>
