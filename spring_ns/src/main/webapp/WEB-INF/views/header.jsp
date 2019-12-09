@@ -94,14 +94,7 @@
                            
                   <!--  회원 전화번호나 비밀번호찾기 -->        
                             <div class="accountbox-login__others">
-                                <h6><a href="${cp }/swMem/findPhone" data-toggle="modal" data-target="#findPhone">전화번호 찾기</a> | <a href="${cp }/swMem/findPwd">비밀번호 찾기</a></h6>
-                                <div class="social-icons">
-                                    <ul>
-                                        <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="google"><a href="https://www.google.com/"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div>
+                                <h6><a href="${cp }/swMem/findPhone">전화번호 찾기</a> | <a href="${cp }/swMem/findPwd">비밀번호 찾기</a></h6>
                             </div>
                     </div>
                     
@@ -135,29 +128,7 @@
         </div>
 <!-- //Login Form -->
 
-<!--  회원 비밀번호 찾기 모달창 -->
-<div class="modal fade" id="findPhone" tabindex="-1" role="dialog" aria-labelledby="findPhone" aria-hidden="true" >
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title" id="findPhone">전화번호 찾기</h4>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			</div>
-			<div class="modal-body">
-				<form	method="post" action="${cp }/swMem/findPhone">
-						<div class="single-input">
-                                <input class="cr-round--lg" type="password"  name="m_name"  placeholder="이름입력"  required
-                                oninvalid="this.setCustomValidity('이름을 입력해주세요.')"  onchange="this.setCustomValidity('')">
-                        </div>    
-                        <div class="modal-footer">
-								<button type="submit" class="btn btn-primary">찾기</button>
-								<button type="reset" class="btn btn-danger" data-dismiss="modal">닫기</button>
-						</div>           
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 <script type="text/javascript">
 	//아이디(phone) 영문,숫자 5~8자이상

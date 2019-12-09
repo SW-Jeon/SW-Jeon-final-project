@@ -29,8 +29,8 @@
  	</select>
  	
  	<!-- 회원 아이디얻기 -->
- 	<select id="getPhone" parameterType="string" resultType="mem">
- 			select RPAD( SUBSTR(m_phone,1,7), LENGTH(m_phone), '#') m_phone from mem where m_phone=#{m_phone} 
+ 	<select id="getPhone" parameterType="mem" resultType="string">
+ 			select LPAD( SUBSTR(m_phone,8,11), LENGTH(m_phone), '#') m_phone from mem where m_name=#{m_name} and m_mail=#{m_mail} 
  	</select>
  
 </mapper>
