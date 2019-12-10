@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import app.spring.hs.dao.DetailDao;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
+import app.spring.vo.FindmenuVo;
 
 @Service
 public class DetailService {
@@ -29,6 +30,9 @@ public class DetailService {
 	}
 	public List<FindimgVo> findimg(String d_sname){
 		return dao.findimg(d_sname);
+	}
+	public List<FindmenuVo> findmenu(String d_sname){
+		return dao.findmenu(d_sname);
 	}
 
 

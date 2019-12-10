@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import app.spring.hs.service.DetailService;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
+import app.spring.vo.FindmenuVo;
 
 @Controller
 public class DetailController {
@@ -19,9 +20,11 @@ public class DetailController {
 		public ModelAndView detailpg(String name){
 			List<DetailVo> list=service.finddetail(name);
 			List<FindimgVo> list1=service.findimg(name);
+			List<FindmenuVo> list2=service.findmenu(name);
 			ModelAndView mv=new ModelAndView(".detailpage.detailpg");
 			mv.addObject("list",list);
 			mv.addObject("list1",list1);
+			mv.addObject("list2",list2);
 			mv.addObject("name",name);
 			return mv;
 		}
