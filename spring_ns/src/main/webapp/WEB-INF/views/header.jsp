@@ -52,7 +52,7 @@
           <form action="${cp }/searchList" method="post">
             <div class="form-row"  style="width: 800px; padding: 20px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="Search..." name="keyword">
+                <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
               </div>
               <div class="col-lg-3.5 col-md-offset-3">
                 <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
