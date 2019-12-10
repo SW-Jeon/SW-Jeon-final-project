@@ -87,12 +87,12 @@ public class MemController {
 		String pwd=req.getParameter("m_pwd");
 		vo=service.getInfo(m_phone);
 		try{
-			if(pwd==null){
-				model.addAttribute("code", "fail");
-				return ".swMem.result";
-			}else{
+			if(pwd.equals(vo.getM_pwd())){
 				service.delete(m_phone);
 				model.addAttribute("code", "success");
+				return ".swMem.result";
+			}else{
+				model.addAttribute("code", "fail");
 				return ".swMem.result";
 			}
 		} catch (Exception e) {
