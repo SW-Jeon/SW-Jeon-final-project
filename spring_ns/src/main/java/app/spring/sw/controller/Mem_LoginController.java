@@ -60,4 +60,14 @@ public class Mem_LoginController {
         	}
         	 return ".swMem.findPhone";
         }
+        
+        //비밀번호찾기 
+        @RequestMapping(value="/swMem/findPwd",method=RequestMethod.GET)
+        public String findPwdForm(){
+        	return ".swMem.findPwd";
+        }
+        @RequestMapping(value="/swMem/findPwd",method=RequestMethod.POST)
+        public String findPwd(){
+        	
+        }
 }

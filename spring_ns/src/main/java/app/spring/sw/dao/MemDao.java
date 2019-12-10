@@ -44,4 +44,8 @@ public class MemDao {
 			return sqlSessionTemplate.selectOne(NAMESPACE+".getPhone",vo);
 		}
 		
+		//비밀번호 변경
+		public int changePwd(MemVo vo){
+			return sqlSessionTemplate.update(NAMESPACE+".changePwd", vo);
+		}
 }
