@@ -66,8 +66,5 @@ public class Mem_LoginController {
         public String findPwdForm(){
         	return ".swMem.findPwd";
         }
-        @RequestMapping(value="/swMem/findPwd",method=RequestMethod.POST)
-        public String findPwd(){
-        	
-        }
+       
 }
