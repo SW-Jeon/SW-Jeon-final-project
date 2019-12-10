@@ -14,7 +14,7 @@
 	</delete>
 	<!--  사업자 개인 조회 -->
 	<select id="getInfo" parameterType="int" resultType="business">
-		select * from business where b_num=#{b_num}
+		select * from business where b_bnum=#{b_bnum}
 	</select>
 	
 	<!-- 사업자 전체 조회 -->
