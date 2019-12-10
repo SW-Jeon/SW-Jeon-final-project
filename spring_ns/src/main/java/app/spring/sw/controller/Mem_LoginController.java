@@ -1,12 +1,15 @@
 package app.spring.sw.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import app.spring.sw.service.MemService;
 import app.spring.vo.MemVo;
@@ -36,4 +39,26 @@ public class Mem_LoginController {
             session.invalidate();
             return "redirect:/";  
         }	
+        
+        //전화번호 찾기
+        @RequestMapping(value="/swMem/findPhone",method=RequestMethod.GET)
+        public String findPhoneForm(){
+        	return ".swMem.findPhone";
+        }
+        
+        @RequestMapping(value="/swMem/findPhone",method=RequestMethod.POST)
+        public String findPhone(String m_name,String m_mail,HttpServletRequest req, Model model,MemVo vo){
+        	String phone=service.getPhone(vo);
+        	String name=req.getParameter("m_name");
+        	String mail=req.getParameter("m_mail");
+        	System.out.println(mail);
+        	
+        	 if(phone==null) {
+        		model.addAttribute("code", "fail");
+        	}else if(name.equals(m_name) && mail.equals(m_mail)){
+        		model.addAttribute("phone", phone);
+        		model.addAttribute("code", "find");
+        	}
+        	return ".swMem.findPhoneOk";
+        }
 }

@@ -79,16 +79,6 @@ public class MemController {
 			return ".swMem.result";
 		}
 	}
-	////회원 아이디 찾기	/////
-	public String seePhone(Model model){
-		try{
-			return  "";
-		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("code", "fail");
-			return ".swMem.result";
-		}
-	}
 	
 /////////////////////////////////////////////////// 운영자 회원수정  /////////////////////////////////////////////////////////////////////////////
 	@RequestMapping(value = "/memUpdate1", method = RequestMethod.GET )

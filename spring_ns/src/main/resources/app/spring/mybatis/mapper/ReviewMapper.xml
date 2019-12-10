@@ -3,7 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="app.spring.mybatis.mapper.ReviewMapper">
   	<!--  리뷰 등록 -->
-  	<insert id="insert" parameterType="review">
+  	<insert id="insert" parameterType="review"  >
   		insert into review values(0,#{	d_num},#{m_phone},#{r_content},#{r_score},#{r_pic},0,now())
   	</insert>
   	
