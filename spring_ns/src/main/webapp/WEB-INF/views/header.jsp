@@ -93,7 +93,7 @@
                            
                   <!--  회원 전화번호나 비밀번호찾기 -->        
                             <div class="accountbox-login__others">
-                                <h6><a href="${cp }/swMem/findPhone">전화번호 찾기</a> | <a href="${cp }/swMem/findPwd">비밀번호 찾기</a></h6>
+                                <h6><a href="${cp }/swMem/findPhone">전화번호 찾기</a> | <a href="${cp }/swMem/find">비밀번호 찾기</a></h6>
                             </div>
                     </div>
                     

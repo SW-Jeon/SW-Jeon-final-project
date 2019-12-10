@@ -44,4 +44,22 @@
 			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 		
+		
+	<!-- 계정 비밀번호 이메일로 보내는데 필요한 것  -->
+		  <!-- 메일보내기 -->
+   <bean id="mailSender" class = "org.springframework.mail.javamail.JavaMailSenderImpl">
+      <property name="host" value="smtp.daum.net" />
+      <property name="port" value="465" />
+      <property name="username" value="w2263" />
+      <property name="password" value="qq171464" />
+      <property name="javaMailProperties">
+         <props>
+               <prop key="mail.transport.protocol">smtps</prop>
+               <prop key="mail.smtp.auth">true</prop>
+               <prop key="mail.smtp.starttls.enable">true</prop>
+               <prop key="mail.debug">true</prop>
+         </props>
+      </property>
+   </bean>	
+   
 </beans>
