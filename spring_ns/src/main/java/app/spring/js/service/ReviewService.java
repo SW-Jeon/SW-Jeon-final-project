@@ -3,6 +3,7 @@ package app.spring.js.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import app.spring.js.dao.BusinessDao;
 import app.spring.js.dao.ReviewDao;
 import app.spring.vo.ReviewVo;
 
@@ -13,4 +14,5 @@ public class ReviewService {
 	public int insert(ReviewVo vo){
 		return rDao.insert(vo);
 	}
+
 }

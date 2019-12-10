@@ -26,7 +26,7 @@ public class ReviewController {
 		return "/pj/review";
 	}
 	 @RequestMapping(value = "/pj/review",method=RequestMethod.POST)
-	    public String requestupload(int d_num, String m_phone,String r_content,String r_score, Date r_regdate,MultipartHttpServletRequest mtfRequest) {
+	    public String requestupload( String m_phone,String r_content,String r_score, Date r_regdate,MultipartHttpServletRequest mtfRequest) {
 	        List<MultipartFile> fileList = mtfRequest.getFiles("file1");
 	    	String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/upload";
 	    
@@ -46,7 +46,7 @@ public class ReviewController {
 
 				//DB에 저장하기
 	        ReviewVo vo=
-			new ReviewVo(0, d_num , m_phone , r_content, r_score, r_pic, 0, r_regdate);
+			new ReviewVo(0, 1, "01022223333", r_content, r_score, r_pic, 0, r_regdate);
 		    service.insert(vo);
 
 

@@ -41,4 +41,9 @@ public class MemService {
 		public String getPhone(MemVo vo){
 			return mDao.getPhone(vo);
 		}
+		
+		//비밀번호 변경
+		public int changePwd(MemVo vo){
+			return mDao.changePwd(vo);
+		}
 }

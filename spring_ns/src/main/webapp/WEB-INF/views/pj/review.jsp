@@ -69,9 +69,6 @@ h1 { font-size: 1.5em; margin: 10px; }
 <br>
 파일 첨부<br>
 		<input multiple="multiple" type="file" name="file1" /><br>
-
-
-
 		<input type="submit" 	>
 </form>
 </body>
