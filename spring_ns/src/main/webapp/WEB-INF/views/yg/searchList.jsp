@@ -27,12 +27,16 @@ function getLocation() {
 function action1(d_sname){
 	location.href="${cp}/detailpage?name="+d_sname;
 }
-function action2(count){
+function action2(count,m){
 	infos[count].open(map,markers[count]);
 	map.panTo(mPositions[count]);  
+	m.style.opacity = 0.5;
+	m.style.zoom = 1.2;
 }
-function action3(count){
+function action3(count,m){
 	infos[count].close();
+	m.style.opacity = 1.5;
+	m.style.zoom = 1.0;
 }
 </script>
 </head>
@@ -53,7 +57,178 @@ function action3(count){
 <div class="row">
 <c:set var="count" value="0"/>
 <c:forEach var="i" items="${list }">
-<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count})" onmouseout="action3(${count})">
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div>
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div><div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div><div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div><div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div><div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
+	<div align="center">
+	<div align="left" style="width: 300px">
+	<span style="font-size: 30px">${i.d_sname }</span><br>
+	<span style="color: grey" >${i.d_addr }<br>
+	${i.d_kind }<br>
+	${i.d_time }</span>
+	</div>
+	</div>
+</div><div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
 	<img style="width:300px;" src="${cp }/resources/maincss/images/logo/non.png"><br>
 	<div align="center">
 	<div align="left" style="width: 300px">
