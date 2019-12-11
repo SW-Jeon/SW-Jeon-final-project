@@ -1,13 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title></title>
+
 
 <style type="text/css">
-	@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+	@import url(/netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 fieldset, label { margin: 0; padding: 0; }
 body{ margin: 20px; }
@@ -50,8 +46,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 </style>
-</head>
-<body>
+<div>
 <h1>리뷰 작성하기</h1>
 <form method="post" action="${cp }/pj/review" enctype="multipart/form-data">
 	후기<br>
@@ -69,19 +64,22 @@ h1 { font-size: 1.5em; margin: 10px; }
 <br>
 파일 첨부<br>
 		<input multiple="multiple" type="file" name="file1" /><br>
-		<input type="submit" 	>
+		<button type="submit" class="btn btn-primary mt-3"> 업로드 </button>
+		<button type="reset"class="btn btn-danger mt-3"  >취소</button>
 </form>
 </body>
-<script type="text/javascript">
-	
-	var radio=document.getElementsByName("rating")
-	
-	for( var i=0; i<radio.legnth; i++){
-		if( radio[i].checked){
-			alert(radio[i].value);
-			break;
+	<script type="text/javascript">
+		
+		var radio=document.getElementsByName("rating")
+		
+		for( var i=0; i<radio.legnth; i++){
+			if( radio[i].checked){
+				alert(radio[i].value);
+				break;
+			}
 		}
 	}
-}
 </script>
-</html>
+</div>
+
+                           

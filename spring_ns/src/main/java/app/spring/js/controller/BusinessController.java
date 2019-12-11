@@ -20,7 +20,7 @@ public class BusinessController {
 	
 	@RequestMapping(value="/pj/business",method=RequestMethod.GET)
 	public String insertForm(BusinessVo vo){
-		return "/pj/business";
+		return ".pj.business";
 		
 	}
 
