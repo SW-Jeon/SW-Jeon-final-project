@@ -14,7 +14,7 @@
   	<link href="${cp }/resources/maincss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="${cp }/resources/maincss/css/plugins.css">
 	<link rel="stylesheet" href="${cp }/resources/maincss/css/style.css">
-	
+
 <!-- Custom fonts for this template -->
   	<link href="${cp }/resources/maincss/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   	<link href="${cp }/resources/maincss/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
@@ -46,6 +46,7 @@
 		</div>
 	</div>
 	
+	
 <!-- Bootstrap core JavaScript -->
   <script src="${cp }/resources/maincss/vendor/jquery/jquery.min.js"></script>
   <script src="${cp }/resources/maincss/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -54,7 +55,7 @@
   <script src="${cp }/resources/maincss/js/bootstrap.min.js"></script>
   <script src="${cp }/resources/maincss/js/plugins.js"></script>
   <script src="${cp }/resources/maincss/js/active.js"></script>
-  
+ 
 <!--   Core JS Files   -->
 	<script src="${cp }/resources/admin/js/core/jquery.3.2.1.min.js"></script>
 	<script src="${cp }/resources/admin/js/core/popper.min.js"></script>
@@ -85,7 +86,7 @@
 
 <!-- Sweet Alert -->
 	<script src="${cp }/resources/admin/js/plugin/sweetalert/sweetalert.min.js"></script>
-
+	
 <!-- Atlantis JS -->
 	<script src="${cp }/resources/admin/js/atlantis.min.js"></script>
 

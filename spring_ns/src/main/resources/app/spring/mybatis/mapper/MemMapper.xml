@@ -14,7 +14,7 @@
   	</update>
   	
   	<!--  회원탈퇴 -->
-  	<delete id="delete" parameterType="string">
+  	<delete id="delete" parameterType="mem">
   		update mem set  m_status=2 where m_phone=#{m_phone} 
   	</delete>
 
@@ -32,5 +32,10 @@
  	<select id="getPhone" parameterType="mem" resultType="string">
  			select LPAD( SUBSTR(m_phone,8,11), LENGTH(m_phone), '#') m_phone from mem where m_name=#{m_name} and m_mail=#{m_mail} 
  	</select>
+ 	
+ 	<!-- 비밀번호 변경 -->
+ 	<update id="changePwd" parameterType="mem">
+ 		update mem set  m_pwd=#{m_pwd}  where m_phone=#{m_phone} 
+ 	</update>
  
 </mapper>

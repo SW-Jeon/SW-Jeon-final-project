@@ -51,7 +51,6 @@ public class Mem_LoginController {
         	String phone=service.getPhone(vo);
         	String name=req.getParameter("m_name");
         	String mail=req.getParameter("m_mail");
-        	System.out.println(mail);
         	
         	 if(phone==null) {
         		model.addAttribute("code", "fail");
@@ -59,6 +58,13 @@ public class Mem_LoginController {
         		model.addAttribute("phone", phone);
         		model.addAttribute("code", "find");
         	}
-        	return ".swMem.findPhoneOk";
+        	 return ".swMem.findPhone";
         }
+        
+        //비밀번호찾기 
+        @RequestMapping(value="/swMem/findPwd",method=RequestMethod.GET)
+        public String findPwdForm(){
+        	return ".swMem.findPwd";
+        }
+       
 }
