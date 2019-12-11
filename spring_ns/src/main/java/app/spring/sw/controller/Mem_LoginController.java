@@ -4,12 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import app.spring.sw.service.MemService;
 import app.spring.vo.MemVo;
@@ -24,7 +22,9 @@ public class Mem_LoginController {
 		MemVo vo=service.getInfo(m_phone);
 		String phone=vo.getM_phone();
 		String pwd=vo.getM_pwd();
-		if(phone.equals(m_phone)&&pwd.equals(m_pwd) ){
+		String status=vo.getM_status();
+		System.out.println(vo+","+m_phone);
+		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
 			session.setAttribute("m_phone", m_phone);
 			session.setAttribute("m_pwd", m_pwd);
 			return "redirect:/";
