@@ -12,7 +12,8 @@
   				<typeAlias type="app.spring.vo.FindimgVo" alias="findimg"/>
   				<typeAlias type="app.spring.vo.BqVo" alias="bq"/>
   				<typeAlias type="app.spring.vo.MqVo" alias="mq"/>
-
+				<typeAlias type="app.spring.vo.FindmenuVo" alias="findmenu"/>
+				<typeAlias type="app.spring.vo.ReportVo" alias="reportinsert"/>
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>
@@ -20,5 +21,6 @@
   			<mapper resource="app/spring/mybatis/mapper/BusinessMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/SelectListMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/ReviewMapper.xml"/>
-  		</mappers>		
+  			<mapper resource="app/spring/mybatis/mapper/ReportMapper.xml"/>
+   		</mappers>		
   </configuration> 

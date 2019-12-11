@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
+import app.spring.vo.FindmenuVo;
 
 
 @Repository
@@ -31,5 +32,8 @@ public class DetailDao {
 	
 	public int insert(DetailVo vo){
 		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",vo);
+	}
+	public List<FindmenuVo> findmenu(String d_sname){
+		return sqlSessionTemplate.selectList(NAMESPACE+".findmenu",d_sname);
 	}
 }

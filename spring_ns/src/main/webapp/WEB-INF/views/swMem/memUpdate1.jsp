@@ -3,7 +3,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<h3 class="text-info text-center">회원정보 수정</h3>
+			<h3 class="text-info text-center mb-5">회원정보 수정</h3>
 			<form role="form" method="post" action="${cp}/memUpdate1" style="width: 70%; padding-left: 500px;">
 				<div class="form-group">
 					<label for="m_phone">전화번호</label><input type="text" class="form-control" name="m_phone"  value="${vo.m_phone}" readonly="readonly">

@@ -1,11 +1,11 @@
-package app.spring.js.service;
+package app.spring.sw.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.spring.js.dao.MqDao;
+import app.spring.sw.dao.MqDao;
 import app.spring.vo.MqVo;
 
 @Service

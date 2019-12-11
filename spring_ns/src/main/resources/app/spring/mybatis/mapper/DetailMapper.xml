@@ -14,6 +14,9 @@
 		select * from detail where d_sname=#{d_sname}
 	</select>
 	<select id="findimg" parameterType="String" resultType="findimg">
-		select p.p_pic from detail d,pic p where d.d_sname=#{d_sname};
+		select p.p_pic from detail d,pic p where d.d_num=p.d_num and d.d_sname=#{d_sname};
+	</select>
+	<select id="findmenu" parameterType="String" resultType="findmenu">
+		select m.me_name,m.me_pay from detail d,menu m where d.d_num=m.d_num and d.d_sname=#{d_sname};
 	</select>
 </mapper>
