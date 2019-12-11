@@ -116,6 +116,10 @@ table tr td{
 		
 	</div>
 	<a href="javascript:report()"><img style="margin-left: 90%;" src="${cp }/resources/images/test/sys2.png"></a>
+	
+	
+	
+	
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 	<script>
