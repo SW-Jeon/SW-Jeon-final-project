@@ -11,5 +11,5 @@
 			<h1> 오류로 인하여 실패하였습니다.</h1>
 		</c:otherwise>
 	</c:choose>
-	<button class="btn btn-danger" onclick="location.href='${cp }/' ">홈으로</button>
+	<button class="btn btn-danger mt-5" onclick="location.href='${cp }/' ">홈으로</button>
 </div>

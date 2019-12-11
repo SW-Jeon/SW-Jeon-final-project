@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<!-- memList -->
+<style>
+	.to{font-size: 2em; font-weight: bold;}
+	.con{font-size: 1.2em;}
+</style>
 
-
-    <link href="${cp }resources/list/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${cp }resources/list/css/style.css" rel="stylesheet">
+<link href="${cp }resources/list/css/bootstrap.min.css" rel="stylesheet">
+<link href="${cp }resources/list/css/style.css" rel="stylesheet">
 
 
   <div class="container-fluid">
@@ -14,21 +17,23 @@
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th>전화번호</th>
-						<th>이름</th>
-						<th>이메일</th>
-						<th>비밀번호</th>
-						<th>수정</th>
+						<th class="to">전화번호</th>
+						<th class="to">이름</th>
+						<th class="to">이메일</th>
+						<th class="to">비밀번호</th>
+						<th class="to">가입상태</th>
+						<th class="to">수정</th>
 					</tr>
 				</thead>
 		    <c:forEach var="vo" items="${list }">		
 				<tbody>
 					<tr class="table-danger">
-						<td>${ vo.m_phone}</td>
-						<td>${ vo.m_name}</td>
-						<td>${ vo.m_mail}</td>
-						<td>${ vo.m_pwd}</td>
-						<td><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">수정</a></td>
+						<td class="con">${ vo.m_phone}</td>
+						<td class="con">${ vo.m_name}</td>
+						<td class="con">${ vo.m_mail}</td>
+						<td class="con">${ vo.m_pwd}</td>
+						<td class="con" style="color:red;">${vo.m_status }</td>
+						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">수정</a></td>
 					</tr>
 				</tbody>
 			</c:forEach>

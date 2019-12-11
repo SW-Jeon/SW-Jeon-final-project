@@ -1,4 +1,4 @@
-package app.spring.js.dao;
+package app.spring.sw.dao;
 
 import java.util.List;
 
