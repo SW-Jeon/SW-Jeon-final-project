@@ -2,6 +2,8 @@ package app.spring.sw.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,20 +31,21 @@ public class MemController {
 		}
 	}
 
-	//// 회원탈퇴 ////
-	@RequestMapping(value = "/memDelete", method = RequestMethod.GET)
-	public String delete(String m_phone, Model model) {
+	
+	//회원마이페이지 --초기화면
+	@RequestMapping(value="/swMem/mypage", method = RequestMethod.GET )
+	public String mypage(String m_phone, Model model){
 		try {
-			model.addAttribute("vo", service.delete(m_phone));
-			return ".main";
+		model.addAttribute("vo", service.getInfo(m_phone));
+		return ".swMem.mypage";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
 		}
 	}
-
-	//// 회원수정 ////
+	
+	//// 회원마이페이지 - 수정 ////
 	@RequestMapping(value = "/memUpdate", method = RequestMethod.GET )
 	public String updateForm(String m_phone, Model model) {
 		try {
@@ -56,15 +59,49 @@ public class MemController {
 	}
 	@RequestMapping(value = "/memUpdate", method = RequestMethod.POST )
 	public String update(MemVo vo, Model model) {
+		service.update(vo);
 		try {
-			model.addAttribute("vo", service.update(vo));
-			return ".main";
+			model.addAttribute("vo", service.getInfo(vo.getM_phone()));
+			return ".swMem.memUpdate";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
 		}
 	}
+	
+	////회원탈퇴 ////
+	@RequestMapping(value = "/memDelete", method = RequestMethod.GET )
+	public String deleteForm(String m_phone, Model model) {
+		try {
+			model.addAttribute("vo", service.getInfo(m_phone));
+			return ".swMem.memDelete";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
+	}
+	@RequestMapping(value="/memDelete",method=RequestMethod.POST)
+	public String delete(MemVo vo, String m_phone, String m_pwd, Model model, HttpServletRequest req){
+		String pwd=req.getParameter("m_pwd");
+		vo=service.getInfo(m_phone);
+		try{
+			if(pwd.equals(vo.getM_pwd())){
+				service.delete(m_phone);
+				model.addAttribute("code", "success");
+				return ".swMem.result";
+			}else{
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
+	}
+	
 
 	//// 회원조회 ////
 	@RequestMapping(value = "/memList", method = RequestMethod.GET )
@@ -79,6 +116,7 @@ public class MemController {
 			return ".swMem.result";
 		}
 	}
+
 	
 /////////////////////////////////////////////////// 운영자 회원수정  /////////////////////////////////////////////////////////////////////////////
 	@RequestMapping(value = "/memUpdate1", method = RequestMethod.GET )
