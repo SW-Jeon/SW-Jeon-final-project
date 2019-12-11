@@ -4,7 +4,7 @@
   <mapper namespace="app.spring.mybatis.mapper.BqMapper">
   	<!-- 사업자 문의 등록 -->
   	<insert id="insert" parameterType="bq">
-  		insert into bq values(0,#{d_num},#{bq_content},now(),null,1)
+  		insert into bq values(0,#{d_num},#{bq_title},#{bq_content},now(),null,1)
   	</insert>
   	
   	<!-- 사업자 문의 삭제 -->
