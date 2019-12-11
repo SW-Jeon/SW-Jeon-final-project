@@ -10,8 +10,8 @@
 		<!-- 네비바 -->
 		<jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/>
 
-				<section class="mypage-cont col-md-10" style="border: 2px solid blue; float: right;">
-						<h1 class="text-info text-center">탈퇴를 신중하게 선택바랍니다.</h1>
+				<section class="mypage-cont col-md-10" style="margin-top:150px; float: right;">
+						<h1 class="text-info text-center mb-5">탈퇴를 신중하게 선택바랍니다.</h1>
 						<img src="${cp }/resources/maincss/images/logo/secret.png" style=" float: left; width: 400px;">
 						<form role="form" method="post" action="${cp}/memDelete" style="width: 70%; padding-left: 500px;">
 								<div class="form-group">

@@ -3,7 +3,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="mypage-wrap mt-5 mx-auto">
-
 	<!-- mypage area -->
 <div class="mypage-area ">
 <!-- contents -->
@@ -11,8 +10,8 @@
 		<!-- 네비바 -->
 		<jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/> 
 		
-		<section class="mypage-cont col-md-10" style="border: 2px solid blue; float: right;">
-			<h1 class="text-info text-center">상 세 정 보</h1>
+		<section class="mypage-cont col-md-10 " style="margin-top:120px; float: right;">
+			<h1 class="text-info text-center mb-5" style="font-size: 3em;">상 세 정 보</h1>
 			<img src="${cp }/resources/maincss/images/logo/secret.png" style=" float: left; width: 400px;">
 			<form role="form" method="post" action="${cp}/memUpdate" style="width: 70%; padding-left: 500px;">
 				<div class="form-group">
