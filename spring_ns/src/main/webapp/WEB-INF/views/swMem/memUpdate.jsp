@@ -10,8 +10,8 @@
 		<!-- 네비바 -->
 		<jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/>
 
-				<section class="mypage-cont col-md-10" style="border: 2px solid blue; float: right;">
-						<h1 class="text-info text-center">회원 정보 수정</h1>
+				<section class="mypage-cont col-md-10" style="margin-top:150px; float: right;">
+						<h1 class="text-info text-center mb-5">회원 정보 수정</h1>
 						<img src="${cp }/resources/maincss/images/logo/secret.png" style=" float: left; width: 400px;">
 						<form role="form" method="post" action="${cp}/memUpdate" style="width: 70%; padding-left: 500px;">
 								<div class="form-group">
@@ -26,7 +26,7 @@
 								<div class="form-group">
 									 <label for="m_pwd">비밀번호</label><input type="text" class="form-control" name="m_pwd"    value="${vo.m_pwd}">
 								</div>
-								<div class="form-group" style="padding-left: 130px;">
+								<div class="form-group" style="padding-left: 150px;">
 									<button type="submit" class="btn btn-primary">정보 수정</button>
 									<button type="reset"class="btn btn-danger">다시 작성</button>
 								</div>
