@@ -5,14 +5,29 @@
 #tag{
 	margin: auto;
 	width: 100px;
-	height: 400px;
-	margin-left: 95%;
-	background-color: black;
-	top: 100px;
+	height: 500px;
+	margin-left: 90%;
+	margin-top:-660px;
+	position: absolute;
+	text-align: center;
+	
+	
 }
 #tag div{
 	width: 100px;
 	height: 25%;
+}
+#top{
+	
+}
+#main{
+	
+}
+#main1{
+	
+}
+#footer{
+	
 }
 #imageinfo ul div li img {
 	width: 370px;
@@ -58,8 +73,23 @@ table tr td{
 	z-index: 1;
 }
 </style>
-
-<div>
+<script>
+	window.addEventListener('scroll',function(e){
+		var sc=window.scrollY;
+		//alert(sc);
+		console.log(sc+"xxxxxxxxxxxx");
+		if(sc>250){
+			var tag=document.getElementById("tag");
+			tag.style.position="absolute";
+			tag.style.top="450px";
+		}
+		if(sc<=250){
+			var tag=document.getElementById("tag");
+			tag.style.position="fixed";
+		}
+	});
+</script>
+<div style="width:5000px; height: 5000px;">
 	<input type="hidden" value="${name }" name="">
 	<h1 style="text-align: center;">${name }</h1>
 	<a href="" style="margin-left: 90%;">블로그들 보러가기</a>
@@ -127,19 +157,27 @@ table tr td{
 		</table>
 		
 	</div>
-	<div id="tag">
-		<div id="top"></div>
-		<div id="main"></div>
-		<div id="main1"></div>
-		<div id="footer"></div>
+	<div id="tag" style="cursor: pointer;">
+		<div id="top"><img title="블로그보러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리</div>
+		<div id="main"><img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜</div>
+		<div id="main1"><img title="리뷰쓰러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/review.png">낭만리뷰</div>
+		<div id="footer" onclick="report()"><img style="width: 100px;height: 100px;" src="${cp }/resources/images/test/report.png">신고하기</div>
 	</div>
-	<a href="javascript:report()"><img style="margin-left: 90%;" src="${cp }/resources/images/test/sys2.png"></a>
+	
 	
 	
 	
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 	<script>
+		
+		//var scroll=window.scrollY;
+		//alert(scroll);
+		
+		//if(scroll>218){
+		//	var tag=document.getElementById("tag");
+		//	tag.style.position="fixed";
+		//}
 		var dnum=document.getElementById("dnum").value;
 		var x=(window.screen.width/2)-(200/2);
 		var y=(window.screen.height/2)-(200/2);
