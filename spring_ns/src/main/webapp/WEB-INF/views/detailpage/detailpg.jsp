@@ -2,6 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
+#tag{
+	margin: auto;
+	width: 100px;
+	height: 400px;
+	margin-left: 95%;
+	background-color: black;
+	top: 100px;
+}
+#tag div{
+	width: 100px;
+	height: 25%;
+}
 #imageinfo ul div li img {
 	width: 370px;
 	height: 400px;
@@ -115,13 +127,18 @@ table tr td{
 		</table>
 		
 	</div>
+	<div id="tag">
+		<div id="top"></div>
+		<div id="main"></div>
+		<div id="main1"></div>
+		<div id="footer"></div>
+	</div>
 	<a href="javascript:report()"><img style="margin-left: 90%;" src="${cp }/resources/images/test/sys2.png"></a>
 	
 	
 	
 	
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 	<script>
 		var dnum=document.getElementById("dnum").value;
 		var x=(window.screen.width/2)-(200/2);
