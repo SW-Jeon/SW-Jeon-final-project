@@ -35,13 +35,7 @@ public class MqDao {
 		return sqlSessionTemplate.selectList(NAMESPACE + ".listAll");
 	}
 
-	//회원문의 본인용
-	public List<MqVo> listMy(String m_phone){
-		return sqlSessionTemplate.selectList(NAMESPACE + ".listMy",m_phone);
-	}
+
 	
-	//문의글 상세내용
-	public int detail(MqVo vo){
-		return sqlSessionTemplate.
-	}
+
 }
