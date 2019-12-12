@@ -34,12 +34,13 @@
 					<tr class="table-danger">
 						<td class="con">${ vo.mq_num}</td>
 						<td class="con">${ vo.m_phone}</td>
-						<td class="con">${ vo.mq_title}</td>
+						<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${vo.mq_num}">${ vo.mq_title}</a></td>
 						<td class="con">${ vo.mq_content}</td>
 						<td class="con" style="color:gray">${vo.mq_reply }</td>
-						<td class="con" style="color:red;"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">${vo.mq_state }</a></td>
+						<td class="con" style="color:red;"><a href="${cp}/swMem/mqReply?mq_num=${vo.mq_num}">${vo.mq_state }</a></td>
 						<td class="con">${ vo.mq_date}</td>
-						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">삭제</a></td>
+						<td class="con"><button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"
+						onclick="location.href='${cp}/swMem/mqDelete?m_phone=${vo.m_phone}' "><i class="fa fa-times"></i></button></td>
 					</tr>
 				</tbody>
 			</c:forEach>

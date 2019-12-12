@@ -10,7 +10,7 @@
 		<!-- 네비바 -->
 		<jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/>
 
-				<section class="mypage-cont col-md-10" style="margin-top:150px; float: right;">
+				<section class="mypage-cont col-md-10" style="margin-top:120px; float: right;">
 						<h1 class="text-info text-center mb-5">회원 정보 수정</h1>
 						<img src="${cp }/resources/maincss/images/logo/secret.png" style=" float: left; width: 400px;">
 						<form role="form" method="post" action="${cp}/memUpdate" style="width: 70%; padding-left: 500px;">

@@ -31,4 +31,9 @@
   	<select id="listMy" resultType="mq" parameterType="string">
   		select * from mq where m_phone=#{m_phone}
   	</select>
+  	
+  	<!--  글의 상세내용 -->
+  	<select id="detail" parameterType="int" resultType="mq">
+  		select * from mq where mq_num=#{mq_num}
+  	</select>
   </mapper>

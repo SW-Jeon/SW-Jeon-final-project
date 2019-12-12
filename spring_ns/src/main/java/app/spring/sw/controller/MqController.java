@@ -39,7 +39,7 @@ public class MqController {
 			}
 		}
 		
-		//글 조회(회원용)
+		//글 목록조회(회원용)
 		@RequestMapping(value="/swMem/mqMyList",method=RequestMethod.GET )
 		public String listMy(Model model,String m_phone){
 			try {
@@ -52,6 +52,16 @@ public class MqController {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");
 				return ".swMem.result";
+			}
+		}
+		//글 상세내용 조회
+		@RequestMapping(value="/swMem/mqContent",method=RequestMethod.GET )
+		public String Detail(Model model,String mq_num){
+			try{
+				return "/";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
 			}
 		}
 		
@@ -74,5 +84,13 @@ public class MqController {
 		//글 삭제
 		
 		//운영자 답변(업데이트)
-		
+		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.GET )
+		public String Reply(Model model,String mq_num){
+		try{
+			return ".swMem.result";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+			}
+		}
 }

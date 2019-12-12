@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- MqMyList -->
-
 <style>
 	.to{font-size: 3em; font-weight: bold;}
 	.con{font-size: 1.2em;}
@@ -30,7 +28,6 @@
 					<tr>
 						<th class="to">글번호</th>
 						<th class="to">제목</th>
-						<th class="to">내용</th>
 						<th class="to">답변</th>
 						<th class="to">답변상태</th>
 						<th class="to">작성일</th>
@@ -40,7 +37,7 @@
 				<tbody>
 					<tr class="table-danger">
 						<td class="con">${ vo.mq_num}</td>
-						<td class="con">${ vo.mq_title}</td>
+						<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}">${ vo.mq_title}</a></td>
 						<td class="con">${ vo.mq_content}</td>
 						<td class="con" style="color:red;">${vo.mq_reply }</td>
 						<td class="con" style="color:red;">${vo.mq_state }</td>
@@ -63,3 +60,4 @@
     <script src="${cp }resources/list/js/jquery.min.js"></script>
     <script src="${cp }resources/list/js/bootstrap.min.js"></script>
     <script src="${cp }resources/list/js/scripts.js"></script>
+    
