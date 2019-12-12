@@ -3,8 +3,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div>
 <div style="text-align: center;">
-	감사합니다.더 나은 서비스로 보답하겠습니다<br>
-	<input type="button" value="확인" onclick="closepop()">
+	<h1>감사합니다.<br>
+	더 나은 서비스로 보답하겠습니다.</h1>
+	<button type="button"  class="btn btn-primary mt-2" onclick="closepop()">확인</button>
 	</div>
 	<script type="text/javascript">
 		function closepop() {
