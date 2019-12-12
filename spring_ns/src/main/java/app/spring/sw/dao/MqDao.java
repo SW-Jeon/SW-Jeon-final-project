@@ -42,6 +42,6 @@ public class MqDao {
 	
 	//문의글 상세내용
 	public int detail(MqVo vo){
-		return sqlSessionTemplate.
+		return sqlSessionTemplate.delete(NAMESPACE);
 	}
 }
