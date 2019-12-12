@@ -38,6 +38,9 @@ var koko1=new Array();
 koko1=koko;
 var hoho1=new Array();
 hoho1=hoho;
+var markers=new Array;
+var infos=new Array;
+var mPositions=new Array;
  mapOption = {
   center: new kakao.maps.LatLng(33.450701, 126.570667), 
         level: 4          
@@ -53,10 +56,10 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
  gap.forEach(function(g,index){
  geocoder.addressSearch(g, function(result, status) {
   
-  
   if (status === kakao.maps.services.Status.OK) {
 	  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 	  markerPosition = new kakao.maps.LatLng(result[0].y, result[0].x);
+	  mPositions.push(markerPosition);
 	  map.setCenter(markerPosition);
    
    // 받은 좌표값으로 마커 생성
@@ -69,7 +72,8 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
    });
    
    //alert(gap[0]+","+gap[1]);
-   
+   marker2=marker;
+   markers.push(marker);
    
    var moinfo='<div style="width:250px;text-align:center;padding:5px 0;"><p style="font-size:2em;color:black;">'+koko1[index]+"</P><br>  종류:"+hoho1[index]+'</div>';
    var infowindow = new kakao.maps.InfoWindow({
@@ -77,7 +81,7 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
 	   content: moinfo
     	
    });
-   
+   infos.push(infowindow);
    kakao.maps.event.addListener(marker, 'mouseover', function() {
 	   
 	   infowindow.open(map,marker);

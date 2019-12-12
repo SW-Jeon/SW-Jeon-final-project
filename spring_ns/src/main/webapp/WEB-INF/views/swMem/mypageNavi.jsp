@@ -11,6 +11,6 @@
 		  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="font-weight: bolder; font-size:1.7em; margin: 20px;"><span>${vo.m_name }</span>  님의 Home</a>
 		  <a class="nav-link" href=" ${cp }/memUpdate?m_phone=${m_phone}">정보 수정</a>
 		  <a class="nav-link" href=" ${cp }/memDelete?m_phone=${m_phone}" >계정 탈퇴</a>
-		  <a class="nav-link" href="${cp }/swMem/memQuestion">회원 문의</a>
+		  <a class="nav-link" href="${cp }/swMem/memQuestion?m_phone=${m_phone}">회원 문의</a>
 		  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">찜 목록</a> 
 	</nav>

@@ -2,17 +2,23 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- header.jsp -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #FBEFF5;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarColor01">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="${cp}/">Home<span class="sr-only">(current)</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
-		</ul>
+	
+	<!-- brand/logo -->
+		<a  class="navbar-brand"href="${cp}/">
+			<img src="${cp }/resources/maincss/images/logo/N2.png" alt="logo images"  style="width: 60px; height: 60px;">
+		</a>
+		
+	<!-- Links -->
+	        <ul class="nav navbar-nav mr-auto " >
+				<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
+			</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
@@ -26,17 +32,14 @@
 			</c:when>
 			<c:otherwise>
 			<div class="col-lg-1 col-sm-3 col-md-1 ">
-				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage?m_phone=${m_phone}"  style="width:150px; height: 50px;">
-				<i class ="fas fa-address-card"> MyHOME</i></a>
+				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage" style="width:150px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
 			</div>		
 			<div class="col-lg-1 col-sm-3 col-md-1 justify-content-end"  >
-				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;">
-				 <i class ="fas fa-power-off"> 로그아웃</i></a>
+				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;"><i class ="fas fa-power-off"> 로그아웃</i></a>
 			</div>
-
 			</c:otherwise>
 		</c:choose>
-		</div>	
+		</div>
 </nav>
 
 <!-- Navigation -->
@@ -51,7 +54,7 @@
           <form action="${cp }/searchList" method="post">
             <div class="form-row"  style="width: 800px; padding: 20px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="Search..." name="keyword">
+                <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
               </div>
               <div class="col-lg-3.5 col-md-offset-3">
                 <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
