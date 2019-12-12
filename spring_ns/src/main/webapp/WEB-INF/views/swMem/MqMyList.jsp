@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- MqMyList -->
 <style>
 	.to{font-size: 3em; font-weight: bold;}
 	.con{font-size: 1.2em;}
@@ -37,8 +38,7 @@
 				<tbody>
 					<tr class="table-danger">
 						<td class="con">${ vo.mq_num}</td>
-						<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}">${ vo.mq_title}</a></td>
-						<td class="con">${ vo.mq_content}</td>
+						<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}&m_phone=${vo.m_phone}">${ vo.mq_title}</a></td>
 						<td class="con" style="color:red;">${vo.mq_reply }</td>
 						<td class="con" style="color:red;">${vo.mq_state }</td>
 						<td class="con">${ vo.mq_date}</td>

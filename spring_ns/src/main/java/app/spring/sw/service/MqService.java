@@ -37,7 +37,7 @@ public class MqService {
 			return mqDao.listMy(m_phone);
 	}
 	//회원 상세내용
-	public int detail(int mq_num){
-			return mqDao.delete(mq_num);
+	public MqVo detail(int mq_num){
+			return mqDao.detail(mq_num);
 	}
 }

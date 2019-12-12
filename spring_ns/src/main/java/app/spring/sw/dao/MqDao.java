@@ -41,7 +41,7 @@ public class MqDao {
 	}
 
 	//회원 상세내용
-	public int detail(int mq_num){
+	public MqVo detail(int mq_num){
 		return sqlSessionTemplate.selectOne(NAMESPACE+".detail", mq_num);
 	}
 
