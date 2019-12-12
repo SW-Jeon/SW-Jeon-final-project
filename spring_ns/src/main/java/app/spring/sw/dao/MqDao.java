@@ -14,7 +14,9 @@ public class MqDao {
 	private final String NAMESPACE="app.spring.mybatis.mapper.MqMapper";
 	//회원 문의 등록
 	public int insert(MqVo vo){
+		System.out.println(vo.getM_phone());
 		return sqlSessionTemplate.insert(NAMESPACE + ".insert",vo);
+		
 	}
 	//회원 문의 삭제
 	public int delete(int mq_num){

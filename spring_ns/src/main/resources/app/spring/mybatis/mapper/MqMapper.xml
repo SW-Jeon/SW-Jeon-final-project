@@ -4,7 +4,7 @@
   <mapper namespace="app.spring.mybatis.mapper.MqMapper">
   	<!-- 회원 문의 등록 -->
   	<insert id="insert" parameterType="mq">
-  		insert into mq values(0,#{m_phone},#{mq_title},#{mq_content},now(),null,1)
+  		insert into mq values(0,#{m_phone},#{mq_title},#{mq_content},null,1,now())
   	</insert>
   	
   	<!-- 회원 문의 삭제 -->

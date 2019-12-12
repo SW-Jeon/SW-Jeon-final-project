@@ -22,5 +22,7 @@
   			<mapper resource="app/spring/mybatis/mapper/SelectListMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/ReviewMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/ReportMapper.xml"/>
+  			<mapper resource="app/spring/mybatis/mapper/BqMapper.xml"/>
+  			<mapper resource="app/spring/mybatis/mapper/MqMapper.xml"/>
    		</mappers>		
   </configuration> 
