@@ -5,12 +5,12 @@
 #tag{
 	margin: auto;
 	width: 100px;
-	height: 500px;
-	margin-left: 90%;
-	margin-top:-660px;
+	height: 450px;
+	left: 1700px;
+	top:500px;
 	position: absolute;
 	text-align: center;
-	
+	z-index:999;
 	
 }
 #tag div{
@@ -74,34 +74,32 @@ table tr td{
 }
 </style>
 <script>
-	window.addEventListener('scroll',function(e){
-		var sc=window.scrollY;
-		//alert(sc);
-		console.log(sc+"xxxxxxxxxxxx");
-		if(sc>250){
-			var tag=document.getElementById("tag");
-			tag.style.position="absolute";
-			tag.style.top="450px";
-		}
-		if(sc<=250){
-			var tag=document.getElementById("tag");
-			tag.style.position="fixed";
-		}
-	});
+window.addEventListener('scroll',function(e){
+	var sc=window.scrollY;
+	if(sc>=200){
+		var tag=document.getElementById("tag"); 
+		var ttop=tag.style.top;
+		
+		tag.style.top=ttop+"px";
+		tag.style.position="fixed";
+		
+	}
+	
+});
+	
 </script>
-<div style="width:5000px; height: 5000px;">
+<div>
 	<input type="hidden" value="${name }" name="">
-	<h1 style="text-align: center;">${name }</h1>
-	<a href="" style="margin-left: 90%;">블로그들 보러가기</a>
+	
 	<div
-		style="width: 1900px; height: 400px; position: relative; left: 5px; top: 50px; overflow: hidden;">
+		style="width: 1900px; height: 400px; position: relative; left: 5px;  overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
 		<a href="javascript:behind()"><img
 			src="${cp }/resources/images/test/button1.png" id="return"></a> <a
 			href="javascript:next()"><img
 			src="${cp }/resources/images/test/button2.png" id="next"></a>
 		<div
-			style="width: 2660px; height: 400px; left: 0px; top: -42px; position: relative;"
+			style="width: 2660px; height: 400px; left: 0px;  position: relative;"
 			id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
@@ -113,6 +111,7 @@ table tr td{
 			</c:forEach>
 		</div>
 	</div>
+		<h1 style="text-align: center;">${name }</h1>
 	<div id="map"
 		style="left: 55%; width: 600px; height: 400px;top:120px; position: relative; "></div>
 	<div
