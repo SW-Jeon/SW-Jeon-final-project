@@ -23,7 +23,6 @@ public class Mem_LoginController {
 		String phone=vo.getM_phone();
 		String pwd=vo.getM_pwd();
 		String status=vo.getM_status();
-		System.out.println(vo+","+m_phone);
 		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
 			session.setAttribute("m_phone", m_phone);
 			session.setAttribute("m_pwd", m_pwd);

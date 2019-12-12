@@ -28,6 +28,7 @@
 
    <!-- Modernizer js -->
  <script src="${cp }/resources/maincss/js/vendor/modernizr-3.5.0.min.js"></script>
+ 
 <style type="text/css">
 	#content{min-height: 1200px;}
 </style>
@@ -45,7 +46,6 @@
 			<tiles:insertAttribute name="footer"/>
 		</div>
 	</div>
-	
 	
 <!-- Bootstrap core JavaScript -->
   <script src="${cp }/resources/maincss/vendor/jquery/jquery.min.js"></script>

@@ -30,9 +30,13 @@ public class MqDao {
 	public MqVo getInfo(int mq_num){
 		return sqlSessionTemplate.selectOne(NAMESPACE + ".getInfo",mq_num);
 	}
-	//회원 전체 문의 조회
+	//회원 전체 문의 조회(운영자용)
 	public List<MqVo> listAll(){
 		return sqlSessionTemplate.selectList(NAMESPACE + ".listAll");
 	}
 
+	//회원문의 본인용
+	public List<MqVo> listMy(String m_phone){
+		return sqlSessionTemplate.selectList(NAMESPACE + ".listMy",m_phone);
+	}
 }

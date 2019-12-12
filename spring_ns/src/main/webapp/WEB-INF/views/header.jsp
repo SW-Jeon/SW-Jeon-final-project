@@ -15,7 +15,8 @@
 		
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto " >
-				<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원목록(운영자 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList">문의목록(운영자 임시)</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
 			</ul>
@@ -32,7 +33,7 @@
 			</c:when>
 			<c:otherwise>
 			<div class="col-lg-1 col-sm-3 col-md-1 ">
-				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage" style="width:150px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
+				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
 			</div>		
 			<div class="col-lg-1 col-sm-3 col-md-1 justify-content-end"  >
 				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;"><i class ="fas fa-power-off"> 로그아웃</i></a>
