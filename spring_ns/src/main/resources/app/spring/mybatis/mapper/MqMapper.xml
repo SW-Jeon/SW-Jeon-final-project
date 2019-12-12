@@ -24,6 +24,6 @@
   	
   	<!-- 회원 문의 전체 조회 -->
   	<select id="listAll" resultType="mq">
-  		select* from mq
+  		select * from mq
   	</select>
   </mapper>

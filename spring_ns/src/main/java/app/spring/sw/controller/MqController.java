@@ -20,6 +20,12 @@ public class MqController {
 		//글쓰기 폼에서 값 전달 받아 등록
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.POST )
 		public String MqInsert(){
+			try{
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+				
+			}
 			return ".main";
 		}
 		

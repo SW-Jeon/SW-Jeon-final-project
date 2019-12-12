@@ -13,8 +13,8 @@
 				<section class="mypage-cont col-md-10" style="margin-top:150px; float: right;">
 						<h1 class="text-info text-center mb-5">회원 문의</h1>
 						<img src="${cp }/resources/maincss/images/logo/secret.png" style=" float: left; width: 400px;">
-						<form role="form" method="post" action="${cp}/memUpdate" style="width: 70%; padding-left: 500px;">
-							<input type="hidden" class="form-control" name="m_phone"  >
+						<form role="form" method="post" action="${cp}/swMem/memQuestion" style="width: 70%; padding-left: 500px;">
+								<input type="hidden" class="form-control" name="m_phone"  >
 								<div class="form-group">
 									<label for="mq_title">제목</label><input type="text" class="form-control" name="mq_title"  >
 								</div>
