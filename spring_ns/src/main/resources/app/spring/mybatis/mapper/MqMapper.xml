@@ -36,4 +36,5 @@
   	<select id="detail" parameterType="int" resultType="mq">
   		select * from mq where mq_num=#{mq_num}
   	</select>
+  	
   </mapper>
