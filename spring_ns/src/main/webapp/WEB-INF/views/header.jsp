@@ -7,12 +7,18 @@
 		<span class="navbar-toggler-icon">NangMan</span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarColor01">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="${cp}/">Home<span class="sr-only">(current)</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
-		</ul>
+	
+	<!-- brand/logo -->
+		<a  class="navbar-brand"href="${cp}/">
+			<img src="${cp }/resources/maincss/images/logo/N2.png" alt="logo images"  style="width: 60px; height: 60px;">
+		</a>
+		
+	<!-- Links -->
+	        <ul class="nav navbar-nav mr-auto " >
+				<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
+			</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
@@ -26,17 +32,14 @@
 			</c:when>
 			<c:otherwise>
 			<div class="col-lg-1 col-sm-3 col-md-1 ">
-				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage?m_phone=${m_phone}"  style="width:150px; height: 50px;">
-				<i class ="fas fa-address-card"> MyHOME</i></a>
+				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage" style="width:150px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
 			</div>		
 			<div class="col-lg-1 col-sm-3 col-md-1 justify-content-end"  >
-				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;">
-				 <i class ="fas fa-power-off"> 로그아웃</i></a>
+				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;"><i class ="fas fa-power-off"> 로그아웃</i></a>
 			</div>
-
 			</c:otherwise>
 		</c:choose>
-		</div>	
+		</div>
 </nav>
 
 <!-- Navigation -->
