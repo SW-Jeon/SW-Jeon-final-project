@@ -5,9 +5,8 @@
 <style type="text/css">
 	@import url(/netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
+
+
 
 /****** Style Star Rating Widget *****/
 
@@ -52,13 +51,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 	후기<br>
 	<textarea rows="5" cols="50" name="r_content " style="resize:none;"></textarea><br>
 	
-<fieldset class="rating" >
-    <input type="radio"  id="star5" name="r_score" value="5"  /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-    <input type="radio" id="star4" name="r_score" value="4"  /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-    <input type="radio" id="star3" name="r_score" value="3"  /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    <input type="radio" id="star2" name="r_score" value="2"  /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-    <input type="radio" id="star1" name="r_score" value="1"  /><label class = "full" for="star1" title="Sucks big time - 1 star"  ></label>    
-</fieldset>
+
 <br>
 <br>
 <br>
@@ -67,18 +60,9 @@ h1 { font-size: 1.5em; margin: 10px; }
 		<button type="submit" class="btn btn-primary mt-3"> 업로드 </button>
 		<button type="reset"class="btn btn-danger mt-3"  >취소</button>
 </form>
-</body>
+
 	<script type="text/javascript">
-		
-		var radio=document.getElementsByName("rating")
-		
-		for( var i=0; i<radio.legnth; i++){
-			if( radio[i].checked){
-				alert(radio[i].value);
-				break;
-			}
-		}
-	}
+	
 </script>
 </div>
 
