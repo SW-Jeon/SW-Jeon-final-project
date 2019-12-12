@@ -12,12 +12,17 @@ import app.spring.hs.service.DetailService;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
 import app.spring.vo.FindmenuVo;
+import app.spring.yg.service.SelectListService;
 
 @Controller
 public class DetailController {
 		@Autowired private DetailService service;
+		@Autowired private SelectListService service2;
 		@RequestMapping(value="/detailpage")	
-		public ModelAndView detailpg(String name){
+		public ModelAndView detailpg(String name,int d_num){
+			System.out.println(d_num);
+			int check=service2.increhit(d_num);
+			System.out.println(name);
 			List<DetailVo> list=service.finddetail(name);
 			List<FindimgVo> list1=service.findimg(name);
 			List<FindmenuVo> list2=service.findmenu(name);
