@@ -8,6 +8,8 @@
 <title>별점</title>
 
 <style>
+.review1{position:absolute;}
+
 
 .star-input>.input,
 .star-input>.input>label:hover,
@@ -32,7 +34,7 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 </head>
 <body>
 
-<div >
+<div class="review1">
 <h1>리뷰 작성하기</h1>
 	<form method="post" action="${cp }/pj/review" enctype="multipart/form-data">
 	<span class="star-input">
