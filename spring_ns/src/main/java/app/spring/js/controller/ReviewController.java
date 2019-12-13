@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,7 +26,16 @@ public class ReviewController {
 	public String reviewForm(ReviewVo vo){
 		return ".pj.review";
 	}
-	 @RequestMapping(value = "/pj/review",method=RequestMethod.POST)
+	
+	@RequestMapping(value="/pj/reviewlist",method=RequestMethod.GET)
+	public String reviewlist(Model model){
+		List<ReviewVo> rlist=service.list();
+		model.addAttribute("list",rlist);
+		return "reviewlist";
+	}
+	
+	
+	@RequestMapping(value = "/pj/review",method=RequestMethod.POST)
 	    public String requestupload(int d_num, String m_phone,String r_content,String r_score, Date r_regdate,MultipartHttpServletRequest mtfRequest) {
 	        List<MultipartFile> fileList = mtfRequest.getFiles("file1");
 	    	String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/upload";

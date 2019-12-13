@@ -1,5 +1,7 @@
 package app.spring.js.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,4 +16,7 @@ public class ReviewDao {
 	public int insert(ReviewVo vo){
 		return sqlSessionTemplate.insert(NAMESPACE + ".insert",vo);
 	}
+	public List<ReviewVo> list(){
+		return sqlSessionTemplate.selectList(NAMESPACE +".list");
+	} 
 }
