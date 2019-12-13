@@ -35,10 +35,11 @@
             </div>
           </form>
         </div>
-        <ul class="navbar-nav" >
-			<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
+        <ul class="navbar-nav " >
+			<li class="nav-item "><a class="nav-link active"  href="${cp}/memList" style="font-size: 1.5em;">회원(임시)</a></li>
+			<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList"  style="font-size: 1.5em;">문의(임시)</a></li>
+			<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만매거진</a></li>
+			<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">

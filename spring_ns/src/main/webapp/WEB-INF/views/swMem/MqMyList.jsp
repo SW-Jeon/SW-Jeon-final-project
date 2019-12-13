@@ -13,15 +13,14 @@
 
   <div class="container-fluid" >
 	<div class="row">
-		<div class="col-md-12 " style="margin-top:80px;">
+		<div class="col-md-12 " style="margin-top:80px; float: right;">
 		<h1 class="text-info text-center">나의 문의 목록</h1>
-			<button class="btn btn-primary" onclick="location.href='${cp }/swMem/memQuestion' ">문의하기</button>
-			<table class="table table-hover table-striped ">
+			<button class="btn btn-primary" onclick="location.href='${cp }/swMem/memQuestion' " style=" float: right;">문의하기</button>
+			<table class="table table-hover table-striped  text-center">
 				<thead>
 					<tr>
 						<th>글번호</th>
 						<th>제목</th>
-						<th>답변내용</th>
 						<th>답변상태</th>
 						<th>작성일</th>
 					</tr>
@@ -31,13 +30,12 @@
 					<tr class="table-danger">
 						<td>${ vo.mq_num}</td>
 						<td><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}&m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Detail" >${ vo.mq_title}</a></td>
-						<td style="color:red;">${vo.mq_reply }</td>
 						<c:choose>
 								<c:when test="${vo.mq_state =='1' }">
-								<td ><span  style="color:blue;">대기</span></td>
+								<td ><span  style="color:blue;">대기중</span></td>
 								</c:when>
 								<c:when test="${vo.mq_state =='2' }">
-								<td ><span  style="color:red;">완료</span></td>
+								<td ><span  style="color:red;">답변완료</span></td>
 								</c:when>
 						</c:choose>
 						<td>${ vo.mq_date}</td>
@@ -45,7 +43,7 @@
 				</tbody>
 			</c:forEach>
 			</table>
-				<button class="btn btn-primary" onclick="location.href='${cp }/' ">홈으로</button>
+				<button class="btn btn-primary " onclick="location.href='${cp }/' ">홈으로</button>
 		</div>
 	</div>
 </div>

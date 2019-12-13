@@ -48,8 +48,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form role="form" method="post" action="${cp}/swMem/memQuestion" >
-					<input type="hidden" class="form-control" name="m_phone"  value=${m_phone }>
+				<form role="form" method="post" action="${cp}/swMem/mqReply" >
 					<div class="form-group">
 						<label for="mq_reply">운영자 답변</label>
 						<textarea rows="5" cols="80" name="mq_content" style="resize: none;"></textarea>

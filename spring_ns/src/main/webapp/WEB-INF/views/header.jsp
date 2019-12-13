@@ -13,11 +13,11 @@
 	}
 </script>
 <style>
-	ul li{margin: 0px;}
-	ul li a{margin: 0px;}
+	ul li{margin: 0px;  }
+	ul li a{margin: 0px; }
 </style>
 
-<nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #F2F2F2;">
+<nav class="navbar navbar-expand-lg  border-bottom  navbar-dark " style="background-color: #F2F2F2;">
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
@@ -28,10 +28,10 @@
 		
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto " >
-				<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원목록(운영자 임시)</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList">문의목록(운영자 임시)</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp}/memList" style="font-size: 1.5em;">회원목록(운영자 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList"  style="font-size: 1.5em;">문의목록(운영자 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만스토리</a></li>
 			</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
@@ -66,7 +66,7 @@
 
         <div class="col-md-6 col-lg-15 col-xl-7 text-right">
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
-            <div class="form-row"  style="width: 800px; padding: 20px;">
+            <div class="form-row"  style="width: 800px; padding: 20px; position: relative; left: -230px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
               </div>

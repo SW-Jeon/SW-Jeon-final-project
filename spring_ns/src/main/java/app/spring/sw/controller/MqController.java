@@ -98,9 +98,11 @@ public class MqController {
 		//글 삭제
 		
 		//운영자 답변(업데이트)
-		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.GET )
-		public String Reply(Model model,String mq_num){
+		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.POST )
+		public String Reply(Model model,String mq_num,MqVo vo){
 		try{
+			model.addAttribute("vo1", service.update(vo));
+			model.addAttribute("code", "success");
 			return ".swMem.result";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");

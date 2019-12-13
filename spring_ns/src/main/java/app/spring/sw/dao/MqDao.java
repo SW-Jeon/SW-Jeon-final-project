@@ -16,20 +16,23 @@ public class MqDao {
 	public int insert(MqVo vo){
 		System.out.println(vo.getM_phone());
 		return sqlSessionTemplate.insert(NAMESPACE + ".insert",vo);
-		
 	}
+	
 	//회원 문의 삭제
 	public int delete(int mq_num){
 		return sqlSessionTemplate.delete(NAMESPACE + ".delete",mq_num);
 	}
+	
 	//회원 문의 답변 후 상태
 	public int update(MqVo vo){
 		return sqlSessionTemplate.update(NAMESPACE + ".update",vo);
 	}
+	
 	//회원 문의 조회
 	public MqVo getInfo(int mq_num){
 		return sqlSessionTemplate.selectOne(NAMESPACE + ".getInfo",mq_num);
 	}
+	
 	//회원 전체 문의 조회(운영자용)
 	public List<MqVo> listAll(){
 		return sqlSessionTemplate.selectList(NAMESPACE + ".listAll");
