@@ -54,14 +54,12 @@ public class MqController {
 			}
 		}
 		
-		//글 상세내용 조회
+		//글 상세내용 조회(회원용)
 		@RequestMapping(value="/swMem/mqContent",method=RequestMethod.GET )
 		public String Detail(Model model,int mq_num,String m_phone ){
 			try{
 				model.addAttribute("vo", MemService.getInfo(m_phone));
-				model.addAttribute("vo", service.detail(mq_num));
-				System.out.println(m_phone);
-				System.out.println(mq_num);
+				model.addAttribute("vo1", service.detail(mq_num));
 				return ".swMem.MqContent";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
@@ -84,6 +82,18 @@ public class MqController {
 				return ".swMem.result";
 			}
 		}
+		//글 상세내용 조회(회원용)
+		@RequestMapping(value="/swMem/mqAdminCon",method=RequestMethod.GET )
+		public String Detail(Model model,int mq_num ){
+			try{
+				model.addAttribute("vo1", service.detail(mq_num));
+				return ".swMem.mqAdminCon";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+			}
+		}
+		
 		
 		//글 삭제
 		

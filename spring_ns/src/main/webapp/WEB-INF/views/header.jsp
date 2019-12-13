@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- header.jsp -->
+<style>
+	ul li{margin: 0px;}
+	ul li a{margin: 0px;}
+</style>
 
-<nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #FBEFF5;">
+<nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #F2F2F2;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
 	</button>
-	<div class="collapse navbar-collapse" id="navbarColor01">
-	
+	<div class="collapse navbar-collapse mx-auto" id="navbarColor01">	
 	<!-- brand/logo -->
-		<a  class="navbar-brand"href="${cp}/">
-			<img src="${cp }/resources/maincss/images/logo/N2.png" alt="logo images"  style="width: 60px; height: 60px;">
-		</a>
+		<a  class="navbar-brand"href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>
 		
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto " >
@@ -45,25 +46,23 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-light bg-light static-top">
-	<div class="container">
-		<div class="col-lg-4 col-sm-4 col-md-6 " >
+		<div class="col-md-2 ml-5" style="float: left; " >
 			<div class="logo">
-				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/nmsk.png" alt="logo images" style="width: 300px; height: 300px;"></a>
+				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images" ></a>
 			</div>
 		</div>
-        <div class="col-md-6 col-lg-15 col-xl-7 text-right">
+        <div class="col-md-6" style="position: relative; left: -400px;">
           <form action="${cp }/searchList" method="post" onsubmit="return lengthcheck()">
-            <div class="form-row"  style="width: 800px; padding: 20px;">
-              <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
+            <div class="form-row"  >
+              <div class="col-md-9  mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
               </div>
-              <div class="col-lg-3.5 col-md-offset-3">
+              <div class=" col-md-offset-3">
                 <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
               </div>
             </div>
           </form>
         </div>
-      </div>
 </nav>
 
 <!-- Login Form  모달창 -->
