@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- header.jsp -->
+<!-- header2.jsp -->
 <script type="text/javascript">
 	function lengthcheck(){
     	if(document.sh.keyword.value.length<2){
@@ -11,13 +11,17 @@
    		}
 	}
 </script>
-<nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #FBEFF5;">
+<style>
+	ul li{margin: 0px;}
+	ul li a{margin: 0px;}
+</style>
+<nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #F2F2F2;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarColor01">
 		<div class="logo">
-				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/N2.png" alt="logo images"  style="width: 60px; height: 60px;"></a>
+				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>
 		</div>
 		 <div class="col-md-6 col-lg-15 col-xl-7 text-right">
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
@@ -31,7 +35,7 @@
             </div>
           </form>
         </div>
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav" >
 			<li class="nav-item"><a class="nav-link" href="${cp}/memList">회원리스트(관리자페이지전 임시)</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">낭만매거진</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">낭만스토리</a></li>

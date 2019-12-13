@@ -1,21 +1,26 @@
 package app.spring.sw.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import app.spring.sw.service.MemService;
 import app.spring.sw.service.MqService;
 import app.spring.vo.MqVo;
 
 @Controller
 public class MqController {
-		@Autowired MqService service;
+		@Autowired private MqService service;
+		@Autowired private MemService MemService;
 		
 		//회원 문의글 쓰기 폼이동
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.GET )
-		public String MqinsertForm(){
+		public String MqinsertForm(String m_phone, Model model){
+			model.addAttribute("vo", MemService.getInfo(m_phone));
 			return ".swMem.MqInsert";
 		}
 		
@@ -33,11 +38,73 @@ public class MqController {
 			}
 		}
 		
+		//글 목록조회(회원용)
+		@RequestMapping(value="/swMem/mqMyList",method=RequestMethod.GET )
+		public String listMy(Model model,String m_phone){
+			try {
+				model.addAttribute("vo", MemService.getInfo(m_phone));
+				List<MqVo> listMy=service.listMy(m_phone);
+				model.addAttribute("m_phone", m_phone);
+				model.addAttribute("listMy", listMy);	
+				return ".swMem.MqMyList";
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
+			}
+		}
+		
+		//글 상세내용 조회(회원용)
+		@RequestMapping(value="/swMem/mqContent",method=RequestMethod.GET )
+		public String Detail(Model model,int mq_num,String m_phone ){
+			try{
+				model.addAttribute("vo", MemService.getInfo(m_phone));
+				model.addAttribute("vo1", service.detail(mq_num));
+				return ".swMem.MqContent";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+			}
+		}
+		
+///////////////////////////////////////////////////////   운영자용  ////////////////////////////////////////////////////////////////	
+		
+		//글 조회(운영자용)
+		@RequestMapping(value="/swMem/mqList",method=RequestMethod.GET )
+		public String listAll(Model model){
+			try {
+				List<MqVo> listAll=service.listAll();
+				model.addAttribute("listAll", listAll);
+				return ".swMem.MqList";
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
+			}
+		}
+		//글 상세내용 조회(회원용)
+		@RequestMapping(value="/swMem/mqAdminCon",method=RequestMethod.GET )
+		public String Detail(Model model,int mq_num ){
+			try{
+				model.addAttribute("vo1", service.detail(mq_num));
+				return ".swMem.mqAdminCon";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+			}
+		}
+		
+		
 		//글 삭제
 		
-		//글 업데이트
-		
-		//글 조회
-		
-		
+		//운영자 답변(업데이트)
+		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.GET )
+		public String Reply(Model model,String mq_num){
+		try{
+			return ".swMem.result";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+			}
+		}
 }

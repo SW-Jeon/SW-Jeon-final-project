@@ -10,7 +10,7 @@
 		<!-- 네비바 -->
 		<jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/>
 
-				<section class="mypage-cont col-md-10" style="margin-top:150px; float: right;">
+				<section class="mypage-cont col-md-10" style="margin-top:120px; float: right;">
 						<h1 class="text-info text-center mb-5">회원 문의</h1>
 						<img src="${cp }/resources/maincss/images/logo/secret.png" style=" float: left; width: 400px;">
 						<form role="form" method="post" action="${cp}/swMem/memQuestion" style="width: 70%; padding-left: 500px;">
@@ -21,14 +21,13 @@
 								<div class="form-group">
 									<label for="mq_content">내용</label><br>
 									<textarea rows="5" cols="80" name="mq_content" style="resize: none;"></textarea>
-								</div>
+								</div>				
 								<div class="form-group" style="padding-left: 150px;">
 									<button type="submit" class="btn btn-primary">문의하기</button>
 									<button type="reset"class="btn btn-danger">취소</button>
 								</div>
 						</form>
 			</section>
-
 		<!-- //contents -->
 		</div>
 	</div>

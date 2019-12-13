@@ -152,14 +152,16 @@ window.addEventListener('scroll',function(e){
 				<input type="hidden" value="${vo.d_addr }" id="addr">
 				<input type="hidden" value="${vo.d_sname }" id="name">
 				<input type="hidden" value="${vo.d_num }" id="dnum">
+				
+				
 			</c:forEach>
 		</table>
-		
+		<input type="text" value="${phone }" id="m_phone">
 	</div>
 	<div id="tag" style="cursor: pointer;">
 		<div id="top"><img title="블로그보러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리</div>
-		<div id="main"><img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜</div>
-		<div id="main1"><img title="리뷰쓰러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/review.png">낭만리뷰</div>
+		<div id="main" onclick="zzim()"><img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜</div>
+		<div id="main1"><a href="${cp }/pj/review"><img title="리뷰쓰러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/review.png"></a>낭만리뷰</div>
 		<div id="footer" onclick="report()"><img style="width: 100px;height: 100px;" src="${cp }/resources/images/test/report.png">신고하기</div>
 	</div>
 	
@@ -169,7 +171,12 @@ window.addEventListener('scroll',function(e){
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 	<script>
-		
+		function zzim() {
+			var d_num=parseInt(document.getElementById("dnum").value);
+			var m_phone=document.getElementById("m_phone").value;
+			alert(m_phone);
+			location.href="${cp}/zzimOk?d_num="+d_num+"&m_phone="+m_phone;
+		}
 		//var scroll=window.scrollY;
 		//alert(scroll);
 		
