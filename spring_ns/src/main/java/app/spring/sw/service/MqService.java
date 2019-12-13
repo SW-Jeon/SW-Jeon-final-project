@@ -15,14 +15,17 @@ public class MqService {
 	public int insert(MqVo vo){
 		return mqDao.insert(vo);
 	}
+	
 	//회원 문의 삭제
 	public int delete(int mq_num){
 		return mqDao.delete(mq_num);
 	}
+	
 	//회원 답변 후 상태
 	public int update(MqVo vo){
 		return mqDao.update(vo);
 	}
+	
 	//회원 문의 조회
 	public MqVo getInfO(int mq_num){
 		return mqDao.getInfo(mq_num);

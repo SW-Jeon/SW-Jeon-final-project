@@ -66,7 +66,7 @@
 
         <div class="col-md-6 col-lg-15 col-xl-7 text-right">
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
-            <div class="form-row"  style="width: 800px; padding: 20px;">
+            <div class="form-row"  style="width: 800px; padding: 20px; position: relative; left: -230px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
               </div>
