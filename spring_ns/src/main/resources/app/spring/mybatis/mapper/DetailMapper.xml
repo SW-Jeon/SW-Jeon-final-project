@@ -6,9 +6,8 @@
 	<insert id="insert" parameterType="detailmap">
 		insert into detail values(0,#{a_id},#{b_num},#{d_name},#{d_kind},#{d_pic},#{d_park},#{d_holi},#{d_time},#{d_phone},#{d_addr},0,)
 	</insert>
-
 	<select id="findlist" parameterType="String" resultType="detailmap">
-		select d_addr,d_sname,d_kind from detail where d_addr like'%?%'=#{d_sname}
+		select d_addr,d_sname,d_kind,d_num from detail where d_addr like'%?%'=#{d_sname}
 	</select>
 	<select id="finddetail" parameterType="String" resultType="detailmap">
 		select * from detail where d_sname=#{d_sname}

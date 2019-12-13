@@ -30,7 +30,9 @@
  <script src="${cp }/resources/maincss/js/vendor/modernizr-3.5.0.min.js"></script>
  
 <style type="text/css">
-	#content{min-height: 1200px;}
+	#content{min-height: 1200px; width: 70%; float: left;}
+	#right{min-height: 1200px; width: 20%; float: right;}
+	#footer{clear: both;}
 </style>
 </head>
 
@@ -41,6 +43,9 @@
 		</div>
 		<div id="content">
 			<tiles:insertAttribute name="content"/>
+		</div>
+		<div id="right">
+			<tiles:insertAttribute name="right"/>
 		</div>
 		<div id="footer">
 			<tiles:insertAttribute name="footer"/>

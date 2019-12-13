@@ -14,13 +14,13 @@ import app.spring.vo.MqVo;
 
 @Controller
 public class MqController {
-		@Autowired MqService service;
-		@Autowired private MemService service1;
+		@Autowired private MqService service;
+		@Autowired private MemService MemService;
 		
 		//회원 문의글 쓰기 폼이동
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.GET )
 		public String MqinsertForm(String m_phone, Model model){
-			model.addAttribute("vo", service1.getInfo(m_phone));
+			model.addAttribute("vo", MemService.getInfo(m_phone));
 			return ".swMem.MqInsert";
 		}
 		
@@ -28,7 +28,6 @@ public class MqController {
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.POST )
 		public String MqInsert(MqVo vo,Model model){
 			try{
-				
 				service.insert(vo);
 				model.addAttribute("code", "success");
 				return ".swMem.result";
@@ -43,7 +42,7 @@ public class MqController {
 		@RequestMapping(value="/swMem/mqMyList",method=RequestMethod.GET )
 		public String listMy(Model model,String m_phone){
 			try {
-				model.addAttribute("vo", service1.getInfo(m_phone));
+				model.addAttribute("vo", MemService.getInfo(m_phone));
 				List<MqVo> listMy=service.listMy(m_phone);
 				model.addAttribute("m_phone", m_phone);
 				model.addAttribute("listMy", listMy);	
@@ -54,11 +53,14 @@ public class MqController {
 				return ".swMem.result";
 			}
 		}
-		//글 상세내용 조회
+		
+		//글 상세내용 조회(회원용)
 		@RequestMapping(value="/swMem/mqContent",method=RequestMethod.GET )
-		public String Detail(Model model,String mq_num){
+		public String Detail(Model model,int mq_num,String m_phone ){
 			try{
-				return "/";
+				model.addAttribute("vo", MemService.getInfo(m_phone));
+				model.addAttribute("vo1", service.detail(mq_num));
+				return ".swMem.MqContent";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
@@ -80,13 +82,27 @@ public class MqController {
 				return ".swMem.result";
 			}
 		}
+		//글 상세내용 조회(회원용)
+		@RequestMapping(value="/swMem/mqAdminCon",method=RequestMethod.GET )
+		public String Detail(Model model,int mq_num ){
+			try{
+				model.addAttribute("vo1", service.detail(mq_num));
+				return ".swMem.mqAdminCon";
+			} catch (Exception e) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+			}
+		}
+		
 		
 		//글 삭제
 		
 		//운영자 답변(업데이트)
-		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.GET )
-		public String Reply(Model model,String mq_num){
+		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.POST )
+		public String Reply(Model model,String mq_num,MqVo vo){
 		try{
+			model.addAttribute("vo1", service.update(vo));
+			model.addAttribute("code", "success");
 			return ".swMem.result";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");

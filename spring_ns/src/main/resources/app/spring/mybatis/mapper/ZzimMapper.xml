@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="app.spring.mybatis.mapper.ZzimMapper">
+	<insert id="insert" parameterType="insertzzim">
+		insert into dish value(0,#{d_num},#{m_phone})
+	</insert>
+</mapper>

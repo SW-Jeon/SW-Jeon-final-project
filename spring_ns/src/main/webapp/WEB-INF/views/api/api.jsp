@@ -7,7 +7,7 @@
 <input type="hidden" name="info" value="${vo.d_addr }">
 <input type="hidden" name="koko" value="${vo.d_sname }">
 <input type="hidden" name="hoho" value="${vo.d_kind }">
-
+<input type="hidden" name="dodo" value="${vo.d_num }">
 </c:forEach>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 <script>
@@ -29,6 +29,11 @@ for(var i=0;i<document.getElementsByName("hoho").length;i++){
 	
 	hoho[i]=document.getElementsByName("hoho")[i].value;
 }
+var dodo=new Array();
+for(var i=0;i<document.getElementsByName("dodo").length;i++){
+	
+	dodo[i]=document.getElementsByName("dodo")[i].value;
+}
 //var koko=document.getElementById("koko");
 var mapOption;
 var map;
@@ -38,6 +43,8 @@ var koko1=new Array();
 koko1=koko;
 var hoho1=new Array();
 hoho1=hoho;
+var dodo1=new Array();
+dodo1=dodo;
 var markers=new Array;
 var infos=new Array;
 var mPositions=new Array;
@@ -97,7 +104,7 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
 	});
 	 kakao.maps.event.addListener(marker, 'click', function() {
 		   
-		  location.href="${cp}/detailpage?name="+koko1[index];
+		  location.href="${cp}/detailpage?name="+koko1[index]+"&d_num="+dodo1[index];
 		});
    
    

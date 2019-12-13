@@ -2,16 +2,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- MqList -->
 
-<style>
-	.to{font-size: 3em; font-weight: bold;}
-	.con{font-size: 1.2em;}
-	td:HOVER {color: blue; font-weight: bolder; font-size: 1.2em;}
-</style>
-
-<link href="${cp }resources/list/css/bootstrap.min.css" rel="stylesheet">
-<link href="${cp }resources/list/css/style.css" rel="stylesheet">
-
-
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -19,27 +9,27 @@
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th class="to">글번호</th>
-						<th class="to">전화번호</th>
-						<th class="to">제목</th>
-						<th class="to">내용</th>
-						<th class="to">답변</th>
-						<th class="to">답변상태</th>
-						<th class="to">작성일</th>
-						<th class="to">삭제</th>
+						<th >글번호</th>
+						<th >전화번호</th>
+						<th >제목</th>
+						<th >내용</th>
+						<th >답변</th>
+						<th>답변상태</th>
+						<th >작성일</th>
+						<th >삭제</th>
 					</tr>
 				</thead>
 		    <c:forEach var="vo" items="${listAll }">		
 				<tbody>
 					<tr class="table-danger">
-						<td class="con">${ vo.mq_num}</td>
-						<td class="con">${ vo.m_phone}</td>
-						<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${vo.mq_num}">${ vo.mq_title}</a></td>
-						<td class="con">${ vo.mq_content}</td>
-						<td class="con" style="color:gray">${vo.mq_reply }</td>
-						<td class="con" style="color:red;"><a href="${cp}/swMem/mqReply?mq_num=${vo.mq_num}">${vo.mq_state }</a></td>
-						<td class="con">${ vo.mq_date}</td>
-						<td class="con"><button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"
+						<td >${ vo.mq_num}</td>
+						<td >${ vo.m_phone}</td>
+						<td ><a href="${cp }/swMem/mqAdminCon?mq_num=${vo.mq_num}" data-toggle="tooltip" data-original-title="Detail" >${ vo.mq_title}</a></td>
+						<td >${ vo.mq_content}</td>
+						<td  style="color:gray">${vo.mq_reply }</td>
+						<td  style="color:red;">${vo.mq_state }</td>
+						<td >${ vo.mq_date}</td>
+						<td ><button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"
 						onclick="location.href='${cp}/swMem/mqDelete?m_phone=${vo.m_phone}' "><i class="fa fa-times"></i></button></td>
 					</tr>
 				</tbody>
@@ -49,7 +39,3 @@
 		</div>
 	</div>
 </div>
-
-    <script src="${cp }resources/list/js/jquery.min.js"></script>
-    <script src="${cp }resources/list/js/bootstrap.min.js"></script>
-    <script src="${cp }resources/list/js/scripts.js"></script>

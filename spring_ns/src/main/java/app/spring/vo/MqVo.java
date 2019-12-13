@@ -25,15 +25,6 @@ public class MqVo {
 		this.mq_date = mq_date;
 	}
 
-
-	public String getMq_title() {
-		return mq_title;
-	}
-
-	public void setMq_title(String mq_title) {
-		this.mq_title = mq_title;
-	}
-
 	public int getMq_num() {
 		return mq_num;
 	}
@@ -48,6 +39,14 @@ public class MqVo {
 
 	public void setM_phone(String m_phone) {
 		this.m_phone = m_phone;
+	}
+
+	public String getMq_title() {
+		return mq_title;
+	}
+
+	public void setMq_title(String mq_title) {
+		this.mq_title = mq_title;
 	}
 
 	public String getMq_content() {
@@ -81,5 +80,9 @@ public class MqVo {
 	public void setMq_date(Date mq_date) {
 		this.mq_date = mq_date;
 	}
+
+
+
+
 	
 }

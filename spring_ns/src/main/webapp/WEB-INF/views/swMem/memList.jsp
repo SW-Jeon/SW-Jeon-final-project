@@ -6,10 +6,6 @@
 	.con{font-size: 1.2em;}
 </style>
 
-<link href="${cp }resources/list/css/bootstrap.min.css" rel="stylesheet">
-<link href="${cp }resources/list/css/style.css" rel="stylesheet">
-
-
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -33,7 +29,7 @@
 						<td class="con">${ vo.m_mail}</td>
 						<td class="con">${ vo.m_pwd}</td>
 						<td class="con" style="color:red;">${vo.m_status }</td>
-						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">수정</a></td>
+						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Update" >수정</a></td>
 					</tr>
 				</tbody>
 			</c:forEach>
@@ -42,7 +38,3 @@
 		</div>
 	</div>
 </div>
-
-    <script src="${cp }resources/list/js/jquery.min.js"></script>
-    <script src="${cp }resources/list/js/bootstrap.min.js"></script>
-    <script src="${cp }resources/list/js/scripts.js"></script>
