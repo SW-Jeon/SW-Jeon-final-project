@@ -8,4 +8,7 @@
   	<update id="increhit" parameterType="int">
 		update detail set d_hit=d_hit+1 where d_num=#{d_num};
 	</update>
+	<select id="recount" parameterType="int" resultType="int">
+		select count(r_score) from review where d_num=#{d_num};
+	</select>
 </mapper>

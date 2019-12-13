@@ -93,7 +93,7 @@ function action3(count,m){
 	<span style="color: grey" >${i.d_addr }<br>
 	${i.d_kind }<br>
 	${i.d_time }<br>
-	${i.d_hit }
+	<i class="flaticon-medical mr-5">&nbsp${i.d_hit }</i><i class="flaticon-pencil">&nbsp${i.r_count }</i>
 	</span>
 	</div>
 	</div>

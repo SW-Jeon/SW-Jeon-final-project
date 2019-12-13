@@ -14,9 +14,10 @@ public class SearchListVo {
 	private int d_hit;
 	private double r_score;
 	private String p_pic;
+	private int r_count;
 	public SearchListVo() {}
 	public SearchListVo(int d_num, String a_id, int b_num, String d_sname, String d_kind, String d_park, String d_holi,
-			String d_time, String d_phone, String d_addr, int d_hit, double r_score, String p_pic) {
+			String d_time, String d_phone, String d_addr, int d_hit, double r_score, String p_pic, int r_count) {
 		super();
 		this.d_num = d_num;
 		this.a_id = a_id;
@@ -31,6 +32,7 @@ public class SearchListVo {
 		this.d_hit = d_hit;
 		this.r_score = r_score;
 		this.p_pic = p_pic;
+		this.r_count = r_count;
 	}
 	public int getD_num() {
 		return d_num;
@@ -109,5 +111,11 @@ public class SearchListVo {
 	}
 	public void setP_pic(String p_pic) {
 		this.p_pic = p_pic;
+	}
+	public int getR_count() {
+		return r_count;
+	}
+	public void setR_count(int r_count) {
+		this.r_count = r_count;
 	}
 }

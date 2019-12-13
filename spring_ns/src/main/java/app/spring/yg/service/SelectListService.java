@@ -21,4 +21,7 @@ public class SelectListService {
 	public int increhit(int d_num){
 		return dao.increhit(d_num);
 	}
+	public int recount(int d_num){
+		return dao.recount(d_num);
+	}
 }

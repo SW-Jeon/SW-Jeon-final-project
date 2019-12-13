@@ -19,18 +19,19 @@ public class SelectListController {
 	@RequestMapping(value="/searchList")	
 	public ModelAndView searchList(String keyword,String standard){
 		Map<String, Object> values=new HashMap<String, Object>();
-		System.out.println(standard);
 		values.put("keyword", keyword);
 		if(standard==null){
 			standard="d_hit desc";
 		}
 		values.put("standard", standard);
 		List<SearchListVo> list=service.searchList(values);
+		for(SearchListVo vo:list){
+			vo.setR_count(service.recount(vo.getD_num()));
+		}
 		ModelAndView mv=new ModelAndView(".yg.searchList");
 		mv.addObject("list",list);
 		mv.addObject("keyword",keyword);
 		mv.addObject("standard",standard);
-		System.out.println(standard);
 		return mv;
 	}
 }

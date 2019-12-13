@@ -22,4 +22,7 @@ public class SelectListDao {
 	public int increhit(int d_num){
 		return sqlSessionTemplate.update(NAMESPACE+".increhit",d_num);
 	}
+	public int recount(int d_num){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".recount",d_num);
+	}
 }

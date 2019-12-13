@@ -1,7 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- header.jsp -->
-
+<script type="text/javascript">
+	function lengthcheck(){
+    	if(document.sh.keyword.value.length<2){
+       		alert("검색값을 2글자이상 입력해주세요~");
+       	return false;
+    	}else{
+     	return true;
+   		}
+	}
+</script>
 <nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #FBEFF5;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
@@ -51,7 +60,7 @@
 			</div>
 		</div>
         <div class="col-md-6 col-lg-15 col-xl-7 text-right">
-          <form action="${cp }/searchList" method="post" onsubmit="return lengthcheck()">
+          <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
             <div class="form-row"  style="width: 800px; padding: 20px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
