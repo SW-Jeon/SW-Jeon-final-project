@@ -12,8 +12,6 @@
 						<th >글번호</th>
 						<th >전화번호</th>
 						<th >제목</th>
-						<th >내용</th>
-						<th >답변</th>
 						<th>답변상태</th>
 						<th >작성일</th>
 						<th >삭제</th>
@@ -25,12 +23,17 @@
 						<td >${ vo.mq_num}</td>
 						<td >${ vo.m_phone}</td>
 						<td ><a href="${cp }/swMem/mqAdminCon?mq_num=${vo.mq_num}" data-toggle="tooltip" data-original-title="Detail" >${ vo.mq_title}</a></td>
-						<td >${ vo.mq_content}</td>
-						<td  style="color:gray">${vo.mq_reply }</td>
-						<td  style="color:red;">${vo.mq_state }</td>
+							<c:choose>
+								<c:when test="${vo.mq_state =='1' }">
+								<td ><span  style="color:blue;">대기중</span></td>
+								</c:when>
+								<c:when test="${vo.mq_state =='2' }">
+								<td ><span  style="color:red;">답변완료</span></td>
+								</c:when>
+						</c:choose>
 						<td >${ vo.mq_date}</td>
-						<td ><button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"
-						onclick="location.href='${cp}/swMem/mqDelete?m_phone=${vo.m_phone}' "><i class="fa fa-times"></i></button></td>
+						<td ><button type="button" data-toggle="tooltip"  class="btn btn-link btn-danger" data-original-title="Remove"
+						onclick="location.href='${cp}/swMem/mqDelete?mq_num=${vo.mq_num}' "><i class="fa fa-times"></i></button></td>
 					</tr>
 				</tbody>
 			</c:forEach>

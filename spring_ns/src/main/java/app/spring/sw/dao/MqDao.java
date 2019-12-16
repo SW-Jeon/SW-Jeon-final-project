@@ -23,7 +23,7 @@ public class MqDao {
 		return sqlSessionTemplate.delete(NAMESPACE + ".delete",mq_num);
 	}
 	
-	//회원 문의 답변 후 상태
+	//회원 문의 답변 후 운영자답변 변경
 	public int update(MqVo vo){
 		return sqlSessionTemplate.update(NAMESPACE + ".update",vo);
 	}

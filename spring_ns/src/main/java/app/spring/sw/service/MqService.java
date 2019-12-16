@@ -21,7 +21,7 @@ public class MqService {
 		return mqDao.delete(mq_num);
 	}
 	
-	//회원 답변 후 상태
+	//회원 문의 답변 후 운영자답변 변경
 	public int update(MqVo vo){
 		return mqDao.update(vo);
 	}

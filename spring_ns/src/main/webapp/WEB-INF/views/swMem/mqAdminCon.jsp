@@ -9,6 +9,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="text-info text-center">회원님 문의 내역</h1>
+						<div class="border border-info rounded"  style="width: 80%; margin-left: 150px;">
 						<div class="form-group">
 							<label for="mq_title">제목</label><input type="text" class="form-control" value="${ vo1.mq_title}" readonly="readonly">
 						</div>
@@ -24,12 +25,13 @@
 						<div class="form-group">
 							<label for="mq_state">답변</label>
 							<input type="text" class="form-control" value="${vo1.mq_state}" readonly="readonly"  >
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">답변달기</button>
+							<button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">답변달기</button>
 						</div>
 						<div class="form-group">
 							<label for="mq_date">날짜</label><input type="text" class="form-control" value="${vo1.mq_date}" readonly="readonly">
 						</div>
-						<button class="btn btn-primary" onclick="location.href='${cp }/' ">홈으로</button>
+						</div>
+						<button class="btn btn-primary mt-3" onclick="location.href='${cp }/' " style="margin-left: 600px;">홈으로</button>
 					</div>
 				</div>
 			</div>
@@ -49,15 +51,16 @@
 			</div>
 			<div class="modal-body">
 				<form role="form" method="post" action="${cp}/swMem/mqReply" >
+					<input type="hidden" name="mq_num" value="${vo1.mq_num }">
 					<div class="form-group">
 						<label for="mq_reply">운영자 답변</label>
-						<textarea rows="5" cols="80" name="mq_content" style="resize: none;"></textarea>
-					</div>			
+						<textarea rows="5" cols="80" name="mq_reply" style="resize: none;"></textarea>
+					</div>	
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary">답변하기</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+					</div>		
 				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="submit" class="btn btn-primary">답변하기</button>
-				<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
 			</div>
 		</div>
 	</div>
