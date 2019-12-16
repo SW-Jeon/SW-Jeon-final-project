@@ -112,7 +112,8 @@ public class MqController {
 		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.POST )
 		public String Reply(Model model,int mq_num,MqVo vo){
 			try{
-			model.addAttribute("vo1",	service.update(vo));
+			service.update(vo);
+			model.addAttribute("vo1", service.detail(mq_num));
 			return ".swMem.mqAdminCon";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");

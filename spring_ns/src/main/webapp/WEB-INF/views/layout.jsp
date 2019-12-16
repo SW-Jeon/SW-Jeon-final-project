@@ -32,7 +32,7 @@
 <style type="text/css">
 	#content{min-height: 1200px; width: 70%; float: left;}
 	#right{min-height: 1200px; width: 20%; float: right;}
-	#footer{clear: both;}
+	#footer{clear: both; height: 200px; background-color: #424242;}
 </style>
 </head>
 
