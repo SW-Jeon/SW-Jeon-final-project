@@ -30,8 +30,8 @@
  <script src="${cp }/resources/maincss/js/vendor/modernizr-3.5.0.min.js"></script>
  
 <style type="text/css">
-	#content{min-height: 1200px; width: 70%; float: left;}
-	#right{min-height: 1200px; width: 20%; float: right;}
+	#content{min-height: 1200px; width: 75%; float: left;}
+	#right{min-height: 1200px; width: 25%; float: left; margin-right: 0px;}
 	#footer{clear: both; height: 200px; background-color: #424242;}
 </style>
 </head>

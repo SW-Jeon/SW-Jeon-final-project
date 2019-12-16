@@ -160,10 +160,51 @@ window.addEventListener('scroll',function(e){
 	</div>
 	<div id="tag" style="cursor: pointer;">
 		<div id="top"><img title="블로그보러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리</div>
+<c:choose>
+	<c:when test="${empty sessionScope.m_phone }">
+	<div id="main" ><a class="modal-trigger"  href="#" data-toggle="modal" data-target="#Modal">
+									<img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜</a></div>
+	</c:when>
+	<c:otherwise>
 		<div id="main" onclick="zzim()"><img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜</div>
+	</c:otherwise>
+</c:choose>		
 		<div id="main1"><a href="${cp }/pj/review"><img title="리뷰쓰러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/review.png"></a>낭만리뷰</div>
-		<div id="footer" onclick="report()"><img style="width: 100px;height: 100px;" src="${cp }/resources/images/test/report.png">신고하기</div>
+		<div id="foot" onclick="report()"><img style="width: 100px;height: 100px;" src="${cp }/resources/images/test/report.png">신고하기</div>
 	</div>
+	
+<!-- Login Form  모달창 -->
+      
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="ModalLabel">로그인</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+			  <form action="${cp }/swMem/memLogin"  method="post"  role="form">
+                    	<div class="form-group">
+                               <label for="m_phone">전화번호</label> <input class="form-control" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요."  required autofocus
+                                   oninvalid="this.setCustomValidity('[ 전화번호 ] 를 입력하셔야합니다..')" onchange="this.setCustomValidity('')">
+                         </div>
+                        <div class="form-group">
+                              <label for="m_pwd">비밀번호</label>  <input class="form-control" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요."  required
+                                    oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다..')" onchange="this.setCustomValidity('')">
+                          </div>
+                          <div class="form-group">
+                                <button type="submit" class="food__btn"><span>Go</span></button>
+                           </div>
+                 </form> 
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //Login Form -->
+	
+	
 	
 	
 	
