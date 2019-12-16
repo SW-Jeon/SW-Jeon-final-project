@@ -14,7 +14,7 @@
   	
   	<!-- 운영자가 회원 문의 답변 후 상태-->
   	<update id="update" parameterType="mq">
-  		update mq set mq_state=2,mq_reply=#{mq_reply} where =#{mq_num}
+  		update mq set mq_state=2,mq_reply=#{mq_reply} where mq_num=#{mq_num}
   	</update>
   	
   	<!--  회원 문의 개인 조회 --> 

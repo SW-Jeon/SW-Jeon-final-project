@@ -82,7 +82,8 @@ public class MqController {
 				return ".swMem.result";
 			}
 		}
-		//글 상세내용 조회(회원용)
+		
+		//글 상세내용 조회(운영자용)
 		@RequestMapping(value="/swMem/mqAdminCon",method=RequestMethod.GET )
 		public String Detail(Model model,int mq_num ){
 			try{
@@ -96,14 +97,24 @@ public class MqController {
 		
 		
 		//글 삭제
+		@RequestMapping(value="/swMem/mqDelete",method=RequestMethod.GET )
+		public String Delete(Model model,int mq_num,MqVo vo){
+			try{
+				model.addAttribute("vo", service.delete(mq_num));
+				return ".swMem.MqList";
+			} catch (Exception e) {
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
+			}
+		}
 		
 		//운영자 답변(업데이트)
 		@RequestMapping(value="/swMem/mqReply",method=RequestMethod.POST )
-		public String Reply(Model model,String mq_num,MqVo vo){
-		try{
-			model.addAttribute("vo1", service.update(vo));
-			model.addAttribute("code", "success");
-			return ".swMem.result";
+		public String Reply(Model model,int mq_num,MqVo vo){
+			try{
+			service.update(vo);
+			model.addAttribute("vo1", service.detail(mq_num));
+			return ".swMem.mqAdminCon";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
 			return ".swMem.result";

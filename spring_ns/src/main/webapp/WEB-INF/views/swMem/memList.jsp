@@ -28,8 +28,16 @@
 						<td class="con">${ vo.m_name}</td>
 						<td class="con">${ vo.m_mail}</td>
 						<td class="con">${ vo.m_pwd}</td>
-						<td class="con" style="color:red;">${vo.m_status }</td>
-						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Update" >수정</a></td>
+						<c:choose>
+								<c:when test="${vo.m_status =='1' }">
+								<td ><span  style="color:blue;">가입중</span></td>
+								</c:when>
+								<c:when test="${vo.m_status =='2' }">
+								<td ><span  style="color:red;">회원탈퇴</span></td>
+								</c:when>
+						</c:choose>
+						
+						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
 					</tr>
 				</tbody>
 			</c:forEach>
