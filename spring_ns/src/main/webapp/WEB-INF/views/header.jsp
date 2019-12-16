@@ -113,24 +113,20 @@
                             </div>
                     </div>
                     
-                <!-- 회원가입 창 -->
+               <!-- 회원가입 창 -->
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="${cp }/memInsert" method="post">
+                        <form action="${cp }/memInsert" method="post" onsubmit="return validate();">
                             <div class="single-input">
-                                <input class="cr-round--lg"  type="tel"  name="m_phone"  placeholder="전화번호"   required autofocus
-                         		oninvalid="this.setCustomValidity('번호 사이에 [ - ]를 적어주세요.')" onchange="this.setCustomValidity('')">
+                                <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호( -빼고 적어주세요.)"  id="m_phone" >
                             </div>
                              <div class="single-input">
-                                <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름"  required
-                                 oninvalid="this.setCustomValidity('꼭 [ 이름 ] 을 적어주세요.')" onchange="this.setCustomValidity('')">
+                                <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름"  id="m_name"  >
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일" required
-                                oninvalid="this.setCustomValidity('꼭 [ 이메일 ] 를 적어주세요.')" onchange="this.setCustomValidity('')">
+                                <input class="cr-round--lg" type="email" name="m_mail" placeholder="이메일"  id="m_mail"  >
                             </div>
                             <div class="single-input">
-                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호"  required
-                                oninvalid="this.setCustomValidity('꼭 [ 비밀번호 ] 를 적어주세요.')"  onchange="this.setCustomValidity('')">
+                                <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호"  id="m_pwd"  >
                             </div>               
                             <div class="single-input">
                                 <button type="submit" class="food__btn" ><span>Sign Up</span></button>
@@ -145,8 +141,66 @@
 
 
 <script type="text/javascript">
-	//아이디(phone) 영문,숫자 5~8자이상
 	//비밀번호는 영문+숫자 8자이상
 
+	function validate() {
+		var getPhone = RegExp(/^[0-9]{10,11}$/);
+		var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+		var getName = RegExp(/^[가-힣]+$/);
+		var getPwd = RegExp(/^[a-zA-Z0-9]{8,16}$/);
+
+		//전화번호 유효성검사
+		if($("#m_phone").val()==""){
+			alert("전화번호는 꼭 ' - '  제외하고 적어주세요.");
+			$("#m_phone").focus();
+			return false;
+		}
+		if (!getPhone.test($("#m_phone").val())) {
+			alert("전화번호는 숫자만 적어주세요.");
+			$("#m_phone").val("");
+			$("#m_phone").focus();
+			return false;
+		}
+
+		//이름 유효성검사
+		if($("#m_name").val()==""){
+			alert("이름을 적어주세요.");
+			$("#m_name").focus();
+			return false;
+		}
+		if (!getName.test($("#m_name").val())) {
+			alert("이름은 한글로 적어주세요.");
+			$("#m_name").val("");
+			$("#m_name").focus();
+			return false;
+		}
+	
+		//이메일이름 유효성검사
+		if($("#m_mail").val()==""){
+			alert("이메일을 적어주세요.");
+			$("#m_mail").focus();
+			return false;
+		}
+		if (!getMail.test($("#m_mail").val())) {
+			alert("이메일 형식에 맞게 적어주세요.");
+			$("#m_mail").val("");
+			$("#m_mail").focus();
+			return false;
+		}
+
+		//비밀번호 유효성검사
+		if($("#m_pwd").val()==""){
+			alert("비밀번호를 적어주세요.");
+			$("#m_pwd").focus();
+			return false;
+		}
+		if (!getPwd.test($("#m_pwd").val())) {
+			alert("비밀번호는 8자이상 영어와 숫자로 적어주세요.");
+			$("#m_pwd").val("");
+			$("#m_pwd").focus();
+			return false;
+		}
+		 return true;	
+	}
 </script>
-  
+
