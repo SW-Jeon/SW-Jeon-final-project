@@ -14,9 +14,9 @@
   				<typeAlias type="app.spring.vo.MqVo" alias="mq"/>
 				<typeAlias type="app.spring.vo.FindmenuVo" alias="findmenu"/>
 				<typeAlias type="app.spring.vo.ReportVo" alias="reportinsert"/>
-				<typeAlias type="app.spring.vo.ZzimVo" alias="insertzzim"/>
+				<typeAlias type="app.spring.vo.ZzimVo" alias="zzim"/>
 				<typeAlias type="app.spring.vo.SearchListVo" alias="searchList"/>
-
+				<typeAlias type="app.spring.vo.ZzimListVo" alias="zzimlists"/>
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>

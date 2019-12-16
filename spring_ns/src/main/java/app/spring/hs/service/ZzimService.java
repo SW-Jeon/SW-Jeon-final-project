@@ -12,4 +12,10 @@ public class ZzimService {
 	public int insert(ZzimVo vo){
 		return dao.insert(vo);
 	}
+	public int delete(int d_num){
+		return dao.delete(d_num);
+	}
+	public ZzimVo select(String m_phone){
+		return dao.select(m_phone);
+	}
 }
