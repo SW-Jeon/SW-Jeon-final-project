@@ -14,7 +14,11 @@
 	<!-- //////////////////////////////////////////////////////////////  타일즈 관련 설정  ///////////////////////////////////////////////////////// -->
 	<beans:bean  class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
 		<beans:property name="definitions">
-			<beans:value>/WEB-INF/tiles.xml</beans:value>
+			<beans:list>
+				<beans:value>/WEB-INF/tiles.xml</beans:value>
+				<beans:value>/WEB-INF/admintiles.xml</beans:value>
+			</beans:list>
+			
 		</beans:property>
 	</beans:bean>
 	<!--  타일즈뷰를 실행하는 뷰리절버 -->

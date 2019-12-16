@@ -15,7 +15,7 @@
 					<label for="m_mail">이메일</label><input type="email" class="form-control" name="m_mail"  placeholder="이메일입력" required
 						oninvalid="this.setCustomValidity('이메일을 입력해주세요.')" onchange="this.setCustomValidity('')">
 				</div>
-				<div class="form-group" style="padding-left: 300px;">
+				<div class="form-group" style="margin-left: 100px;">
 					<button type="submit" class="btn btn-primary m-3">찾기</button>
 					<button type="reset" class="btn btn-danger">취소</button>
 				</div>
@@ -24,7 +24,7 @@
 	</div>
 </div>
 <div class="result text-center" >
-	<span class="border border-warning">
+	<span class="">
 		<c:choose>
 			<c:when test="${code=='find' }">
 				<h1> 회원님의 전화번호는 <span class="text-danger">${phone} </span>입니다.</h1>
