@@ -6,7 +6,6 @@
 	<definition name=".admin"  template="/WEB-INF/views/admin/adminlayout.jsp" >
 		<put-attribute name="head" value="/WEB-INF/views/admin/adheader.jsp"/>
 		<put-attribute name="con" value="/WEB-INF/views/admin/adMain.jsp"/>
-		<put-attribute name="foot" value="/WEB-INF/views/admin/adfooter.jsp"/>
 	</definition>
 	
 	<definition name=".admin.*"  extends=".admin">

@@ -20,8 +20,6 @@
   	<link href="${cp }/resources/maincss/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-<!-- Atllantis CSS -->
-	<link rel="stylesheet" href="${cp }/resources/admin/css/atlantis.css">
 
   <!-- Custom styles for this template -->
   <link href="${cp }/resources/maincss/css/landing-page.min.css" rel="stylesheet">
@@ -61,41 +59,7 @@
   <script src="${cp }/resources/maincss/js/plugins.js"></script>
   <script src="${cp }/resources/maincss/js/active.js"></script>
  
-<!--   Core JS Files   -->
-	<script src="${cp }/resources/admin/js/core/jquery.3.2.1.min.js"></script>
-	<script src="${cp }/resources/admin/js/core/popper.min.js"></script>
-	<script src="${cp }/resources/admin/js/core/bootstrap.min.js"></script>
 
-<!-- jQuery UI -->
-	<script src="${cp }/resources/admin/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="${cp }/resources/admin/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-
-<!-- Chart JS -->
-	<script src="${cp }/resources/admin/js/plugin/chart.js/chart.min.js"></script>
-
-<!-- jQuery Sparkline -->
-	<script src="${cp }/resources/admin/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-<!-- Chart Circle -->
-	<script src="${cp }/resources/admin/js/plugin/chart-circle/circles.min.js"></script>
-
-<!-- Datatables -->
-	<script src="${cp }/resources/admin/js/plugin/datatables/datatables.min.js"></script>
-
-<!-- Bootstrap Notify -->
-	<script src="${cp }/resources/admin/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
-<!-- jQuery Vector Maps -->
-	<script src="${cp }/resources/admin/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="${cp }/resources/admin/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-
-<!-- Sweet Alert -->
-	<script src="${cp }/resources/admin/js/plugin/sweetalert/sweetalert.min.js"></script>
-	
-<!-- Atlantis JS -->
-	<script src="${cp }/resources/admin/js/atlantis.min.js"></script>
-
-	<script src="${cp }/resources/admin/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
