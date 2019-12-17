@@ -22,7 +22,7 @@
   <link href="${cp }/resources/admin/css/sb-admin.css" rel="stylesheet">
 </head>
 <style>
-	#head{width: 100%; height: 200px; background-color: #1C1C1C;}
+	#head{width: 100%; height: 200px; background-color: #2E2E2E;}
 </style>
 
 <body>
