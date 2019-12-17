@@ -5,11 +5,14 @@
 <link href="${cp }/resources/list/css/bootstrap.min.css" rel="stylesheet">
 <link href="${cp }/resources/list/css/style.css" rel="stylesheet">
 
+<!-- 네비바 -->
+<jsp:include page="/WEB-INF/views/admin/adminNavi.jsp"/> 
+
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="text-info text-center">회원님 문의 내역</h1>
-						<div class="border border-info rounded"  style="width: 80%; margin-left: 150px;">
+					
 						<div class="form-group">
 							<label for="mq_title">제목</label><input type="text" class="form-control" value="${ vo1.mq_title}" readonly="readonly">
 						</div>
@@ -34,7 +37,7 @@
 						<button class="btn btn-primary mt-3" onclick="location.href='${cp }/' " style="margin-left: 600px;">홈으로</button>
 					</div>
 				</div>
-			</div>
+			
 <!-- 운영자 답변달기 -->
 		<!-- Button trigger modal -->
 
@@ -54,7 +57,7 @@
 					<input type="hidden" name="mq_num" value="${vo1.mq_num }">
 					<div class="form-group">
 						<label for="mq_reply">운영자 답변</label>
-						<textarea rows="5" cols="80" name="mq_reply" style="resize: none;"></textarea>
+						<textarea rows="5" cols="63" name="mq_reply" style="resize: none;"></textarea>
 					</div>	
 					<div class="modal-footer">
 						<button type="submit" class="btn btn-primary">답변하기</button>

@@ -2,17 +2,20 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- memList -->
 <style>
-	.to{font-size: 3em; font-weight: bold;}
+	.to{font-size: 1.7em; font-weight: bold;}
 	.con{font-size: 1.2em;}
 </style>
-
+ 
+<!-- 네비바 -->
+<jsp:include page="/WEB-INF/views/admin/adminNavi.jsp"/> 
+	 
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
 		<h1 class="text-info text-center">회원목록</h1>
 			<table class="table table-hover table-striped">
 				<thead>
-					<tr>
+					<tr  class="table-success">
 						<th class="to">전화번호</th>
 						<th class="to">이름</th>
 						<th class="to">이메일</th>
@@ -23,7 +26,7 @@
 				</thead>
 		    <c:forEach var="vo" items="${list }">		
 				<tbody>
-					<tr class="table-danger">
+					<tr class="table-light">
 						<td class="con">${ vo.m_phone}</td>
 						<td class="con">${ vo.m_name}</td>
 						<td class="con">${ vo.m_mail}</td>
@@ -36,7 +39,6 @@
 								<td ><span  style="color:red;">회원탈퇴</span></td>
 								</c:when>
 						</c:choose>
-						
 						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
 					</tr>
 				</tbody>

@@ -28,21 +28,14 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">운영자 로그인</div>
       <div class="card-body">
-        <form method="post" action="${cp }/admin/adLogin">
+        <form method="post" action="${cp }/admin/adLogin" >
           <div class="form-group">
-            <div class="form-label-group">
-              <input type="text"  class="form-control"  name="a_id"  placeholder="운영자 아이디" required="required" autofocus="autofocus">
-            </div>
-          </div>
+             아이디
+             <input type="text"  class="form-control"  name="a_id"  required autofocus  oninvalid="this.setCustomValidity('[ 아이디 ] 를 입력하셔야합니다.')" onchange="this.setCustomValidity('')">
+           </div>
           <div class="form-group">
-            <div class="form-label-group">
-              <input type="password"  class="form-control"  name="a_pwd"  placeholder="비밀번호" required="required">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="checkbox">
-              <label> <input type="checkbox" value="remember-me"> Remember Password</label>
-            </div>
+            비밀번호 
+            <input type="password"  class="form-control"  name="a_pwd"   required oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다.')" onchange="this.setCustomValidity('')">
           </div>
             <button type="submit" class="btn btn-primary  btn-block" style="">로그인</button>
         </form>
@@ -50,6 +43,7 @@
     </div>
   </div>
 
+    
   <!-- Bootstrap core JavaScript-->
   <script src="${cp }/resources/admin/vendor/jquery/jquery.min.js"></script>
   <script src="${cp }/resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
