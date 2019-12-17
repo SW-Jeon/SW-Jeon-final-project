@@ -163,34 +163,29 @@ window.addEventListener('scroll',function(e){
 
 			</c:forEach>
 		</table>
-		<input type="text" value="${phone }" id="mphone">
+		<input type="hidden" value="${phone }" id="mphone">
 	</div>
 	<div id="tag" style="cursor: pointer;">
+
 		<div id="top">
-			<img title="블로그보러가기" style="width: 100px; height: 100px;"
-				src="${cp }/resources/images/test/blog.png">낭만스토리
+			<img title="블로그보러가기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리
 		</div>
 		<c:choose>
 			<c:when test="${empty sessionScope.m_phone }">
 				<div id="main">
-					<a class="modal-trigger" href="#" data-toggle="modal"
-						data-target="#Modal"> <img title="찜하기"
-						style="width: 100px; height: 100px;"
-						src="${cp }/resources/images/test/zzim.png">낭만찜
+					<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal"> 
+						<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜
 					</a>
 				</div>
 			</c:when>
 			<c:otherwise>
 				<div id="main" onclick="zzim()">
-					<img title="찜하기" style="width: 100px; height: 100px;"
-						src="${cp }/resources/images/test/zzim.png">낭만 찜
+					<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜
 				</div>
 			</c:otherwise>
 		</c:choose>
 		<div id="main1">
-			<a href="${cp }/pj/review"><img title="리뷰쓰러가기"
-				style="width: 100px; height: 100px;"
-				src="${cp }/resources/images/test/review.png"></a>낭만리뷰
+			<a href="${cp }/pj/review"><img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png"></a>낭만리뷰
 		</div>
 		<div id="foot" onclick="report()">
 			<img style="width: 100px; height: 100px;"
@@ -245,6 +240,7 @@ window.addEventListener('scroll',function(e){
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+
 	<script>
 		
 		function zzim() {
