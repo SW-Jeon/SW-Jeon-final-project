@@ -166,7 +166,7 @@ window.addEventListener('scroll',function(e){
 		<input type="hidden" value="${phone }" id="mphone">
 	</div>
 	<div id="tag" style="cursor: pointer;">
-
+j
 		<div id="top">
 			<img title="블로그보러가기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리
 		</div>
