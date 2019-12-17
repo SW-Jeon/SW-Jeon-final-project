@@ -33,7 +33,7 @@
 	</div>
 	
 	 <!-- Bootstrap core JavaScript-->
-  <script src="${cp }/resources/admin/js/jquery/jquery.min.js"></script>
+  <script src="${cp }/resources/admin/vendor/jquery/jquery.min.js"></script>
   <script src="${cp }/resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -43,13 +43,12 @@
   <script src="${cp }/resources/admin/js/sb-admin.min.js"></script>
   
    <!-- Page level plugin JavaScript-->
-  <script src="${cp }/resources/admin/vendor/chart.js/Chart.min.js"></script>
+  
   <script src="${cp }/resources/admin/vendor/datatables/jquery.dataTables.js"></script>
   <script src="${cp }/resources/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
   
     <!-- Demo scripts for this page-->
   <script src="${cp }/resources/admin/js/demo/datatables-demo.js"></script>
-  <script src="${cp }/resources/admin/js/demo/chart-area-demo.js"></script>
-  
-</body>
+
+  </body>
 </html>

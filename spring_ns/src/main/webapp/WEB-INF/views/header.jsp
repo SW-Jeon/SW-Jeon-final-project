@@ -29,8 +29,7 @@
 		
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto "  id="navi">
-				<li class="nav-item "><a class="nav-link active " href="${cp}/memList" style="font-size: 1.5em; color:black;">회원목록(운영자 임시)</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList"  style="font-size: 1.5em; color:black;">문의목록(운영자 임시)</a></li>
+				<li class="nav-item "><a class="nav-link active " href="#" style="font-size: 1.5em; color:black;">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
 			</ul>
@@ -40,7 +39,7 @@
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
 								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
-									<i class ="flaticon-users" style="color: white; "> Sign In</i></a>
+									<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
 				</div>
@@ -69,7 +68,7 @@
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
             <div class="form-row"  style="width: 800px; padding: 20px; position: relative; left: -230px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
+                <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을 검색하세요." name="keyword" autofocus>
               </div>
               <div class=" col-md-offset-3">
                 <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
@@ -97,11 +96,11 @@
                         <form action="${cp }/memLogin"  method="post" >
                             <div class="single-input">
                                 <input class="cr-round--lg" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요."  required autofocus
-                                   oninvalid="this.setCustomValidity('[ 전화번호 ] 를 입력하셔야합니다..')" onchange="this.setCustomValidity('')">
+                                   oninvalid="this.setCustomValidity('[ 전화번호 ] 를 입력하셔야합니다.')" onchange="this.setCustomValidity('')">
                             </div>
                             <div class="single-input">
                                 <input class="cr-round--lg" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요."  required
-                                    oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다..')" onchange="this.setCustomValidity('')">
+                                    oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다.')" onchange="this.setCustomValidity('')">
                             </div>
                             <div class="single-input">
                                 <button type="submit" class="food__btn"><span>Go</span></button>
@@ -118,7 +117,7 @@
                     <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <form action="${cp }/memInsert" method="post" onsubmit="return validate();">
                             <div class="single-input">
-                                <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호( -빼고 적어주세요.)"  id="m_phone" >
+                                <input class="cr-round--lg"  type="text"  name="m_phone"  placeholder="전화번호( -빼고 적어주세요.)"  id="m_phone"  autofocus>
                             </div>
                              <div class="single-input">
                                 <input class="cr-round--lg"  type="text"  name="m_name" placeholder="이름"  id="m_name"  >

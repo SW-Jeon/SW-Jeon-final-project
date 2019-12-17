@@ -27,19 +27,18 @@
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
             <div class="form-row"  style="width: 800px; padding: 20px;">
               <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을~" name="keyword">
+                <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을 검색하세요." name="keyword">
               </div>
               <div class="col-lg-3.5 col-md-offset-3">
-                <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요!</i></button>
+                <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요.</i></button>
               </div>
             </div>
           </form>
         </div>
         <ul class="navbar-nav " >
-			<li class="nav-item "><a class="nav-link active"  href="${cp}/memList" style="font-size: 1.5em;">회원(임시)</a></li>
-			<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList"  style="font-size: 1.5em;">문의(임시)</a></li>
-			<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만매거진</a></li>
-			<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="#" style="font-size: 1.5em; color:black;">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
@@ -47,14 +46,14 @@
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
 								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
-									<i class ="flaticon-users" style="color: white; "> Sign In</i></a>
+								<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
 				</div>
 			</c:when>
 			<c:otherwise>
 			<div class="col-lg-1 col-sm-3 col-md-1 ">
-				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage" style="width:150px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
+				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage" style="width:170px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
 			</div>		
 			<div class="col-lg-1 col-sm-3 col-md-1 justify-content-end"  >
 				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;"><i class ="fas fa-power-off"> 로그아웃</i></a>
@@ -92,14 +91,9 @@
                             </div>
                           </form>  
                             <div class="accountbox-login__others">
-                                <h6><a href="#">비밀번호 찾기</a></h6>
-                                <div class="social-icons">
-                                    <ul>
-                                        <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="google"><a href="https://www.google.com/"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div>
+                                 <div class="accountbox-login__others">
+                                	<h6><a href="${cp }/swMem/findPhone">전화번호 찾기</a> | <a href="${cp }/swMem/find">비밀번호 찾기</a></h6>
+                            	</div>	
                             </div>      
                     </div>
                     
