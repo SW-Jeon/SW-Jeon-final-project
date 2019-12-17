@@ -21,6 +21,9 @@
   <!-- Custom styles for this template-->
   <link href="${cp }/resources/admin/css/sb-admin.css" rel="stylesheet">
 </head>
+<style>
+	#head{width: 100%; height: 200px; background-color: #1C1C1C;}
+</style>
 
 <body>
 	<div id="wrap">
