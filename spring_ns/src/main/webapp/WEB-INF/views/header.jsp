@@ -15,6 +15,7 @@
 <style>
 	ul li{margin: 0px;  }
 	ul li a{margin: 0px; }
+ #navi{color:black;}	
 </style>
 
 <nav class="navbar navbar-expand-lg  border-bottom  navbar-dark " style="background-color: #F2F2F2;">
@@ -27,11 +28,11 @@
 		<a  class="navbar-brand"href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>
 		
 	<!-- Links -->
-	        <ul class="nav navbar-nav mr-auto " >
-				<li class="nav-item "><a class="nav-link active " href="${cp}/memList" style="font-size: 1.5em;">회원목록(운영자 임시)</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList"  style="font-size: 1.5em;">문의목록(운영자 임시)</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em;">낭만스토리</a></li>
+	        <ul class="nav navbar-nav mr-auto "  id="navi">
+				<li class="nav-item "><a class="nav-link active " href="${cp}/memList" style="font-size: 1.5em; color:black;">회원목록(운영자 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/mqList"  style="font-size: 1.5em; color:black;">문의목록(운영자 임시)</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
 			</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">

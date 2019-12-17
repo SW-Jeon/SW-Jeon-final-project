@@ -23,7 +23,7 @@ public class Mem_LoginController {
 	@Autowired private MemService service;
 	@Autowired private DetailService service1;
 	
-	//로그인
+	//회원 메인페이지 로그인
 	@RequestMapping(value="/memLogin",method=RequestMethod.POST )
 		public String login(String m_phone,String m_pwd,HttpSession session,Model model){
 		MemVo vo=service.getInfo(m_phone);
@@ -39,7 +39,7 @@ public class Mem_LoginController {
 			return ".swMem.result";
 		}
 	}
-	   //로그인
+	   //상세페이지에서 로그인
 	   @RequestMapping(value="/swMem/memLogin",method=RequestMethod.POST )
 	      public String loginFOM(String m_phone,String m_pwd,String name,HttpSession session,Model model){
 	      MemVo vo=service.getInfo(m_phone);
