@@ -2,33 +2,38 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
-#tag{
+#tag {
 	margin: auto;
 	width: 100px;
 	height: 450px;
-	left: 1700px;
-	top:500px;
+	left: 1800px;
+	top: 500px;
 	position: absolute;
 	text-align: center;
-	z-index:999;
-	
+	z-index: 999;
 }
-#tag div{
+
+#tag div {
 	width: 100px;
 	height: 25%;
 }
-#top{
+
+#top {
 	
 }
-#main{
+
+#main {
 	
 }
-#main1{
+
+#main1 {
 	
 }
-#footer{
+
+#footer {
 	
 }
+
 #imageinfo ul div li img {
 	width: 370px;
 	height: 400px;
@@ -37,7 +42,7 @@
 }
 
 #imageinfo ul div li {
-	position:absolute;
+	position: absolute;
 	list-style: none;
 	width: 370px;
 	padding: 0px;
@@ -49,12 +54,14 @@ table {
 	border-spacing: 0 20px;
 	width: 600px;
 }
-table tr th{
+
+table tr th {
 	border: 1px solid yellow;
 	text-align: center;
 	background-color: pink;
 }
-table tr td{
+
+table tr td {
 	text-align: center;
 	border-bottom: 1px solid black;
 }
@@ -90,20 +97,20 @@ window.addEventListener('scroll',function(e){
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-	
+
 	<div
-		style="width: 1900px; height: 400px; position: relative; left: 5px;  overflow: hidden;">
+		style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
 		<a href="javascript:behind()"><img
 			src="${cp }/resources/images/test/button1.png" id="return"></a> <a
 			href="javascript:next()"><img
 			src="${cp }/resources/images/test/button2.png" id="next"></a>
 		<div
-			style="width: 2660px; height: 400px; left: 0px;  position: relative;"
+			style="width: 2660px; height: 400px; left: 0px; position: relative;"
 			id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
-					<div style="left:200px;">
+					<div style="left: 200px;">
 						<li style="margin-left: 10px" name="lili"><img
 							src="${cp }/resources/maincss/images/test/${im.p_pic }"></li>
 					</div>
@@ -111,11 +118,11 @@ window.addEventListener('scroll',function(e){
 			</c:forEach>
 		</div>
 	</div>
-		<h1 style="text-align: center;">${name }</h1>
+	<h1 style="text-align: center;">${name }</h1>
 	<div id="map"
-		style="left: 55%; width: 600px; height: 400px;top:120px; position: relative; "></div>
+		style="left: 60%; width: 600px; height: 500px; top: 200px; position: relative; max-width: 100%;"></div>
 	<div
-		style="margin-top: -300px; margin-bottom: 100px; margin-left: 300px; position: relative;width: 700px;">
+		style="margin-top: -300px; margin-bottom: 100px; margin-left: 100px; position: relative; width: 700px; max-width: 100%;">
 		<table style="color: black;">
 			<c:forEach var="vo" items="${list }">
 				<tr>
@@ -130,14 +137,14 @@ window.addEventListener('scroll',function(e){
 					<th>가게 주소</th>
 					<td>${vo.d_addr }</td>
 				</tr>
-				
+
 				<tr>
 					<th>메뉴</th>
-					
-					<td><c:forEach var="me" items="${list2 }">${me.me_name } : ${me.me_pay }원<br></c:forEach></td>
-					
+
+					<td><c:forEach var="me" items="${list2 }">${me.me_name } : ${me.me_pay }원<br>
+						</c:forEach></td>
 				<tr>
-				
+
 					<th>주차여부</th>
 					<td>${vo.d_park }</td>
 				</tr>
@@ -152,72 +159,102 @@ window.addEventListener('scroll',function(e){
 				<input type="hidden" value="${vo.d_addr }" id="addr">
 				<input type="hidden" value="${vo.d_sname }" id="name">
 				<input type="hidden" value="${vo.d_num }" id="dnum">
-				
-				
+
+
 			</c:forEach>
 		</table>
-		<input type="text" value="${phone }" id="m_phone">
+		<input type="text" value="${phone }" id="mphone">
 	</div>
 	<div id="tag" style="cursor: pointer;">
-		<div id="top"><img title="블로그보러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리</div>
-<c:choose>
-	<c:when test="${empty sessionScope.m_phone }">
-	<div id="main" ><a class="modal-trigger"  href="#" data-toggle="modal" data-target="#Modal">
-									<img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜</a></div>
-	</c:when>
-	<c:otherwise>
-		<div id="main" onclick="zzim()"><img title="찜하기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜</div>
-	</c:otherwise>
-</c:choose>		
-		<div id="main1"><a href="${cp }/pj/review"><img title="리뷰쓰러가기" style="width: 100px;height: 100px;" src="${cp }/resources/images/test/review.png"></a>낭만리뷰</div>
-		<div id="foot" onclick="report()"><img style="width: 100px;height: 100px;" src="${cp }/resources/images/test/report.png">신고하기</div>
+
+		<div id="top">
+			<img title="블로그보러가기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리
+		</div>
+		<c:choose>
+			<c:when test="${empty sessionScope.m_phone }">
+				<div id="main">
+					<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal"> 
+						<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜
+					</a>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div id="main" onclick="zzim()">
+					<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜
+				</div>
+			</c:otherwise>
+		</c:choose>
+		<div id="main1">
+			<a href="${cp }/pj/review"><img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png"></a>낭만리뷰
+		</div>
+		<div id="foot" onclick="report()">
+			<img style="width: 100px; height: 100px;"
+				src="${cp }/resources/images/test/report.png">신고하기
+		</div>
 	</div>
-	
-<!-- Login Form  모달창 -->
-      
-<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h3 class="modal-title" id="ModalLabel">로그인</h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-			  <form action="${cp }/swMem/memLogin"  method="post"  role="form">
-                    	<div class="form-group">
-                               <label for="m_phone">전화번호</label> <input class="form-control" type="text"  name="m_phone"  placeholder="전화번호를 입력하세요."  required autofocus
-                                   oninvalid="this.setCustomValidity('[ 전화번호 ] 를 입력하셔야합니다..')" onchange="this.setCustomValidity('')">
-                         </div>
-                        <div class="form-group">
-                              <label for="m_pwd">비밀번호</label>  <input class="form-control" type="password"  name="m_pwd"  placeholder="비밀번호를 입력하세요."  required
-                                    oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다..')" onchange="this.setCustomValidity('')">
-                          </div>
-                          <div class="form-group">
-                                <button type="submit" class="food__btn"><span>Go</span></button>
-                           </div>
-                 </form> 
+
+	<!-- Login Form  모달창 -->
+
+	<div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+		aria-labelledby="ModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="ModalLabel">로그인</h3>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="${cp }/swMem/memLogin" method="post" role="form">
+						<input type="hidden" value="${name }" name="name">
+						<div class="form-group">
+							<label for="m_phone">전화번호</label> <input class="form-control"
+								type="text" name="m_phone" placeholder="전화번호를 입력하세요." required
+								autofocus
+								oninvalid="this.setCustomValidity('[ 전화번호 ] 를 입력하셔야합니다..')"
+								onchange="this.setCustomValidity('')">
+						</div>
+						<div class="form-group">
+							<label for="m_pwd">비밀번호</label> <input class="form-control"
+								type="password" name="m_pwd" placeholder="비밀번호를 입력하세요." required
+								oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다..')"
+								onchange="this.setCustomValidity('')">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="food__btn">
+								<span>Go</span>
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- //Login Form -->
-	
-	
-	
-	
-	
-	
-	
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+	<!-- //Login Form -->
+
+
+
+
+
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+
 	<script>
+		
 		function zzim() {
+			
 			var d_num=parseInt(document.getElementById("dnum").value);
-			var m_phone=document.getElementById("m_phone").value;
-			alert(m_phone);
-			location.href="${cp}/zzimOk?d_num="+d_num+"&m_phone="+m_phone;
-		}
+			var m_phone=document.getElementById("mphone").value;
+			
+		
+			
+				
+				var win;
+				win=window.open('${cp}/zzimOk?d_num='+d_num+'&m_phone='+m_phone,'_blank','width=200,height=200,left='+x+',top='+y);
+				
+			}
 		//var scroll=window.scrollY;
 		//alert(scroll);
 		

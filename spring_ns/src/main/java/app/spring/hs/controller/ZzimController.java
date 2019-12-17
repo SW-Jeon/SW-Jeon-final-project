@@ -11,8 +11,17 @@ import app.spring.vo.ZzimVo;
 public class ZzimController {
 	@Autowired private ZzimService service;
 	@RequestMapping("/zzimOk")
-	public String zzimOk(ZzimVo vo){
+	public String zzimOk(ZzimVo vo,String m_phone,int d_num){
+		System.out.println(m_phone);
+		ZzimVo vo1=service.select(m_phone);
+		
+		if(vo1==null){
 		service.insert(vo);
-		return ".main"; 
+		return ".zzim.zzim";
+		
+		}else{
+			service.delete(d_num);
+			return ".zzim.zzimdel";
+		}
 	}
 }

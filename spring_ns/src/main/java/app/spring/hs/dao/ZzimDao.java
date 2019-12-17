@@ -13,4 +13,10 @@ public class ZzimDao {
 	public int insert(ZzimVo vo){
 		return sqlsessionTemplate.insert(NAMESPACE+".insert",vo);
 	}
+	public int delete(int d_num){
+		return sqlsessionTemplate.delete(NAMESPACE+".delete",d_num);
+	}
+	public ZzimVo select(String m_phone){
+		return sqlsessionTemplate.selectOne(NAMESPACE+".select",m_phone);
+	}
 }
