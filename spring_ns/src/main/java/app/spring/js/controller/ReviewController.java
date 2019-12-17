@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import app.spring.js.service.ReviewService;
 import app.spring.vo.ReviewVo;
@@ -27,14 +28,15 @@ public class ReviewController {
 		return ".pj.review";
 	}
 	
-	@RequestMapping(value="/pj/reviewlist",method=RequestMethod.GET)
+	@RequestMapping(value="/pj/reviewlist")
 	public String reviewlist(Model model){
 		List<ReviewVo> rlist=service.list();
 		model.addAttribute("list",rlist);
-		return "reviewlist";
+		return ".pj.reviewlist";
 	}
+
 	
-	
+
 	@RequestMapping(value = "/pj/review",method=RequestMethod.POST)
 	    public String requestupload(int d_num, String m_phone,String r_content,String r_score, Date r_regdate,MultipartHttpServletRequest mtfRequest) {
 	        List<MultipartFile> fileList = mtfRequest.getFiles("file1");
