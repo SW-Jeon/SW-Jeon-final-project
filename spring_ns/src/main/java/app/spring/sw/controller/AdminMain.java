@@ -15,13 +15,15 @@ import app.spring.vo.AdminVo;
 public class AdminMain {
 	@Autowired AdminService service;
 	
+	//admin 메인페이지
 	@RequestMapping(value="/admin/adminMain")
 	public String admin(HttpServletRequest req){
 			String cp=req.getContextPath();
 			req.getSession().getServletContext().setAttribute("cp", cp);
 			return ".admin";
 		}
-
+	
+	//로그인
 	@RequestMapping(value="/admin/adminLogin",method=RequestMethod.GET)
 	public String adminLogForm(){
 		return "admin/adminLogin";
@@ -31,7 +33,8 @@ public class AdminMain {
 		AdminVo vo=service.getInfo(a_id);
 		String id=vo.getA_id();
 		String pwd=vo.getA_pwd();
-		if(id.equals(a_id) && pwd.equals(a_pwd)){
+		String phone=(String)session.getAttribute("m_phone");
+		if(id.equals(a_id) && pwd.equals(a_pwd) && phone ==null){
 			session.setAttribute("a_id", a_id);
 			session.setAttribute("a_pwd", a_pwd);
 			return ".admin";
@@ -39,4 +42,11 @@ public class AdminMain {
 			return "redirect:/admin/adminLogin";
 		}
 	}
+	 //로그아웃
+    @RequestMapping(value="/adminLogout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/admin/adminLogin";
+    }	
+	
 }

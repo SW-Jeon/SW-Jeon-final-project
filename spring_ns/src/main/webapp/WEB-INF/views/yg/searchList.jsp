@@ -192,7 +192,7 @@ function action8(){
 		</select>
 	</c:when>
 	<c:otherwise>
-	    <div style="float: right;" data-toggle="modal" data-target="#exampleModal"><b><i class="flaticon-interface-4 mr-3" style="font-size: 20px">필터</i></b>
+	    <div style="float: right;" data-toggle="modal" data-target="#exampleModal"><b><i class="fas fa-cogs mr-3" style="font-size: 20px">필터</i></b>
 	    	
 	    </div>
 	</c:otherwise>

@@ -30,7 +30,8 @@ public class Mem_LoginController {
 		String phone=vo.getM_phone();
 		String pwd=vo.getM_pwd();
 		String status=vo.getM_status();
-		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
+		String id=(String)session.getAttribute("a_id");
+		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") && id==null ){
 			session.setAttribute("m_phone", m_phone);
 			session.setAttribute("m_pwd", m_pwd);
 			return "redirect:/";
@@ -46,10 +47,11 @@ public class Mem_LoginController {
 	      String phone=vo.getM_phone();
 	      String pwd=vo.getM_pwd();
 	      String status=vo.getM_status();
+	      String id=(String)session.getAttribute("a_id");
 	      List<DetailVo> list=service1.finddetail(name);
 			List<FindimgVo> list1=service1.findimg(name);
 			List<FindmenuVo> list2=service1.findmenu(name);
-	      if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
+			if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") && id==null ){
 	         session.setAttribute("m_phone", m_phone);
 	         session.setAttribute("m_pwd", m_pwd);
 	         model.addAttribute("phone",phone);
