@@ -32,47 +32,48 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 </style>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/pj/reviewlist.jsp" flush="false"/><br>
+
 <div class="review1">
 <h1>리뷰 작성하기</h1>
    <form method="post" action="${cp }/pj/review" enctype="multipart/form-data">
+   <input type="hidden" value="${d_num }" name="d_num">
    <span class="star-input">
       <span class="input">
-          <input type="radio" name="star-input" value="1" id="p1" >
+          <input type="radio" name="star_input" value="1" id="p1" >
           <label for="p1">1</label>
-          <input type="radio" name="star-input" value="2" id="p2">
+          <input type="radio" name="star_input" value="2" id="p2">
           <label for="p2">2</label>
-          <input type="radio" name="star-input" value="3" id="p3">
+          <input type="radio" name="star_input" value="3" id="p3">
           <label for="p3">3</label>
-          <input type="radio" name="star-input" value="4" id="p4">
+          <input type="radio" name="star_input" value="4" id="p4">
           <label for="p4">4</label>
-          <input type="radio" name="star-input" value="5" id="p5">
+          <input type="radio" name="star_input" value="5" id="p5">
           <label for="p5">5</label>
         </span><br>         
-      <!--          <output for="star-input" ><b></b>점</output>-->	
+           <output for="star-input" ><b></b>점</output>
    </span><br>
    <br>
    후기<br>
       <textarea rows="5" cols="50" name="r_content " style="resize:none;"></textarea><br>
    파일 첨부<br>
-         <input multiple="multiple" type="file" name="file1"  ><br>
+         <input type="file" name="file1"  ><br>
          <button type="submit" class="btn btn-primary mt-3"> 등록 </button>
          <button type="reset"class="btn btn-danger mt-3"  >취소</button>
    </form>
 </div>
-<jsp:include page="/WEB-INF/views/pj/reviewlist.jsp" flush="false"/><br>
+
 <script src="${cp }/resources/stars/js/jquery-3.4.1.js"></script>
 <script src="${cp }/resources/stars/js/star.js" charset="utf-8"></script>
 <script type="text/javascript">
-	//var p5=document.getElementById("p5");
-   // var radio=document.getElementsByName("star-input");
-   // for( var i=0; i<radio.length; i++){
-   // 	radio[i].addEventListener("click", function() {
-   // 		if( this.checked){
-	//            alert(this.value);
-    // 	  }
-    //	});
-    //}		
+	var p5=document.getElementById("p5");
+    var radio=document.getElementsByName("star-input");
+    for( var i=0; i<radio.length; i++){
+    	radio[i].addEventListener("click", function() {
+    		if( this.checked){
+	            alert(this.value);
+     	  }
+    	});
+    }		
 </script>
 </body>
 </html>

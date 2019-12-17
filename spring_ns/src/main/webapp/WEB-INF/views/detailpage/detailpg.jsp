@@ -185,7 +185,9 @@ window.addEventListener('scroll',function(e){
 			</c:otherwise>
 		</c:choose>
 		<div id="main1">
-			<a href="${cp }/pj/review"><img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png"></a>낭만리뷰
+			<c:forEach var="vo" items="${list }">
+				<a href="${cp }/pj/review?d_num=${vo.d_num}"><img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png"></a>낭만리뷰
+			</c:forEach>
 		</div>
 		<div id="foot" onclick="report()">
 			<img style="width: 100px; height: 100px;"
