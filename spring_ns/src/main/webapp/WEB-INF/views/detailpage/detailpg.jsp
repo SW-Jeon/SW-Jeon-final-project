@@ -163,7 +163,7 @@ window.addEventListener('scroll',function(e){
 
 			</c:forEach>
 		</table>
-		<input type="text" value="${phone }" id="mphone">
+		<input type="hidden" value="${phone }" id="mphone">
 	</div>
 	<div id="tag" style="cursor: pointer;">
 
