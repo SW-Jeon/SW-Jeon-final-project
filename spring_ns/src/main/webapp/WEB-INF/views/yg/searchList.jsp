@@ -61,99 +61,79 @@ function action4(m){
 		lis2.value='d_sname'
 	}
 }
-var ck=0;
-if(${pri.equals('0')} ){
-	ck=1;
-}
 function action5(m){
 	var pri=document.getElementsByClassName("pri");
 	var pri2=document.getElementsByName("pri")[0];
-	alert(ck);
 	for(var i=0;i<pri.length;i++){
 		pri[i].src="${cp}/resources/check/pp"+(i+5)+".png";
 	}
-	if(m.src.match("pp5.png")&&ck!=1){
-		m.src="${cp}/resources/check/pp1.png";
-		pri2.value='0'
-		ck=1;
-	}else if(m.src.match("pp6.png")&&ck!=2){
-		m.src="${cp}/resources/check/pp2.png";
-		pri2.value='1'
-		ck=2;
-	}else if(m.src.match("pp7.png")&&ck!=3){
-		m.src="${cp}/resources/check/pp3.png";
-		pri2.value='2'
-		ck=3;
-	}else if(m.src.match("pp8.png")&&ck!=4){
-		m.src="${cp}/resources/check/pp4.png";
-		pri2.value='3'
-		ck=4;
-	}else{
-		ck=0;
-		pri2.value=''
-	}
+		if(m.src.match("pp5.png")&&pri2.value!='0'){
+			m.src="${cp}/resources/check/pp1.png";
+			pri2.value='0'
+		}else if(m.src.match("pp6.png")&&pri2.value!='1'){
+			m.src="${cp}/resources/check/pp2.png";
+			pri2.value='1'
+		}else if(m.src.match("pp7.png")&&pri2.value!='2'){
+			m.src="${cp}/resources/check/pp3.png";
+			pri2.value='2'
+		}else if(m.src.match("pp8.png")&&pri2.value!='3'){
+			m.src="${cp}/resources/check/pp4.png";
+			pri2.value='3'
+		}else{
+			pri2.value='';
+		}
 }
-var ck1=0;
 function action6(m){
 	var food=document.getElementsByClassName("food");
 	var food2=document.getElementsByName("food")[0];
 	for(var i=0;i<food.length;i++){
 		food[i].src="${cp}/resources/check/f"+(i+7)+".png";
 	}
-	if(m.src.match("f7.png")&&ck1!=1){
-		m.src="${cp}/resources/check/f1.png";
-		food2.value='한식';
-		ck1=1;
-	}else if(m.src.match("f8.png")&&ck1!=2){
-		m.src="${cp}/resources/check/f2.png";
-		food2.value='일식';
-		ck1=2;
-	}else if(m.src.match("f9.png")&&ck1!=3){
-		m.src="${cp}/resources/check/f3.png";
-		food2.value='중식';
-		ck1=3;
-	}else if(m.src.match("f10.png")&&ck1!=4){
-		m.src="${cp}/resources/check/f4.png";
-		food2.value='양식';
-		ck1=4;
-	}else if(m.src.match("f11.png")&&ck1!=5){
-		m.src="${cp}/resources/check/f5.png";
-		food2.value='카페';
-		ck1=5;
-	}else if(m.src.match("f12.png")&&ck1!=6){
-		m.src="${cp}/resources/check/f6.png";
-		food2.value='세계음식';
-		ck1=1;
-	}else{
-		ck1=0;
-		food2.value='';
-	}
+		if(m.src.match("f7.png")&&food2.value!='한식'){
+			m.src="${cp}/resources/check/f1.png";
+			food2.value='한식';
+		}else if(m.src.match("f8.png")&&food2.value!='일식'){
+			m.src="${cp}/resources/check/f2.png";
+			food2.value='일식';
+		}else if(m.src.match("f9.png")&&food2.value!='중식'){
+			m.src="${cp}/resources/check/f3.png";
+			food2.value='중식';
+		}else if(m.src.match("f10.png")&&food2.value!='양식'){
+			m.src="${cp}/resources/check/f4.png";
+			food2.value='양식';
+		}else if(m.src.match("f11.png")&&food2.value!='카페'){
+			m.src="${cp}/resources/check/f5.png";
+			food2.value='카페';
+		}else if(m.src.match("f12.png")&&food2.value!='세계음식'){
+			m.src="${cp}/resources/check/f6.png";
+			food2.value='세계음식';
+		}else{
+			food2.value='';
+		}
 }
-var ck2=0;
 function action7(m){
 	var park=document.getElementsByClassName("park");
 	var park2=document.getElementsByName("park")[0];
-	alert(park2.value);
 	for(var i=0;i<park.length;i++){
 		park[i].src="${cp}/resources/check/pa"+(i+3)+".png";
 	}
-	if(m.src.match("pa3.png")&&ck2!=1){
-		m.src="${cp}/resources/check/pa1.png";
-		park2.value='x';
-		ck2=1;
-	}else if(m.src.match("pa4.png")&&ck2!=2){
-		m.src="${cp}/resources/check/pa2.png";
-		park2.value='o';
-		ck2=2;
-	}else{
-		park2.value='';
-		ck2=0;
-	}
+		if(m.src.match("pa3.png")&&park2.value!='x'){
+			m.src="${cp}/resources/check/pa1.png";
+			park2.value='x';
+		}else if(m.src.match("pa4.png")&&park2.value!='o'){
+			m.src="${cp}/resources/check/pa2.png";
+			park2.value='o';
+		}else{
+			park2.value='';
+		}
 }
 function action8(){
 	var pri=document.getElementsByClassName("pri");
+	var pri2=document.getElementsByName("pri")[0];
 	var food=document.getElementsByClassName("food");
+	var food2=document.getElementsByName("food")[0];
 	var park=document.getElementsByClassName("park");
+	var park2=document.getElementsByName("park")[0];
 	for(var i=0;i<pri.length;i++){
 		pri[i].src="${cp}/resources/check/pp"+(i+5)+".png";
 	}
@@ -163,6 +143,9 @@ function action8(){
 	for(var i=0;i<park.length;i++){
 		park[i].src="${cp}/resources/check/pa"+(i+3)+".png";
 	}
+	pri2.value='';
+	food2.value='';
+	park2.value='';
 }
 </script>
 </head>
@@ -192,7 +175,7 @@ function action8(){
 		</select>
 	</c:when>
 	<c:otherwise>
-	    <div style="float: right;" data-toggle="modal" data-target="#exampleModal"><b><i class="flaticon-interface-4 mr-3" style="font-size: 20px">필터</i></b>
+	    <div style="float: right;" data-toggle="modal" data-target="#exampleModal"><b><i class="fas fa-cogs mr-3" style="font-size: 20px">필터</i></b>
 	    	
 	    </div>
 	</c:otherwise>
@@ -245,8 +228,8 @@ function action8(){
 		<div class="modal-content">
 			<div class="modal-body">
 				<form role="form" method="post" action="${cp}/searchList" >
-					<input type="text" name="standard" value="${standard }">
-					<input type="text" name="pri" value="${pri }">
+					<input type="hidden" name="standard" value="${standard }">
+					<input type="hidden" name="pri" value="${pri }">
 					<input type="hidden" name="food" value="${food }">
 					<input type="hidden" name="park" value="${park }">
 					<input type="hidden" name="keyword" value="${keyword }">
