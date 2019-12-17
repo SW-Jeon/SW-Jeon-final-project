@@ -16,7 +16,7 @@
 				<div class="form-group">
 					<label for="m_mail">이메일</label><input type="email" class="form-control" name="m_mail"  placeholder="이메일입력" required>
 				</div>
-				<div class="form-group" style="padding-left: 300px;">
+		<div class="form-group" style="margin-left: 100px;">
 					<button type="submit" class="btn btn-primary m-3">찾기</button>
 					<button type="reset" class="btn btn-danger">취소</button>
 				</div>

@@ -1,5 +1,7 @@
 package app.spring.sw.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,12 +11,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import app.spring.hs.service.DetailService;
 import app.spring.sw.service.MemService;
+import app.spring.vo.DetailVo;
+import app.spring.vo.FindimgVo;
+import app.spring.vo.FindmenuVo;
 import app.spring.vo.MemVo;
 
 @Controller
 public class Mem_LoginController {
 	@Autowired private MemService service;
+	@Autowired private DetailService service1;
 	
 	//로그인
 	@RequestMapping(value="/memLogin",method=RequestMethod.POST )
@@ -32,6 +39,32 @@ public class Mem_LoginController {
 			return ".swMem.result";
 		}
 	}
+	   //로그인
+	   @RequestMapping(value="/swMem/memLogin",method=RequestMethod.POST )
+	      public String loginFOM(String m_phone,String m_pwd,String name,HttpSession session,Model model){
+	      MemVo vo=service.getInfo(m_phone);
+	      String phone=vo.getM_phone();
+	      String pwd=vo.getM_pwd();
+	      String status=vo.getM_status();
+	      List<DetailVo> list=service1.finddetail(name);
+			List<FindimgVo> list1=service1.findimg(name);
+			List<FindmenuVo> list2=service1.findmenu(name);
+	      if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
+	         session.setAttribute("m_phone", m_phone);
+	         session.setAttribute("m_pwd", m_pwd);
+	         model.addAttribute("phone",phone);
+				System.out.println(phone);
+				model.addAttribute("list",list);
+				model.addAttribute("list1",list1);
+				model.addAttribute("list2",list2);
+				model.addAttribute("name",name);
+	         return ".detailpage.detailpg";
+	      }else{
+	         model.addAttribute("code", "fail");
+	         return ".swMem.result";
+	      }
+	   }
+
 		 //로그아웃
         @RequestMapping(value="/memLogout")
         public String logout(HttpSession session){

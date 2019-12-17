@@ -29,26 +29,19 @@
    <!-- Modernizer js -->
  <script src="${cp }/resources/maincss/js/vendor/modernizr-3.5.0.min.js"></script>
  
-<style type="text/css">
-	#content{min-height: 1200px; width: 75%; float: left;}
-	#right{min-height: 1200px; width: 25%; float: left; margin-right: 0px;}
-	#footer{clear: both; height: 200px; background-color: #424242;}
-</style>
+
 </head>
 
 <body>
 	<div id="wrap">
-		<div id="header">
-			<tiles:insertAttribute name="header"/>
+		<div id="head">
+			<tiles:insertAttribute name="head"/>
 		</div>
-		<div id="content">
-			<tiles:insertAttribute name="content"/>
+		<div id="con">
+			<tiles:insertAttribute name="con"/>
 		</div>
-		<div id="right">
-			<tiles:insertAttribute name="right"/>
-		</div>
-		<div id="footer">
-			<tiles:insertAttribute name="footer"/>
+		<div id="foot">
+			<tiles:insertAttribute name="foot"/>
 		</div>
 	</div>
 	
