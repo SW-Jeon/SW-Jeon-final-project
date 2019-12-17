@@ -59,7 +59,7 @@
 					<div class="modal-footer">
 						<button type="submit" class="btn btn-primary">답변하기</button>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
-					</div>		
+					</div>
 				</form>
 			</div>
 		</div>

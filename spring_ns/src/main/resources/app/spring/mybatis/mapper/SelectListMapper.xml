@@ -3,7 +3,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.SelectListMapper">
   	<select id="searchList" parameterType="map" resultType="searchList"> 
-  		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,d.d_time,round(avg(r.r_score),1) r_score,d.d_hit, p.p_pic from detail d left outer join menu m on d.d_num=m.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where d.d_addr like concat('%',#{keyword},'%') or d.d_sname like concat('%',#{keyword},'%') or m.me_name like concat('%',#{keyword},'%') group by d.d_num order by ${standard}
+  		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,d.d_time,round(avg(r.r_score),1) r_score,d.d_hit, p.p_pic from detail d left outer join menu m on d.d_num=m.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where (d.d_addr like concat('%',#{keyword},'%') or d.d_sname like concat('%',#{keyword},'%') or m.me_name like concat('%',#{keyword},'%'))
+    <if test="pri != null and pri !=''">
+        and TRUNCATE(m.me_pay/10000,0)=#{pri}
+    </if>
+    <if test="food != null and food !=''">
+        and d_kind=#{food}
+    </if>
+    <if test="park != null and park !=''">
+        and d_park=#{park}
+    </if>
+    	group by d.d_num order by ${standard}
   	</select>
   	<update id="increhit" parameterType="int">
 		update detail set d_hit=d_hit+1 where d_num=#{d_num};
