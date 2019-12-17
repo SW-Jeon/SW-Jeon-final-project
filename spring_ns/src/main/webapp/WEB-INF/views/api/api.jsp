@@ -7,7 +7,7 @@
 <input type="hidden" name="info" value="${vo.d_addr }">
 <input type="hidden" name="koko" value="${vo.d_sname }">
 <input type="hidden" name="hoho" value="${vo.d_kind }">
-
+<input type="hidden" name="dodo" value="${vo.d_num }">
 </c:forEach>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 <script>
@@ -29,6 +29,11 @@ for(var i=0;i<document.getElementsByName("hoho").length;i++){
 	
 	hoho[i]=document.getElementsByName("hoho")[i].value;
 }
+var dodo=new Array();
+for(var i=0;i<document.getElementsByName("dodo").length;i++){
+	
+	dodo[i]=document.getElementsByName("dodo")[i].value;
+}
 //var koko=document.getElementById("koko");
 var mapOption;
 var map;
@@ -38,6 +43,11 @@ var koko1=new Array();
 koko1=koko;
 var hoho1=new Array();
 hoho1=hoho;
+var dodo1=new Array();
+dodo1=dodo;
+var markers=new Array;
+var infos=new Array;
+var mPositions=new Array;
  mapOption = {
   center: new kakao.maps.LatLng(33.450701, 126.570667), 
         level: 4          
@@ -53,10 +63,10 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
  gap.forEach(function(g,index){
  geocoder.addressSearch(g, function(result, status) {
   
-  
   if (status === kakao.maps.services.Status.OK) {
 	  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 	  markerPosition = new kakao.maps.LatLng(result[0].y, result[0].x);
+	  mPositions.push(markerPosition);
 	  map.setCenter(markerPosition);
    
    // 받은 좌표값으로 마커 생성
@@ -69,7 +79,8 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
    });
    
    //alert(gap[0]+","+gap[1]);
-   
+   marker2=marker;
+   markers.push(marker);
    
    var moinfo='<div style="width:250px;text-align:center;padding:5px 0;"><p style="font-size:2em;color:black;">'+koko1[index]+"</P><br>  종류:"+hoho1[index]+'</div>';
    var infowindow = new kakao.maps.InfoWindow({
@@ -77,7 +88,7 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
 	   content: moinfo
     	
    });
-   
+   infos.push(infowindow);
    kakao.maps.event.addListener(marker, 'mouseover', function() {
 	   
 	   infowindow.open(map,marker);
@@ -93,7 +104,7 @@ var imageSrc="${cp}/resources/maincss/images/logo/111.png",
 	});
 	 kakao.maps.event.addListener(marker, 'click', function() {
 		   
-		  location.href="${cp}/detailpage?name="+koko1[index];
+		  location.href="${cp}/detailpage?name="+koko1[index]+"&d_num="+dodo1[index];
 		});
    
    

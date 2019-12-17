@@ -1,5 +1,7 @@
 package app.spring.js.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,7 @@ public class ReviewService {
 	public int insert(ReviewVo vo){
 		return rDao.insert(vo);
 	}
-
+	public List<ReviewVo> list(){
+		return rDao.list();
+	}
 }

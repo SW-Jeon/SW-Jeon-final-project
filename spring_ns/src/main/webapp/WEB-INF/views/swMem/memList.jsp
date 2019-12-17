@@ -2,18 +2,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- memList -->
 <style>
-	.to{font-size: 2em; font-weight: bold;}
+	.to{font-size: 3em; font-weight: bold;}
 	.con{font-size: 1.2em;}
 </style>
-
-<link href="${cp }resources/list/css/bootstrap.min.css" rel="stylesheet">
-<link href="${cp }resources/list/css/style.css" rel="stylesheet">
-
 
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-		<h3 class="text-info text-center">리스트</h3>
+		<h1 class="text-info text-center">회원목록</h1>
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
@@ -32,8 +28,16 @@
 						<td class="con">${ vo.m_name}</td>
 						<td class="con">${ vo.m_mail}</td>
 						<td class="con">${ vo.m_pwd}</td>
-						<td class="con" style="color:red;">${vo.m_status }</td>
-						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}">수정</a></td>
+						<c:choose>
+								<c:when test="${vo.m_status =='1' }">
+								<td ><span  style="color:blue;">가입중</span></td>
+								</c:when>
+								<c:when test="${vo.m_status =='2' }">
+								<td ><span  style="color:red;">회원탈퇴</span></td>
+								</c:when>
+						</c:choose>
+						
+						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
 					</tr>
 				</tbody>
 			</c:forEach>
@@ -42,7 +46,3 @@
 		</div>
 	</div>
 </div>
-
-    <script src="${cp }resources/list/js/jquery.min.js"></script>
-    <script src="${cp }resources/list/js/bootstrap.min.js"></script>
-    <script src="${cp }resources/list/js/scripts.js"></script>
