@@ -9,7 +9,7 @@
       <div class="col-lg-10 text-center">
           <ul class="list-inline mb-1   ">
             <li class="list-inline-item mt-3">
-              <a href="${cp }/admin">운영자</a>
+              <a href="${cp }/admin/adminMain">운영자</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
