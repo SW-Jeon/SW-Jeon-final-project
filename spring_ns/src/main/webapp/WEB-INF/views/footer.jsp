@@ -40,7 +40,7 @@
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
+              <a href="${cp}/pj/reviewlist">Privacy Policy</a>
             </li>
           </ul>
           		

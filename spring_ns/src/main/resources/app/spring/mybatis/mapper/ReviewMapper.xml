@@ -6,8 +6,8 @@
   	<insert id="insert" parameterType="review"  >
   		insert into review values(0,#{	d_num},#{m_phone},#{r_content},#{r_score},#{r_pic},0,now())
   	</insert>
-  	
+  	<!--  리뷰 리스트  출력할거 -->
   	<select id="list"  resultType="review">
-     	select * from review
+     	select m_phone,r_score,r_content,r_pic from review 
   	</select>
   </mapper>
