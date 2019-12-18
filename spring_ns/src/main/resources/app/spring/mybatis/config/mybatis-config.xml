@@ -34,5 +34,8 @@
   			<mapper resource="app/spring/mybatis/mapper/MqMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/ZzimMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/AdminMapper.xml"/>
+  			<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml"/>
+  			<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml"/>
+  			<mapper resource="app/spring/mybatis/mapper/StoryMapper.xml"/>
    		</mappers>		
   </configuration> 

@@ -48,5 +48,8 @@ public class AdminMain {
         session.invalidate();
         return "redirect:/admin/adminLogin";
     }	
+    
+  
+   
 	
 }
