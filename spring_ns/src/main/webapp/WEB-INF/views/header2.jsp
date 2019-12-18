@@ -45,7 +45,7 @@
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
 								<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
