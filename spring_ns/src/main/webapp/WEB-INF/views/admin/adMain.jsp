@@ -9,8 +9,8 @@
         <!-- Page Content -->
         <h1>Blank Page</h1>
         <hr>
-        <p>This is a great starting point for new custom pages.</p>
-	</div >
+        <img src="${cp}/resources/maincss/images/logo/logo-1.png" style="height: 700px; text-align: center;">	
+      </div >
 </div>
  
 	

@@ -195,8 +195,7 @@ j
 
 	<!-- Login Form  모달창 -->
 
-	<div class="modal fade" id="Modal" tabindex="-1" role="dialog"
-		aria-labelledby="ModalLabel" aria-hidden="true">
+	<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -234,26 +233,13 @@ j
 	</div>
 	<!-- //Login Form -->
 
-
-
-
-
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
-
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
 	<script>
-		
 		function zzim() {
-			
 			var d_num=parseInt(document.getElementById("dnum").value);
 			var m_phone=document.getElementById("mphone").value;
-			
-		
-			
-				
-				var win;
-				win=window.open('${cp}/zzimOk?d_num='+d_num+'&m_phone='+m_phone,'_blank','width=200,height=200,left='+x+',top='+y);
-				
+			var win;
+				win=window.open('${cp}/zzimOk?d_num='+d_num+'&m_phone='+m_phone,'_blank','width=200,height=200,left='+x+',top='+y);	
 			}
 		//var scroll=window.scrollY;
 		//alert(scroll);
@@ -315,7 +301,6 @@ j
 
 		}
 			
-
 		}
 		var mapOption;
 		var map;
