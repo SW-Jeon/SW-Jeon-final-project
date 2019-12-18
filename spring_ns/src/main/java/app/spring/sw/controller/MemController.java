@@ -102,14 +102,13 @@ public class MemController {
 		}
 	}
 	
-
 	//// 회원조회 ////
 	@RequestMapping(value = "/memList", method = RequestMethod.GET )
 	public String list(Model model) {
 		try {
 			List<MemVo> list=service.listAll();
 			model.addAttribute("list", list);
-			return ".swMem.memList";
+			return ".admin.memList";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
@@ -117,13 +116,12 @@ public class MemController {
 		}
 	}
 
-	
 /////////////////////////////////////////////////// 운영자 회원수정  /////////////////////////////////////////////////////////////////////////////
 	@RequestMapping(value = "/memUpdate1", method = RequestMethod.GET )
 	public String updateForm1(String m_phone, Model model) {
 		try {
 			model.addAttribute("vo", service.getInfo(m_phone));
-			return ".swMem.memUpdate1";
+			return ".admin.memUpdate1";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");

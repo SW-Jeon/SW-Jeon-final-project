@@ -75,7 +75,7 @@ public class MqController {
 			try {
 				List<MqVo> listAll=service.listAll();
 				model.addAttribute("listAll", listAll);
-				return ".swMem.MqList";
+				return ".admin.MqList";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");
@@ -88,7 +88,7 @@ public class MqController {
 		public String Detail(Model model,int mq_num ){
 			try{
 				model.addAttribute("vo1", service.detail(mq_num));
-				return ".swMem.mqAdminCon";
+				return ".admin.mqAdminCon";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
@@ -101,7 +101,7 @@ public class MqController {
 		public String Delete(Model model,int mq_num,MqVo vo){
 			try{
 				model.addAttribute("vo", service.delete(mq_num));
-				return ".swMem.MqList";
+				return ".admin.MqList";
 			} catch (Exception e) {
 				model.addAttribute("code", "fail");
 				return ".swMem.result";
@@ -114,7 +114,7 @@ public class MqController {
 			try{
 			service.update(vo);
 			model.addAttribute("vo1", service.detail(mq_num));
-			return ".swMem.mqAdminCon";
+			return ".admin.mqAdminCon";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
 			return ".swMem.result";

@@ -28,9 +28,7 @@
 				</div>
 			</form>
 		</section>
-		
-
-		<!-- //contents -->
+<!-- //contents -->
 		</div>
-		</div>
+	</div>
 </div>

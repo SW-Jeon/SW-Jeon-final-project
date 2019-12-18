@@ -5,17 +5,19 @@
   	
   	<!-- 사업자 정보 등록 -->
   	<insert id="insert" parameterType="business">
-  		insert into business values(0,#{b_bnum},#{b_phone},#{b_name})
+  		insert into business values(0,#{b_bnum},#{b_phone},#{b_name},1)
   	</insert>
   	
-	<!-- 사업자 정보 삭제 -->	
+	<!-- 사업자 정보 탈퇴-->	
 	<delete id="delete" parameterType="int">
-		delete from business where b_num=#{b_num}
+		update business set b_state=2 where b_num=#{b_num}
 	</delete>
 	<!--  사업자 개인 조회 -->
 	<select id="getInfo" parameterType="int" resultType="business">
 		select * from business where b_bnum=#{b_bnum}
 	</select>
+	
+	<update id=""></update>
 	
 	<!-- 사업자 전체 조회 -->
 	<select id="listAll" resultType="business">

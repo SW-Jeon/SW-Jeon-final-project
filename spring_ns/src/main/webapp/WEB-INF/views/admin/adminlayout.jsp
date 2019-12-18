@@ -2,35 +2,28 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
 <title>NangMan</title>
-	
-<!-- Bootstrap core CSS -->
-  	<link href="${cp }/resources/maincss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="${cp }/resources/maincss/css/plugins.css">
-	<link rel="stylesheet" href="${cp }/resources/maincss/css/style.css">
 
-<!-- Custom fonts for this template -->
-  	<link href="${cp }/resources/maincss/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  	<link href="${cp }/resources/maincss/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-  	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="${cp }/resources/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-<!-- Atllantis CSS -->
-	<link rel="stylesheet" href="${cp }/resources/admin/css/atlantis.css">
+  <!-- Page level plugin CSS-->
+  <link href="${cp }/resources/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="${cp }/resources/maincss/css/landing-page.min.css" rel="stylesheet">
-
-   <!-- Modernizer js -->
- <script src="${cp }/resources/maincss/js/vendor/modernizr-3.5.0.min.js"></script>
- 
-
+  <!-- Custom styles for this template-->
+  <link href="${cp }/resources/admin/css/sb-admin.css" rel="stylesheet">
 </head>
+<style>
+	#head{width: 100%; height: 200px; background-color: #2E2E2E;}
+</style>
 
 <body>
 	<div id="wrap">
@@ -40,63 +33,25 @@
 		<div id="con">
 			<tiles:insertAttribute name="con"/>
 		</div>
-		<div id="foot">
-			<tiles:insertAttribute name="foot"/>
-		</div>
 	</div>
 	
-<!-- Bootstrap core JavaScript -->
-  <script src="${cp }/resources/maincss/vendor/jquery/jquery.min.js"></script>
-  <script src="${cp }/resources/maincss/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="${cp }/resources/maincss/js/vendor/jquery-3.2.1.min.js"></script>
-  <script src="${cp }/resources/maincss/js/popper.min.js"></script>
-  <script src="${cp }/resources/maincss/js/bootstrap.min.js"></script>
-  <script src="${cp }/resources/maincss/js/plugins.js"></script>
-  <script src="${cp }/resources/maincss/js/active.js"></script>
- 
-<!--   Core JS Files   -->
-	<script src="${cp }/resources/admin/js/core/jquery.3.2.1.min.js"></script>
-	<script src="${cp }/resources/admin/js/core/popper.min.js"></script>
-	<script src="${cp }/resources/admin/js/core/bootstrap.min.js"></script>
+	 <!-- Bootstrap core JavaScript-->
+  <script src="${cp }/resources/admin/vendor/jquery/jquery.min.js"></script>
+  <script src="${cp }/resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- jQuery UI -->
-	<script src="${cp }/resources/admin/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="${cp }/resources/admin/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="${cp }/resources/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Chart JS -->
-	<script src="${cp }/resources/admin/js/plugin/chart.js/chart.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="${cp }/resources/admin/js/sb-admin.min.js"></script>
+  
+   <!-- Page level plugin JavaScript-->
+  
+  <script src="${cp }/resources/admin/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="${cp }/resources/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
+  
+    <!-- Demo scripts for this page-->
+  <script src="${cp }/resources/admin/js/demo/datatables-demo.js"></script>
 
-<!-- jQuery Sparkline -->
-	<script src="${cp }/resources/admin/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-<!-- Chart Circle -->
-	<script src="${cp }/resources/admin/js/plugin/chart-circle/circles.min.js"></script>
-
-<!-- Datatables -->
-	<script src="${cp }/resources/admin/js/plugin/datatables/datatables.min.js"></script>
-
-<!-- Bootstrap Notify -->
-	<script src="${cp }/resources/admin/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
-<!-- jQuery Vector Maps -->
-	<script src="${cp }/resources/admin/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="${cp }/resources/admin/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-
-<!-- Sweet Alert -->
-	<script src="${cp }/resources/admin/js/plugin/sweetalert/sweetalert.min.js"></script>
-	
-<!-- Atlantis JS -->
-	<script src="${cp }/resources/admin/js/atlantis.min.js"></script>
-
-	<script src="${cp }/resources/admin/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['${cp }/resources/admin/css/fonts.min.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-</script>
-</body>
+  </body>
 </html>

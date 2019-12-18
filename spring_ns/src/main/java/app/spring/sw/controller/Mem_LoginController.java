@@ -23,33 +23,48 @@ public class Mem_LoginController {
 	@Autowired private MemService service;
 	@Autowired private DetailService service1;
 	
-	//로그인
+	//회원 메인페이지 로그인
 	@RequestMapping(value="/memLogin",method=RequestMethod.POST )
 		public String login(String m_phone,String m_pwd,HttpSession session,Model model){
 		MemVo vo=service.getInfo(m_phone);
+		if(vo==null){
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
 		String phone=vo.getM_phone();
 		String pwd=vo.getM_pwd();
 		String status=vo.getM_status();
-		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
+		String id=(String)session.getAttribute("a_id");
+		
+		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") && id==null ){
 			session.setAttribute("m_phone", m_phone);
 			session.setAttribute("m_pwd", m_pwd);
 			return "redirect:/";
+		}else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
 		}else{
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
 		}
+		
 	}
-	   //로그인
+	   //상세페이지에서 로그인
 	   @RequestMapping(value="/swMem/memLogin",method=RequestMethod.POST )
 	      public String loginFOM(String m_phone,String m_pwd,String name,HttpSession session,Model model){
 	      MemVo vo=service.getInfo(m_phone);
+	      if(vo==null){
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
+	      }
 	      String phone=vo.getM_phone();
 	      String pwd=vo.getM_pwd();
 	      String status=vo.getM_status();
+	      String id=(String)session.getAttribute("a_id");
 	      List<DetailVo> list=service1.finddetail(name);
 			List<FindimgVo> list1=service1.findimg(name);
 			List<FindmenuVo> list2=service1.findmenu(name);
-	      if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") ){
+			if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") && id==null ){
 	         session.setAttribute("m_phone", m_phone);
 	         session.setAttribute("m_pwd", m_pwd);
 	         model.addAttribute("phone",phone);
@@ -59,6 +74,9 @@ public class Mem_LoginController {
 				model.addAttribute("list2",list2);
 				model.addAttribute("name",name);
 	         return ".detailpage.detailpg";
+		  }else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
 	      }else{
 	         model.addAttribute("code", "fail");
 	         return ".swMem.result";
