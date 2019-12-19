@@ -50,7 +50,7 @@ star-input>.input.focus{outline:1px dotted #ddd;}
           <input type="radio" name="star_input" value="5" id="p5">
           <label for="p5">5</label>
         </span><br>         
-           <output for="star-input" ><b></b>점</output>
+       <!--      <output for="star-input" ><b></b>점</output>-->
    </span><br>
    <br>
    후기<br>
@@ -65,15 +65,15 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 <script src="${cp }/resources/stars/js/jquery-3.4.1.js"></script>
 <script src="${cp }/resources/stars/js/star.js" charset="utf-8"></script>
 <script type="text/javascript">
-	var p5=document.getElementById("p5");
-    var radio=document.getElementsByName("star-input");
-    for( var i=0; i<radio.length; i++){
-    	radio[i].addEventListener("click", function() {
-    		if( this.checked){
-	            alert(this.value);
-     	  }
-    	});
-    }		
+ 	// var p5=document.getElementById("p5");
+   // var radio=document.getElementsByName("star-input");
+   // for( var i=0; i<radio.length; i++){
+    	//radio[i].addEventListener("click", function() {
+    	//	if( this.checked){
+	      //      alert(this.value);
+     	 // }
+    	//});
+    //}		
 </script>
 </body>
 </html>

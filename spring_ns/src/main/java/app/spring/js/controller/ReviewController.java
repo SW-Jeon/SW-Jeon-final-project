@@ -1,13 +1,12 @@
 package app.spring.js.controller;
 
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Date;
 import java.util.List;
-import java.util.UUID;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -55,31 +54,38 @@ public class ReviewController {
 		System.out.println(uploadPath);
 		String m_phone=(String)session.getAttribute("m_phone");
 		System.out.println(m_phone);
-		//전송된 파일명
-		String r_pic=file1.getOriginalFilename();
-		//저장될 파일명(중복되지 않는 이름으로 만들기)
-		//String r_pic=UUID.randomUUID() +"_" + orgfilename;
-		try{
-			//전송된 파일을 읽어오기 위한 스트림
-			InputStream fis=file1.getInputStream();
-			//전송된 파일을 서버에 출력하기 위한 스트림
-			FileOutputStream fos=
-					new FileOutputStream(uploadPath+"\\" + r_pic);
-			//파일복사하기(업로드하기)
-			FileCopyUtils.copy(fis, fos);
-			fis.close();
-			fos.close();
-			//File f=new File(uploadPath +"\\" + savefilename);
-			//long filesize=f.length();
-			//DB에 저장하기
-			ReviewVo vo=
-					new ReviewVo(0, d_num , m_phone, r_content, star_input, r_pic, 0, r_regdate);
-			service.insert(vo);
+	
+			try{
+				if(!file1.isEmpty()){
+					//전송된 파일명
+					String r_pic=file1.getOriginalFilename();
+					//저장될 파일명(중복되지 않는 이름으로 만들기)
+					//String r_pic=UUID.randomUUID() +"_" + orgfilename;
+				//전송된 파일을 읽어오기 위한 스트림
+				InputStream fis=file1.getInputStream();
+				//전송된 파일을 서버에 출력하기 위한 스트림
+				FileOutputStream fos=
+						new FileOutputStream(uploadPath+"\\" + r_pic);
+				//파일복사하기(업로드하기)
+				FileCopyUtils.copy(fis, fos);
+				fis.close();
+				fos.close();
 			
-			return ".";
+				//File f=new File(uploadPath +"\\" + savefilename);
+				//long filesize=f.length();
+				//DB에 저장하기
+				ReviewVo vo=
+						new ReviewVo(0, d_num , m_phone, r_content, star_input, r_pic, 0, r_regdate);
+				service.insert(vo);
+			}	else{
+				ReviewVo vo=
+						new ReviewVo(0, d_num , m_phone, r_content, star_input, null, 0, r_regdate);
+				service.insert(vo);
+			}
+			return ".main";
 		}catch(IOException ie){
 			ie.printStackTrace();
-			return "error";
+			return ".main";
 		}
 	}
 
