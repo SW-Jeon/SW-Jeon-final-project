@@ -34,8 +34,7 @@
 						<td class="con"><button type="button" data-toggle="tooltip"  class="btn btn-link " data-original-title="Update"
 							onclick="location.href='${cp}/admin/infoUpdate?i_num=${vo.i_num}' "><i class="fas fa-pencil-alt" style="font-size: 20px;"></i></button></td>
 						<td class="con"><button type="button" data-toggle="tooltip"  class="btn btn-link " data-original-title="Remove"
-							onclick="location.href='${cp}/admin/infoDelete?i_num=${vo.i_num}' "><i class="fa fa-times" style="font-size: 20px;"></i></button></td>
-							
+							onclick="location.href='${cp}/admin/infoDelete?i_num=${vo.i_num}' "><i class="fa fa-times" style="font-size: 20px;"></i></button></td>	
 					</tr>
 				</tbody>
 			</c:forEach>

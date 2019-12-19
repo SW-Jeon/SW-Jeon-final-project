@@ -28,9 +28,6 @@
               <a href="${cp }/admin/info">회사소개</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp }/admin/info">공지사항</a>
-            </li>
           </ul>
           
           <ul class="list-inline mb-2   ">

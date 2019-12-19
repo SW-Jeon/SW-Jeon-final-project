@@ -8,7 +8,7 @@
 <section class="mypage-cont col-md-10" style="margin-top: 80px; float: right;">
 	<h1 class="text-info text-center mb-5">공지사항 수정</h1>
 	<form role="form" method="post" action="${cp}/admin/infoUpdate" >
-		<input type="hidden" class="form-control" name="a_id" value=${a_id }>
+		<input type="hidden"  name="i_num" value="${vo.i_num }">
 			<div class="form-group">
 				<label for="i_title">제목</label>
 				<input type="text" class="form-control" name="i_title" value="${vo.i_title }">
