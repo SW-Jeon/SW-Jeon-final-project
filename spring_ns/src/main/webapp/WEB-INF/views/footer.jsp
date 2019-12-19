@@ -20,6 +20,17 @@
              </c:choose>
             </li>
             <li class="list-inline-item">&sdot;</li>
+             <li class="list-inline-item">
+            <c:choose>	
+				<c:when test="${empty sessionScope.b_phone}">           
+                    <a href="${cp }/business/businessLogin">사업자</a>
+             	</c:when>
+             	<c:otherwise>
+             		<a href="${cp }/business/businessMain">사업자</a>
+             	</c:otherwise>
+             </c:choose>
+             </li>
+            <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="${cp }/admin/policy">회사정책</a>
             </li>

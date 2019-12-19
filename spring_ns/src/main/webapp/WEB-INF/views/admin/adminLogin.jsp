@@ -21,7 +21,12 @@
   <link href="${cp }/resources/admin/css/sb-admin.css" rel="stylesheet">
 
 </head>
+<script type="text/javascript">
+ function goBack() {
+	window.history.back();
+}
 
+</script>
 <body class="bg-dark">
 
   <div class="container">
@@ -38,6 +43,7 @@
             <input type="password"  class="form-control"  name="a_pwd"   required oninvalid="this.setCustomValidity('[ 비밀번호 ] 를 입력하셔야합니다.')" onchange="this.setCustomValidity('')">
           </div>
             <button type="submit" class="btn btn-primary  btn-block" style="">로그인</button>
+            <button type="button" class="btn btn-primary  btn-block" style="background-color: #ff4040" onclick="goBack()">닫기</button>
         </form>
       </div>
     </div>
