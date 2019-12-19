@@ -18,7 +18,7 @@
 					</div>
 					<div class="form-group">
 						<label for="mq_content">내용</label><br>
-						<textarea rows="5" cols="100" name="mq_content" style="resize: none;"></textarea>
+						<textarea class="form-control" rows="3"  name="mq_content" style="resize: none;"></textarea>
 					</div>
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-primary">문의하기</button>

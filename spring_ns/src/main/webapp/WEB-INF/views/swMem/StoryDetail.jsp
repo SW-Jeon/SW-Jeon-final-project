@@ -2,13 +2,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- storyDetail -->
 
-<!-- 네비바 -->
-<jsp:include page="/WEB-INF/views/admin/adminNavi.jsp"/> 
-
 	<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<h1 class="text-info text-center">낭만매거진</h1>
+						<span style="float: right;"><i class="fas fa-eye mr-4" data-toggle="tooltip" data-original-title="조회수">${ vo.s_hit}</i></span>
 						<div class="form-group">
 							<label for="s_title">제목</label><input type="text" class="form-control" value="${ vo.s_title}" readonly="readonly">
 						</div>

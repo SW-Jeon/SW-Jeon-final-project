@@ -5,11 +5,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.AdminService;
-import app.spring.vo.AdminVo;
 
 @Controller
 public class AdminMain {
@@ -28,28 +28,27 @@ public class AdminMain {
 	public String adminLogForm(){
 		return "admin/adminLogin";
 	}
-	@RequestMapping(value="/admin/adLogin",method=RequestMethod.POST)
-	public String login(String a_id,String a_pwd,HttpSession session){
-		AdminVo vo=service.getInfo(a_id);
-		String id=vo.getA_id();
-		String pwd=vo.getA_pwd();
-		String phone=(String)session.getAttribute("m_phone");
-		if(id.equals(a_id) && pwd.equals(a_pwd) && phone ==null){
-			session.setAttribute("a_id", a_id);
-			session.setAttribute("a_pwd", a_pwd);
-			return ".admin";
-		}else{
-			return "redirect:/admin/adminLogin";
+
+	@RequestMapping(value = "/admin/adLogin", method = RequestMethod.POST)
+	public String login(String a_id, String a_pwd, HttpSession session, Model model) {
+		boolean vo = service.getInfo(a_id);
+		if (vo) {
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		} else {
+			String phone = (String) session.getAttribute("m_phone");
+			if (phone == null) {
+				session.setAttribute("a_id", a_id);
+				session.setAttribute("a_pwd", a_pwd);
+				return ".admin";
+			}
 		}
+		return "redirect:/admin/adminLogin";
 	}
 	 //로그아웃
     @RequestMapping(value="/adminLogout")
     public String logout(HttpSession session){
         session.invalidate();
         return "redirect:/admin/adminLogin";
-    }	
-    
-  
-   
-	
+    }		
 }

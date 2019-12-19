@@ -14,7 +14,7 @@
 					</div>
 					<div class="form-group">
 						<label for="i_content">내용</label><br>
-						<textarea rows="5" cols="100" name="i_content" style="resize: none;"></textarea>
+						<textarea class="form-control" rows="3"  name="i_content" style="resize: none;"></textarea>
 					</div>
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-primary">등록</button>

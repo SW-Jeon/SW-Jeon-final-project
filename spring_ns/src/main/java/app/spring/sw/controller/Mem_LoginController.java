@@ -28,7 +28,7 @@ public class Mem_LoginController {
 		public String login(String m_phone,String m_pwd,HttpSession session,Model model){
 		MemVo vo=service.getInfo(m_phone);
 		if(vo==null){
-			model.addAttribute("code", "fail");
+			model.addAttribute("code", "drop");
 			return ".swMem.result";
 		}
 		String phone=vo.getM_phone();
@@ -41,7 +41,7 @@ public class Mem_LoginController {
 			session.setAttribute("m_pwd", m_pwd);
 			return "redirect:/";
 		}else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
-			model.addAttribute("code", "fail");
+			model.addAttribute("code", "no");
 			return ".swMem.result";
 		}else{
 			model.addAttribute("code", "fail");
@@ -54,7 +54,7 @@ public class Mem_LoginController {
 	      public String loginFOM(String m_phone,String m_pwd,String name,HttpSession session,Model model){
 	      MemVo vo=service.getInfo(m_phone);
 	      if(vo==null){
-				model.addAttribute("code", "fail");
+				model.addAttribute("code", "drop");
 				return ".swMem.result";
 	      }
 	      String phone=vo.getM_phone();
@@ -75,7 +75,7 @@ public class Mem_LoginController {
 				model.addAttribute("name",name);
 	         return ".detailpage.detailpg";
 		  }else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
-				model.addAttribute("code", "fail");
+				model.addAttribute("code", "no");
 				return ".swMem.result";
 	      }else{
 	         model.addAttribute("code", "fail");
