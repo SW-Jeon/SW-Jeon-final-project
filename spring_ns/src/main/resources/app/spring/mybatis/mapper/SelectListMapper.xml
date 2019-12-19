@@ -3,7 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.SelectListMapper">
   	<select id="searchList" parameterType="map" resultType="searchList"> 
-  		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,d.d_time,round(avg(r.r_score),1) r_score,d.d_hit, p.p_pic from detail d left outer join menu m on d.d_num=m.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where (d.d_addr like concat('%',#{keyword},'%') or d.d_sname like concat('%',#{keyword},'%') or m.me_name like concat('%',#{keyword},'%'))
+  		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,round(avg(r.r_score),1) r_score,d.d_hit, p.p_pic from detail d left outer join menu m on d.d_num=m.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where (d.d_addr like concat('%',#{keyword},'%') or d.d_sname like concat('%',#{keyword},'%') or m.me_name like concat('%',#{keyword},'%'))
     <if test="pri != null and pri !=''">
         and TRUNCATE(m.me_pay/10000,0)=#{pri}
     </if>
@@ -20,5 +20,17 @@
 	</update>
 	<select id="recount" parameterType="int" resultType="int">
 		select count(r_score) from review where d_num=#{d_num};
+	</select>
+	<select id="checkfood" parameterType="map" resultType="food">
+		select * from food where d_num=#{d_num} and m_phone=#{m_phone};
+	</select>
+	<insert id="joinfood" parameterType="map">
+		insert into food values(0,#{d_num},#{m_phone});
+	</insert>
+	<select id="foodlist" parameterType="String" resultType="searchList">
+		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,round(avg(r.r_score),1) r_score, p.p_pic from food f inner join detail d on f.d_num=d.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where f.m_phone=#{m_phone} group by d.d_num order by f.f_num;
+	</select>
+	<select id="foodcount" parameterType="String" resultType="int">
+		select count(f_num) from food where m_phone=#{m_phone};
 	</select>
 </mapper>

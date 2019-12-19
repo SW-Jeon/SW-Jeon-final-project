@@ -39,7 +39,7 @@ public class BusinessController {
 			e.printStackTrace();
 			model.addAttribute("code","fail");
 			return "";
-		}
+		}	
 	}
 	
 	

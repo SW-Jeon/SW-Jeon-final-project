@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.MemService;
+import app.spring.vo.DetailVo;
 import app.spring.vo.MemVo;
+import app.spring.yg.service.SelectListService;
 
 @Controller
 public class MemController {
 	@Autowired
 	private MemService service;
+	@Autowired private SelectListService service2;
 
 	//// 회원가입 ////
 	@RequestMapping(value = "/memInsert", method = RequestMethod.POST)
@@ -36,6 +39,12 @@ public class MemController {
 	@RequestMapping(value="/swMem/mypage", method = RequestMethod.GET )
 	public String mypage(String m_phone, Model model){
 		try {
+			if(m_phone!=null){
+				int count=service2.foodcount(m_phone);
+				List<DetailVo> flist=service2.foodlist(m_phone);
+				model.addAttribute("count",count);
+				model.addAttribute("flist",flist);
+			}
 		model.addAttribute("vo", service.getInfo(m_phone));
 		return ".swMem.mypage";
 		} catch (Exception e) {
