@@ -2,8 +2,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- memList -->
 <style>
-	.to{font-size: 1.7em; font-weight: bold;}
-	.con{font-size: 1.2em;}
+	.to{font-size: 1.7em; font-weight: bold; text-align: center;}
+	.con{font-size: 1.2em; text-align: center;}
 </style>
  
 <!-- 네비바 -->
@@ -33,10 +33,10 @@
 						<td class="con">${ vo.m_pwd}</td>
 						<c:choose>
 								<c:when test="${vo.m_status =='1' }">
-								<td ><span  style="color:blue;">가입중</span></td>
+								<td class="con"><span  style="color:blue;">가입중</span></td>
 								</c:when>
 								<c:when test="${vo.m_status =='2' }">
-								<td ><span  style="color:red;">회원탈퇴</span></td>
+								<td class="con"><span  style="color:red;">회원탈퇴</span></td>
 								</c:when>
 						</c:choose>
 						<td class="con"><a href="${cp}/memUpdate1?m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>

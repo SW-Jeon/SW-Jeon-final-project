@@ -23,10 +23,15 @@ public class BusinessDao {
 	}
 	//사업자 개인 조회
 	public BusinessVo getInfo(int b_num){
-		return sqlSessionTemplate.selectOne(NAMESPACE + "getInfo",b_num);
+		return sqlSessionTemplate.selectOne(NAMESPACE + ".getInfo",b_num);
 	}
 	//사업자 전체 조회
 	public List<BusinessVo> listAll(){
-		return sqlSessionTemplate.selectList(NAMESPACE+ "listAll");
+		return sqlSessionTemplate.selectList(NAMESPACE+ ".listAll");
+	}
+	
+	//사업자 상태변경
+	public int update(BusinessVo vo){
+		return sqlSessionTemplate.update(NAMESPACE+".bnUpdate", vo);
 	}
 }

@@ -1,7 +1,5 @@
 package app.spring.js.controller;
 
-
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +42,6 @@ public class BusinessController {
 		}
 	}
 	
-
 	//업체목록
 	@RequestMapping(value="/admin/businessList",method=RequestMethod.GET)
 	public String list(Model model)	{
@@ -57,5 +54,31 @@ public class BusinessController {
 			model.addAttribute("code", "fail");
 			return ".sw	Mem.result";
 		}	
+	}
+	
+	//업체 상태변경
+	@RequestMapping(value="/admin/businessUpdate",method=RequestMethod.GET)
+	public String UpdateForm(Model model,int b_num){
+		try{
+			model.addAttribute("vo", service.getInfo(b_num));
+			return ".admin.business.businessUpdate";
+		}catch(Exception e){
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".sw	Mem.result";
+		}	
+	}
+	@RequestMapping(value="/admin/bnUpdate",method=RequestMethod.POST)
+	public String UpdateForm(Model model,BusinessVo vo,int b_num){
+	try{
+		service.update(vo);
+		model.addAttribute("vo", service.getInfo(b_num));
+		return ".admin.business.businessUpdate";
+	}catch(Exception e){
+		e.printStackTrace();
+		model.addAttribute("code", "fail");
+		return ".sw	Mem.result";
+	}	
+		
 	}
 }

@@ -27,4 +27,8 @@ public class BusinessService {
 	public List<BusinessVo> listAll(){
 		return bDao.listAll();
 	}
+	//사업자 상태변경
+	public int update(BusinessVo vo){
+		return bDao.update(vo);
+	}
 }

@@ -2,8 +2,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- infoList -->
 <style>
-	.to{font-size: 1.7em; font-weight: bold;}
-	.con{font-size: 1.2em;}
+	.to{font-size: 1.7em; font-weight: bold; text-align: center;}
+	.con{font-size: 1.2em; text-align: center;}
 </style>
 
 <!-- 네비바 -->
