@@ -64,12 +64,14 @@ function openZipSearch() {
 			파일 첨부<br>
 	         <input multiple="multiple" type="file" name="file1"  ><br>
          </div>
+         	<div>
+         
+         </div>
 	</div>
 	
          
          
-	<button type="submit" class="btn btn-primary mt-3">등록</button>
-	<button type="reset" class="btn btn-primary mt-3">취소</button> 
+	
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
