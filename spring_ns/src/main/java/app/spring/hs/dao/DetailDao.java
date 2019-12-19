@@ -29,7 +29,7 @@ public class DetailDao {
 	public List<FindimgVo> findimg(String d_sname){
 		return sqlSessionTemplate.selectList(NAMESPACE+".findimg",d_sname);
 	}
-	
+	//가게정보 등록
 	public int insert(DetailVo vo){
 		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",vo);
 	}

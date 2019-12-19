@@ -11,6 +11,12 @@
      	return true;
    		}
 	}
+	function action1(d_sname,d_num){
+		location.href="${cp}/detailpage?name="+d_sname+"&d_num="+d_num;
+	}
+	function action2(d_num,m_phone){
+		location.href="${cp}/zzimOk?d_num="+d_num+"&m_phone="+m_phone
+	}
 </script>
 <style>
 	ul li{margin: 0px;  }
@@ -30,7 +36,7 @@
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto "  id="navi">
 				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.5em; color:black;">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
 			</ul>
 		<c:choose>	
@@ -38,15 +44,15 @@
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
 									<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
 				</div>
 			</c:when>
 			<c:otherwise>
-			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
-				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt "><br> 최근 본 맛집</i></a>
+			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 "><!-- 최근본 맛집 -->
+				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#foodModal"><br> 최근 본 맛집</i></a>
 			</div>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
@@ -141,7 +147,36 @@
             </div>
         </div>
 <!-- //Login Form -->
-
+<div class="modal fade" id="foodModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
+		<div class="modal-content">
+			<div class="modal-body">
+					<div class="border-bottom mb-3" ><span  style="font-size: 20px; color: orange;"><b>최근 본 맛집 (${count })</b></span><br></div>
+					<c:forEach var="i" items="${flist }">
+					<div style="text-align: left; width: 400px;" onclick="action1('${i.d_sname}','${i.d_num }')">
+					<div style="float: left; margin-left: 20px; margin-right: 20px;">
+					<c:choose>
+						<c:when test="${empty i.p_pic }">
+							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/logo/non.png">
+						</c:when>
+						<c:otherwise>
+							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/test/${i.p_pic }">
+						</c:otherwise>
+					</c:choose>
+					</div>
+					<div class="mb-3" style="float: left;">
+						<span style="font-size: 20px; color: black">${i.d_sname }</span>&nbsp&nbsp&nbsp<span style="font-size: 20px; color: orange">${i.r_score }</span><br>
+						<span style="color: grey" >${i.d_addr }<br>
+						${i.d_kind }<br>
+						${i.d_time }<br>
+						</span>
+					</div>
+					</div>
+					</c:forEach>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 	//비밀번호는 영문+숫자 8자이상

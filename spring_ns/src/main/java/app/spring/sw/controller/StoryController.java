@@ -29,7 +29,7 @@ public class StoryController {
 	public String insertStory(StoryVo vo,Model model){
 		try {
 			stService.insert(vo);
-			return ".admin.story.storyList";
+			return "redirect:/admin/storyList";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
@@ -42,7 +42,7 @@ public class StoryController {
 	public String Delete(Model model,int s_num,StoryVo vo){
 		try {
 			model.addAttribute("vo", stService.delete(s_num));
-			return ".admin.story.storyList";
+			return "redirect:/admin/storyList";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
@@ -82,7 +82,7 @@ public class StoryController {
 		public String updateForm(int s_num,Model model){
 			try {
 				model.addAttribute("vo", stService.detail(s_num));
-				return ".admin.story.storyList";
+				return ".admin.story.storyUpdate";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");
@@ -94,7 +94,7 @@ public class StoryController {
 			try {
 				stService.update(vo);
 				model.addAttribute("vo", stService.detail(s_num));
-				return ".admin.story.storyList";
+				return "redirect:/admin/storyList";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");
@@ -108,7 +108,7 @@ public class StoryController {
 			try{
 				List<StoryVo> listAll=stService.list();
 				model.addAttribute("listAll", listAll);
-				return ".swMem.storyList";
+				return ".swMem.StoryList";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");
@@ -121,7 +121,7 @@ public class StoryController {
 			try {
 				model.addAttribute("vo", stService.detail(s_num));
 				stService.addHit(s_num);
-				return ".swMem.storyDatail";
+				return ".swMem.StoryDetail";
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");

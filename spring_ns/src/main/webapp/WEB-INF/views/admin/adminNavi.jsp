@@ -13,7 +13,7 @@
 		       		<a class="nav-link" href="${cp }/admin/infoList"><i class="fas fa-feather-alt mr-2 ml-2" ></i><span>공지사항</span></a>
 		      </li>
 		       <li class="nav-item">
-		       		<a class="nav-link" href="${cp }/admin/Story"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>낭만매거진</span></a>
+		       		<a class="nav-link" href="${cp }/admin/storyList"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>낭만매거진</span></a>
 		      </li>   
 		</ul>
 </nav> 

@@ -20,14 +20,14 @@ var oEditors = [];
 
 		<section class="mypage-cont col-md-10" style="margin-top: 80px; float: right;">
 				<h1 class="text-info text-center mb-5">낭만매거진 글쓰기</h1>
-				<form role="form" method="post" action="${cp}/admin/InfoInsert" >
+				<form role="form" method="post" action="${cp}/admin/storyInsert" >
 					<input type="hidden" name="a_id" value=${a_id }>
-					<div class="form-group">
-						<label for="s_title">제목</label><input type="text" class="form-control" name="s_title">
+					<div class="form-group ">
+						<label for="s_title">제목</label><input type="text" class="form-control col-xs-2" name="s_title">
 					</div>
 					<div class="form-group">
-						<label for="i_content">내용</label><br>
-						<textarea name="ir1" id="ir1" rows="10" cols="100"  name="s_content" placeholder="500자">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>
+						<label for="s_content">내용</label><br>
+						<textarea class="form-control" rows="3" name="s_content" style="resize: none;"></textarea>
 					</div>
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-primary">등록</button>

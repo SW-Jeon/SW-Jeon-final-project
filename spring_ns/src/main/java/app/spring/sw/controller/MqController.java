@@ -1,4 +1,3 @@
-
 package app.spring.sw.controller;
 
 import java.util.List;
@@ -102,7 +101,7 @@ public class MqController {
 		public String Delete(Model model,int mq_num,MqVo vo){
 			try{
 				model.addAttribute("vo", service.delete(mq_num));
-				return ".admin.MqList";
+				return  "redirect:/swMem/mqList";
 			} catch (Exception e) {
 				model.addAttribute("code", "fail");
 				return ".swMem.result";
@@ -115,7 +114,7 @@ public class MqController {
 			try{
 			service.update(vo);
 			model.addAttribute("vo1", service.detail(mq_num));
-			return ".admin.mqAdminCon";
+			return  "redirect:/swMem/mqAdminCon";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
 			return ".swMem.result";

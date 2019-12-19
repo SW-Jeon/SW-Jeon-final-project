@@ -20,6 +20,10 @@ public class DetailService {
 	public DetailVo finds(String d_sname){
 		return dao.finds(d_sname);
 	}
+	//가게정보 등록
+	public int insert(DetailVo vo){
+		return dao.insert(vo);
+	}
 	
 	public List<DetailVo> findlist(String d_sname){
 		return dao.findlist(d_sname);

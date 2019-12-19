@@ -31,7 +31,7 @@ public class AdInfoController {
 	public String insertInfo(InfoVo vo, Model model) {
 		try {
 			inService.insert(vo);
-			return ".admin.info.infoList";
+			return "redirect:/admin/infoList";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
@@ -44,7 +44,7 @@ public class AdInfoController {
 	public String Delete(Model model, int i_num, InfoVo vo) {
 		try {
 			model.addAttribute("vo", inService.delete(i_num));
-			return ".admin.info.infoList";
+			return "redirect:/admin/infoList";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
@@ -96,7 +96,7 @@ public class AdInfoController {
 		try {
 			inService.update(vo);
 			model.addAttribute("vo", inService.detail(i_num));
-			return ".admin.info.infoList";
+			return "redirect:/admin/infoList";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");

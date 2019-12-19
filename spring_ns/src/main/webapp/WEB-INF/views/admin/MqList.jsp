@@ -45,7 +45,6 @@
 				</tbody>
 			</c:forEach>
 			</table>
-				<button class="btn btn-primary" onclick="location.href='${cp }/' ">홈으로</button>
 		</div>
 	</div>
 </div>
