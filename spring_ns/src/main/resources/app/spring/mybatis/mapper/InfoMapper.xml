@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="app.spring.mybatis.mapper.InfoMapper">
+  
+  		<!-- 공지사항 등록 -->
+  		<insert id="insert" parameterType="info">
+  			insert into info values(0,'admin',#{i_title},#{i_content},now(),0)
+  		</insert>
+  		
+  		<!-- 조회수 업데이트 -->
+  		<update id="addHit" parameterType="int">
+			update info set i_hit=i_hit+1 where i_num=#{i_num}
+		</update>
+		
+		<!--  수정 -->
+		<update id="update" parameterType="info" >
+			update info set i_title=#{i_title},i_content=#{i_content} where i_num=#{i_num}
+		</update>
+		
+		<!-- 삭제 -->
+		<delete id="delete" parameterType="int">
+			delete from info where i_num=#{i_num}
+		</delete>
+		
+		<!--전체 조회 -->
+  		<select id="listAll" resultType="info">
+  			select * from info
+  		</select>
+  		
+  		<!--  글의 상세내용 -->
+  		<select id="detail" parameterType="int" resultType="info">
+  			select * from info where i_num=#{i_num}
+  		</select>
+ 
+  </mapper>

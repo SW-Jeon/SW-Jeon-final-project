@@ -5,13 +5,15 @@ public class ZzimListVo {
 	private String d_sname;
 	private String d_phone;
 	private String d_addr;
+	private String m_phone;
 	public ZzimListVo(){}
-	public ZzimListVo(String p_pic, String d_sname, String d_phone, String d_addr) {
+	public ZzimListVo(String p_pic, String d_sname, String d_phone, String d_addr, String m_phone) {
 		super();
 		this.p_pic = p_pic;
 		this.d_sname = d_sname;
 		this.d_phone = d_phone;
 		this.d_addr = d_addr;
+		this.m_phone = m_phone;
 	}
 	public String getP_pic() {
 		return p_pic;
@@ -37,5 +39,12 @@ public class ZzimListVo {
 	public void setD_addr(String d_addr) {
 		this.d_addr = d_addr;
 	}
+	public String getM_phone() {
+		return m_phone;
+	}
+	public void setM_phone(String m_phone) {
+		this.m_phone = m_phone;
+	}
+	
 	
 }

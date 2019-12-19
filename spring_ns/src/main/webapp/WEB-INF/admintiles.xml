@@ -8,9 +8,20 @@
 		<put-attribute name="con" value="/WEB-INF/views/admin/adMain.jsp"/>
 	</definition>
 	
+	<definition name=".admin.*.*.*"  extends=".admin">
+		<put-attribute name="con" value="/WEB-INF/views/admin/{1}/{2}/{3}.jsp"/>
+	</definition>
+	
+	<definition name=".admin.*.*"  extends=".admin">
+		<put-attribute name="con" value="/WEB-INF/views/admin/{1}/{2}.jsp"/>
+	</definition>
+	
 	<definition name=".admin.*"  extends=".admin">
 		<put-attribute name="con" value="/WEB-INF/views/admin/{1}.jsp"/>
 	</definition>
+	
+	
+	
 	
 
 </tiles-definitions>

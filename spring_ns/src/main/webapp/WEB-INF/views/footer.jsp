@@ -10,7 +10,14 @@
       <div class="col-lg-10 text-center">
           <ul class="list-inline mb-1   ">
             <li class="list-inline-item mt-3">
-              <a href="${cp }/admin/adminLogin">운영자</a>
+ 			<c:choose>	
+				<c:when test="${empty sessionScope.a_id}">           
+                    <a href="${cp }/admin/adminLogin">운영자</a>
+             	</c:when>
+             	<c:otherwise>
+             		<a href="${cp }/admin/adminMain">운영자</a>
+             	</c:otherwise>
+             </c:choose>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">

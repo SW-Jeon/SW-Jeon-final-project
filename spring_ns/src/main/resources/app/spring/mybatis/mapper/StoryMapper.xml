@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="app.spring.mybatis.mapper.StoryMapper">
+  
+  		<!-- 매거진 등록 -->
+  		<insert id="insert" parameterType="story">
+  			insert into story values(0,'admin',#{s_title},#{s_content},now(),0)
+  		</insert>
+  		
+  		<!-- 조회수 업데이트 -->
+  		<update id="addHit" parameterType="int">
+			update story set s_hit=s_hit+1 where s_num=#{s_num}
+		</update>
+		
+		<!--  수정 -->
+		<update id="update" parameterType="story" >
+			update story set s_title=#{s_title},s_content=#{s_content} where s_num=#{s_num}
+		</update>
+		
+		<!-- 삭제 -->
+		<delete id="delete" parameterType="int">
+			delete from story where s_num=#{s_num}
+		</delete>
+		
+		<!--전체 조회 -->
+  		<select id="listAll" resultType="story">
+  			select * from story
+  		</select>
+  		
+  		<!--  글의 상세내용 -->
+  		<select id="detail" parameterType="int" resultType="story">
+  			select * from story where s_num=#{s_num}
+  		</select>
+ 
+  </mapper>

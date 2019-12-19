@@ -45,18 +45,21 @@
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
 								<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
 				</div>
 			</c:when>
 			<c:otherwise>
-			<div class="col-lg-1 col-sm-3 col-md-1 ">
-				<a class="btn btn-block btn-lg btn-danger"  href="${cp}/swMem/mypage" style="width:170px; height: 50px;"><i class ="fas fa-address-card"> MyHOME</i></a>
+			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt "><br> 최근 본 맛집</i></a>
+			</div>
+			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
 			</div>		
 			<div class="col-lg-1 col-sm-3 col-md-1 justify-content-end"  >
-				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 50px;"><i class ="fas fa-power-off"> 로그아웃</i></a>
+				 <a class="btn btn-block btn-lg btn-danger"  href="${cp}/memLogout" style="width:150px; height: 60px;"><i class ="fas fa-power-off"><br> 로그아웃</i></a>
 			</div>
 			</c:otherwise>
 		</c:choose>
