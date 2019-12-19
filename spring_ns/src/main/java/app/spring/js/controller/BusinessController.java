@@ -29,28 +29,33 @@ public class BusinessController {
 		return ".yg.editor";
 		
 	}
-	@RequestMapping(value="/pj/business")
-	public String list(Model model)	{
-		try{
-			List<BusinessVo> list=service.listAll();
-			model.addAttribute("list",list);
-			return ".pj.business";
-		}catch(Exception e){
-			e.printStackTrace();
-			model.addAttribute("code","fail");
-			return "";
-		}	
-	}
 	
 	
+	//업체등록
 	@RequestMapping(value="/pj/business",method=RequestMethod.POST)
-	public String insert(BusinessVo vo){
+	public String insert(BusinessVo vo,Model model){
 		try{
 			service.insert(vo);
 			return ".main";
 		} catch(Exception e){
 			e.printStackTrace();
-		return ".main";
+			model.addAttribute("code", "fail");
+			return ".sw	Mem.result";
 		}
+	}
+	
+
+	//업체목록
+	@RequestMapping(value="/admin/businessList",method=RequestMethod.GET)
+	public String list(Model model)	{
+		try{
+			List<BusinessVo> list=service.listAll();
+			model.addAttribute("list",list);
+			return ".admin.business.businessList";
+		}catch(Exception e){
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".sw	Mem.result";
+		}	
 	}
 }

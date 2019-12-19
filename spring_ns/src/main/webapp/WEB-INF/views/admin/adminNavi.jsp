@@ -15,5 +15,14 @@
 		       <li class="nav-item">
 		       		<a class="nav-link" href="${cp }/admin/storyList"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>낭만매거진</span></a>
 		      </li>   
+		       <li class="nav-item">
+		       		<a class="nav-link" href="${cp }/admin/businessList"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체승인목록</span></a>
+		      </li>  
+		       <li class="nav-item">
+		       		<a class="nav-link" href="#"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체관리</span></a>
+		      </li>  
+		        <li class="nav-item">
+		       		<a class="nav-link" href="#"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고</span></a>
+		      </li>   
 		</ul>
 </nav> 

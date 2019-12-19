@@ -114,7 +114,7 @@ public class MqController {
 			try{
 			service.update(vo);
 			model.addAttribute("vo1", service.detail(mq_num));
-			return  "redirect:/swMem/mqAdminCon";
+			return  ".admin.mqAdminCon";
 			} catch (Exception e) {
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
