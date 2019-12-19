@@ -17,11 +17,13 @@ import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
 import app.spring.vo.FindmenuVo;
 import app.spring.vo.MemVo;
+import app.spring.yg.service.SelectListService;
 
 @Controller
 public class Mem_LoginController {
 	@Autowired private MemService service;
 	@Autowired private DetailService service1;
+	@Autowired private SelectListService service2;
 	
 	//회원 메인페이지 로그인
 	@RequestMapping(value="/memLogin",method=RequestMethod.POST )
@@ -39,7 +41,11 @@ public class Mem_LoginController {
 		if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") && id==null ){
 			session.setAttribute("m_phone", m_phone);
 			session.setAttribute("m_pwd", m_pwd);
-			return "redirect:/";
+			List<DetailVo> flist=service2.foodlist(m_phone);
+			int count=service2.foodcount(m_phone);
+			session.setAttribute("flist", flist);
+			session.setAttribute("count", count);
+			return ".main";
 		}else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
 			model.addAttribute("code", "fail");
 			return ".swMem.result";
