@@ -49,6 +49,6 @@ public class AdminMain {
     @RequestMapping(value="/adminLogout")
     public String logout(HttpSession session){
         session.invalidate();
-        return "redirect:/admin/adminLogin";
+        return ".main";
     }		
 }
