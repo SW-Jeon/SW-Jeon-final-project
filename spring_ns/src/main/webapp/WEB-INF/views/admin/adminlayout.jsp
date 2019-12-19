@@ -15,11 +15,12 @@
   <!-- Custom fonts for this template-->
   <link href="${cp }/resources/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Page level plugin CSS-->
-  <link href="${cp }/resources/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="${cp }/resources/admin/css/sb-admin.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  
 </head>
 <style>
 	#head{width: 100%; height: 200px; background-color: #2E2E2E;}
@@ -45,13 +46,14 @@
   <!-- Custom scripts for all pages-->
   <script src="${cp }/resources/admin/js/sb-admin.min.js"></script>
   
-   <!-- Page level plugin JavaScript-->
-  
-  <script src="${cp }/resources/admin/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="${cp }/resources/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
-  
-    <!-- Demo scripts for this page-->
-  <script src="${cp }/resources/admin/js/demo/datatables-demo.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script>
+		$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+		})
+</script>
 
   </body>
 </html>

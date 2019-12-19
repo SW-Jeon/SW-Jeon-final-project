@@ -26,12 +26,9 @@
 							<label for="mq_reply">답변</label><input type="text" class="form-control" value="${vo1.mq_reply}" readonly="readonly">
 						</div>
 						<div class="form-group">
-							<label for="mq_state">답변</label>
+							<label for="mq_state">답변상태</label>
 							<input type="text" class="form-control" value="${vo1.mq_state}" readonly="readonly"  >
 							<button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">답변달기</button>
-						</div>
-						<div class="form-group">
-							<label for="mq_date">날짜</label><input type="text" class="form-control" value="${vo1.mq_date}" readonly="readonly">
 						</div>
 						</div>
 						<button class="btn btn-primary mt-3" onclick="location.href='${cp }/' " style="margin-left: 600px;">홈으로</button>

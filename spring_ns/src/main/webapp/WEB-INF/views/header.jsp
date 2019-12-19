@@ -29,7 +29,7 @@
 		
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto "  id="navi">
-				<li class="nav-item "><a class="nav-link active " href="#" style="font-size: 1.5em; color:black;">공지사항</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.5em; color:black;">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
 			</ul>
@@ -38,7 +38,7 @@
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
 									<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>

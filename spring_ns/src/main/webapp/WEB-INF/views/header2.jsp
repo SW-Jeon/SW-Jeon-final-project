@@ -23,29 +23,29 @@
 		<div class="logo">
 				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>
 		</div>
-		 <div class="col-md-6 col-lg-15 col-xl-7 text-right">
+		 <div class="col-md-3 col-lg-2 col-xl-6">
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
-            <div class="form-row"  style="width: 800px; padding: 20px;">
-              <div class="col-lg-9.5 col-md-9 mb-2 mb-md-0">
+            <div class="form-row"  style="width: 750px;">
+              <div class="col-md-9 mb-2 ">
                 <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을 검색하세요." name="keyword">
               </div>
-              <div class="col-lg-3.5 col-md-offset-3">
+              <div class="col-md-3 ">
                 <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요.</i></button>
               </div>
             </div>
           </form>
         </div>
         <ul class="navbar-nav " >
-				<li class="nav-item "><a class="nav-link active " href="#" style="font-size: 1.5em; color:black;">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.3em; color:black;">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.3em; color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.3em; color:black;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
 					<div class="col-lg-2 col-sm-4 col-md-1 ">
 						<div class="header__right d-flex justify-content-end"  >
 							<div class="log__in " >
-								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:150px; height: 50px;">
+								<a class="accountbox-trigger btn btn-block btn-lg btn-danger"  href="#" style="width:130px; height: 50px;">
 								<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
