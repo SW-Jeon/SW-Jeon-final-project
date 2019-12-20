@@ -10,13 +10,20 @@
 		text-align: center;
 	}
 </style>
-<div>
+<script>
+	function init(){
+	document.getElementById("path").value=location.pathname + location.serch;
+	}
+</script>
+<div onload="init()">
+	<input type="hidden" name="path" id="path">
 	<table style="border: 1px solid black; margin-left: 50px; margin-top: 100px;" >
 		<th>업체사진</th>
 		<th>업체이름</th>
 		<th>전화번호</th>
 		<th>주소</th>
 		<th>상세페이지로가기</th>
+		<th>삭제</th>
 		<c:forEach var="vo" items="${list }" >
 		
 		
@@ -25,23 +32,24 @@
 			<td>${vo.d_sname }</td>
 			<td>${vo.d_phone }</td>
 			<td>${vo.d_addr }</td>
-			<td><a href="">이동</a></td>
+			<td><a href="${cp }/zzimdetail?name=${vo.d_sname}">이동</a></td>
+			<td><a href="${cp }/zzimdel?d_num=${vo.d_num}">삭제</a></td>
 		</tr>
 		</c:forEach>
 	</table>
-	<ul class="pagination">
+	<ul class="btn-group pagination">
 		<c:if test="${vo.prev }">
 			<li>
-				<a href="">이전</a>
+				<a href="${cp }/zzimlists?page=${vo.startPage-1}"><i class="fa fa-chevron-left"></i></a>
 			</li>
 		</c:if>
-		<c:forEach begin="${vo.startPage }" end="${vo.endPage }" var="index">
-			<a href="">[${index }]</a>
+		<c:forEach begin="${vo.startPage }" end="${vo.endPage }" var="pageNum">
+			<a href="${cp }/zzimlists?page=${pageNum}">[${pageNum }]</a>
 		
 		</c:forEach>
-		<c:if test="${vo.next }">
+		<c:if test="${vo.next && vo.endPage >0 }">
 			<li>
-				<a href="">[다음]</a>
+				<a href="${cp }/zzimlists?page=${vo.endPage+1}"><i class="fa fa-chevron-right"></i></a>
 			</li>
 		</c:if>
 	</ul>

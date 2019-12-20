@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import app.spring.hs.dao.BoardDao;
 import app.spring.hs.dao.ZzimListDao;
 import app.spring.vo.Criteria;
 import app.spring.vo.ZzimListVo;
@@ -13,6 +14,7 @@ import app.spring.vo.ZzimListVo;
 @Service
 public class ZzimListService implements BoardService{
 	@Autowired private ZzimListDao dao;
+	@Autowired private BoardDao dao1;
 	
 	public List<ZzimListVo> zzimlist(String m_phone){
 		return dao.zzimlist(m_phone);

@@ -26,7 +26,6 @@ public class DetailController {
 			String phone=(String)session.getAttribute("m_phone");
 			ModelAndView mv=new ModelAndView(".detailpage.detailpg");
 			mv.addObject("phone",phone);
-			System.out.println(phone);
 			mv.addObject("list",list);
 			mv.addObject("list1",list1);
 			mv.addObject("list2",list2);

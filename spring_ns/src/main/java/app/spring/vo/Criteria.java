@@ -4,6 +4,7 @@ public class Criteria {
 	private int page;
 	private int perPageNum;
 	private String m_phone;
+	private int counts;
 	public Criteria(){
 		this.page=1;
 		this.perPageNum=10;
@@ -25,11 +26,12 @@ public class Criteria {
 	public int getPerPageNum() {
 		return perPageNum;
 	}
-	public void setPerPageNum(int perPageNum) {
-		if(perPageNum <=0 || perPageNum > 100){
-			this.perPageNum = 10;
+	public void setPerPageNum(int pageCount) {
+		int cnt = this.perPageNum;
+		if(pageCount != cnt){
+			this.perPageNum = cnt;
 		}else{
-			this.perPageNum = perPageNum;
+			this.perPageNum = pageCount;
 	
 		}
 	}
@@ -38,6 +40,12 @@ public class Criteria {
 	}
 	public void setM_phone(String m_phone) {
 		this.m_phone = m_phone;
+	}
+	public int getCounts() {
+		return counts;
+	}
+	public void setCounts(int counts) {
+		this.counts = counts;
 	}
 	@Override
 	public String toString() {
