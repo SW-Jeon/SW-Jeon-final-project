@@ -95,7 +95,6 @@ public class BusinessController {
 			return ".sw	Mem.result";
 		}
 	}
-
 	@RequestMapping(value = "/admin/bnUpdate", method = RequestMethod.POST)
 	public String UpdateForm(Model model, BusinessVo vo, int b_num) {
 		try {
@@ -110,11 +109,7 @@ public class BusinessController {
 
 	}
 
-	@RequestMapping(value = "/pj/business", method = RequestMethod.GET)
-	public String insertForm(BusinessVo vo) {
-		return ".pj.business";
 
-	}
 
 	@RequestMapping(value = "/yg/test", method = RequestMethod.GET)
 	public String road(BusinessVo vo) {
