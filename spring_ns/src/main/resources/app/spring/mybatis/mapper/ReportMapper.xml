@@ -6,5 +6,7 @@
 	<insert id="insert" parameterType="reportinsert">
 		insert into report value(0,#{a_id},#{m_phone},#{d_num},#{re_title},#{re_category},#{re_content},null)
 	</insert>
-
+	
+	<update id="changeDab" parameterType="reportinsert"> 
+	</update>
 </mapper>
