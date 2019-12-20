@@ -19,4 +19,7 @@ public class ReviewDao {
 	public List<ReviewVo> list(){
 		return sqlSessionTemplate.selectList(NAMESPACE +".list");
 	} 
+	public List<ReviewVo> list2(int d_num){
+		return sqlSessionTemplate.selectList(NAMESPACE + ".list2",d_num);
+	}
 }
