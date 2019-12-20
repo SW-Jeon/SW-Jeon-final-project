@@ -73,7 +73,7 @@ public class BusinessController {
 	try{
 		service.update(vo);
 		model.addAttribute("vo", service.getInfo(b_num));
-		return ".admin.business.businessUpdate";
+		return "redirect:/admin/businessList";
 	}catch(Exception e){
 		e.printStackTrace();
 		model.addAttribute("code", "fail");

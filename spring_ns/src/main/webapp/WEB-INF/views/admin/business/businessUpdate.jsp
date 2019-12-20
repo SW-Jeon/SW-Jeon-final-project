@@ -19,24 +19,34 @@
 			</div>
 		<c:choose>
 			<c:when test="${vo.b_state =='1'}">
-				<input type="radio"  name="b_state"  checked="checked">등록 대기중
-				<input type="radio"  name="b_state"  >승인 하기
-				<input type="radio"  name="b_state"  >업체 정지
+				<input type="radio"  name="b_state"  value="1" checked="checked">등록 대기중
+				<input type="radio"  name="b_state"  value="2">승인 하기
+				<input type="radio"  name="b_state"  value="4">업체 정지
 			</c:when>
 			<c:when test="${vo.b_state =='2'}">
-				<input type="radio"  name="b_state" >등록 대기중
-				<input type="radio"  name="b_state"  checked="checked">승인 하기
-				<input type="radio"  name="b_state"  >업체 정지
+				<input type="radio"  name="b_state"  value="1"  >등록 대기중
+				<input type="radio"  name="b_state"  value="2"  checked="checked">승인 하기
+				<input type="radio"  name="b_state"  value="4" >업체 정지
 			</c:when>
 			<c:when test="${vo.b_state =='4'}">
-				<input type="radio"  name="b_state"  >등록 대기중
-				<input type="radio"  name="b_state"  >승인 하기
-				<input type="radio"  name="b_state"  checked="checked">업체 정지
+				<input type="radio"  name="b_state"  value="1"  >등록 대기중
+				<input type="radio"  name="b_state"   value="2" >승인 하기
+				<input type="radio"  name="b_state"  value="4" checked="checked">업체 정지
 			</c:when>
 		</c:choose>	
 			<div class="form-group text-center">
-				<button type="submit" class="btn btn-primary">상태변경</button>
+				<button type="submit" class="btn btn-primary" id="radioButton">상태변경</button>
 				<button type="reset" class="btn btn-danger">취소</button>
 			</div>
 	</form>
 </section>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#radioButton').click(function () {
+      // getter
+      var radioVal = $('input[name="b_state"]:checked').val();
+      alert(radioVal);
+    });
+
+  });
+</script>
