@@ -3,20 +3,20 @@
 "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name=".business"  template="/WEB-INF/views/admin/adminlayout.jsp" >
-		<put-attribute name="head" value="/WEB-INF/views/admin/adheader.jsp"/>
-		<put-attribute name="con" value="/WEB-INF/views/admin/adMain.jsp"/>
+	<definition name=".business"  template="/WEB-INF/views/business/bnlayout.jsp" >
+		<put-attribute name="head" value="/WEB-INF/views/business/bnheader.jsp"/>
+		<put-attribute name="con" value="/WEB-INF/views/business/bnMain.jsp"/>
 	</definition>
 	
-	<definition name=".business.*.*.*"  extends=".admin">
+	<definition name=".business.*.*.*"  extends=".business">
 		<put-attribute name="con" value="/WEB-INF/views/admin/{1}/{2}/{3}.jsp"/>
 	</definition>
 	
-	<definition name=".business.*.*"  extends=".admin">
+	<definition name=".business.*.*"  extends=".business">
 		<put-attribute name="con" value="/WEB-INF/views/admin/{1}/{2}.jsp"/>
 	</definition>
 	
-	<definition name=".business.*"  extends=".admin">
+	<definition name=".business.*"  extends=".business">
 		<put-attribute name="con" value="/WEB-INF/views/admin/{1}.jsp"/>
 	</definition>
 	
