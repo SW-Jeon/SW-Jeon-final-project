@@ -41,7 +41,6 @@ public class DetailController {
 			List<FindimgVo> list1=service.findimg(name);
 			List<FindmenuVo> list2=service.findmenu(name);
 			List<ReviewVo> list3=service3.list2(d_num);
-			System.out.println(list3);
 			service2.increhit(d_num);
 			if(phone!=null){
 				Map<String, Object> values=new HashMap<String, Object>();

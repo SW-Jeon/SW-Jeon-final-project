@@ -30,7 +30,6 @@ public class ReviewController {
 	@RequestMapping(value="/pj/review",method=RequestMethod.GET)
 	public String reviewForm(int d_num,Model model){
 		model.addAttribute("d_num",d_num);
-		System.out.println(d_num);
 		return ".pj.review";
 	}
 	
