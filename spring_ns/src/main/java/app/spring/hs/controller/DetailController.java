@@ -1,7 +1,9 @@
 package app.spring.hs.controller;
 
 
-import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,16 +12,19 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import app.spring.hs.service.DetailService;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
 import app.spring.vo.FindmenuVo;
+
 import app.spring.yg.service.SelectListService;
 
 @Controller
@@ -62,42 +67,51 @@ public class DetailController {
 			return ".pj.detailupload";
 		}
 		
-	/*	@RequestMapping(value = "/pj/detailupload",method=RequestMethod.POST)
-	    public String detailupload(0 , String a_id ,String b_num ,String d_sname, Date r_regdate,MultipartHttpServletRequest mtfRequest) {
-	        List<MultipartFile> fileList = mtfRequest.getFiles("file1");
-	    	String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/upload";
-	    
-	        for (MultipartFile mf : fileList) {
-	            String r_pic = mf.getOriginalFilename(); // 원본 파일 명
-	        
-
-	            System.out.println("originFileName : " + r_pic);
-	            System.out.println(uploadPath);
+		@RequestMapping(value = "/pj/detailupload",method=RequestMethod.POST)
+	    public String detailupload(String d_sname, String d_kind, String d_park, String d_holi, String d_time, String d_phone,
+	    		String d_addr,@RequestParam (required=false) List<MultipartFile> file) throws IOException {
+	         HashMap<String,Object> map=new HashMap<String, Object>();
+	         String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/maincss/images/test";
+			try{
+				
+				for(int i=0;i<file.size();i++){		
+	            	map.put("r_pic"+i, file.get(i).getOriginalFilename());
+	            	InputStream fis=file.get(i).getInputStream();
+	            	FileOutputStream fos=
+							new FileOutputStream(uploadPath+"\\" +file.get(i).getOriginalFilename());
+	            	FileCopyUtils.copy(fis, fos);
+					fis.close();
+					fos.close();
+	            }
+			
+			DetailVo vo1=
+					new DetailVo(0, "admin",4 , d_sname, d_kind, d_park, d_holi, d_time, d_phone, d_addr, 0);
+					service.insert(vo1,map);
+	        //    System.out.println("originFileName : " + r_pic);
+	        //    System.out.println(uploadPath,);
 
 	            //String r_pic = path + System.currentTimeMillis() + r_pic1;
 	       //     String r_pic= UUID.randomUUID() + "_" + r_pic1;
 	        //	String r_pic2= uploadPath +"\\"+ UUID.randomUUID() +"_" + r_pic1;
 	            
-	            try {
-	                mf.transferTo(new File(uploadPath,r_pic));
-
+	          
+	        /*
 				//DB에 저장하기
-	        DetailVo vo=
-			new DetailVo(0, d_num , m_phone, r_content, r_score, r_pic, 0, r_regdate);
-		    service.insert(vo);
-
-
-	            } catch (IllegalStateException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            } catch (IOException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
-	        }
-
+	        DetailVo vo1=
+			new DetailVo(0, "admin",1, d_sname, d_kind, d_park, d_holi, d_time, d_phone, d_addr, 0);
+	        
+		   // service.insert(vo);
+	        
+	        try {
+				service.insert(vo1,r_pic);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			*/
+	       }catch (Exception e) {
+		  e.printStackTrace();
+		}
 	        return ".main";
 	    }
-
-*/
 		}

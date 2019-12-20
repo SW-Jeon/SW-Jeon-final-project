@@ -16,7 +16,7 @@ function openZipSearch() {
 	}).open();
 }
 </script>
-<form method="post" action="${cp }/pj/detailupload">
+<form method="post" action="${cp }/pj/detailupload" enctype="multipart/form-data">
 	<div class="mt-5 w-300" style="margin-left:500px;">
 		<div class="col-md-6">
 		음식점 이름
@@ -29,16 +29,16 @@ function openZipSearch() {
 				<option value="중식">중식</option>
 				<option value="일식">일식</option>
 				<option value="카페">카페</option>
-				<option value="세계 음식">세계 음식</option>
+				<option value="세계음식">세계음식</option>
 			</select>
 		</div>
 			주차 여부<br>
 		<div class="btn-group-toggle" data-toggle="buttons" >		
 			<label class="btn btn-danger">	
-				<input type="radio" name="d_park"  >o
+				<input type="radio" name="d_park"  value="o" >o
 			</label>			
 			<label class="btn btn-danger">	
-				<input type="radio" name="d_park" >x
+				<input type="radio" name="d_park"  value="x">x
 			</label>
 		</div>
 		<div>
@@ -62,15 +62,15 @@ function openZipSearch() {
 		</div>
 		<div>
 			파일 첨부<br>
-	         <input multiple="multiple" type="file" name="file1"  ><br>
+	         <input multiple="multiple" type="file" name="file"  ><br>
          </div>
-         	<div>
-         
+         <div>
+         	<button type="submit" class="btn btn-primary mt-3">등록</button>
+			<button type="reset" class="btn btn-primary mt-3">취소</button> 
          </div>
 	</div>
 	
-         
-         
+`
 	
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

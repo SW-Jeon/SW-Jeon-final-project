@@ -22,7 +22,6 @@ public class DetailVo {
 		this.a_id = a_id;
 		this.b_num = b_num;
 		this.d_sname = d_sname;
-		
 		this.d_kind = d_kind;
 		this.d_park = d_park;
 		this.d_holi = d_holi;
