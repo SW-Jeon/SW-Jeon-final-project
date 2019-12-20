@@ -38,4 +38,7 @@ public class SelectListDao {
 	public int foodcount(String m_phone){
 		return sqlSessionTemplate.selectOne(NAMESPACE+".foodcount",m_phone);
 	}
+	public int fooddelete(String m_phone){
+		return sqlSessionTemplate.delete(NAMESPACE+".fooddelete",m_phone);
+	}
 }

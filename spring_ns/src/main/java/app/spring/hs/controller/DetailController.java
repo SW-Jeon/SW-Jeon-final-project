@@ -40,6 +40,10 @@ public class DetailController {
 				values.put("d_num", d_num);
 				if(service2.checkfood(values)==null){
 					service2.joinfood(values);
+					int count=service2.foodcount(phone);
+					List<DetailVo> flist=service2.foodlist(phone);
+					session.setAttribute("count", count);
+					session.setAttribute("flist", flist);
 				}
 			}
 			ModelAndView mv=new ModelAndView(".detailpage.detailpg");

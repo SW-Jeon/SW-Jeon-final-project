@@ -10,7 +10,7 @@
     <if test="food != null and food !=''">
         and d_kind=#{food}
     </if>
-    <if test="park != null and park !=''">
+    <if test="park != null and park !='' and park !=x">
         and d_park=#{park}
     </if>
     	group by d.d_num order by ${standard}
@@ -33,4 +33,7 @@
 	<select id="foodcount" parameterType="String" resultType="int">
 		select count(f_num) from food where m_phone=#{m_phone};
 	</select>
+	<delete id="fooddelete" parameterType="String">
+		delete from food where m_phone=#{m_phone};
+	</delete>
 </mapper>

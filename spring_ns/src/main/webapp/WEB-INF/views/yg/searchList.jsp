@@ -188,7 +188,7 @@ function action8(){
 	<c:when test="${not empty list }">
 <jsp:include page="/WEB-INF/views/api/api.jsp" flush="false"/><br>
 <div class="container-fluid">
-<div class="row">
+<div class="row" style="height:465px; overflow-y:scroll;">
 <c:set var="count" value="0"/>
 <c:forEach var="i" items="${list }">
 <div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}','${i.d_num }')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">

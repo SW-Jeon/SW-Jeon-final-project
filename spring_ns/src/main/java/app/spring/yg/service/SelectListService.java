@@ -37,4 +37,7 @@ public class SelectListService {
 	public int foodcount(String m_phone){
 		return dao.foodcount(m_phone);
 	}
+	public int fooddelete(String m_phone){
+		return dao.fooddelete(m_phone);
+	}
 }
