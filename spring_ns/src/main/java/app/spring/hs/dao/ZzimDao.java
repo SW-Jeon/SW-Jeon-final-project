@@ -1,5 +1,7 @@
 package app.spring.hs.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,7 +18,7 @@ public class ZzimDao {
 	public int delete(int d_num){
 		return sqlsessionTemplate.delete(NAMESPACE+".delete",d_num);
 	}
-	public ZzimVo select(String m_phone){
-		return sqlsessionTemplate.selectOne(NAMESPACE+".select",m_phone);
+	public List<ZzimVo> select(String m_phone){
+		return sqlsessionTemplate.selectList(NAMESPACE+".select",m_phone);
 	}
 }

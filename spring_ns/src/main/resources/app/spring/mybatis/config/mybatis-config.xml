@@ -16,13 +16,14 @@
 				<typeAlias type="app.spring.vo.ReportVo" alias="report"/>
 				<typeAlias type="app.spring.vo.SearchListVo" alias="searchList"/>
 				<typeAlias type="app.spring.vo.ZzimListVo" alias="zzimlists"/>
+				<typeAlias type="app.spring.vo.ZzimPageVo" alias="zzimlistss"/>
 				<typeAlias type="app.spring.vo.AdminVo" alias="admin"/>
 				<typeAlias type="app.spring.vo.InfoVo" alias="info"/>
 				<typeAlias type="app.spring.vo.AdVo" alias="ad"/>
 				<typeAlias type="app.spring.vo.CareVo" alias="care"/>
 				<typeAlias type="app.spring.vo.PayVo" alias="pay"/>
 				<typeAlias type="app.spring.vo.StoryVo" alias="story"/>
-				
+				<typeAlias type="app.spring.vo.Criteria" alias="cri"/>
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>

@@ -18,7 +18,7 @@
 	<select id="zzimcount" resultType="int">
 		select count(*) from dish
 	</select>
-	<select id="listpage" resultType="zzimlists" parameterType="String">
-		select R1.*from(select p.p_pic,d.d_sname,d.d_phone,d.d_addr,@rownum:=@rownum+1 as rnum from detail d,dish s,pic p,(select @rownum :=0) as r where d.d_num=s.d_num and d.d_num=p.d_num and s.m_phone=#{m_phone} group by d.d_num limit 2)R1 limit ${pageStart},#{perPageNum}
+	<select id="listpage" resultType="zzimlists" parameterType="cri">
+		select R1.*from(select s.d_num,p.p_pic,d.d_sname,d.d_phone,d.d_addr from detail d left outer join pic p on d.d_num=p.d_num, dish s where d.d_num=s.d_num and s.m_phone=#{m_phone} group by d.d_num limit #{counts})R1 limit #{pageStart},#{perPageNum}
 	</select>
 </mapper>

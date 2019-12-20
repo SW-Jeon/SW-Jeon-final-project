@@ -97,7 +97,7 @@ window.addEventListener('scroll',function(e){
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-
+	<a href="${cp }/chatgo">채팅ㄱ</a>
 	<div
 		style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
