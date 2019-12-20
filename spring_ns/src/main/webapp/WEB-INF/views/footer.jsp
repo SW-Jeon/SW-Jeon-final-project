@@ -32,7 +32,7 @@
              </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="${cp }/admin/policy">회사정책</a>
+             <a href="${cp }/business/businessMain">사업자</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
