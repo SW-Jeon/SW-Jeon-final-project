@@ -47,7 +47,7 @@ public class BusinessDao {
 	
 	//사업자상태조회
 	public BusinessVo getState(BusinessVo vo){
-			return sqlSessionTemplate.selectOne(NAMESPACE + ".getState", vo);
+		return sqlSessionTemplate.selectOne(NAMESPACE + ".getState", vo);
 	}
 	
 }

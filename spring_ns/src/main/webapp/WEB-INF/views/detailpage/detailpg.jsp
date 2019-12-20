@@ -166,9 +166,7 @@ window.addEventListener('scroll',function(e){
 		<input type="hidden" value="${phone }" id="mphone">
 	</div>
 
-	<div id="tag" style="cursor: pointer;">
-
-			<c:forEach var="vo3" items="${list3}">
+	<c:forEach var="vo3" items="${list3}">
 					<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-2">
@@ -200,6 +198,7 @@ window.addEventListener('scroll',function(e){
 					</div>
 				</div>
 			</c:forEach>
+			
 	<div id="tag" style="cursor: pointer;">
 
 		<div id="top">
