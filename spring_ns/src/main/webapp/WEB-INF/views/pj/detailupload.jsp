@@ -35,10 +35,10 @@ function openZipSearch() {
 			주차 여부<br>
 		<div class="btn-group-toggle" data-toggle="buttons" >		
 			<label class="btn btn-danger">	
-				<input type="radio" name="d_park"  >o
+				<input type="radio" name="d_park"  value="o" >o
 			</label>			
 			<label class="btn btn-danger">	
-				<input type="radio" name="d_park" >x
+				<input type="radio" name="d_park"  value="x">x
 			</label>
 		</div>
 		<div>
@@ -62,15 +62,15 @@ function openZipSearch() {
 		</div>
 		<div>
 			파일 첨부<br>
-	         <input multiple="multiple" type="file" name="file1"  ><br>
+	         <input multiple="multiple" type="file" name="file"  id="file" ><br>
          </div>
-         	<div>
-         
+         <div>
+         	<button type="submit" class="btn btn-primary mt-3">등록</button>
+			<button type="reset" class="btn btn-primary mt-3">취소</button> 
          </div>
 	</div>
 	
-         
-         
+`
 	
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

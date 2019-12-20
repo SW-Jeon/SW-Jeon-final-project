@@ -50,10 +50,10 @@ public class ReviewController {
 			MultipartFile file1,HttpSession session){
 		//업로드할 폴더의 절대경로 얻어오기
 		String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/upload";
-		System.out.println(star_input);
-		System.out.println(uploadPath);
+	//	System.out.println(star_input);
+	//	System.out.println(uploadPath);
 		String m_phone=(String)session.getAttribute("m_phone");
-		System.out.println(m_phone);
+	//	System.out.println(m_phone);
 	
 			try{
 				if(!file1.isEmpty()){

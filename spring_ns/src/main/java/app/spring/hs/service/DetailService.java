@@ -4,15 +4,19 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import app.spring.hs.dao.DetailDao;
+import app.spring.js.dao.PicuploadDao;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
 import app.spring.vo.FindmenuVo;
+import app.spring.vo.PicuploadVo;
 
 @Service
 public class DetailService {
 	@Autowired private DetailDao dao;
+	@Autowired private PicuploadDao pDao;
 	public void setDao(DetailDao dao) {
 		this.dao = dao;
 	}
@@ -21,9 +25,16 @@ public class DetailService {
 		return dao.finds(d_sname);
 	}
 	//가게정보 등록
-	public int insert(DetailVo vo){
-		return dao.insert(vo);
+	@Transactional(rollbackFor=Exception.class)
+	public int insert(DetailVo vo,String r_pic) throws Exception{
+		dao.insert1(vo);
+		int d_num=dao.seldnum(vo.getB_num());
+		System.out.println(d_num);
+		PicuploadVo pvo=new PicuploadVo(0, r_pic,d_num);
+		pDao.insert2(pvo);
+		return 1;
 	}
+	
 	
 	public List<DetailVo> findlist(String d_sname){
 		return dao.findlist(d_sname);

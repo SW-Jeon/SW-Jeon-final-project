@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
 import app.spring.vo.FindmenuVo;
+import app.spring.vo.PicuploadVo;
 
 
 @Repository
@@ -30,9 +31,13 @@ public class DetailDao {
 		return sqlSessionTemplate.selectList(NAMESPACE+".findimg",d_sname);
 	}
 	//가게정보 등록
-	public int insert(DetailVo vo){
+	public int insert1(DetailVo vo){
 		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",vo);
 	}
+	public int seldnum(int b_num){
+		return sqlSessionTemplate.selectOne(NAMESPACE+ ".insert",b_num);
+	}
+
 	public List<FindmenuVo> findmenu(String d_sname){
 		return sqlSessionTemplate.selectList(NAMESPACE+".findmenu",d_sname);
 	}
