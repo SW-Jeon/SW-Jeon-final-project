@@ -34,4 +34,10 @@ public class BusinessDao {
 	public int update(BusinessVo vo){
 		return sqlSessionTemplate.update(NAMESPACE+".bnUpdate", vo);
 	}
+	
+	//사업자 로그인
+	public boolean getLog(BusinessVo vo){
+		BusinessVo b = sqlSessionTemplate.selectOne(NAMESPACE + ".getLog",vo);
+		return (b==null)?true:false;
+	}
 }

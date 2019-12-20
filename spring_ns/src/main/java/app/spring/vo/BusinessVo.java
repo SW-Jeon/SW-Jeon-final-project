@@ -5,16 +5,18 @@ public class BusinessVo {
 	private int b_bnum;
 	private String b_phone;
 	private String b_name;
+	private String b_pwd;
 	private String b_state;
 	
 	public BusinessVo(){}
-	
-	public BusinessVo(int b_num, int b_bnum, String b_phone, String b_name, String b_state) {
+
+	public BusinessVo(int b_num, int b_bnum, String b_phone, String b_name, String b_pwd, String b_state) {
 		super();
 		this.b_num = b_num;
 		this.b_bnum = b_bnum;
 		this.b_phone = b_phone;
 		this.b_name = b_name;
+		this.b_pwd = b_pwd;
 		this.b_state = b_state;
 	}
 
@@ -50,6 +52,14 @@ public class BusinessVo {
 		this.b_name = b_name;
 	}
 
+	public String getB_pwd() {
+		return b_pwd;
+	}
+
+	public void setB_pwd(String b_pwd) {
+		this.b_pwd = b_pwd;
+	}
+
 	public String getB_state() {
 		return b_state;
 	}
@@ -57,6 +67,9 @@ public class BusinessVo {
 	public void setB_state(String b_state) {
 		this.b_state = b_state;
 	}
+	
+	
+
 }
 
 	

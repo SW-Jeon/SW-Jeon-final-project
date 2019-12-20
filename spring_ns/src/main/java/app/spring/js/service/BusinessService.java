@@ -31,4 +31,8 @@ public class BusinessService {
 	public int update(BusinessVo vo){
 		return bDao.update(vo);
 	}
+	//사업자 로그인
+	public boolean getLog(BusinessVo vo){
+		return bDao.getLog(vo);
+	}
 }

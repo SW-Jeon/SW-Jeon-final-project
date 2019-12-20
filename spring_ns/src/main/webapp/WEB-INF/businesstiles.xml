@@ -3,21 +3,21 @@
 "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name=".business"  template="/WEB-INF/views/business/bnlayout.jsp" >
-		<put-attribute name="head" value="/WEB-INF/views/business/bnheader.jsp"/>
-		<put-attribute name="con" value="/WEB-INF/views/business/bnMain.jsp"/>
+	<definition name=".bs"  template="/WEB-INF/views/pj/bs/bsLayout.jsp" >
+		<put-attribute name="head" value="/WEB-INF/views/pj/bs/bsHeader.jsp"/>
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/bsMain.jsp"/>
 	</definition>
 	
-	<definition name=".business.*.*.*"  extends=".business">
-		<put-attribute name="con" value="/WEB-INF/views/admin/{1}/{2}/{3}.jsp"/>
+	<definition name=".bs.*.*.*"  extends=".bs">
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/{1}/{2}/{3}.jsp"/>
 	</definition>
 	
-	<definition name=".business.*.*"  extends=".business">
-		<put-attribute name="con" value="/WEB-INF/views/admin/{1}/{2}.jsp"/>
+	<definition name=".bs.*.*"  extends=".bs">
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/{1}/{2}.jsp"/>
 	</definition>
 	
-	<definition name=".business.*"  extends=".business">
-		<put-attribute name="con" value="/WEB-INF/views/admin/{1}.jsp"/>
+	<definition name=".bs.*"  extends=".bs">
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/{1}.jsp"/>
 	</definition>
 	
 	
