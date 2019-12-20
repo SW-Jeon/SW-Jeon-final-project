@@ -112,7 +112,7 @@ window.addEventListener('scroll',function(e){
 				<ul style="padding: 0px;">
 					<div style="left: 200px;">
 						<li style="margin-left: 10px" name="lili"><img
-							src="${cp }/resources/dupload/${im.p_pic }"></li>
+							src="${cp }/resources/maincss/images/test/${im.p_pic }"></li>
 					</div>
 				</ul>
 			</c:forEach>
