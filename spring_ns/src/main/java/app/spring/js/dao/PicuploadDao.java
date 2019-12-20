@@ -12,6 +12,6 @@ public class PicuploadDao {
 	private final String NAMESPACE="app.spring.mybatis.mapper.Picupload.Mapper";
 	//사진 등록
 	public int insert2(PicuploadVo pvo){
-		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",pvo);
+		return sqlSessionTemplate.insert(NAMESPACE+ ".insert2",pvo);
 	}
 }

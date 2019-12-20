@@ -4,11 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.DetailMapper">
 	<insert id="insert1" parameterType="app.spring.vo.DetailVo">
-		insert into detail values(0,#{a_id},#{b_num},#{d_name},#{d_kind},#{d_park},#{d_holi},#{d_time},#{d_phone},#{d_addr},0)
+		insert into detail values(0,#{a_id},#{b_num},#{d_sname},#{d_kind},#{d_park},#{d_holi},#{d_time},#{d_phone},#{d_addr},0)
 	</insert>
 	
-	<select id="seldnum" parameterType="int">
-		select d_num from detail where b_num=#{b_num}
+	<select id="seldnum" parameterType="int" resultType="int" >
+		select max(d_num) from detail where b_num=#{b_num}
 	</select>
 	
 	<insert id="insert2"  parameterType="app.spring.vo.PicuploadVo">

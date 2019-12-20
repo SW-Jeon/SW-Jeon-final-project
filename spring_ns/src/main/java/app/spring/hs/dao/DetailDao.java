@@ -32,10 +32,13 @@ public class DetailDao {
 	}
 	//가게정보 등록
 	public int insert1(DetailVo vo){
-		return sqlSessionTemplate.insert(NAMESPACE+ ".insert",vo);
+		return sqlSessionTemplate.insert(NAMESPACE+ ".insert1",vo);
+	}
+	public int insert2(PicuploadVo pvo){
+		return sqlSessionTemplate.insert(NAMESPACE+ ".insert2",pvo);
 	}
 	public int seldnum(int b_num){
-		return sqlSessionTemplate.selectOne(NAMESPACE+ ".insert",b_num);
+		return sqlSessionTemplate.selectOne(NAMESPACE+ ".seldnum",b_num);
 	}
 
 	public List<FindmenuVo> findmenu(String d_sname){

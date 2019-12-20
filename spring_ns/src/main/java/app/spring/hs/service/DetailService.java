@@ -1,5 +1,6 @@
 package app.spring.hs.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,13 @@ public class DetailService {
 	}
 	//가게정보 등록
 	@Transactional(rollbackFor=Exception.class)
-	public int insert(DetailVo vo,String r_pic) throws Exception{
+	public int insert(DetailVo vo,HashMap<String, Object> map) throws Exception{
 		dao.insert1(vo);
 		int d_num=dao.seldnum(vo.getB_num());
-		System.out.println(d_num);
-		PicuploadVo pvo=new PicuploadVo(0, r_pic,d_num);
-		pDao.insert2(pvo);
+		for(int i=0;i<map.size();i++){
+		PicuploadVo pvo=new PicuploadVo(0,(String)map.get("r_pic"+i),d_num);
+		dao.insert2(pvo);
+		}
 		return 1;
 	}
 	

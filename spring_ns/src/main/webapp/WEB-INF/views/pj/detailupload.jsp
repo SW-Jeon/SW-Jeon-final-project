@@ -16,7 +16,7 @@ function openZipSearch() {
 	}).open();
 }
 </script>
-<form method="post" action="${cp }/pj/detailupload">
+<form method="post" action="${cp }/pj/detailupload" enctype="multipart/form-data">
 	<div class="mt-5 w-300" style="margin-left:500px;">
 		<div class="col-md-6">
 		음식점 이름
@@ -29,7 +29,7 @@ function openZipSearch() {
 				<option value="중식">중식</option>
 				<option value="일식">일식</option>
 				<option value="카페">카페</option>
-				<option value="세계 음식">세계 음식</option>
+				<option value="세계 음식">세계음식</option>
 			</select>
 		</div>
 			주차 여부<br>
@@ -62,7 +62,7 @@ function openZipSearch() {
 		</div>
 		<div>
 			파일 첨부<br>
-	         <input multiple="multiple" type="file" name="file"  id="file" ><br>
+	         <input multiple="multiple" type="file" name="file"  ><br>
          </div>
          <div>
          	<button type="submit" class="btn btn-primary mt-3">등록</button>
