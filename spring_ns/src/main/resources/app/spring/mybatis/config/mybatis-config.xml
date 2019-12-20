@@ -13,7 +13,7 @@
   				<typeAlias type="app.spring.vo.FoodVo" alias="food"/>
 				<typeAlias type="app.spring.vo.FindmenuVo" alias="findmenu"/>
 				<typeAlias type="app.spring.vo.ZzimVo" alias="zzim"/>
-				<typeAlias type="app.spring.vo.ReportVo" alias="reportinsert"/>
+				<typeAlias type="app.spring.vo.ReportVo" alias="report"/>
 				<typeAlias type="app.spring.vo.SearchListVo" alias="searchList"/>
 				<typeAlias type="app.spring.vo.ZzimListVo" alias="zzimlists"/>
 				<typeAlias type="app.spring.vo.AdminVo" alias="admin"/>

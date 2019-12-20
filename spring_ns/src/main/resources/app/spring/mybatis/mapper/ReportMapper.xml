@@ -3,10 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.ReportMapper">
-	<insert id="insert" parameterType="reportinsert">
+	<insert id="insert" parameterType="report">
 		insert into report value(0,#{a_id},#{m_phone},#{d_num},#{re_title},#{re_category},#{re_content},null)
 	</insert>
 	
-	<update id="changeDab" parameterType="reportinsert"> 
-	</update>
+	
 </mapper>
