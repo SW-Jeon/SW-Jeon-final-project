@@ -34,7 +34,7 @@ public class AdminMain {
 	public String login(AdminVo vo, HttpSession session, Model model) {
 		boolean vo1 = service.getInfo(vo);
 		if (vo1) {
-			model.addAttribute("code", "fail");
+			model.addAttribute("code", "no");
 			return ".swMem.result";
 		} else {
 			String phone = (String) session.getAttribute("m_phone");
