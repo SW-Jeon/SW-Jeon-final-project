@@ -29,7 +29,7 @@ function openZipSearch() {
 				<option value="중식">중식</option>
 				<option value="일식">일식</option>
 				<option value="카페">카페</option>
-				<option value="세계 음식">세계음식</option>
+				<option value="세계음식">세계음식</option>
 			</select>
 		</div>
 			주차 여부<br>

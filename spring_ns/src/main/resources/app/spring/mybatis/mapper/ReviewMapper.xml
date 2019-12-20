@@ -16,6 +16,6 @@
   	</insert>
   	<!--  리뷰 리스트  출력할거 -->
   	<select id="list"  resultType="review">
-     	select m_phone,r_score,r_content,r_pic from review 
+     	select rpad(substr(m_phone,1,7),length(m_phone),'*') ,r_score,r_content,r_pic from review 
   	</select>
   </mapper>
