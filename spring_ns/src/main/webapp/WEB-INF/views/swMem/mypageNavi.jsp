@@ -8,7 +8,7 @@
 </style>
 
 	<nav class="nav nav-tabs flex-column col-md-2" style="float: left;  height:1200px; width:500px; background-color: #FBEFEF; ">
-		  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="font-weight: bold; font-size:1.2em; "><span>${vo.m_name }</span>  님의 Home</a>
+		  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="font-weight: bold; font-size:1.2em; "><span>${vo.m_name }</span> 님</a>
 		  <a class="nav-link" href=" ${cp }/memUpdate?m_phone=${m_phone}">정보 수정</a>
 		  <a class="nav-link" href=" ${cp }/memDelete?m_phone=${m_phone}" >계정 탈퇴</a>
 		  <a class="nav-link" href="${cp }/swMem/mqMyList?m_phone=${m_phone}">회원 문의</a>

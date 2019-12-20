@@ -15,4 +15,8 @@ public class AdminDao {
 		AdminVo a =  sqlSessionTemplate.selectOne(NAMESPACE+".getInfo", vo);
 		return (a == null) ? true : false;
 	}
+	
+	public AdminVo getA(AdminVo vo){
+		return  sqlSessionTemplate.selectOne(NAMESPACE+".getA", vo);
+	}
 }

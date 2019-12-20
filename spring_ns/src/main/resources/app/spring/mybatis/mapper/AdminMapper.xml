@@ -6,6 +6,10 @@
 	<select id="getInfo" parameterType="admin" resultType="admin">
 		select * from admin where a_id=#{a_id} and a_pwd=#{a_pwd} 
 	</select>
-  
+  	
+  	<!-- 운영자 개인조회 -->
+	<select id="getA" parameterType="admin" resultType="admin">
+		select * from admin where a_id=#{a_id} and a_pwd=#{a_pwd} 
+	</select>
  
   </mapper>

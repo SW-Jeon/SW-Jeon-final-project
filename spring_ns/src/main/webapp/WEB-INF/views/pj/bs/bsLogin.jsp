@@ -27,8 +27,7 @@
 }
 
 </script>
-<body class="bg-info">
-
+<body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">사업자 로그인</div>

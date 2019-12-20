@@ -37,9 +37,12 @@ public class AdminMain {
 			model.addAttribute("code", "no");
 			return ".swMem.result";
 		} else {
-			String phone = (String) session.getAttribute("m_phone");
-			if (phone == null) {
-				session.setAttribute("vo", vo);
+			String m_phone = (String) session.getAttribute("m_phone");
+			String b_phone = (String) session.getAttribute("b_phone");
+			if (m_phone == null && b_phone == null ) {
+				AdminVo vo2=service.getA(vo);
+				String id= vo2.getA_id();
+				session.setAttribute("id", id);
 				return ".admin";
 			}
 		}

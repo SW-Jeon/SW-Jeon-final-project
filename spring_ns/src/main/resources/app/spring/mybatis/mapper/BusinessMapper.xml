@@ -32,4 +32,10 @@
 	<select id="getLog" parameterType="business" resultType="business">
 		select * from business where b_phone=#{b_phone} and b_pwd=#{b_pwd}
 	</select>
+	
+	<!--  사업자 개인 조회 -->
+	<select id="getState" parameterType="business" resultType="business">
+		select * from business where b_phone=#{b_phone} and b_pwd=#{b_pwd}
+	</select>
+	
   </mapper>

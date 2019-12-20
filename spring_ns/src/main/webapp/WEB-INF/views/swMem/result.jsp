@@ -16,9 +16,12 @@
 		</c:when>	
 		<c:when test="${code=='no' }">
 			<img src="${cp }/resources/maincss/images/logo/fail.png" >
-			<h1>비밀번호가 틀렸거나 존재하지않는 회원입니다.</h1>
+			<h1>존재하지 않는 회원입니다.</h1>
 		</c:when>
-		
+		<c:when test="${code=='nono' }">
+			<img src="${cp }/resources/maincss/images/logo/fail.png" >
+			<h1>정지 당하셨습니다.</h1>
+		</c:when>
 	</c:choose>
 	<button class="btn btn-danger mt-5" onclick="location.href='${cp }/' ">홈으로</button>
 </div>

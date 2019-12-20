@@ -48,7 +48,7 @@
 									<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
-				</div>
+					</div>
 			</c:when>
 			<c:otherwise>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 "><!-- 최근본 맛집 -->

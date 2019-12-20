@@ -32,7 +32,6 @@ public class BusinessController {
 	public String adminLogForm() {
 		return "pj/bs/bsLogin";
 	}
-
 	@RequestMapping(value = "/business/bsLogin", method = RequestMethod.POST)
 	public String login(BusinessVo vo, HttpSession session, Model model) {
 		boolean vo1 = service.getLog(vo);
@@ -41,12 +40,21 @@ public class BusinessController {
 			return ".swMem.result";
 		} else {
 			String phone = (String) session.getAttribute("m_phone");
-			if (phone == null) {
-				session.setAttribute("vo", vo);
+			String id = (String) session.getAttribute("a_id");
+			BusinessVo vo2=service.getState(vo);
+			String state=vo2.getB_state();
+			if (phone == null && id ==null && (state.equals("1") || state.equals("2"))) {
+				int num= vo2.getB_num();
+				session.setAttribute("num", num);
 				return ".bs";
+			}else if( state.equals("4")){
+				model.addAttribute("code", "nono");
+				return ".swMem.result";
+			}else{
+				model.addAttribute("code", "no");
+				return ".swMem.result";
 			}
 		}
-		return "redirect:/business/businessLogin";
 	}
 
 	// 로그아웃
@@ -106,11 +114,8 @@ public class BusinessController {
 			model.addAttribute("code", "fail");
 			return ".sw	Mem.result";
 		}
-
 	}
-
-
-
+	//에디터페이지
 	@RequestMapping(value = "/yg/test", method = RequestMethod.GET)
 	public String road(BusinessVo vo) {
 		return ".yg.editor";

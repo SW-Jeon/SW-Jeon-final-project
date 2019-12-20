@@ -35,4 +35,9 @@ public class BusinessService {
 	public boolean getLog(BusinessVo vo){
 		return bDao.getLog(vo);
 	}
+	
+	//사업자 로그인
+		public BusinessVo getState(BusinessVo vo){
+			return bDao.getState(vo);
+		}
 }

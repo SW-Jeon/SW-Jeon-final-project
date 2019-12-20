@@ -14,4 +14,8 @@ public class AdminService {
 	public boolean getInfo(AdminVo vo){
 		return aDao.getInfo(vo);
 	}
+	
+	public AdminVo getA(AdminVo vo){
+		return aDao.getA(vo);
+	}
 }

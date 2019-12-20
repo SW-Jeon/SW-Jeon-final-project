@@ -3,12 +3,11 @@
  <!-- footer.jsp -->
  <style>
  	#foo div ul li a{font-size: 1.4em; color: #FFFFFF;}
- 
  </style>
 <div id="foo"> 
 <div class="container " >
       <div class="col-lg-10 text-center">
-          <ul class="list-inline mb-1   ">
+          <ul class="list-inline mb-1">
             <li class="list-inline-item mt-3">
  			<c:choose>	
 				<c:when test="${empty sessionScope.a_id}">           
