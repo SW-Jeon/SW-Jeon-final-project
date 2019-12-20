@@ -32,10 +32,6 @@
              </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-             <a href="${cp }/business/businessMain">사업자</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
               <a href="${cp }/admin/info">회사소개</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
@@ -43,7 +39,7 @@
           
           <ul class="list-inline mb-2   ">
             <li class="list-inline-item mt-2">
-              <a href="${cp }/pj/business">사업자 등록</a>
+              <a href="${cp }/pj/business">사업자 문의</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
