@@ -3,9 +3,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.ReportMapper">
+	<!-- 신고하기 -->
 	<insert id="insert" parameterType="report">
 		insert into report value(0,#{a_id},#{m_phone},#{d_num},#{re_title},#{re_category},#{re_content},null)
 	</insert>
 	
+	<!-- 신고삭제 -->
+	<delete id="delete"  parameterType="int"  >
+		delete from report where re_num=#{re_num}
+	</delete>
 	
+	<!-- 신고상태 변경 -->
+	<update id="update" parameterType="report">
+		update report set re_state=#{re_state} where re_num=#{re_num}
+	</update>
+	
+	<!-- 신고조회  -->
+	<select id="getInfo"  parameterType="int" resultType="report">
+		select * from report where re_num=#{re_num}
+	</select>
+	
+	<!-- 신고리스트  -->
+	<select id="listAll"  resultType="report">
+		select * from report 
+	</select>
 </mapper>
