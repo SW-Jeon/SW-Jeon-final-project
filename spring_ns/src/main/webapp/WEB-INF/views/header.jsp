@@ -14,8 +14,8 @@
 	function action1(d_sname,d_num){
 		location.href="${cp}/detailpage?name="+d_sname+"&d_num="+d_num;
 	}
-	function action2(d_num,m_phone){
-		location.href="${cp}/zzimOk?d_num="+d_num+"&m_phone="+m_phone
+	function delete2(m_phone){
+		location.href="${cp}/deletepage?m_phone="+m_phone
 	}
 </script>
 <style>
@@ -153,7 +153,7 @@
 			<div class="modal-body">
 					<div class="border-bottom mb-3" ><span  style="font-size: 20px; color: orange;"><b>최근 본 맛집 (${count })</b></span><br></div>
 					<c:forEach var="i" items="${flist }">
-					<div style="text-align: left; width: 400px;" onclick="action1('${i.d_sname}','${i.d_num }')">
+					<div style="text-align: left;" onclick="action1('${i.d_sname}','${i.d_num }')">
 					<div style="float: left; margin-left: 20px; margin-right: 20px;">
 					<c:choose>
 						<c:when test="${empty i.p_pic }">
@@ -166,13 +166,17 @@
 					</div>
 					<div class="mb-3" style="float: left;">
 						<span style="font-size: 20px; color: black">${i.d_sname }</span>&nbsp&nbsp&nbsp<span style="font-size: 20px; color: orange">${i.r_score }</span><br>
-						<span style="color: grey" >${i.d_addr }<br>
+						<span style="color: grey">${i.d_addr }<br>
 						${i.d_kind }<br>
 						${i.d_time }<br>
 						</span>
 					</div>
 					</div>
+					<br><br>
 					</c:forEach>
+					<div style="float: right">
+						<span style="color: grey; font-size: 16px;" onclick="delete2('${m_phone}')">목록 비우기</span>	
+					</div>
 			</div>
 		</div>
 	</div>

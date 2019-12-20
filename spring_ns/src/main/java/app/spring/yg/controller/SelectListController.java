@@ -50,4 +50,13 @@ public class SelectListController {
 		}
 		return mv;
 	}
+	@RequestMapping(value="/deletepage")
+	public String deletepage(String m_phone,HttpSession session){
+		service.fooddelete(m_phone);
+		int count=service.foodcount(m_phone);
+		List<DetailVo> flist=service.foodlist(m_phone);
+		session.setAttribute("count", count);
+		session.setAttribute("flist", flist);
+		return ".main";
+	}
 }
