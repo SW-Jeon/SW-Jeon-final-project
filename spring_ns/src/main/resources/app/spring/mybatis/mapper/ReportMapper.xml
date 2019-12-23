@@ -29,9 +29,10 @@
 	</select>
 	
 	<!--  신고3회이상 당한 업체 조회 -->
-	<select id="getThree"  parameterType="int" resultType="report" >
-		select d_num,a from(
-		select d_num,count(d_num) a from report group by d_num
-		)re where a>3;
+	<select id="getThree"  resultType="reportName" >
+		select d.d_sname,re.black,re_state from (
+		select d_num,count(d_num) black,re_state from report group by d_num
+		)re, detail d where black>3 and re.d_num=d.d_num;
+
 	</select>
 </mapper>

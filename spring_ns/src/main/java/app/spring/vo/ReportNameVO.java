@@ -4,25 +4,29 @@ public class ReportNameVO {
 	private int re_num;
 	private String a_id;
 	private String m_phone;
+	private int d_num;
 	private String d_sname;
 	private String re_title;
 	private String re_content;
 	private String re_category;
 	private String re_state;
+	private int black;
 	
 	public ReportNameVO(){}
 
-	public ReportNameVO(int re_num, String a_id, String m_phone, String d_sname, String re_title, String re_content,
-			String re_category, String re_state) {
+	public ReportNameVO(int re_num, String a_id, String m_phone, int d_num, String d_sname, String re_title,
+			String re_content, String re_category, String re_state, int black) {
 		super();
 		this.re_num = re_num;
 		this.a_id = a_id;
 		this.m_phone = m_phone;
+		this.d_num = d_num;
 		this.d_sname = d_sname;
 		this.re_title = re_title;
 		this.re_content = re_content;
 		this.re_category = re_category;
 		this.re_state = re_state;
+		this.black = black;
 	}
 
 	public int getRe_num() {
@@ -47,6 +51,14 @@ public class ReportNameVO {
 
 	public void setM_phone(String m_phone) {
 		this.m_phone = m_phone;
+	}
+
+	public int getD_num() {
+		return d_num;
+	}
+
+	public void setD_num(int d_num) {
+		this.d_num = d_num;
 	}
 
 	public String getD_sname() {
@@ -88,6 +100,14 @@ public class ReportNameVO {
 	public void setRe_state(String re_state) {
 		this.re_state = re_state;
 	}
-	
+
+	public int getBlack() {
+		return black;
+	}
+
+	public void setBlack(int black) {
+		this.black = black;
+	}
+
 	
 }

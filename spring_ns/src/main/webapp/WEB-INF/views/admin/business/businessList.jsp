@@ -33,16 +33,13 @@
 						<td class="con">${ vo.b_name}</td>
 						<c:choose>
 								<c:when test="${vo.b_state =='1' }">
-								<td class="con"><span  style="color:black;">등록 대기중</span></td>
+								<td class="con"><span  style="color:brown;"><b>등록 대기중</b></span></td>
 								</c:when>
 								<c:when test="${vo.b_state =='2' }">
 								<td class="con"><span  style="color:blue;"><b>승인 완료</b></span></td>
 								</c:when>
 								<c:when test="${vo.b_state =='3' }">
 								<td class="con"><span  style="color:gray;">업체 탈퇴</span></td>
-								</c:when>
-								<c:when test="${vo.b_state =='4' }">
-								<td class="con"><span  style="color:red;"><b>업체 정지</b></span></td>
 								</c:when>
 						</c:choose>
 						<td class="con"><a href="${cp}/admin/businessUpdate?b_num=${vo.b_num}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>

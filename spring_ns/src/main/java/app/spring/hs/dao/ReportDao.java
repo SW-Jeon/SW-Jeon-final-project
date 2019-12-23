@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import app.spring.vo.ReportNameVO;
 import app.spring.vo.ReportVo;
 
 @Repository
@@ -39,7 +40,7 @@ public class ReportDao {
 	}
 	
 	//신고3회이상 당한 업체 조회
-	public ReportVo getThree(int d_num){
-		return sqlsessionTemplate.selectOne(NAMESPACE+".getThree", d_num);
+	public List<ReportNameVO> getThree(){
+		return sqlsessionTemplate.selectList(NAMESPACE+".getThree");
 	}
 }

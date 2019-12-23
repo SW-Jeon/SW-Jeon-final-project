@@ -12,28 +12,22 @@
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-		<h1 class="text-info text-center">업체 신고 현황</h1>
+		<h1 class="text-info text-center">잦은 신고 업체 현황</h1>
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr  class="table-success">
-						<th class="to">번호</th>
-						<th class="to">회원전화번호</th>
 						<th class="to">업체이름</th>
-						<th class="to">제목</th>
-						<th class="to">신고 유형</th>
+						<th class="to">신고횟수</th>
 						<th class="to">업체상태</th>
 						<th class="to">상태변경</th>
 						<th class="to">삭제</th>
 					</tr>
 				</thead>
-		    <c:forEach var="vo" items="${listAll }">		
+		    <c:forEach var="vo" items="${listBlack }">		
 				<tbody>
 					<tr class="table-light">
-						<td class="con">${ vo.re_num}</td>
-						<td class="con">${ vo.m_phone}</td>
 						<td class="con">${ vo.d_sname}</td>
-						<td class="con"><a href="${cp }/admin/bsCareDetail?re_num=${vo.re_num}" data-toggle="tooltip" data-original-title="Detail" >${ vo.re_title}</a></td>
-						<td class="con">${ vo.re_category}</td>
+						<td class="con">${ vo.black}</td>
 						<c:choose>
 								<c:when test="${vo.re_state =='1' }">
 								<td class="con"><span  style="color:black;"><b>신고 접수중</b></span></td>
@@ -51,8 +45,8 @@
 								<td class="con"><span  style="color:hotpink;"><b>업체 정지</b></span></td>
 								</c:when>
 						</c:choose>
-						<td class="con"><a href="${cp}/admin/bsCareUpdate?re_num=${vo.re_num}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
-						<td class="con"><a href="${cp}/admin/bsCareDelete?re_num=${vo.re_num}" data-toggle="tooltip" data-original-title="Remove" ><i class="fa fa-times" style="color: red;"></i></a></td>
+						<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_sname=${vo.d_sname}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
+						<td class="con"><a href="${cp}/admin/bsBlackDelete?d_sname=${vo.d_sname}" data-toggle="tooltip" data-original-title="Remove" ><i class="fa fa-times" style="color: red;"></i></a></td>
 					</tr>
 				</tbody>
 			</c:forEach>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.spring.hs.dao.ReportDao;
+import app.spring.vo.ReportNameVO;
 import app.spring.vo.ReportVo;
 
 @Service
@@ -37,7 +38,7 @@ public class ReportService {
 	}
 	
 	//신고3회이상 당한 업체 조회
-	public ReportVo getThree(int d_num){
-		return Rdao.getThree(d_num);
+	public List<ReportNameVO> getThree(){
+		return Rdao.getThree();
 	}
 }
