@@ -5,7 +5,7 @@
 <mapper namespace="app.spring.mybatis.mapper.ReportMapper">
 	<!-- 신고하기 -->
 	<insert id="insert" parameterType="report">
-		insert into report value(0,#{a_id},#{m_phone},#{d_num},#{re_title},#{re_category},#{re_content},null)
+		insert into report value(0,#{a_id},#{m_phone},#{d_num},#{re_title},#{re_category},#{re_content},1)
 	</insert>
 	
 	<!-- 신고삭제 -->
@@ -24,7 +24,14 @@
 	</select>
 	
 	<!-- 신고리스트  -->
-	<select id="listAll"  resultType="report">
-		select * from report 
+	<select id="listAll"  resultType="reportName">
+		select re_num,m_phone,d.d_sname,re_title,re_category,re_content,re_state from report r,detail d where r.d_num=d.d_num
+	</select>
+	
+	<!--  신고3회이상 당한 업체 조회 -->
+	<select id="getThree"  parameterType="int" resultType="report" >
+		select d_num,a from(
+		select d_num,count(d_num) a from report group by d_num
+		)re where a>3;
 	</select>
 </mapper>

@@ -44,4 +44,5 @@ public class DetailDao {
 	public List<FindmenuVo> findmenu(String d_sname){
 		return sqlSessionTemplate.selectList(NAMESPACE+".findmenu",d_sname);
 	}
+	
 }

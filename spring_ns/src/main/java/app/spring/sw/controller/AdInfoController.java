@@ -71,7 +71,7 @@ public class AdInfoController {
 	@RequestMapping(value = "/admin/infoDetail", method = RequestMethod.GET)
 	public String Detail(Model model, int i_num) {
 		try {
-			model.addAttribute("vo", inService.detail(i_num));
+			model.addAttribute("vo",inService.detail(i_num));
 			return ".admin.info.infoDetail";
 		} catch (Exception e) {
 			e.printStackTrace();

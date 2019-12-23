@@ -34,5 +34,4 @@
 		select m.me_name,m.me_pay from detail d,menu m where d.d_num=m.d_num and d.d_sname=#{d_sname};
 	</select>
 	
-	
 </mapper>

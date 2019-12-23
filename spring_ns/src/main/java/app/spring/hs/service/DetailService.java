@@ -51,7 +51,8 @@ public class DetailService {
 	public List<FindmenuVo> findmenu(String d_sname){
 		return dao.findmenu(d_sname);
 	}
-
+	
+	
 
 
 }

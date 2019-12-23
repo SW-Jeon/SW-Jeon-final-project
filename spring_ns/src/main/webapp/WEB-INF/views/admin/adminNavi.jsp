@@ -19,7 +19,7 @@
 		       		<a class="nav-link" href="${cp }/admin/businessList"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체승인목록</span></a>
 		      </li>  
 		       <li class="nav-item">
-		       		<a class="nav-link" href="#"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체관리</span></a>
+		       		<a class="nav-link" href="${cp }/admin/bsCare"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체관리</span></a>
 		      </li>  
 		        <li class="nav-item">
 		       		<a class="nav-link" href="#"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고</span></a>
