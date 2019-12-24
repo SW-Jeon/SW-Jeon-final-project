@@ -1,8 +1,10 @@
 package app.spring.js.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.js.service.BusinessService;
 import app.spring.vo.BusinessVo;
+import app.spring.vo.DetailVo;
 
 @Controller
 public class BusinessController {
-	@Autowired
-	private BusinessService service;
+	@Autowired private BusinessService service;
 
 	// 사업자 메인페이지
 	@RequestMapping(value = "/business/businessMain")
@@ -34,8 +36,9 @@ public class BusinessController {
 		return "pj/bs/bsLogin";
 	}
 	@RequestMapping(value = "/business/bsLogin", method = RequestMethod.POST)
-	public String login(BusinessVo vo, HttpSession session, Model model) {
+	public String login(BusinessVo vo, HttpSession session, Model model,HttpServletResponse response) throws Exception {
 		boolean vo1 = service.getLog(vo);
+
 		if (vo1) {
 			model.addAttribute("code", "no");
 			return ".swMem.result";
@@ -44,9 +47,23 @@ public class BusinessController {
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
 			String state=vo2.getB_state();
+			DetailVo vo31=service.getbd(vo.getB_phone());
+		    int r_state2=service.getrstate(vo31);
 			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
 				session.setAttribute("num", num);
+				if(r_state2==4){
+					//alert띄우기	
+					response.setContentType("text/html; charset=UTF-8");
+					PrintWriter out = response.getWriter();
+					out.println("<script>alert('경고당하셨군요~ 개선바랍니다.');</script>");
+					out.flush();
+				}else if(r_state2==5){	
+					response.setContentType("text/html; charset=UTF-8");
+					PrintWriter out = response.getWriter();
+					out.println("<script>alert('업체 정지가 되셨습니다. 운영자에게 문의 바랍니다.');</script>");
+					out.flush();
+				}
 				return ".bs";
 			}else if( state.equals("1")){
 				model.addAttribute("code", "nono");

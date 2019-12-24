@@ -37,4 +37,9 @@
 	<update id="getUpdate"  parameterType="reportName" >
 		 update report set re_state=4 where d_num=#{d_num} and 4>=re_state
 	</update>
+	
+	<!-- 신고 당한 업체 조회  -->
+	<select id="getState"  parameterType="report" resultType="report">
+		select * from report where re_state=#{re_state} 
+	</select>
 </mapper>

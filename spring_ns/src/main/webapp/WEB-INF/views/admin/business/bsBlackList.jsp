@@ -28,13 +28,16 @@
 						<td class="con">${ vo.d_num}</td>
 						<td class="con">${ vo.black}</td>
 						<c:choose>
-						<c:when test="${vo.re_state ==1 ||  vo.re_state == 2 ||  vo.re_state ==3}">
-						<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
-						</c:when><c:otherwise>
-						<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>
+						<c:when test="${vo.re_state == 1 ||  vo.re_state == 2 ||  vo.re_state == 3}">
+							<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Alert" ><i class="fas fa-thumbs-down"></i></a></td>
+						</c:when>
+						<c:when test="${vo.re_state == 4}">
+							<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Stop" ><i class="fas fa-skull"></i>1</a></td>
+						</c:when>
+						<c:otherwise>
+							<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-redo-alt"></i></a></td>
 						</c:otherwise>
 						</c:choose>
-						<td class="con"><a href="${cp}/admin/bsBlackDelete?d_sname=${vo.d_sname}" data-toggle="tooltip" data-original-title="Remove" ><i class="fa fa-times" style="color: red;"></i></a></td>
 					</tr>
 				</tbody>
 			</c:forEach>

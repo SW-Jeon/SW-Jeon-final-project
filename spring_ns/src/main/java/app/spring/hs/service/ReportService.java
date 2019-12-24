@@ -46,4 +46,10 @@ public class ReportService {
 	public int getUpdate(ReportNameVO vo){
 		return Rdao.getUpdate(vo);
 	}
+	
+	//신고 업체 상태 조회
+	public ReportVo getState(ReportVo vo){
+		return Rdao.getState(vo);
+	}
+	
 }

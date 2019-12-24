@@ -88,6 +88,13 @@ public class ReportVo {
 	public void setRe_state(int re_state) {
 		this.re_state = re_state;
 	}
+
+	@Override
+	public String toString() {
+		return "ReportVo [re_num=" + re_num + ", a_id=" + a_id + ", m_phone=" + m_phone + ", d_num=" + d_num
+				+ ", re_title=" + re_title + ", re_content=" + re_content + ", re_category=" + re_category
+				+ ", re_state=" + re_state + "]";
+	}
 	
 	
 	

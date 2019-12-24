@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import app.spring.vo.BusinessVo;
+import app.spring.vo.DetailVo;
 
 @Repository
 public class BusinessDao {
@@ -44,10 +45,20 @@ public class BusinessDao {
 		BusinessVo b = sqlSessionTemplate.selectOne(NAMESPACE + ".getLog", vo);
 		return (b == null) ? true : false;
 	}
-	
-	//사업자상태조회
-	public BusinessVo getState(BusinessVo vo){
+
+	// 사업자상태조회
+	public BusinessVo getState(BusinessVo vo) {
 		return sqlSessionTemplate.selectOne(NAMESPACE + ".getState", vo);
 	}
-	
+
+	// b_num과 d_num얻어오기
+	public DetailVo getbd(String phone) {
+		return sqlSessionTemplate.selectOne(NAMESPACE + ".getbd", phone);
+	}
+
+	// rtate얻어오기
+	public int getrstate(DetailVo vo) {
+		return sqlSessionTemplate.selectOne(NAMESPACE + ".getrstate", vo);
+	}
+
 }

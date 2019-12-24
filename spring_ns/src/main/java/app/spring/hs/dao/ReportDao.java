@@ -48,4 +48,9 @@ public class ReportDao {
 	public int getUpdate(ReportNameVO vo){
 		return sqlsessionTemplate.update(NAMESPACE+".getUpdate",vo);
 	}
+	
+	//신고 업체 상태 조회
+	public ReportVo getState(ReportVo vo){
+		return sqlsessionTemplate.selectOne(NAMESPACE+".getInfo",vo);
+	}
 }
