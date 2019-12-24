@@ -44,8 +44,8 @@ public class ReportDao {
 		return sqlsessionTemplate.selectList(NAMESPACE+".getThree");
 	}
 	
-	//상태 변경 
-	public int getUpdate(int d_num){
-		return sqlsessionTemplate.delete(NAMESPACE+".update",d_num);
+	//신고 3회이상 당한 업체 경고상태로 변경하기 
+	public int getUpdate(ReportVo vo){
+		return sqlsessionTemplate.update(NAMESPACE+".update",vo);
 	}
 }

@@ -30,11 +30,11 @@
 	
 	<!--  신고3회이상 당한 업체 조회 -->
 	<select id="getThree"  resultType="reportName" >
-		select d_num,count(d_num),re_state from report where 3>=re_state group by d_num having count(d_num)>2
+		select d.d_sname,r.d_num,count(r.d_num) black,r.re_state from report r,detail d where 3>=r.re_state and r.d_num=d.d_num group by r.d_num having count(r.d_num)>2
 	</select>
 	
-	<!-- 신고 당한 업체 상태 업데이트 -->
-	<update id="getUpdate" parameterType="int" >
+	<!-- 신고 3회이상 당한 업체 경고상태로 변경하기 -->
+	<update id="getUpdate" parameterType="reportName" >
 		 update report set re_state=4 where d_num=#{d_num} and 4>=re_state
 	</update>
 </mapper>

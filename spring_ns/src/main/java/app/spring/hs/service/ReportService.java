@@ -41,8 +41,9 @@ public class ReportService {
 	public List<ReportNameVO> getThree(){
 		return Rdao.getThree();
 	}
-	//상태 변경 
-	public int getUpdate(int d_num){
-		return Rdao.getUpdate(d_num);
+	
+	//신고 3회이상 당한 업체 경고상태로 변경하기
+	public int getUpdate(ReportVo vo){
+		return Rdao.getUpdate(vo);
 	}
 }

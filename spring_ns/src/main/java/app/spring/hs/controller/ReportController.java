@@ -79,10 +79,12 @@ public class ReportController {
 	
 	//블랙리트스 상태변경
 	@RequestMapping(value="/admin/bsBlackUpdate",method = RequestMethod.GET)
-	public String update1(int d_num,Model model){
+	public String update1(int d_num,int re_state,Model model,ReportVo vo){
 		try{
-			service.getUpdate(d_num);
-			return "redirect:/admin/bsBlack";
+			System.out.println(re_state);
+			System.out.println(d_num);
+			model.addAttribute("vo",service.getUpdate(vo));
+			return "redirect:/admin/bsCare";
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");

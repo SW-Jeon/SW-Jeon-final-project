@@ -35,19 +35,19 @@
 						<td class="con"><a href="${cp }/admin/bsCareDetail?re_num=${vo.re_num}" data-toggle="tooltip" data-original-title="Detail" >${ vo.re_title}</a></td>
 						<td class="con">${ vo.re_category}</td>
 						<c:choose>
-								<c:when test="${vo.re_state =='1' }">
+								<c:when test="${vo.re_state ==1 }">
 								<td class="con"><span  style="color:black;"><b>신고 접수중</b></span></td>
 								</c:when>
-								<c:when test="${vo.re_state =='2' }">
+								<c:when test="${vo.re_state ==2 }">
 								<td class="con"><span  style="color:blue;"><b>신고 확인중</b></span></td>
 								</c:when>
-								<c:when test="${vo.re_state =='3' }">
+								<c:when test="${vo.re_state ==3 }">
 								<td class="con"><span  style="color:orange;"><b>처리 완료</b></span></td>
 								</c:when>
-								<c:when test="${vo.re_state =='4' }">
+								<c:when test="${vo.re_state ==4}">
 								<td class="con"><span  style="color:red;"><b>업체 경고</b></span></td>
 								</c:when>
-								<c:when test="${vo.re_state =='5' }">
+								<c:when test="${vo.re_state ==5 }">
 								<td class="con"><span  style="color:hotpink;"><b>업체 정지</b></span></td>
 								</c:when>
 						</c:choose>
