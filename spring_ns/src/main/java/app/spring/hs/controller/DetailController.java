@@ -49,6 +49,10 @@ public class DetailController {
 				if(service2.checkfood(values)==null){
 					service2.joinfood(values);
 					int count=service2.foodcount(phone);
+					if(count>5){
+						values.put("del",count-5);
+						service2.foodautodel(values);
+					}
 					List<DetailVo> flist=service2.foodlist(phone);
 					session.setAttribute("count", count);
 					session.setAttribute("flist", flist);

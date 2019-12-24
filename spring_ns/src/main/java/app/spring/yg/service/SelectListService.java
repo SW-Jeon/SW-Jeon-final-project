@@ -40,4 +40,10 @@ public class SelectListService {
 	public int fooddelete(String m_phone){
 		return dao.fooddelete(m_phone);
 	}
+	public int foodautodel(Map<String, Object>values){
+		return dao.foodautodel(values);
+	}
+	public int searchCount(Map<String, Object>values){
+		return dao.searchcount(values);
+	}
 }
