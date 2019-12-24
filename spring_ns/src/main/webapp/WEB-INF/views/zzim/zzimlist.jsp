@@ -11,11 +11,9 @@
 	}
 </style>
 <script>
-	function init(){
-	document.getElementById("path").value=location.pathname + location.serch;
-	}
+	
 </script>
-<div onload="init()">
+<div>
 	<input type="hidden" name="path" id="path">
 	<table style="border: 1px solid black; margin-left: 50px; margin-top: 100px;" >
 		<th>업체사진</th>
@@ -24,7 +22,7 @@
 		<th>주소</th>
 		<th>상세페이지로가기</th>
 		<th>삭제</th>
-		<c:forEach var="vo" items="${list }" >
+		<c:forEach var="vo" items="${list }">
 		
 		
 		<tr>
