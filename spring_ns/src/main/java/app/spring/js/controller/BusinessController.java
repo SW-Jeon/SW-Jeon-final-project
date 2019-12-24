@@ -43,12 +43,15 @@ public class BusinessController {
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
 			String state=vo2.getB_state();
-			if (phone == null && id ==null && (state.equals("1") || state.equals("2"))) {
+			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
 				session.setAttribute("num", num);
 				return ".bs";
-			}else if( state.equals("4")){
+			}else if( state.equals("1")){
 				model.addAttribute("code", "nono");
+				return ".swMem.result";
+			}else if( state.equals("3")){
+				model.addAttribute("code", "drop");
 				return ".swMem.result";
 			}else{
 				model.addAttribute("code", "no");

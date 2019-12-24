@@ -43,7 +43,7 @@ public class ReportService {
 	}
 	
 	//신고 3회이상 당한 업체 경고상태로 변경하기
-	public int getUpdate(ReportVo vo){
+	public int getUpdate(ReportNameVO vo){
 		return Rdao.getUpdate(vo);
 	}
 }

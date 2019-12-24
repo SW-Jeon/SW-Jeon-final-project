@@ -39,7 +39,7 @@
 								<td class="con"><span  style="color:blue;"><b>승인 완료</b></span></td>
 								</c:when>
 								<c:when test="${vo.b_state =='3' }">
-								<td class="con"><span  style="color:gray;">업체 탈퇴</span></td>
+								<td class="con"><span  style="color:gray;">사업체 탈퇴</span></td>
 								</c:when>
 						</c:choose>
 						<td class="con"><a href="${cp}/admin/businessUpdate?b_num=${vo.b_num}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-edit"></i></a></td>

@@ -20,7 +20,7 @@
 		</c:when>
 		<c:when test="${code=='nono' }">
 			<img src="${cp }/resources/maincss/images/logo/fail.png" >
-			<h1>정지 당하셨습니다.</h1>
+			<h1>사업체 승인 대기중입니다.</h1>
 		</c:when>
 	</c:choose>
 	<button class="btn btn-danger mt-5" onclick="location.href='${cp }/' ">홈으로</button>

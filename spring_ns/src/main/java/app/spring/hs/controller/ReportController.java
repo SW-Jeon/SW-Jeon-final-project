@@ -77,20 +77,7 @@ public class ReportController {
 	}
 	
 	
-	//블랙리트스 상태변경
-	@RequestMapping(value="/admin/bsBlackUpdate",method = RequestMethod.GET)
-	public String update1(int d_num,int re_state,Model model,ReportVo vo){
-		try{
-			System.out.println(re_state);
-			System.out.println(d_num);
-			service.getUpdate(vo);
-			return "redirect:/admin/bsCare";
-		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("code", "fail");
-			return ".swMem.result";
-		}
-	}
+	
 	// 신고 전체리스트
 	@RequestMapping(value = "/admin/bsCare", method = RequestMethod.GET)
 	public String list(Model model, String d_sname) {
@@ -131,4 +118,16 @@ public class ReportController {
 			return ".swMem.result";
 		}
 	}
+	//블랙리트스 3회이상 업체 경고로 상태변경
+		@RequestMapping(value="/admin/bsBlackUpdate",method = RequestMethod.GET)
+		public String update1(Model model,ReportNameVO vo){
+			try{
+				service.getUpdate(vo);
+				return "redirect:/admin/bsCare";
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("code", "fail");
+				return ".swMem.result";
+			}
+		}
 }
