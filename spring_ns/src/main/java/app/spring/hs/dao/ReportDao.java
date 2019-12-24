@@ -53,4 +53,9 @@ public class ReportDao {
 	public ReportVo getState(ReportVo vo){
 		return sqlsessionTemplate.selectOne(NAMESPACE+".getInfo",vo);
 	}
+	
+	//업체 경고에서 업체 정지 상태변경하기
+	public int getStop(ReportNameVO vo){
+		return sqlsessionTemplate.update(NAMESPACE+".getStop", vo);
+	}
 }

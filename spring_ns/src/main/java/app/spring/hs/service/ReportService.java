@@ -52,4 +52,8 @@ public class ReportService {
 		return Rdao.getState(vo);
 	}
 	
+	//업체 경고에서 업체 정지 상태변경하기
+	public int getStop(ReportNameVO vo){
+		return Rdao.getStop(vo);
+	}		
 }

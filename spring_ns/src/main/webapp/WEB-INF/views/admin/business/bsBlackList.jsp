@@ -19,24 +19,23 @@
 						<th class="to">업체이름</th>
 						<th class="to">신고횟수</th>
 						<th class="to">업체상태</th>
-						<th class="to">삭제</th>
 					</tr>
 				</thead>
 		    <c:forEach var="vo" items="${listBlack }">		
 				<tbody>
 					<tr class="table-light">
-						<td class="con">${ vo.d_num}</td>
+						<td class="con">${ vo.d_sname}</td>
 						<td class="con">${ vo.black}</td>
 						<c:choose>
-						<c:when test="${vo.re_state == 1 ||  vo.re_state == 2 ||  vo.re_state == 3}">
-							<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Alert" ><i class="fas fa-thumbs-down"></i></a></td>
-						</c:when>
-						<c:when test="${vo.re_state == 4}">
-							<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Stop" ><i class="fas fa-skull"></i>1</a></td>
-						</c:when>
-						<c:otherwise>
-							<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-redo-alt"></i></a></td>
-						</c:otherwise>
+							<c:when test="${vo.re_state == 1 ||  vo.re_state == 2 ||  vo.re_state == 3}">
+								<td class="con"><a href="${cp}/admin/bsBlackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Alert" ><i class="fas fa-thumbs-down"></i></a></td>
+							</c:when>
+							<c:when test="${vo.re_state == 4}">
+								<td class="con"><a href="${cp}/admin/bsStopUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Stop" ><i class="fas fa-skull"></i></a></td>
+							</c:when>
+							<c:when test="${vo.re_state == 5}">
+								<td class="con"><a href="${cp}/admin/BackUpdate?d_num=${vo.d_num}&re_state=${vo.re_state}" data-toggle="tooltip" data-original-title="Update" ><i class="fas fa-redo-alt"></i></a></td>
+							</c:when>
 						</c:choose>
 					</tr>
 				</tbody>
