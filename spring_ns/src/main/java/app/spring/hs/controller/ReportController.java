@@ -143,7 +143,13 @@ public class ReportController {
 			return ".swMem.result";
 		}
 	}
-
+	
+	//블랙리스트에서 경고된 업체 상태 변경
+	@RequestMapping(value="/admin/BackUpdate", method = RequestMethod.GET)
+	public String upForm(Model model, int d_num){
+		model.addAttribute("vo",service.getThree());
+		return ".admin.business.bsBlackBack";
+	}
 	
 
 }

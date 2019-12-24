@@ -47,4 +47,5 @@
 	<select id="getState"  parameterType="report" resultType="report">
 		select * from report where re_state=#{re_state} 
 	</select>
+	
 </mapper>
