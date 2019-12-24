@@ -13,7 +13,7 @@
     <if test="park != null and park !='' and park !=x">
         and d_park=#{park}
     </if>
-    	group by d.d_num order by ${standard}
+    	group by d.d_num order by ${standard} limit ${startrow},${endrow}
   	</select>
   	<update id="increhit" parameterType="int">
 		update detail set d_hit=d_hit+1 where d_num=#{d_num};
@@ -28,7 +28,7 @@
 		insert into food values(0,#{d_num},#{m_phone});
 	</insert>
 	<select id="foodlist" parameterType="String" resultType="searchList">
-		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,round(avg(r.r_score),1) r_score, p.p_pic from food f inner join detail d on f.d_num=d.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where f.m_phone=#{m_phone} group by d.d_num order by f.f_num;
+		select d.d_num,d.d_sname,d.d_addr,d.d_kind,d.d_time,round(avg(r.r_score),1) r_score, p.p_pic from food f inner join detail d on f.d_num=d.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where f.m_phone=#{m_phone} group by d.d_num order by f.f_num desc;
 	</select>
 	<select id="foodcount" parameterType="String" resultType="int">
 		select count(f_num) from food where m_phone=#{m_phone};
@@ -36,4 +36,20 @@
 	<delete id="fooddelete" parameterType="String">
 		delete from food where m_phone=#{m_phone};
 	</delete>
+	<delete id="foodautodel" parameterType="map">
+		delete from food where f_num in (select * from ( (select f_num from food where m_phone=#{m_phone} order by f_num desc limit 5,#{del}) as fod) ) limit #{del}
+	</delete>
+	<select id="searchCount" parameterType="map" resultType="int"> 
+  		select count(d_num) from (select d.d_num from detail d left outer join menu m on d.d_num=m.d_num left outer join review r on d.d_num=r.d_num left outer join pic p on d.d_num=p.d_num where (d.d_addr like concat('%',#{keyword},'%') or d.d_sname like concat('%',#{keyword},'%') or m.me_name like concat('%',#{keyword},'%'))
+    <if test="pri != null and pri !=''">
+        and TRUNCATE(m.me_pay/10000,0)=#{pri}
+    </if>
+    <if test="food != null and food !=''">
+        and d_kind=#{food}
+    </if>
+    <if test="park != null and park !='' and park !=x">
+        and d_park=#{park}
+    </if>
+    	group by d.d_num order by ${standard})s
+  	</select>
 </mapper>

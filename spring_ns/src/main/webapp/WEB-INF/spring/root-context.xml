@@ -41,6 +41,9 @@
  	 <context:component-scan base-package="app.spring.js">
 			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
+	<context:component-scan base-package="app.spring.yg">
+			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 		
 		
 	<!-- 계정 비밀번호 이메일로 보내는데 필요한 것  -->
