@@ -41,4 +41,8 @@ public class ReportService {
 	public List<ReportNameVO> getThree(){
 		return Rdao.getThree();
 	}
+	//상태 변경 
+	public int getUpdate(int d_num){
+		return Rdao.getUpdate(d_num);
+	}
 }

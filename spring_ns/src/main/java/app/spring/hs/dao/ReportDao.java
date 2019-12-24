@@ -43,4 +43,9 @@ public class ReportDao {
 	public List<ReportNameVO> getThree(){
 		return sqlsessionTemplate.selectList(NAMESPACE+".getThree");
 	}
+	
+	//상태 변경 
+	public int getUpdate(int d_num){
+		return sqlsessionTemplate.delete(NAMESPACE+".update",d_num);
+	}
 }

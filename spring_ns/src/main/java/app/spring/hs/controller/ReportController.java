@@ -75,7 +75,20 @@ public class ReportController {
 			return ".swMem.result";
 		}
 	}
-
+	
+	
+	//블랙리트스 상태변경
+	@RequestMapping(value="/admin/bsBlackUpdate",method = RequestMethod.GET)
+	public String update1(int d_num,Model model){
+		try{
+			service.getUpdate(d_num);
+			return "redirect:/admin/bsBlack";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
+	}
 	// 신고 전체리스트
 	@RequestMapping(value = "/admin/bsCare", method = RequestMethod.GET)
 	public String list(Model model, String d_sname) {

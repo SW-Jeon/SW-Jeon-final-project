@@ -9,13 +9,13 @@ public class ReportNameVO {
 	private String re_title;
 	private String re_content;
 	private String re_category;
-	private String re_state;
+	private int re_state;
 	private int black;
 	
 	public ReportNameVO(){}
 
 	public ReportNameVO(int re_num, String a_id, String m_phone, int d_num, String d_sname, String re_title,
-			String re_content, String re_category, String re_state, int black) {
+			String re_content, String re_category, int re_state, int black) {
 		super();
 		this.re_num = re_num;
 		this.a_id = a_id;
@@ -93,11 +93,11 @@ public class ReportNameVO {
 		this.re_category = re_category;
 	}
 
-	public String getRe_state() {
+	public int getRe_state() {
 		return re_state;
 	}
 
-	public void setRe_state(String re_state) {
+	public void setRe_state(int re_state) {
 		this.re_state = re_state;
 	}
 
@@ -109,5 +109,6 @@ public class ReportNameVO {
 		this.black = black;
 	}
 
+	
 	
 }

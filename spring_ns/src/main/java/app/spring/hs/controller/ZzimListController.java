@@ -33,7 +33,6 @@ public class ZzimListController {
 		
 		System.out.println(cri.getPage()+","+cri.getPerPageNum());
 		ZzimPageVo vo=new ZzimPageVo();
-		System.out.println("아아");
 		vo.setCri(cri);
 		int totalNum=service.zzimcount();
 		cri.setCounts(totalNum);
@@ -45,7 +44,6 @@ public class ZzimListController {
 		ModelAndView mv = new ModelAndView(".zzim.zzimlist");
 		mv.addObject("vo",vo);
 		mv.addObject("list",dto);
-		System.out.println("아나나나나나나나나");
 		return mv;
 	}
 	@RequestMapping("/zzimdel")

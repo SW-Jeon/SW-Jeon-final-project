@@ -31,12 +31,7 @@
 			<div class="custom-control custom-radio mr-3 custom-control-inline" >
 				<input type="radio"  class="custom-control-input" name="re_state"  value="3" id="c3"><label class="custom-control-label" for="c3">처리 완료</label>
 			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="4" id="c4"><label class="custom-control-label" for="c4">업체 경고</label>
-			</div>	
-			<div class="custom-control custom-radio custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="5" id="c5"><label class="custom-control-label" for="c5">업체 정지</label>
-			</div>	
+	
 			</c:when>
 			<c:when test="${vo.re_state =='2'}">
 			<div class="custom-control custom-radio mr-3 custom-control-inline " >
@@ -48,12 +43,6 @@
 			<div class="custom-control custom-radio mr-3 custom-control-inline" >
 				<input type="radio"  class="custom-control-input" name="re_state"  value="3" id="c3"><label class="custom-control-label" for="c3">처리 완료</label>
 			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="4" id="c4"><label class="custom-control-label" for="c4">업체 경고</label>
-			</div>	
-			<div class="custom-control custom-radio custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="5" id="c5"><label class="custom-control-label" for="c5">업체 정지</label>
-			</div>	
 			</c:when>
 			<c:when test="${vo.re_state =='3'}">
 			<div class="custom-control custom-radio mr-3 custom-control-inline " >
@@ -64,47 +53,7 @@
 			</div>	
 			<div class="custom-control custom-radio mr-3 custom-control-inline" >
 				<input type="radio"  class="custom-control-input" name="re_state"  value="3" checked="checked"  id="c3"><label class="custom-control-label" for="c3">처리 완료</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="4" id="c4"><label class="custom-control-label" for="c4">업체 경고</label>
-			</div>	
-			<div class="custom-control custom-radio custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="5" id="c5"><label class="custom-control-label" for="c5">업체 정지</label>
-			</div>	
-			</c:when>
-			<c:when test="${vo.re_state =='4'}">
-			<div class="custom-control custom-radio mr-3 custom-control-inline " >
-				<input type="radio"  class="custom-control-input " name="re_state"  value="1" id="c1"><label class="custom-control-label" for="c1">신고 접수중</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="2" id="c2"><label class="custom-control-label" for="c2">신고 확인중</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="3" id="c3"><label class="custom-control-label" for="c3">처리 완료</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  checked="checked"   value="4" id="c4"><label class="custom-control-label" for="c4">업체 경고</label>
-			</div>	
-			<div class="custom-control custom-radio custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="5" id="c5"><label class="custom-control-label" for="c5">업체 정지</label>
-			</div>	
-			</c:when>
-			<c:when test="${vo.re_state =='5'}">
-			<div class="custom-control custom-radio mr-3 custom-control-inline " >
-				<input type="radio"  class="custom-control-input " name="re_state"  value="1" id="c1"><label class="custom-control-label" for="c1">신고 접수중</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="2" id="c2"><label class="custom-control-label" for="c2">신고 확인중</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="3" id="c3"><label class="custom-control-label" for="c3">처리 완료</label>
-			</div>	
-			<div class="custom-control custom-radio mr-3 custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  value="4" id="c4"><label class="custom-control-label" for="c4">업체 경고</label>
-			</div>	
-			<div class="custom-control custom-radio custom-control-inline" >
-				<input type="radio"  class="custom-control-input" name="re_state"  checked="checked"   value="5" id="c5"><label class="custom-control-label" for="c5">업체 정지</label>
-			</div>	
+			</div>		
 			</c:when>
 		</c:choose>
 		<br>
