@@ -25,7 +25,10 @@
 		       		<a class="nav-link" href="${cp }/admin/bsBlack"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>Blacklist(업체)</span></a>
 		      </li>  
 		        <li class="nav-item">
-		       		<a class="nav-link" href="#"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고</span></a>
+		       		<a class="nav-link" href="${cp }/insertform"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고</span></a>
+		      </li>
+		      <li class="nav-item">
+		      	<a class="nav-link" href="${cp }/adlist"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고목록</span></a>
 		      </li>   
 		</ul>
 </nav> 

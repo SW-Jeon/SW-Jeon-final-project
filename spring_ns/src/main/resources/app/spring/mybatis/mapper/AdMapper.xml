@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="app.spring.mybatis.mapper.AdMapper">
+	<insert id="adinsert" parameterType="advo">
+		insert into ad values(0,#{a_id},#{ad_site},#{ad_date},#{ad_vernum})
+	</insert>
+	<select id="addate" resultType="java.sql.Date" parameterType="int">
+		select date_add(now(), interval #{dates} month) as data from dual
+	</select>
+	<insert id="adpic" parameterType="pivo">
+		insert into adpic values(0,#{ad_num},#{ad_pic})
+	</insert>
+	<insert id="adverinsert" parameterType="adver">
+		insert into advertiser values(0,#{ad_name})
+	</insert>
+	<select id="advernum" resultType="int">
+		select ad_vernum from advertiser where ad_name=#{ad_num}
+	</select>
+	<select id="adnum" resultType="int">
+		select a.ad_num from ad a,advertiser t where a.ad_vernum=t.ad_vernum
+	</select>
+	<insert id="payinsert" parameterType="payin">
+		insert into pay values(0,#{ad_pay},#{ad_num})
+	</insert>
+	<select id="adcount" resultType="int">
+		select count(*) from ad
+	</select>
+	<select id="adlist" parameterType="cri" resultType="adlists">
+		select R2. *from(select a.ad_num,t.ad_name,a.ad_site,c.ad_pic,p.ad_pay from ad a,advertiser t,adpic c,pay p where a.ad_vernum=t.ad_vernum and a.ad_num=c.ad_num and a.ad_num=p.ad_num group by ad_num)R2 limit #{pageStart},#{perPageNum}
+	</select>
+</mapper>

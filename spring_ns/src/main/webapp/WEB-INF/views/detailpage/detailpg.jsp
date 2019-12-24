@@ -211,22 +211,38 @@ window.addEventListener('scroll',function(e){
 						<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜
 					</a>
 				</div>
+				<div id="main1">
+			<c:forEach var="vo" items="${list }">
+			<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal">
+				<img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png">낭만리뷰
+			</a>
+			</c:forEach>
+			</div>
+			
+			<div id="foot">
+			<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal">
+			<img style="width: 100px; height: 100px;"
+				src="${cp }/resources/images/test/report.png">신고하기
+			</a>
+			</div>
+			
 			</c:when>
 			<c:otherwise>
 				<div id="main" onclick="zzim()">
 					<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜
 				</div>
-			</c:otherwise>
-		</c:choose>
-		<div id="main1">
+				<div id="main1">
 			<c:forEach var="vo" items="${list }">
 				<a href="${cp }/pj/review?d_num=${vo.d_num}"><img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png"></a>낭만리뷰
 			</c:forEach>
-		</div>
-		<div id="foot" onclick="report()">
+			</div>
+			<div id="foot" onclick="report()">
 			<img style="width: 100px; height: 100px;"
 				src="${cp }/resources/images/test/report.png">신고하기
-		</div>
+			</div>
+			</c:otherwise>
+		</c:choose>
+		
 	</div>
 
 	<!-- Login Form  모달창 -->
