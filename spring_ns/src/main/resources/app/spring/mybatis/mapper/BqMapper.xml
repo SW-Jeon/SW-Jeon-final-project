@@ -4,7 +4,7 @@
   <mapper namespace="app.spring.mybatis.mapper.BqMapper">
   	<!-- 사업자 문의 등록 -->
   	<insert id="insert" parameterType="bq">
-  		insert into bq values(0,#{d_num},#{bq_title},#{bq_content},now(),null,1)
+  		insert into bq values(0,#{d_num},#{bq_title},#{bq_content},now(),null,'1')
   	</insert>
   	
   	<!-- 사업자 문의 삭제 -->
@@ -21,9 +21,22 @@
   	<select id="getInfo" parameterType="int" resultType="bq">
   		select * from bq where bq_num=#{bq_num}
   	</select>
-  	
+  	<select id="getdnum" parameterType="string" resultType="int">
+  		select d_num from detail d,business b where d.b_num=b.b_num and b.b_phone=#{b_phone}
+  	</select>
+  	<select id="alllist" parameterType="int" resultType="bq">
+  		select * from bq where d_num=#{d_num}
+  	</select>
   	<!-- 사업자 문의 전체 조회 -->
   	<select id="listAll" resultType="bq">
   		select* from bq
+  	</select>
+  	<!-- 사업자 문의 조회(개인용) -->
+  	<select id="listBq" parameterType="int" resultType="bq">
+  		select * from bq where b_num=#{b_num}
+  	</select>
+ 	<!-- 글의 상세내용 -->
+  	<select id="bqdetail" parameterType="int" resultType="bq">
+  		select * from bq where bq_num=#{bq_num}
   	</select>
   </mapper>

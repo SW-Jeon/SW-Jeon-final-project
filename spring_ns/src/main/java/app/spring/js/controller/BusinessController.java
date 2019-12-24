@@ -27,6 +27,7 @@ public class BusinessController {
 		return ".bs";
 	}
 
+
 	// 로그인
 	@RequestMapping(value = "/business/businessLogin", method = RequestMethod.GET)
 	public String adminLogForm() {

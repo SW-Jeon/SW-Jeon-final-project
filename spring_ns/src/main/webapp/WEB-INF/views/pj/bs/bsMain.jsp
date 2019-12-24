@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- bsMain -->
 <div>
+	
 	<!-- 네비바 -->
 	<jsp:include page="/WEB-INF/views/pj/bs/bsNavi.jsp"/>  
 
