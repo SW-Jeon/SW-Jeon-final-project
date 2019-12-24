@@ -83,7 +83,7 @@ public class ReportController {
 		try{
 			System.out.println(re_state);
 			System.out.println(d_num);
-			model.addAttribute("vo",service.getUpdate(vo));
+			service.getUpdate(vo);
 			return "redirect:/admin/bsCare";
 		} catch (Exception e) {
 			e.printStackTrace();

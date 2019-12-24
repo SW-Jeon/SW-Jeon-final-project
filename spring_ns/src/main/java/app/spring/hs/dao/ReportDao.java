@@ -26,7 +26,7 @@ public class ReportDao {
 	
 	//신고상태변경
 	public int update(ReportVo vo){
-		return sqlsessionTemplate.delete(NAMESPACE+".update",vo);
+		return sqlsessionTemplate.update(NAMESPACE+".update",vo);
 	}
 	
 	//신고조회하기
