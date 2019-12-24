@@ -10,8 +10,7 @@ import app.spring.vo.BusinessVo;
 
 @Service
 public class BusinessService {
-	@Autowired
-	private BusinessDao bDao;
+	@Autowired private BusinessDao bDao;
 
 	// 사업자 등록
 	public int insert(BusinessVo vo) {
@@ -23,7 +22,7 @@ public class BusinessService {
 		return bDao.delete(b_num);
 	}
 
-	// 사업자 검색
+	// 사업자 조회
 	public BusinessVo getInfo(int b_num) {
 		return bDao.getInfo(b_num);
 	}

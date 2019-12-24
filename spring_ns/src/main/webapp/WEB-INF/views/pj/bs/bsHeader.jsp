@@ -14,7 +14,7 @@
 		<a class="btn btn-block btn-lg btn-info "  href="${cp}/bsLogout" style="width:150px; height: 50px; float: right;">
 			<i class ="fas fa-power-off"> 로그아웃</i>
 			</a>
-	    <a class="navbar-brand " href="${cp }/admin/adminMain">
+	    <a class="navbar-brand " href="${cp }/business/businessMain">
 	     	<b style="font-size: 2em; color:white;">사업자</b> 
 	     </a>
 	</nav>

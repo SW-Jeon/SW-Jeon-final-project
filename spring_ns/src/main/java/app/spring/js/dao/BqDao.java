@@ -28,8 +28,21 @@ public class BqDao {
 	public BqVo getInfo(int bq_num){
 		return sqlSessionTemplate.selectOne(NAMESPACE + ".getInfo",bq_num);
 	}
+	public int getdnum(String b_phone){
+		return sqlSessionTemplate.selectOne(NAMESPACE + ".getdnum",b_phone);
+	}
+	public List<BqVo> alllist(int d_num){
+		return sqlSessionTemplate.selectList(NAMESPACE + ".alllist",d_num);
+	}
 	//사업자 전체 문의 조회
 	public List<BqVo> listAll(){
 		return sqlSessionTemplate.selectList(NAMESPACE+".listAll");
+	}
+	public List<BqVo> listBq(int b_phone){
+		return sqlSessionTemplate.selectList(NAMESPACE+".listBq",b_phone);
+	}
+	//상세 내용
+	public BqVo detail(int bq_num){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".bqdetail",bq_num);
 	}
 }
