@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name=".bs"  template="/WEB-INF/views/pj/bs/bsLayout.jsp" >
+		<put-attribute name="head" value="/WEB-INF/views/pj/bs/bsHeader.jsp"/>
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/bsMain.jsp"/>
+	</definition>
+	
+	<definition name=".bs.*.*.*"  extends=".bs">
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/{1}/{2}/{3}.jsp"/>
+	</definition>
+	
+	<definition name=".bs.*.*"  extends=".bs">
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/{1}/{2}.jsp"/>
+	</definition>
+	
+	<definition name=".bs.*"  extends=".bs">
+		<put-attribute name="con" value="/WEB-INF/views/pj/bs/{1}.jsp"/>
+	</definition>
+	
+	
+	
+	
+
+</tiles-definitions>

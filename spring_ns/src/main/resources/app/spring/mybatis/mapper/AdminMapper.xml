@@ -3,9 +3,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="app.spring.mybatis.mapper.AdminMapper">
   	<!-- 운영자 조회 -->
-	<select id="getInfo" parameterType="string" resultType="admin">
-		select * from admin where a_id=#{a_id} 
+	<select id="getInfo" parameterType="admin" resultType="admin">
+		select * from admin where a_id=#{a_id} and a_pwd=#{a_pwd} 
 	</select>
-  
+  	
+  	<!-- 운영자 개인조회 -->
+	<select id="getA" parameterType="admin" resultType="admin">
+		select * from admin where a_id=#{a_id} and a_pwd=#{a_pwd} 
+	</select>
  
   </mapper>

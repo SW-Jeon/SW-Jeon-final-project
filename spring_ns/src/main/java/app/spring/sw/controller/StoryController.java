@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.AdminService;
 import app.spring.sw.service.StoryService;
+import app.spring.vo.AdminVo;
 import app.spring.vo.StoryVo;
 
 @Controller
@@ -19,8 +20,8 @@ public class StoryController {
 	
 	//글쓰기폼 이동
 	@RequestMapping(value = "/admin/Story", method = RequestMethod.GET)
-	public String insertForm(String a_id,Model model){
-		model.addAttribute("vo", adService.getInfo(a_id));
+	public String insertForm(AdminVo vo,Model model){
+		model.addAttribute("vo", adService.getInfo(vo));
 		return ".admin.story.storyInsert";
 	}
 	

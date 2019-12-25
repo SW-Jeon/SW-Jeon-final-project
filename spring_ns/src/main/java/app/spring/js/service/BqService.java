@@ -27,8 +27,22 @@ public class BqService {
 	public BqVo getInfo(int bq_num){
 		return bqDao.getInfo(bq_num);
 	}
+	public int getdnum(String b_phone){
+		return bqDao.getdnum(b_phone);
+	}
+	public List<BqVo> alllist(int d_num){
+		return bqDao.alllist(d_num);
+	}
 	//사업자 전체  문의 조회
 	public List<BqVo> listAll(){
 		return bqDao.listAll();
+	}
+	//사업자문의 본인용
+	public List<BqVo> listBq(int b_phone){
+		return bqDao.listBq(b_phone);
+	}
+	
+	public BqVo detail(int bq_num){
+		return bqDao.detail(bq_num);
 	}
 }

@@ -14,8 +14,8 @@
 	function action1(d_sname,d_num){
 		location.href="${cp}/detailpage?name="+d_sname+"&d_num="+d_num;
 	}
-	function action2(d_num,m_phone){
-		location.href="${cp}/zzimOk?d_num="+d_num+"&m_phone="+m_phone
+	function delete2(m_phone){
+		location.href="${cp}/deletepage?m_phone="+m_phone
 	}
 </script>
 <style>
@@ -48,12 +48,21 @@
 									<i class ="fas fa-child" style="color: white; "> Sign In</i></a>
 							</div>
 						</div>
-				</div>
+					</div>
 			</c:when>
 			<c:otherwise>
-			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 "><!-- 최근본 맛집 -->
-				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#foodModal"><br> 최근 본 맛집</i></a>
-			</div>
+			<c:choose>
+				<c:when test="${count!=0 }">
+					<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+					<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#foodModal"><br> 최근 본 맛집</i></a>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+					<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#"><br> 최근 본 맛집</i></a>
+					</div>
+				</c:otherwise>
+			</c:choose>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
 			</div>		
@@ -151,10 +160,14 @@
 	<div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
 		<div class="modal-content">
 			<div class="modal-body">
-					<div class="border-bottom mb-3" ><span  style="font-size: 20px; color: orange;"><b>최근 본 맛집 (${count })</b></span><br></div>
+					<div class="border-bottom mb-3" ><span  style="font-size: 20px; color: orange;"><b>최근 본 맛집 (${count })</b></span>
+					<div style="float: right">
+						<span style="color: grey; font-size: 16px;" onclick="delete2('${m_phone}')">전체삭제</span>	
+					</div>
+					<br></div>
 					<c:forEach var="i" items="${flist }">
-					<div style="text-align: left; width: 400px;" onclick="action1('${i.d_sname}','${i.d_num }')">
-					<div style="float: left; margin-left: 20px; margin-right: 20px;">
+					<div style="text-align: left;" onclick="action1('${i.d_sname}','${i.d_num }')">
+					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 120px;">
 					<c:choose>
 						<c:when test="${empty i.p_pic }">
 							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/logo/non.png">
@@ -166,12 +179,13 @@
 					</div>
 					<div class="mb-3" style="float: left;">
 						<span style="font-size: 20px; color: black">${i.d_sname }</span>&nbsp&nbsp&nbsp<span style="font-size: 20px; color: orange">${i.r_score }</span><br>
-						<span style="color: grey" >${i.d_addr }<br>
+						<span style="color: grey">${i.d_addr }<br>
 						${i.d_kind }<br>
 						${i.d_time }<br>
 						</span>
 					</div>
 					</div>
+					<br><br>
 					</c:forEach>
 			</div>
 		</div>

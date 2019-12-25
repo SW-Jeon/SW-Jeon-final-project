@@ -3,19 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="app.spring.mybatis.mapper.DetailMapper">
-	<insert id="insert" parameterType="detailmap">
-		insert into detail values(0,admin,#{b_num},#{d_name},#{d_kind},#{d_park},#{d_holi},#{d_time},#{d_phone},#{d_addr},0)
+	<insert id="insert1" parameterType="app.spring.vo.DetailVo">
+		insert into detail values(0,#{a_id},#{b_num},#{d_sname},#{d_kind},#{d_park},#{d_holi},#{d_time},#{d_phone},#{d_addr},0)
 	</insert>
+	
+	<select id="seldnum" parameterType="int" resultType="int" >
+		select max(d_num) from detail where b_num=#{b_num}
+	</select>
+	
+	<insert id="insert2"  parameterType="app.spring.vo.PicuploadVo">
+  		insert into pic values(0,#{p_pic},#{d_num}) 
+  	</insert>
+	
 	<select id="findlist" parameterType="String" resultType="detailmap">
 		select d_addr,d_sname,d_kind,d_num from detail where d_addr like'%?%'=#{d_sname}
 	</select>
+	
+	
 	<select id="finddetail" parameterType="String" resultType="detailmap">
 		select * from detail where d_sname=#{d_sname}
 	</select>
+	
+	
 	<select id="findimg" parameterType="String" resultType="findimg">
 		select p.p_pic from detail d,pic p where d.d_num=p.d_num and d.d_sname=#{d_sname};
 	</select>
+	
+	
 	<select id="findmenu" parameterType="String" resultType="findmenu">
 		select m.me_name,m.me_pay from detail d,menu m where d.d_num=m.d_num and d.d_sname=#{d_sname};
 	</select>
+	
 </mapper>

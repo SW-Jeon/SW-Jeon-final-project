@@ -1,5 +1,7 @@
 package app.spring.hs.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,7 @@ public class ZzimService {
 	public int delete(int d_num){
 		return dao.delete(d_num);
 	}
-	public ZzimVo select(String m_phone){
+	public List<ZzimVo> select(String m_phone){
 		return dao.select(m_phone);
 	}
 }

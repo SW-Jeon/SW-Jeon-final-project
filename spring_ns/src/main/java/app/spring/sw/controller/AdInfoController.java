@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.AdminService;
 import app.spring.sw.service.InfoService;
+import app.spring.vo.AdminVo;
 import app.spring.vo.InfoVo;
 
 @Controller
@@ -21,8 +22,8 @@ public class AdInfoController {
 
 	//  글쓰기 폼
 	@RequestMapping(value = "/admin/Info", method = RequestMethod.GET)
-	public String insertForm(String a_id, Model model) {
-		model.addAttribute("vo", adService.getInfo(a_id));
+	public String insertForm(AdminVo vo, Model model) {
+		model.addAttribute("vo", adService.getInfo(vo));
 		return ".admin.info.adminInsert";
 	}
 	
@@ -70,7 +71,7 @@ public class AdInfoController {
 	@RequestMapping(value = "/admin/infoDetail", method = RequestMethod.GET)
 	public String Detail(Model model, int i_num) {
 		try {
-			model.addAttribute("vo", inService.detail(i_num));
+			model.addAttribute("vo",inService.detail(i_num));
 			return ".admin.info.infoDetail";
 		} catch (Exception e) {
 			e.printStackTrace();

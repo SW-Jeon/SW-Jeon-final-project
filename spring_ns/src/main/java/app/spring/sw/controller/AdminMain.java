@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.AdminService;
+import app.spring.vo.AdminVo;
 
 @Controller
 public class AdminMain {
@@ -30,16 +31,18 @@ public class AdminMain {
 	}
 
 	@RequestMapping(value = "/admin/adLogin", method = RequestMethod.POST)
-	public String login(String a_id, String a_pwd, HttpSession session, Model model) {
-		boolean vo = service.getInfo(a_id);
-		if (vo) {
-			model.addAttribute("code", "fail");
+	public String login(AdminVo vo, HttpSession session, Model model) {
+		boolean vo1 = service.getInfo(vo);
+		if (vo1) {
+			model.addAttribute("code", "no");
 			return ".swMem.result";
 		} else {
-			String phone = (String) session.getAttribute("m_phone");
-			if (phone == null) {
-				session.setAttribute("a_id", a_id);
-				session.setAttribute("a_pwd", a_pwd);
+			String m_phone = (String) session.getAttribute("m_phone");
+			String b_phone = (String) session.getAttribute("b_phone");
+			if (m_phone == null && b_phone == null ) {
+				AdminVo vo2=service.getA(vo);
+				String id= vo2.getA_id();
+				session.setAttribute("id", id);
 				return ".admin";
 			}
 		}
@@ -49,6 +52,6 @@ public class AdminMain {
     @RequestMapping(value="/adminLogout")
     public String logout(HttpSession session){
         session.invalidate();
-        return "redirect:/admin/adminLogin";
+        return ".main";
     }		
 }

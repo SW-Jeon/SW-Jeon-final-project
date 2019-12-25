@@ -1,5 +1,7 @@
 package app.spring.hs.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +15,12 @@ public class ZzimController {
 	@RequestMapping("/zzimOk")
 	public String zzimOk(ZzimVo vo,String m_phone,int d_num){
 		System.out.println(m_phone);
-		ZzimVo vo1=service.select(m_phone);
-		
-		if(vo1==null){
+		List<ZzimVo> vo1=service.select(m_phone);
+		for(ZzimVo vo2:vo1){
+			System.out.println(vo2.getD_num());
+		}
+		ZzimVo vo3=new ZzimVo();
+		if(vo3.getD_num()!=d_num){
 		service.insert(vo);
 		return ".zzim.zzim";
 		
@@ -23,5 +28,6 @@ public class ZzimController {
 			service.delete(d_num);
 			return ".zzim.zzimdel";
 		}
+		
 	}
 }

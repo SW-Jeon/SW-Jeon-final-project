@@ -37,12 +37,12 @@ function action2(count,m){
 	infos[count].open(map,markers[count]);
 	map.panTo(mPositions[count]);  
 	m.style.opacity = 0.5;
-	m.style.zoom = 1.2;
+	m.style.cursor = 'pointer';
 }
 function action3(count,m){
 	infos[count].close();
 	m.style.opacity = 1;
-	m.style.zoom = 1.0;
+	m.style.cursor = 'default';
 }
 function action4(m){
 	var lis=document.getElementsByClassName("lis");
@@ -150,6 +150,7 @@ function action8(){
 </script>
 </head>
 <body>
+<div>
 <div style="margin-left: 10%; width:80%;">
 <br><span style="font-size: 30px;"><b>[<span style="color: orange;">${keyword }</span>]검색된 맛집정보</b></span>
 <c:choose>
@@ -176,7 +177,6 @@ function action8(){
 	</c:when>
 	<c:otherwise>
 	    <div style="float: right;" data-toggle="modal" data-target="#exampleModal"><b><i class="fas fa-cogs mr-3" style="font-size: 20px">필터</i></b>
-	    	
 	    </div>
 	</c:otherwise>
 </c:choose>
@@ -213,6 +213,49 @@ function action8(){
 </div>
 <c:set var="count" value="${count+1}"/>
 </c:forEach>
+</div>
+	<div style="">
+		<ul class="pagination justify-content-center mt-3">
+			<c:choose>
+				<c:when test="${pagenum==1 }">
+				<li class="page-item disabled">
+			      <a class="page-link" href="${cp }/searchList?pagenum=${pagenum-1}&standard=${standard}&keyword=${keyword}&pri=${pri}&food=${food}&park=${park}">&laquo;</a>
+			    </li>
+			    </c:when>
+			    <c:otherwise>
+			    <li class="page-item">
+			      <a class="page-link" href="${cp }/searchList?pagenum=${pagenum-1}&standard=${standard}&keyword=${keyword}&pri=${pri}&food=${food}&park=${park}">&laquo;</a>
+			    </li>
+			    </c:otherwise>
+			</c:choose>
+			<c:forEach var="i" begin="${startpagenum }" end="${endpagenum }">
+				<c:choose>
+					<c:when test="${pagenum==i}">
+					<li class="page-item active">
+			      		<a class="page-link" href="${cp }/searchList?pagenum=${i}&standard=${standard}&keyword=${keyword}&pri=${pri}&food=${food}&park=${park}">${i}</a>
+			    	</li>
+			    	</c:when>
+			    	<c:otherwise>
+			    	<li class="page-item">
+			      		<a class="page-link" href="${cp }/searchList?pagenum=${i}&standard=${standard}&keyword=${keyword}&pri=${pri}&food=${food}&park=${park}">${i}</a>
+			    	</li>
+			    	</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			<c:choose>
+				<c:when test="${pagenum==totalpagecount }">
+				<li class="page-item disabled">
+			      <a class="page-link" href="${cp }/searchList?pagenum=${pagenum+1}&standard=${standard}&keyword=${keyword}&pri=${pri}&food=${food}&park=${park}">&raquo;</a>
+			    </li>
+			    </c:when>
+			    <c:otherwise>
+			    <li class="page-item">
+			      <a class="page-link" href="${cp }/searchList?pagenum=${pagenum+1}&standard=${standard}&keyword=${keyword}&pri=${pri}&food=${food}&park=${park}">&raquo;</a>
+			    </li>
+			    </c:otherwise>
+			</c:choose>
+		</ul>
+	</div>
 </div>
 </div>
 	</c:when>

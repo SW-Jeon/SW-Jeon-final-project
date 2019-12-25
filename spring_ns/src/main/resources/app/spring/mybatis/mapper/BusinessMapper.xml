@@ -5,23 +5,47 @@
   	
   	<!-- 사업자 정보 등록 -->
   	<insert id="insert" parameterType="business">
-  		insert into business values(0,#{b_bnum},#{b_phone},#{b_name},1)
+  		insert into business values(0,#{b_bnum},#{b_phone},#{b_name},#{b_pwd},1)
   	</insert>
   	
 	<!-- 사업자 정보 탈퇴-->	
-	<delete id="delete" parameterType="int">
-		update business set b_state=2 where b_num=#{b_num}
-	</delete>
-	<!--  사업자 개인 조회 -->
-	<select id="getInfo" parameterType="int" resultType="business">
-		select * from business where b_bnum=#{b_bnum}
-	</select>
+	<update id="delete" parameterType="int">
+		update business set b_state=3 where b_num=#{b_num}
+	</update>
 	
-	<update id=""></update>
+	<!-- 사업자 등록상태 변경 -->
+	<update id="bnUpdate" parameterType="business">
+		update business set b_state=#{b_state} where b_num=#{b_num}
+	</update>
 	
 	<!-- 사업자 전체 조회 -->
 	<select id="listAll" resultType="business">
 		select * from business
+	</select>
+	
+	<!--  사업자 개인 조회 -->
+	<select id="getInfo" parameterType="int" resultType="business">
+		select * from business where b_num=#{b_num}
+	</select>
+	
+	<!-- 사업자로그인 -->
+	<select id="getLog" parameterType="business" resultType="business">
+		select * from business where b_phone=#{b_phone} and b_pwd=#{b_pwd}
+	</select>
+	
+	<!--  사업자 개인 조회 -->
+	<select id="getState" parameterType="business" resultType="business">
+		select * from business where b_phone=#{b_phone} and b_pwd=#{b_pwd}
+	</select>
+	
+	<!--  bd얻어오기-->
+	<select id="getbd" parameterType="String" resultType="app.spring.vo.DetailVo">
+		select b.b_num,d.d_num from business b,detail d where b.b_num=d.b_num and b.b_phone=#{phone}
+	</select>
+	
+	<!--  rstate얻어오기-->
+	<select id="getrstate" parameterType="app.spring.vo.DetailVo" resultType="int">
+		select r.re_state from business b,detail d,report r where r.re_state=5 and b.b_num=d.b_num and d.b_num=#{b_num} and d.d_num=#{d_num} group by re_state
 	</select>
 	
   </mapper>

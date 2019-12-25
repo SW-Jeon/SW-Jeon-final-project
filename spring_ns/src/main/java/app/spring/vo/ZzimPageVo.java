@@ -26,7 +26,7 @@ public class ZzimPageVo {
 			endPage = tempEndPage;
 		}
 		prev = startPage == 1 ? false : true;
-		next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
+		next = endPage * cri.getPerPageNum() < totalCount ? true : false;
 	}
 	public Criteria getCri() {
 		return cri;

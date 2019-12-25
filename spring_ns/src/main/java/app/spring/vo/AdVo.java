@@ -5,19 +5,19 @@ import java.sql.Date;
 public class AdVo {
 	private int ad_num;
 	private String a_id;
-	private String ad_pic;
 	private String ad_site;
 	private Date ad_date;
+	private int ad_vernum;
 	
 	public AdVo(){}
 
-	public AdVo(int ad_num, String a_id, String ad_pic, String ad_site, Date ad_date) {
+	public AdVo(int ad_num, String a_id, String ad_site, Date ad_date,int ad_vernum) {
 		super();
 		this.ad_num = ad_num;
 		this.a_id = a_id;
-		this.ad_pic = ad_pic;
 		this.ad_site = ad_site;
 		this.ad_date = ad_date;
+		this.ad_vernum=ad_vernum;
 	}
 
 	public int getAd_num() {
@@ -36,14 +36,6 @@ public class AdVo {
 		this.a_id = a_id;
 	}
 
-	public String getAd_pic() {
-		return ad_pic;
-	}
-
-	public void setAd_pic(String ad_pic) {
-		this.ad_pic = ad_pic;
-	}
-
 	public String getAd_site() {
 		return ad_site;
 	}
@@ -58,6 +50,12 @@ public class AdVo {
 
 	public void setAd_date(Date ad_date) {
 		this.ad_date = ad_date;
+	}
+	public int getAd_vernum() {
+		return ad_vernum;
+	}
+	public void setAd_vernum(int ad_vernum) {
+		this.ad_vernum = ad_vernum;
 	}
 	
 	

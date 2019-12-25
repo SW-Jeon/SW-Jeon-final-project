@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- MqList -->
+
 <style>
-	.to{font-size: 1.7em; font-weight: bold;}
-	.con{font-size: 1.2em;}
+	.to{font-size: 1.7em; font-weight: bold; text-align: center;}
+	.con{font-size: 1.2em; text-align: center;}
 </style>
+ 
 
 <!-- 네비바 -->
 <jsp:include page="/WEB-INF/views/admin/adminNavi.jsp"/> 

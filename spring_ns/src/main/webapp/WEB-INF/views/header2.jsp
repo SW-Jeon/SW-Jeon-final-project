@@ -13,6 +13,9 @@
 	function action1(d_sname,d_num){
 		location.href="${cp}/detailpage?name="+d_sname+"&d_num="+d_num;
 	}
+	function delete2(m_phone){
+		location.href="${cp}/deletepage?m_phone="+m_phone
+	}
 </script>
 <style>
 	ul li{margin: 0px;}
@@ -39,9 +42,9 @@
           </form>
         </div>
         <ul class="navbar-nav " >
-				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.5em; color:black;">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="font-size: 1.5em; color:black;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.5em; color:black;">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.3em; color:black;">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="font-size: 1.3em; color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.3em; color:black;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
@@ -55,9 +58,19 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
-				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#foodModal"><br> 최근 본 맛집</i></a>
-			</div>
+			<c:choose>
+				<c:when test="${count!=0 }">
+					<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+					<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#foodModal"><br> 최근 본 맛집</i></a>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+					<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-map-marked-alt" data-toggle="modal" data-target="#"><br> 최근 본 맛집</i></a>
+					</div>
+				</c:otherwise>
+			</c:choose>
+			
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
 			</div>		
@@ -131,10 +144,14 @@
 	<div class="modal-dialog" style="max-width: 100%; width: auto; display: table;">
 		<div class="modal-content">
 			<div class="modal-body">
-					<div class="border-bottom mb-3" ><span  style="font-size: 20px; color: orange;"><b>최근 본 맛집 (${count })</b></span><br></div>
+					<div class="border-bottom mb-3" ><span  style="font-size: 20px; color: orange;"><b>최근 본 맛집 (${count })</b></span>
+					<div style="float: right">
+						<span style="color: grey; font-size: 16px;" onclick="delete2('${m_phone}')">전체삭제</span>	
+					</div>
+					<br></div>
 					<c:forEach var="i" items="${flist }">
-					<div style="text-align: left; width: 400px;" onclick="action1('${i.d_sname}','${i.d_num }')">
-					<div style="float: left; margin-left: 20px; margin-right: 20px;">
+					<div style="text-align: left;" onclick="action1('${i.d_sname}','${i.d_num }')">
+					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 120px;">
 					<c:choose>
 						<c:when test="${empty i.p_pic }">
 							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/logo/non.png">

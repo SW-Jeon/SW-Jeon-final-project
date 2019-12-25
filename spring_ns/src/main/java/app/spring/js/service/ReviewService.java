@@ -18,4 +18,7 @@ public class ReviewService {
 	public List<ReviewVo> list(){
 		return rDao.list();
 	}
+	public List<ReviewVo> list2(int d_num){
+		return rDao.list2(d_num);
+	}
 }
