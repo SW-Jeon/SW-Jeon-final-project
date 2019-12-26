@@ -13,7 +13,7 @@
 					<div class="col-md-12">
 						<h1 class="text-info text-center">메뉴 등록</h1>
 						<div class="form-group">
-							<label for="bq_title">메뉴 이름</label><input type="text" class="form-control" value="${ vo.bq_title}" readonly="readonly">
+							<label for="me">메뉴 이름</label><input type="text" class="form-control" value="${ vo.bq_title}" readonly="readonly">
 						</div>
 						<div class="form-group">
 							<label for="bq_content">가격</label><input type="text" class="form-control" value="${ vo.bq_content}" readonly="readonly">

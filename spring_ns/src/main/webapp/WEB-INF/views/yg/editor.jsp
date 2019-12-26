@@ -36,9 +36,10 @@ var oEditors = [];
 </script>
 </head>
 <body>
-<form action="#" name="writefrm" id="writefrm">
+<form method="post" action="${cp }/bloginsert" name="writefrm" id="writefrm" enctype="multipart/form-data">
 <textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>
-<input type="button" id="writebtn" name="writebtn" value="저장">
+<input type="file" name="file1"><br>
+<input type="submit" class="btn btn-primary mt-3" id="writebtn" name="writebtn" value="저장">
 </form>
 </body>
 </html>
