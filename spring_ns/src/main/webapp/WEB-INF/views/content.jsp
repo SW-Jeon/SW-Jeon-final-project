@@ -1,5 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<style>
+	.slide{
+		position: relative;
+		width: 250px;
+		height: 150px;
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+		
+	}
+	.slide ul{
+		position: absolute;
+		margin: 0px;
+		padding: 0;
+		list-style: none;
+	}
+	.slide ul li{
+		float:left;
+		width: 250px;
+		height: 150px;
+		margin: 0;
+		padding: 0;
+	}
+	.slide ul li img{
+		width: 250px;
+		height: 150px;
+	}
+</style>
+<script>
+	
+	$(document).ready(function(){
+		var $slide = $(".slide").find("ul");
+		var slideWidth=$slide.children().outerWidth();
+		var slideHeight=$slide.children().outerHeight();
+		var length=$slide.children().length;
+		var rollingId;
+		rollingId=setInterval(function() {rollingStart();},3000);
+		function rollingStart(){
+			$slide.css("width",(slideWidth+length) +"px");
+			$slide.css("height",slideHeight+"px");
+			$slide.animate({left:-slideWidth},1500,function(){
+				$(this).append("<li>"+$(this).find("li:first").html()+"</li>");
+				$(this).find("li:first").remove();
+				$(this).css("left",0);
+			});
+			
+		}
+	});
+		
+</script>
 <!-- content.jsp -->
 <div>
 	 <!-- Icons Grid -->
@@ -7,30 +58,18 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
-            </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
+            <div class="slide">
+            <ul>
+            <c:forEach var="i" begin="1" end="20">
+            	
+              <li><img src="${cp }/resources/maincss/images/mainimg/${i }.jpg"></li>
+              
+              </c:forEach>
+              </ul>
+              </div>
             </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
           </div>
         </div>
       </div>

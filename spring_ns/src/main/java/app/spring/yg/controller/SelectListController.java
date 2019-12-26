@@ -32,6 +32,7 @@ public class SelectListController {
 		values.put("food",food);
 		values.put("park",park);
 		int totalRowCount=service.searchCount(values);
+		System.out.println(totalRowCount);
 		PageUtil pu=new PageUtil(pagenum, totalRowCount, 6, 10);
 		System.out.println(pu.getPageNum());
 		System.out.println(pu.getStartPageNum());
