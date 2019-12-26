@@ -27,7 +27,6 @@ public class BusinessController {
 		return ".bs";
 	}
 
-
 	// 로그인
 	@RequestMapping(value = "/business/businessLogin", method = RequestMethod.GET)
 	public String adminLogForm() {
@@ -40,19 +39,19 @@ public class BusinessController {
 			model.addAttribute("code", "no");
 			return ".swMem.result";
 		} else {
+
+			session.setAttribute("phonenum",vo.getB_phone());
+
 			String phone = (String) session.getAttribute("m_phone");
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
 			String state=vo2.getB_state();
-			if (phone == null && id ==null && state.equals("2")) {
+			if (phone == null && id ==null && (state.equals("1") || state.equals("2"))) {
 				int num= vo2.getB_num();
 				session.setAttribute("num", num);
 				return ".bs";
-			}else if( state.equals("1")){
+			}else if( state.equals("4")){
 				model.addAttribute("code", "nono");
-				return ".swMem.result";
-			}else if( state.equals("3")){
-				model.addAttribute("code", "drop");
 				return ".swMem.result";
 			}else{
 				model.addAttribute("code", "no");
