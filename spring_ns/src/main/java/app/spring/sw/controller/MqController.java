@@ -29,8 +29,7 @@ public class MqController {
 		public String MqInsert(MqVo vo,Model model){
 			try{
 				service.insert(vo);
-				model.addAttribute("code", "success");
-				return ".swMem.result";
+				return "redirect:/swMem/mqMyList";
 			}catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");

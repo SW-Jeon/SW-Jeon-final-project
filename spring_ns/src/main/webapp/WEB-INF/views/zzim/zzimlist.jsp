@@ -10,9 +10,7 @@
 		text-align: center;
 	}
 </style>
-<script>
-	
-</script>
+
 <div>
 	<input type="hidden" name="path" id="path">
 	<table style="border: 1px solid black; margin-left: 50px; margin-top: 100px;" >

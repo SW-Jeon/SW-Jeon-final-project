@@ -3,7 +3,9 @@
 <!-- content.jsp -->
 <div>
 	 <!-- Icons Grid -->
+	 <img src="${cp }/resources/main/a11.jpg" style="width: 1430px;">
   <section class="features-icons bg-light text-center">
+  
     <div class="container">
       <div class="row">
         <div class="col-lg-4">

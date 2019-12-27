@@ -62,7 +62,6 @@ star-input>.input.focus{outline:1px dotted #ddd;}
    </form>
 </div>
 
-<script src="${cp }/resources/stars/js/jquery-3.4.1.js"></script>
 <script src="${cp }/resources/stars/js/star.js" charset="utf-8"></script>
 <script type="text/javascript">
  	// var p5=document.getElementById("p5");
