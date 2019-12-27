@@ -7,28 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-function getLocation() {
-	  if (navigator.geolocation) { // GPS를 지원하면
-	    navigator.geolocation.getCurrentPosition(function(position) {
-	      //alert(position.coords.latitude + ' ' + position.coords.longitude);//현 좌표값
-	    }, function(error) {
-	      console.error(error);
-	    }, {
-	      enableHighAccuracy: false,
-	      maximumAge: 0,
-	      timeout: Infinity
-	    });
-	  } else {
-	    alert('GPS를 지원하지 않습니다');
-	  }
-	}
-	getLocation();	
-	window.onload = function() {
-		document.getElementById('select1').onchange = function() { 
-			location.href="${cp}/searchList?keyword=${keyword}&standard="+this.value;
-			} 
-		};
-
 	
 function action1(d_sname,d_num){
 	location.href="${cp}/detailpage?name="+d_sname+"&d_num="+d_num;
@@ -147,6 +125,9 @@ function action8(){
 	food2.value='';
 	park2.value='';
 }
+function action11(m){
+	location.href="${cp }/searchList?pagenum=1&standard="+m.value+"&keyword=${keyword}";
+}
 </script>
 </head>
 <body>
@@ -155,7 +136,7 @@ function action8(){
 <br><span style="font-size: 30px;"><b>[<span style="color: orange;">${keyword }</span>]검색된 맛집정보</b></span>
 <c:choose>
 	<c:when test="${empty m_phone }">
-		<select style="width: 200px; height:30px; float: right;" id="select1">
+		<select style="width: 200px; height:30px; float: right;" id="select1" onchange="action11(this)">
 			<c:choose>
 			<c:when test="${standard=='d_hit desc'}">
 			<option value="d_hit desc" selected="selected">인기순

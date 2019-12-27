@@ -102,7 +102,7 @@ window.addEventListener('scroll',function(e){
 			href="javascript:next()"><img
 			src="${cp }/resources/images/test/button2.png" id="next"></a>
 		<div
-			style="width: 2660px; height: 400px; left: 0px; position: relative;"
+			style="width: 1460px; height: 400px; left: 0px; position: relative; overflow: hidden"
 			id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
@@ -189,7 +189,7 @@ window.addEventListener('scroll',function(e){
 						</div>
 						<div class="col-md-10">
 							${vo3.r_content }<br>
-							<img src="${cp}/resources/upload/${vo.r_pic }" width="200px" height="200px">
+							<img src="${cp}/resources/upload/${vo3.r_pic }" width="200px" height="200px">
 						</div>
 					</div>
 				</div>
@@ -281,7 +281,7 @@ window.addEventListener('scroll',function(e){
 	</div>
 	<!-- //Login Form -->
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=088923eb526168e58ebc5d418c534e8b&libraries=services"></script>
 	<script>
 		function zzim() {
 			var d_num=parseInt(document.getElementById("dnum").value);

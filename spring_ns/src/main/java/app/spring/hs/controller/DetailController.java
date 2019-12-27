@@ -83,7 +83,7 @@ public class DetailController {
 	    public String detailupload(String d_sname, String d_kind, String d_park, String d_holi, String d_time, String d_phone,
 	    		String d_addr,@RequestParam (required=false) List<MultipartFile> file) throws IOException {
 	         HashMap<String,Object> map=new HashMap<String, Object>();
-	         String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/maincss/images/test";
+	         String uploadPath="C:/Users/JHTA/git/final-project/spring_ns/src/main/webapp/resources/maincss/images/test";
 			try{
 				
 				for(int i=0;i<file.size();i++){		

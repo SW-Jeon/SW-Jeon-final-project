@@ -29,7 +29,6 @@ public class BusinessController {
 		return ".bs";
 	}
 
-
 	// 로그인
 	@RequestMapping(value = "/business/businessLogin", method = RequestMethod.GET)
 	public String adminLogForm() {
@@ -44,16 +43,21 @@ public class BusinessController {
 			return ".swMem.result";
 		} else {
 			try{
+
 			String phone = (String) session.getAttribute("m_phone");
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
 			String state=vo2.getB_state();
+
 			DetailVo vo31=service.getbd(vo.getB_phone());
+			System.out.println(vo31);
 		    int r_state3=service.getrstate(vo31);
 
 			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
 				session.setAttribute("num", num);
+				session.setAttribute("b_phone", vo.getB_phone());
+				System.out.println(vo.getB_phone());
 				if(r_state3==4){
 					//alert띄우기	
 					response.setContentType("text/html; charset=UTF-8");
@@ -67,11 +71,8 @@ public class BusinessController {
 					out.flush();
 				}
 				return ".bs";
-			}else if( state.equals("1")){
+			}else if( state.equals("4")){
 				model.addAttribute("code", "nono");
-				return ".swMem.result";
-			}else if( state.equals("3")){
-				model.addAttribute("code", "drop");
 				return ".swMem.result";
 			}else{
 				model.addAttribute("code", "no");

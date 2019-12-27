@@ -44,7 +44,7 @@ public class BqController {
 		public String listBq(Model model,HttpSession session){
 			try{
 				
-				String b_phone=(String)session.getAttribute("phonenum");
+				String b_phone=(String)session.getAttribute("b_phone");
 				int d_num=service.getdnum(b_phone);
 				session.setAttribute("d_num",d_num);
 				List<BqVo> list=service.alllist(d_num);

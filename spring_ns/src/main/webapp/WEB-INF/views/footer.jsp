@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!-- footer.jsp -->
+
  <style>
- 	#foo div ul li a{ color: #FFFFFF;}
- </style>
+#foo div ul li a{color: #FFFFFF;}
+</style>
 <div id="foo"> 
 <div class="container " >
       <div class="col-lg-10 text-center">
@@ -108,10 +109,9 @@
 				if( data==1){
 					//1: 아이디가 중복되는 문구
 					$("#b_bnum").text("이미 등록된 번호입니다");
-					$("#b_bnum").css("color", "red");
+					$("#b_bnum").css("color","red");
 					$("#submit").attr("disabled", true);
-				}	
-					)
+				})
 				}, error: function(){
 					console.log("실패");
 				}
