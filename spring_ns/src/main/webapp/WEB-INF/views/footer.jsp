@@ -31,12 +31,13 @@
              </c:choose>
              </li>
             <li class="list-inline-item">&sdot;</li>
+             <li class="list-inline-item mt-2">
+              <a  data-toggle="modal" data-target="#bsModal">사업자 등록</a>
+            </li>
           </ul>
           
           <ul class="list-inline mb-2   ">
-            <li class="list-inline-item mt-2">
-              <a  data-toggle="modal" data-target="#bsModal">사업자 문의</a>
-            </li>
+           
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="${cp }/yg/test">Contact</a>
