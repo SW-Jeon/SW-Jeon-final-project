@@ -89,15 +89,11 @@ window.addEventListener('scroll',function(e){
 		
 		tag.style.top=ttop+"px";
 		tag.style.position="fixed";
-		
 	}
-	
 });
-	
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-	<a href="${cp }/chatgo">채팅ㄱ</a>
 	<div
 		style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
@@ -305,7 +301,6 @@ window.addEventListener('scroll',function(e){
 		var y=(window.screen.height/2)-(200/2);
 		function report(){
 			var kk;
-			alert(dnum);
 			kk=window.open('${cp}/report?dnum='+dnum,'_blank','width=500,height=500,left='+x+',top='+y);
 			kk.focus();
 		}

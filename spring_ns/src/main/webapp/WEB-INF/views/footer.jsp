@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!-- footer.jsp -->
  <style>
- 	#foo div ul li a{font-size: 1.4em; color: #FFFFFF;}
+ 	#foo div ul li a{ color: #FFFFFF;}
  </style>
 <div id="foo"> 
 <div class="container " >
@@ -29,10 +29,6 @@
              	</c:otherwise>
              </c:choose>
              </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp }/admin/info">회사소개</a>
-            </li>
             <li class="list-inline-item">&sdot;</li>
           </ul>
           

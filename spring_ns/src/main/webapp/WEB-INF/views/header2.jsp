@@ -42,9 +42,9 @@
           </form>
         </div>
         <ul class="navbar-nav " >
-				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.3em; color:black;">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="font-size: 1.3em; color:black;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.3em; color:black;">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="color:black;">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style=" color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style=" color:black;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
