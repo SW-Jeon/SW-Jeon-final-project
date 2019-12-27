@@ -42,8 +42,7 @@ public class BusinessController {
 			model.addAttribute("code", "no");
 			return ".swMem.result";
 		} else {
-
-			session.setAttribute("phonenum",vo.getB_phone());
+			try{
 
 			String phone = (String) session.getAttribute("m_phone");
 			String id = (String) session.getAttribute("a_id");
@@ -52,17 +51,18 @@ public class BusinessController {
 
 			DetailVo vo31=service.getbd(vo.getB_phone());
 			System.out.println(vo31);
-		    int r_state2=service.getrstate(vo31);
+		    int r_state3=service.getrstate(vo31);
+
 			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
 				session.setAttribute("num", num);
-				if(r_state2==4){
+				if(r_state3==4){
 					//alert띄우기	
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
 					out.println("<script>alert('경고당하셨군요~ 개선바랍니다.');</script>");
 					out.flush();
-				}else if(r_state2==5){	
+				}else if(r_state3==5){	
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
 					out.println("<script>alert('업체 정지가 되셨습니다. 운영자에게 문의 바랍니다.');</script>");
@@ -76,7 +76,11 @@ public class BusinessController {
 				model.addAttribute("code", "no");
 				return ".swMem.result";
 			}
-		}
+		    }catch (Exception e) {
+				e.printStackTrace();
+				return ".bs";
+		    	}
+			}
 	}
 
 	// 로그아웃

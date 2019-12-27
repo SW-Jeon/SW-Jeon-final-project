@@ -89,11 +89,8 @@ window.addEventListener('scroll',function(e){
 		
 		tag.style.top=ttop+"px";
 		tag.style.position="fixed";
-		
 	}
-	
 });
-	
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">

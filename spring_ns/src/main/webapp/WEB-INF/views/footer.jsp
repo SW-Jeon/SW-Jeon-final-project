@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!-- footer.jsp -->
-<!--   <style>
- 	#foo div ul li a{font-size: 1.4em; color: #FFFFFF;}
- </style>
- -->
- <<style>
+
+ <style>
 #foo div ul li a{color: #FFFFFF;}
 </style>
 <div id="foo"> 
@@ -33,10 +30,6 @@
              	</c:otherwise>
              </c:choose>
              </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp }/admin/info">회사소개</a>
-            </li>
             <li class="list-inline-item">&sdot;</li>
           </ul>
           
