@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- MqMyList -->
+<style>
+	.to{font-size: 1.7em; font-weight: bold; text-align: center;}
+	.con{font-size: 1.2em; text-align: center;}
+</style>
 
 <div class="mypage-wrap mt-5 mx-auto">
 
@@ -19,26 +23,26 @@
 			<table class="table table-hover table-striped  text-center">
 				<thead>
 					<tr>
-						<th>글번호</th>
-						<th>제목</th>
-						<th>답변상태</th>
-						<th>작성일</th>
+						<th class="to">글번호</th>
+						<th class="to">제목</th>
+						<th class="to">답변상태</th>
+						<th class="to">작성일</th>
 					</tr>
 				</thead>
 		    <c:forEach var="vo" items="${listMy}">		
 				<tbody>
 					<tr class="table-danger">
-						<td>${ vo.mq_num}</td>
-						<td><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}&m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Detail" >${ vo.mq_title}</a></td>
+						<td class="con">${ vo.mq_num}</td>
+						<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}&m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Detail" >${ vo.mq_title}</a></td>
 						<c:choose>
 								<c:when test="${vo.mq_state =='1' }">
-								<td ><span  style="color:blue;">대기중</span></td>
+								<td class="con"><span  style="color:blue;">대기중</span></td>
 								</c:when>
 								<c:when test="${vo.mq_state =='2' }">
-								<td ><span  style="color:red;">답변완료</span></td>
+								<td class="con"><span  style="color:red;">답변완료</span></td>
 								</c:when>
 						</c:choose>
-						<td>${ vo.mq_date}</td>
+						<td class="con">${ vo.mq_date}</td>
 					</tr>
 				</tbody>
 			</c:forEach>
