@@ -7,9 +7,7 @@
 <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<script src="${cp }/resources/stars/js/jquery-3.4.1.js"></script>
 <title>NangMan</title>
-	
 <!-- Bootstrap core CSS -->
   	<link href="${cp }/resources/maincss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="${cp }/resources/maincss/css/plugins.css">
@@ -55,13 +53,13 @@
 <!-- Bootstrap core JavaScript -->
   <script src="${cp }/resources/maincss/vendor/jquery/jquery.min.js"></script>
   <script src="${cp }/resources/maincss/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="${cp }/resources/maincss/js/vendor/jquery-3.2.1.min.js"></script>
+
   <script src="${cp }/resources/maincss/js/popper.min.js"></script>
   <script src="${cp }/resources/maincss/js/bootstrap.min.js"></script>
   <script src="${cp }/resources/maincss/js/plugins.js"></script>
   <script src="${cp }/resources/maincss/js/active.js"></script>
  
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>

@@ -61,7 +61,6 @@ star-input>.input.focus{outline:1px dotted #ddd;}
          <button type="reset"class="btn btn-danger mt-3"  >취소</button>
    </form>
 </div>
-
 <script src="${cp }/resources/stars/js/star.js" charset="utf-8"></script>
 <script type="text/javascript">
  	// var p5=document.getElementById("p5");

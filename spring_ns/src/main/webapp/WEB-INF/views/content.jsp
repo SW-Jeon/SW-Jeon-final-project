@@ -1,9 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<style type="text/css">
+	*{margin: 0px;padding: 0px;}
+	#imgslide{width:980px;height: 200px;position: absolute;left:0px;}
+</style>
+<script src="${cp }/resources/js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setInterval(function() {
+				i=-4;
+				$("#imgslide").css("left","800px");
+			var a=parseInt($("#imgslide").css("left"));
+			$("#imgslide").animate({
+				left:a-140
+			},1000,function(){
+				i++;
+			});
+		}, 2000)
+	});
+</script>
 <!-- content.jsp -->
 <div>
 	 <!-- Icons Grid -->
-	 <img src="${cp }/resources/main/a11.jpg" style="width: 1430px;">
+	 <img src="${cp }/resources/main/a11.jpg" id="imgslide" style="width: 1430px;">
   <section class="features-icons bg-light text-center">
   
     <div class="container">
