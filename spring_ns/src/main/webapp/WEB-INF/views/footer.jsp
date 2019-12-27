@@ -10,7 +10,7 @@
           <ul class="list-inline mb-1">
             <li class="list-inline-item mt-3">
  			<c:choose>	
-				<c:when test="${empty sessionScope.a_id}">           
+				<c:when test="${empty sessionScope.id}">           
                     <a href="${cp }/admin/adminLogin">운영자</a>
              	</c:when>
              	<c:otherwise>

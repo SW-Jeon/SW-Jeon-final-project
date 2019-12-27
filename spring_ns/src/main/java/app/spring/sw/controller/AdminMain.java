@@ -42,6 +42,7 @@ public class AdminMain {
 			if (m_phone == null && b_phone == null ) {
 				AdminVo vo2=service.getA(vo);
 				String id= vo2.getA_id();
+				System.out.println(vo2.getA_id());
 				session.setAttribute("id", id);
 				return ".admin";
 			}

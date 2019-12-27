@@ -32,7 +32,7 @@ public class BqController {
 				BqVo vo1=new BqVo(0,d_num,vo.getBq_title(),vo.getBq_content(),null,null,"1");
 				service.insert(vo1);
 				model.addAttribute("code","success");
-				return ".pj.result";
+				return "redirect:/pj/bs/BqList";
 			}catch(Exception e){
 				e.printStackTrace();
 				model.addAttribute("code","fail");
