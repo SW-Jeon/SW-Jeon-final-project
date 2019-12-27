@@ -6,7 +6,7 @@
 	.con{font-size: 1.2em; text-align: center;}
 </style>
 
-<div class="mypage-wrap mt-5 mx-auto">
+<div class="mypage-wrap  mx-auto">
    <!-- mypage area -->
 		<div class="mypage-area ">
 		<!-- contents -->
@@ -20,7 +20,7 @@
 					<button class="btn btn-primary" onclick="location.href='${cp }/swMem/memQuestion' " style=" float: right;">문의하기</button>
 					<table class="table table-hover table-striped  text-center">
 						<thead>
-							<tr>
+							<tr  class="table-success">
 								<th class="to">글번호</th>
 								<th class="to">제목</th>
 								<th class="to">답변상태</th>
@@ -29,7 +29,7 @@
 						</thead>
 				    <c:forEach var="vo" items="${listMy}">		
 						<tbody>
-							<tr class="table-danger">
+							<tr class="table-light">
 								<td class="con">${ vo.mq_num}</td>
 								<td class="con"><a href="${cp }/swMem/mqContent?mq_num=${ vo.mq_num}&m_phone=${vo.m_phone}" data-toggle="tooltip" data-original-title="Detail" >${ vo.mq_title}</a></td>
 								<c:choose>

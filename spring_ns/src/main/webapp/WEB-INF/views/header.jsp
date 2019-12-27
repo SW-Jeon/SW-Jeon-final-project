@@ -64,6 +64,9 @@
 				</c:otherwise>
 			</c:choose>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> 나의 블로그</i></a>
+			</div>		
+			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
 			</div>		
 			<div class="col-lg-1 col-sm-3 col-md-1 justify-content-end"  >
