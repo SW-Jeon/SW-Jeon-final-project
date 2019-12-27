@@ -102,7 +102,7 @@ window.addEventListener('scroll',function(e){
 			href="javascript:next()"><img
 			src="${cp }/resources/images/test/button2.png" id="next"></a>
 		<div
-			style="width: 2660px; height: 400px; left: 0px; position: relative;"
+			style="width: 1460px; height: 400px; left: 0px; position: relative; overflow: hidden"
 			id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">

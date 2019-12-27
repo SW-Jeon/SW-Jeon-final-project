@@ -16,7 +16,7 @@
 		</c:when>	
 		<c:when test="${code=='no' }">
 			<img src="${cp }/resources/maincss/images/logo/fail.png" >
-			<h1>존재하지 않는 회원입니다.</h1>
+			<h1>아이디 또는 비밀번호가 일치하지 않습니다.</h1>
 		</c:when>
 		<c:when test="${code=='nono' }">
 			<img src="${cp }/resources/maincss/images/logo/fail.png" >

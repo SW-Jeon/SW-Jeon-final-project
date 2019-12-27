@@ -56,6 +56,8 @@ public class BusinessController {
 			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
 				session.setAttribute("num", num);
+				session.setAttribute("b_phone", vo.getB_phone());
+				System.out.println(vo.getB_phone());
 				if(r_state3==4){
 					//alert띄우기	
 					response.setContentType("text/html; charset=UTF-8");
