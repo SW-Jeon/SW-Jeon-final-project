@@ -97,7 +97,6 @@ window.addEventListener('scroll',function(e){
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-	<a href="${cp }/chatgo">채팅ㄱ</a>
 	<div
 		style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
@@ -193,7 +192,7 @@ window.addEventListener('scroll',function(e){
 						</div>
 						<div class="col-md-10">
 							${vo3.r_content }<br>
-							<img src="${cp}/resources/upload/${vo.r_pic }" width="200px" height="200px">
+							<img src="${cp}/resources/upload/${vo3.r_pic }" width="200px" height="200px">
 						</div>
 					</div>
 				</div>
@@ -285,7 +284,7 @@ window.addEventListener('scroll',function(e){
 	</div>
 	<!-- //Login Form -->
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=088923eb526168e58ebc5d418c534e8b&libraries=services"></script>
 	<script>
 		function zzim() {
 			var d_num=parseInt(document.getElementById("dnum").value);
@@ -305,7 +304,6 @@ window.addEventListener('scroll',function(e){
 		var y=(window.screen.height/2)-(200/2);
 		function report(){
 			var kk;
-			alert(dnum);
 			kk=window.open('${cp}/report?dnum='+dnum,'_blank','width=500,height=500,left='+x+',top='+y);
 			kk.focus();
 		}

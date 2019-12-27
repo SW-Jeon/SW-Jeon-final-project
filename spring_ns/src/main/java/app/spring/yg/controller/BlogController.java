@@ -18,7 +18,7 @@ import app.spring.vo.ReviewVo;
 @Controller
 public class BlogController {
 	@RequestMapping(value="/bloginsert")
-	public String bloginsert(String ir1,MultipartFile file1,Model model){
+	public String bloginsert(String title,String ir1,MultipartFile file1,Model model){
 		System.out.println(ir1);
 		String uploadPath="C:/Users/JHTA/git/final-project/spring_ns/src/main/webapp/resources/blogimg";
 		try{
@@ -35,9 +35,12 @@ public class BlogController {
 			fis.close();
 			fos.close();
 			System.out.println("에러아님");
+			model.addAttribute("title", title);
 			model.addAttribute("ir1", ir1);
 			model.addAttribute("r_pic", r_pic);
 		}	else{
+			model.addAttribute("title", title);
+			model.addAttribute("ir1", ir1);
 			System.out.println("에러");
 		}
 		return ".yg.result2";

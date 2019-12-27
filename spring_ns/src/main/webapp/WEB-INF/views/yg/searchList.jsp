@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	
-function action1(d_sname,d_num,pagenum){
-	location.href="${cp}/detailpage?pagenum="+pagenum+"name="+d_sname+"&d_num="+d_num;
+function action1(d_sname,d_num){
+	location.href="${cp}/detailpage?name="+d_sname+"&d_num="+d_num;
 }
 function action2(count,m){
 	infos[count].open(map,markers[count]);
@@ -172,7 +172,7 @@ function action11(m){
 <div class="row">
 <c:set var="count" value="0"/>
 <c:forEach var="i" items="${list }">
-<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}','${i.d_num }','${pagenum }')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
+<div class="col-md-4" style="text-align: center; width: 100px;" onclick="action1('${i.d_sname}','${i.d_num }')" onmouseover="action2(${count},this)" onmouseout="action3(${count},this)">
 	<c:choose>
 		<c:when test="${empty i.p_pic }">
 			<img style="width:300px;height: 300px;" src="${cp }/resources/maincss/images/logo/non.png"><br><br>

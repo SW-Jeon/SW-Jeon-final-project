@@ -50,7 +50,7 @@ public class Mem_LoginController {
 			model.addAttribute("code", "no");
 			return ".swMem.result";
 		}else{
-			model.addAttribute("code", "fail");
+			model.addAttribute("code", "drop");
 			return ".swMem.result";
 		}
 		

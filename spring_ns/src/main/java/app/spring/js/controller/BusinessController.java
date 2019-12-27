@@ -51,6 +51,7 @@ public class BusinessController {
 			String state=vo2.getB_state();
 
 			DetailVo vo31=service.getbd(vo.getB_phone());
+			System.out.println(vo31);
 		    int r_state2=service.getrstate(vo31);
 			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
