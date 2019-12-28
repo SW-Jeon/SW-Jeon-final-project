@@ -37,17 +37,18 @@ public class BusinessController {
 	@RequestMapping(value = "/business/bsLogin", method = RequestMethod.POST)
 	public String login(BusinessVo vo, HttpSession session, Model model,HttpServletResponse response) throws Exception {
 		boolean vo1 = service.getLog(vo);
+
 		if (vo1) {
 			model.addAttribute("code", "no");
 			return ".swMem.result";
 		} else {
 			try{
-			session.setAttribute("phonenum",vo.getB_phone());
+
 			String phone = (String) session.getAttribute("m_phone");
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
-
 			String state=vo2.getB_state();
+
 			DetailVo vo31=service.getbd(vo.getB_phone());
 			System.out.println(vo31);
 		    int r_state3=service.getrstate(vo31);
