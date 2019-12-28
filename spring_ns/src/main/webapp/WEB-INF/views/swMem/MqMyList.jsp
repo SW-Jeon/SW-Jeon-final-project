@@ -6,7 +6,7 @@
    .con{font-size: 1.2em; text-align: center;}
 </style>
 
-<div class="mypage-wrap mt-5 mx-auto">
+<div class="mypage-wrap  mx-auto">
 
    <!-- mypage area -->
 <div class="mypage-area ">
