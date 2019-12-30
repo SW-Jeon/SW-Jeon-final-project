@@ -20,7 +20,6 @@
 				<typeAlias type="app.spring.vo.AdminVo" alias="admin"/>
 				<typeAlias type="app.spring.vo.InfoVo" alias="info"/>
 				<typeAlias type="app.spring.vo.AdVo" alias="ad"/>
-				<typeAlias type="app.spring.vo.CareVo" alias="care"/>
 				<typeAlias type="app.spring.vo.PayVo" alias="pay"/>
 				<typeAlias type="app.spring.vo.StoryVo" alias="story"/>
 				<typeAlias type="app.spring.vo.Criteria" alias="cri"/>
