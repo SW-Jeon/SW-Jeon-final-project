@@ -9,7 +9,7 @@
         <div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-info text-center">나의 문의 내역</h1>
+						<h1 class="text-info text-center mt-5">나의 문의 내역</h1>
 						<div class="form-group">
 							<label for="bq_title">제목</label><input type="text" class="form-control" value="${ vo.bq_title}" readonly="readonly">
 						</div>

@@ -37,30 +37,19 @@ public class InsertAddController {
 		int ad_vernum=service.advernum(ad_name);
 		maps.put("ad_pay",ad_pay);
 		try{
-			
 				for(int i=0; i<files.size();i++){
 				maps.put("ad_pic"+i,files.get(i).getOriginalFilename());
 				InputStream ips=files.get(i).getInputStream();
 				FileOutputStream fos=new FileOutputStream(uploadPath+"\\" + files.get(i).getOriginalFilename());
 				FileCopyUtils.copy(ips, fos);
-				
 				ips.close();
 				fos.close();
 				}
-				
 				AdVo vo=new AdVo(0, "admin", ad_site, ad_date,ad_vernum);
-				
-				service.adinsert(vo,maps);
-				
-				
-				
-			
-			
+				service.adinsert(vo,maps);	
 		}catch(IOException io){
 			io.printStackTrace();
 		}
 		return ".main";
 	}
-	
-	
 }

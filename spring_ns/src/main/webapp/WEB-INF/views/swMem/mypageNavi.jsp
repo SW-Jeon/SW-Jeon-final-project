@@ -7,7 +7,7 @@
 	a:hover{color:red;}
 </style>
 
-	<nav class="nav nav-tabs flex-column col-md-2 bg-light" style="float: left;  height:1200px; width:500px; ">
+	<nav class="nav nav-tabs flex-column col-md-2 bg-light" style="float: left;  height:1500px; width:500px; ">
 		  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="font-weight: bold; font-size:1.2em; "><span>${vo.m_name }</span> 님</a>
 		  <a class="nav-link" href=" ${cp }/memUpdate?m_phone=${m_phone}">정보 수정</a>
 		  <a class="nav-link" href=" ${cp }/memDelete?m_phone=${m_phone}" >계정 탈퇴</a>

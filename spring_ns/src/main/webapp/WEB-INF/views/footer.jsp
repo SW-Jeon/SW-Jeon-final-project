@@ -9,55 +9,40 @@
 <div class="container " >
       <div class="col-lg-10 text-center">
           <ul class="list-inline mb-1">
-            <li class="list-inline-item mt-3">
- 			<c:choose>	
-				<c:when test="${empty sessionScope.id}">           
-                    <a href="${cp }/admin/adminLogin">운영자</a>
-             	</c:when>
-             	<c:otherwise>
-             		<a href="${cp }/admin/adminMain">운영자</a>
-             	</c:otherwise>
-             </c:choose>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-             <li class="list-inline-item">
-            <c:choose>	
-				<c:when test="${empty sessionScope.b_phone}">           
-                    <a href="${cp }/business/businessLogin">사업자</a>
-             	</c:when>
-             	<c:otherwise>
-             		<a href="${cp }/business/businessMain">사업자</a>
-             	</c:otherwise>
-             </c:choose>
-             </li>
-            <li class="list-inline-item">&sdot;</li>
-             <li class="list-inline-item mt-2">
-              <a  data-toggle="modal" data-target="#bsModal">사업자 등록</a>
-            </li>
-          </ul>
-          
-          <ul class="list-inline mb-2   ">
-           
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp }/yg/test">Contact</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp }/pj/detailupload">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp}/pj/reviewlist">Privacy Policy</a>
-            </li>
-          </ul>
-          		
-          <p class="text-muted small mb-4 mb-lg-0 mt-5">&copy; Last_project 2019. All Rights Reserved.</p>
+	            <li class="list-inline-item mt-3">
+	 			<c:choose>	
+					<c:when test="${empty sessionScope.id}">           
+	                    <a href="${cp }/admin/adminLogin">운영자</a>
+	             	</c:when>
+	             	<c:otherwise>
+	             		<a href="${cp }/admin/adminMain">운영자</a>
+	             	</c:otherwise>
+	             </c:choose>
+	            </li>
+	            <li class="list-inline-item">&sdot;</li>
+	             <li class="list-inline-item">
+	            <c:choose>	
+					<c:when test="${empty sessionScope.b_phone}">           
+	                    <a href="${cp }/business/businessLogin">사업자</a>
+	             	</c:when>
+	             	<c:otherwise>
+	             		<a href="${cp }/business/businessMain">사업자</a>
+	             	</c:otherwise>
+	             </c:choose>
+	             </li>
+	            	<li class="list-inline-item">&sdot;</li>
+	             	<li class="list-inline-item mt-2">
+	              <a  data-toggle="modal" data-target="#bsModal">사업자 등록</a>
+	            </li>
+	             	<li class="list-inline-item">&sdot;</li>
+	            	<li class="list-inline-item" >
+	              	<a href="${cp }/yg/test">Contact</a><li>
+	            </li>
+          </ul><br>
+          <p class="text-muted small mb-4 mt-3">&copy; Last_project 2019. All Rights Reserved.</p>
       </div>
  </div>
 </div>
-
-
 
 <!-- 사업자 등록 Modal창 -->
 <div class="modal fade" id="bsModal" tabindex="-1" role="dialog" aria-labelledby="bsModalLabel" aria-hidden="true">

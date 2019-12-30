@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import app.spring.hs.service.DetailService;
 import app.spring.hs.service.ZzimListService;
 import app.spring.hs.service.ZzimService;
+import app.spring.sw.service.MemService;
 import app.spring.vo.Criteria;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
@@ -25,22 +26,24 @@ public class ZzimListController {
 	@Autowired private ZzimListService service;
 	@Autowired private ZzimService service1;
 	@Autowired private DetailService service2;
+	@Autowired private MemService service3;
 	
 	@RequestMapping("/zzimlists")
 	public ModelAndView zzimlists(Criteria cri,HttpSession session) throws Exception{
 		System.out.println(cri.getPage()+","+cri.getPerPageNum());
-		ZzimPageVo vo=new ZzimPageVo();
-		vo.setCri(cri);
+		ZzimPageVo vo1=new ZzimPageVo();
+		vo1.setCri(cri);
 		int totalNum=service.zzimcount();
 		cri.setCounts(totalNum);
 		System.out.println(totalNum);
-		vo.setTotalCount(service.zzimcount());
+		vo1.setTotalCount(service.zzimcount());
 		String m_phone=(String)session.getAttribute("m_phone");
 		cri.setM_phone(m_phone);
 		List<ZzimListVo> dto=service.listpage(cri);
 		ModelAndView mv = new ModelAndView(".zzim.zzimlist");
-		mv.addObject("vo",vo);
+		mv.addObject("vo1",vo1);
 		mv.addObject("list",dto);
+		mv.addObject("vo", service3.getInfo(m_phone));
 		return mv;
 	}
 	@RequestMapping("/zzimdel")

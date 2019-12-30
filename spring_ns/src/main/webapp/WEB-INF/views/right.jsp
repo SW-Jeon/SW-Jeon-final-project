@@ -2,19 +2,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- right -->
 
-<div class=" ">
-	<img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images"  style="width: 300px; height: 300px;">
+<div class="ml-3 mb-2 ">
+	<img src="${cp }/resources/maincss/images/logo/ad1.png" alt="logo images"  style="width: 300px; height: 450px;">
 </div>
-<div class=" ">
-	<img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images"  style="width: 300px; height: 300px;">
+<div class=" ml-3 mb-2">
+	<img src="${cp }/resources/maincss/images/logo/ad2.png" alt="logo images"  style="width: 300px; height: 450px;">
 </div>
-<div class=" ">
-	<img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images"  style="width: 300px; height: 300px;">
+<div class=" ml-3 mb-2" >
+	<img src="${cp }/resources/maincss/images/logo/ad3.png" alt="logo images" style="width: 300px; height: 450px;">
 </div>
-<div class=" ">
-	<img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images" style="width: 300px; height: 300px;">
-</div>
-<div class=" ">
-	<img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images" style="width: 300px; height: 300px;">
+<div class=" ml-3 mb-2">
+	<img src="${cp }/resources/maincss/images/logo/ad4.png" alt="logo images" style="width: 300px; height: 450px; ">
 </div>
 

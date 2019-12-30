@@ -2,6 +2,8 @@ package app.spring.sw.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,8 +43,9 @@ public class MqController {
 		
 		//글 목록조회(회원용)
 		@RequestMapping(value="/swMem/mqMyList",method=RequestMethod.GET )
-		public String listMy(Model model,String m_phone){
+		public String listMy(Model model,HttpSession session){
 			try {
+				String m_phone= (String)session.getAttribute("m_phone");
 				model.addAttribute("vo", MemService.getInfo(m_phone));
 				List<MqVo> listMy=service.listMy(m_phone);
 				model.addAttribute("listMy", listMy);	
