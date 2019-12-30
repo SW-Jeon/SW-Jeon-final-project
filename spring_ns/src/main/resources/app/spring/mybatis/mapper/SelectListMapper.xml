@@ -52,4 +52,25 @@
     </if>
     	group by d.d_num order by ${standard})s
   	</select>
+  	<select id="searchblogname" parameterType="String" resultType="int">
+  		select count(*) from blog where m_phone=#{m_phone}
+  	</select>
+  	<select id="searchbloglist" resultType="blog">
+  		select * from blog
+  	</select>
+  	<select id="bloginfo" parameterType="String" resultType="bloginfo">
+  		select * from blog b inner join editor e on b.bl_name=e.bl_name where m_phone=#{m_phone}
+  	</select>
+  	<insert id="insertblogname" parameterType="blog">
+  		insert into blog values(#{bl_name},#{m_phone},#{bl_profile})
+  	</insert>
+  	<insert id="inserteditor" parameterType="editor">
+  		insert into editor values(0,#{bl_name},#{ed_title},#{ed_content},#{ed_pic},now(),0);
+  	</insert>
+  	<delete id="blogdelete" parameterType="int">
+  		delete from editor where ed_num=#{ed_num};
+  	</delete>
+  	<update id="updateeditor" parameterType="editor">
+  		update editor set ed_title=#{ed_title},ed_content=#{ed_content} where ed_num=#{ed_num};
+  	</update>
 </mapper>

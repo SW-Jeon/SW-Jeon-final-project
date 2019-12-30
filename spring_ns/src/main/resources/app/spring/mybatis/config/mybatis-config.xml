@@ -3,14 +3,16 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="app.spring.vo.MemVo" alias="mem" />
-		<typeAlias type="app.spring.vo.DetailVo" alias="detailmap" />
-		<typeAlias type="app.spring.vo.BusinessVo" alias="business" />
-		<typeAlias type="app.spring.vo.ReviewVo" alias="review" />
-		<typeAlias type="app.spring.vo.FindimgVo" alias="findimg" />
-		<typeAlias type="app.spring.vo.BqVo" alias="bq" />
+		<typeAlias type="app.spring.vo.MemVo" alias="mem"/>
+		<typeAlias type="app.spring.vo.DetailVo" alias="detailmap"/>
+		<typeAlias type="app.spring.vo.BusinessVo" alias="business"/>
+		<typeAlias type="app.spring.vo.ReviewVo" alias="review"/>
+		<typeAlias type="app.spring.vo.FindimgVo" alias="findimg"/>
+		<typeAlias type="app.spring.vo.BqVo" alias="bq"/>
+		<typeAlias type="app.spring.vo.BlogVo" alias="blog"/>
 		<typeAlias type="app.spring.vo.MqVo" alias="mq" />
-		<typeAlias type="app.spring.vo.FoodVo" alias="food" />
+		<typeAlias type="app.spring.vo.FoodVo" alias="food"/>
+		<typeAlias type="app.spring.vo.EditorVo" alias="editor"/>
 		<typeAlias type="app.spring.vo.FindmenuVo" alias="findmenu" />
 		<typeAlias type="app.spring.vo.ZzimVo" alias="zzim" />
 		<typeAlias type="app.spring.vo.ReportVo" alias="report" />
@@ -30,6 +32,7 @@
 		<typeAlias type="app.spring.vo.PayVo" alias="payin" />
 		<typeAlias type="app.spring.vo.AdlistVo" alias="adlists" />
 		<typeAlias type="app.spring.vo.AdPageVo" alias="adlistss" />
+		<typeAlias type="app.spring.vo.BlogInfoVo" alias="bloginfo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="app/spring/mybatis/mapper/MemMapper.xml" />

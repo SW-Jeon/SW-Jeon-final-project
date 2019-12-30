@@ -7,7 +7,10 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import app.spring.vo.BlogInfoVo;
+import app.spring.vo.BlogVo;
 import app.spring.vo.DetailVo;
+import app.spring.vo.EditorVo;
 import app.spring.vo.FoodVo;
 import app.spring.vo.SearchListVo;
 
@@ -45,6 +48,27 @@ public class SelectListDao {
 		return sqlSessionTemplate.delete(NAMESPACE+".foodautodel",values);
 	}
 	public int searchcount(Map<String, Object>values){
-		return  sqlSessionTemplate.selectOne(NAMESPACE+".searchCount",values);
+		return sqlSessionTemplate.selectOne(NAMESPACE+".searchCount",values);
+	}
+	public int searchblogname(String m_phone){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".searchblogname",m_phone);
+	}
+	public List<BlogVo> searchbloglist(){
+		return sqlSessionTemplate.selectList(NAMESPACE+".searchbloglist");
+	}
+	public List<BlogInfoVo> bloginfo(String m_phone){
+		return sqlSessionTemplate.selectList(NAMESPACE+".bloginfo",m_phone);
+	}
+	public int insertblogname(BlogVo vo){
+		return sqlSessionTemplate.insert(NAMESPACE+".insertblogname",vo);
+	}
+	public int inserteditor(EditorVo vo){
+		return sqlSessionTemplate.insert(NAMESPACE+".inserteditor",vo);
+	}
+	public int blogdelete(int ed_num){
+		return sqlSessionTemplate.delete(NAMESPACE+".blogdelete", ed_num);
+	}
+	public int updateeditor(EditorVo vo){
+		return sqlSessionTemplate.update(NAMESPACE+".updateeditor",vo);
 	}
 }
