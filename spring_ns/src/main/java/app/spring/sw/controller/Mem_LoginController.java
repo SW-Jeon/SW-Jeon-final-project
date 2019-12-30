@@ -43,8 +43,10 @@ public class Mem_LoginController {
 			session.setAttribute("m_pwd", m_pwd);
 			List<DetailVo> flist=service2.foodlist(m_phone);
 			int count=service2.foodcount(m_phone);
+			int check=service2.searchblogname(m_phone);
 			session.setAttribute("flist", flist);
 			session.setAttribute("count", count);
+			session.setAttribute("check", check);
 			return ".main";
 		}else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
 			model.addAttribute("code", "no");
@@ -73,7 +75,13 @@ public class Mem_LoginController {
 			if(phone.equals(m_phone) && pwd.equals(m_pwd) && status.equals("1") && id==null ){
 	         session.setAttribute("m_phone", m_phone);
 	         session.setAttribute("m_pwd", m_pwd);
-	         model.addAttribute("phone",phone);
+	         List<DetailVo> flist=service2.foodlist(m_phone);
+				int count=service2.foodcount(m_phone);
+				int check=service2.searchblogname(m_phone);
+				session.setAttribute("flist", flist);
+				session.setAttribute("count", count);
+				session.setAttribute("check", check);
+				model.addAttribute("phone",phone);
 				System.out.println(phone);
 				model.addAttribute("list",list);
 				model.addAttribute("list1",list1);
