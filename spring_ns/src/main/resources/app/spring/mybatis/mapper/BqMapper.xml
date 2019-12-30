@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="app.spring.mybatis.mapper.BqMapper">
+
   	<!-- 사업자 문의 등록 -->
   	<insert id="insert" parameterType="bq">
   		insert into bq values(0,#{d_num},#{bq_title},#{bq_content},now(),null,'1')
@@ -24,8 +25,8 @@
   	<select id="getdnum" parameterType="string" resultType="int">
   		select d_num from detail d,business b where d.b_num=b.b_num and b.b_phone=#{b_phone}
   	</select>
-  	<select id="alllist" parameterType="int" resultType="bq">
-  		select * from bq where d_num=#{d_num}
+  	<select id="alllist" parameterType="String" resultType="bq">
+  		select d.d_sname,q.bq_num,q.d_num,q.bq_title,q.bq_content,q.bq_state,q.bq_date from detail d,bq q,business b where b.b_phone=#{b_phone} and b.b_num=d.b_num  and d.d_num=q.d_num
   	</select>
   	<!-- 사업자 문의 전체 조회 -->
   	<select id="listAll" resultType="bq">
@@ -39,4 +40,12 @@
   	<select id="bqdetail" parameterType="int" resultType="bq">
   		select * from bq where bq_num=#{bq_num}
   	</select>
+  	<!-- 사업체 업체메뉴 리스트-->
+  	<select id="getbqlist" parameterType="String" resultType="app.spring.vo.DetailVo">
+  		select d.d_num,d.d_sname from business b,detail d where b.b_phone=#{b_phone} and d.b_num=b.b_num
+  	</select>
+  	<!-- 사업체 메뉴 등록-->
+  	<insert id="menuinsert" parameterType="app.spring.vo.MenuVo" >
+  		insert into menu values(0,#{d_num},#{me_name},#{me_pay})
+  	</insert>
   </mapper>

@@ -48,10 +48,6 @@ public class DetailController {
 				if(service2.checkfood(values)==null){
 					service2.joinfood(values);
 					int count=service2.foodcount(phone);
-					if(count>5){
-						values.put("del",count-5);
-						service2.foodautodel(values);
-					}
 					List<DetailVo> flist=service2.foodlist(phone);
 					session.setAttribute("count", count);
 					session.setAttribute("flist", flist);
@@ -72,13 +68,11 @@ public class DetailController {
 			}
 			return mv;
 		}
-		
 		@RequestMapping(value="/pj/bs/bqdetailupload",method=RequestMethod.GET)
 		public String detailForm(DetailVo vo){
 			return ".bs.bqdetailupload";
 		}
-		
-		@RequestMapping(value = "/pj/bs/bqdetailupload",method=RequestMethod.POST)
+		@RequestMapping(value="/pj/bs/bqdetailupload",method=RequestMethod.POST)
 	    public String detailupload(String d_sname, String d_kind, String d_park, String d_holi, String d_time, String d_phone,
 	    		String d_addr,@RequestParam (required=false) List<MultipartFile> file) throws IOException {
 	         HashMap<String,Object> map=new HashMap<String, Object>();
@@ -98,28 +92,7 @@ public class DetailController {
 			DetailVo vo1=
 					new DetailVo(0, "admin",4 , d_sname, d_kind, d_park, d_holi, d_time, d_phone, d_addr, 0);
 					service.insert(vo1,map);
-	        //    System.out.println("originFileName : " + r_pic);
-	        //    System.out.println(uploadPath,);
-
-	            //String r_pic = path + System.currentTimeMillis() + r_pic1;
-	       //     String r_pic= UUID.randomUUID() + "_" + r_pic1;
-	        //	String r_pic2= uploadPath +"\\"+ UUID.randomUUID() +"_" + r_pic1;
-	            
-	          
-	        /*
-				//DB에 저장하기
-	        DetailVo vo1=
-			new DetailVo(0, "admin",1, d_sname, d_kind, d_park, d_holi, d_time, d_phone, d_addr, 0);
-	        
-		   // service.insert(vo);
-	        
-	        try {
-				service.insert(vo1,r_pic);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			*/
+	      
 	       }catch (Exception e) {
 		  e.printStackTrace();
 		}

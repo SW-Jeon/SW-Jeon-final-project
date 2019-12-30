@@ -19,5 +19,5 @@
 			<h1>존재하지 않는 회원입니다.</h1>
 		</c:when>
 	</c:choose>
-	<button class="btn btn-danger mt-5" onclick="location.href='${cp }/' ">홈으로</button>
+	<button class="btn btn-danger mt-5" onclick="location.href='${cp }/business/businessMain '">홈으로</button>
 </div>

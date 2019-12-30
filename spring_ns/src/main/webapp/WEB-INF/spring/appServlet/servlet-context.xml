@@ -55,6 +55,8 @@
 	<context:component-scan base-package="app.spring.sw"/>
 	<context:component-scan base-package="app.spring.js"/>
 	<context:component-scan base-package="app.spring.yg"/>
+	<context:component-scan base-package="app.spring.vo"/>
+
 
 
 </beans:beans>

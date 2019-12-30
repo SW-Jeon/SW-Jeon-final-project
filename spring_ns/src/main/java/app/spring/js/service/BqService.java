@@ -1,5 +1,6 @@
 package app.spring.js.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import app.spring.js.dao.BqDao;
 import app.spring.vo.BqVo;
+import app.spring.vo.DetailVo;
+import app.spring.vo.MenuVo;
 
 @Service
 public class BqService {
@@ -30,8 +33,8 @@ public class BqService {
 	public int getdnum(String b_phone){
 		return bqDao.getdnum(b_phone);
 	}
-	public List<BqVo> alllist(int d_num){
-		return bqDao.alllist(d_num);
+	public List<BqVo> alllist(String b_phone){
+		return bqDao.alllist(b_phone);
 	}
 	//사업자 전체  문의 조회
 	public List<BqVo> listAll(){
@@ -45,4 +48,12 @@ public class BqService {
 	public BqVo detail(int bq_num){
 		return bqDao.detail(bq_num);
 	}
+	//사업자 등록업체 조회
+	public List<DetailVo> getbqlist(String b_phone){
+		return bqDao.getbqlist(b_phone);
+	}
+	//사업자 메뉴등록
+		public int  menuinsert(MenuVo vo){
+			return bqDao.menuinsert(vo);
+		}
 }

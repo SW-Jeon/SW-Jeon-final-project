@@ -43,15 +43,14 @@ public class BusinessController {
 			return ".swMem.result";
 		} else {
 			try{
-
 			String phone = (String) session.getAttribute("m_phone");
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
 			String state=vo2.getB_state();
-
+			 session.setAttribute("businessphone", vo.getB_phone());
 			DetailVo vo31=service.getbd(vo.getB_phone());
-			System.out.println(vo31);
 		    int r_state3=service.getrstate(vo31);
+
 
 			if (phone == null && id ==null && state.equals("2")) {
 				int num= vo2.getB_num();
@@ -101,7 +100,7 @@ public class BusinessController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
-			return ".sw	Mem.result";
+			return ".swMem.result";
 		}
 	}
 
@@ -115,7 +114,7 @@ public class BusinessController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
-			return ".sw	Mem.result";
+			return ".swMem.result";
 		}
 	}
 

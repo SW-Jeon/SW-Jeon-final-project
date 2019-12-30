@@ -3,6 +3,7 @@ package app.spring.vo;
 import java.sql.Date;
 
 public class BqVo {
+	private String d_sname;
 	private int bq_num;
 	private int d_num;
 	private String bq_title;
@@ -12,7 +13,7 @@ public class BqVo {
 	private String bq_state;
 	
 	public BqVo(){}
-	
+
 	public BqVo(int bq_num, int d_num, String bq_title, String bq_content, Date bq_date, String bq_reply,String bq_state) {
 		super();
 		this.bq_num = bq_num;
@@ -22,6 +23,26 @@ public class BqVo {
 		this.bq_date = bq_date;
 		this.bq_reply = bq_reply;
 		this.bq_state = bq_state;
+	}
+	
+	public BqVo(String d_sname,int bq_num, int d_num, String bq_title, String bq_content, Date bq_date, String bq_reply,String bq_state) {
+		super();
+		this.d_sname= d_sname;
+		this.bq_num = bq_num;
+		this.d_num = d_num;
+		this.bq_title = bq_title;
+		this.bq_content = bq_content;
+		this.bq_date = bq_date;
+		this.bq_reply = bq_reply;
+		this.bq_state = bq_state;
+	}
+	
+	public String getD_sname() {
+		return d_sname;
+	}
+
+	public void setD_sname(String d_sname) {
+		this.d_sname = d_sname;
 	}
 	
 	public String getBq_title() {
