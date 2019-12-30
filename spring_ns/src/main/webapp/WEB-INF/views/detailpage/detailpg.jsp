@@ -51,20 +51,13 @@
 
 table {
 	border-collapse: separate;
-	border-spacing: 0 20px;
+	border-spacing: 0 15px;
 	width: 600px;
 }
 
-table tr th {
-	border: 1px solid yellow;
-	text-align: center;
-	background-color: pink;
-}
+table tr th { text-align: center;  font-weight: 400;}
 
-table tr td {
-	text-align: center;
-	border-bottom: 1px solid black;
-}
+table tr td { text-align: center; font-size:1.2em; font-weight: bolder;}
 
 #return {
 	position: relative;
@@ -94,35 +87,31 @@ window.addEventListener('scroll',function(e){
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-	<div
-		style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
+	<div style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
-		<a href="javascript:behind()"><img
-			src="${cp }/resources/images/test/button1.png" id="return"></a> <a
-			href="javascript:next()"><img
-			src="${cp }/resources/images/test/button2.png" id="next"></a>
-		<div
-			style="width: 1460px; height: 400px; left: 0px; position: relative; overflow: hidden"
-			id="imageinfo">
+		<a href="javascript:behind()"><img src="${cp }/resources/images/test/button1.png" id="return"></a> 
+		<a href="javascript:next()"><img src="${cp }/resources/images/test/button2.png" id="next"></a>
+		<div style="width: 1460px; height: 400px; left: 0px; position: relative; overflow: hidden" id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
 					<div style="left: 200px;">
-						<li style="margin-left: 10px" name="lili"><img
-							src="${cp }/resources/maincss/images/test/${im.p_pic }"></li>
+						<li style="margin-left: 10px" name="lili">
+							<img src="${cp }/resources/maincss/images/test/${im.p_pic }">
+						</li>
 					</div>
 				</ul>
 			</c:forEach>
 		</div>
 	</div>
-	<h1 style="text-align: center;">${name }</h1>
-	<div id="map"
-		style="left: 60%; width: 600px; height: 500px; top: 200px; position: relative; max-width: 100%;"></div>
-	<div
-		style="margin-top: -300px; margin-bottom: 100px; margin-left: 100px; position: relative; width: 700px; max-width: 100%;">
+	<h1 class="text-dark text-center mb-3 mt-3">${name }</h1>
+	<hr>
+	<div id="map" style="left: 60%; width: 600px; height: 500px;  position: relative; max-width: 100%;"></div>
+	<div style="margin-top: -500px; margin-bottom: 100px; margin-left: 100px; padding:0px; position: relative; width: 700px; max-width: 100%;">
+
 		<table style="color: black;">
 			<c:forEach var="vo" items="${list }">
 				<tr>
-					<th>카테고리</th>
+					<th >카테고리</th>
 					<td>${vo.d_kind }</td>
 				</tr>
 				<tr>
@@ -161,7 +150,7 @@ window.addEventListener('scroll',function(e){
 		</table>
 		<input type="hidden" value="${phone }" id="mphone">
 	</div>
-
+	<hr>
 	<c:forEach var="vo3" items="${list3}">
 					<div class="container-fluid">
 					<div class="row">
