@@ -34,8 +34,8 @@ public class BqDao {
 	public int getdnum(String b_phone){
 		return sqlSessionTemplate.selectOne(NAMESPACE + ".getdnum",b_phone);
 	}
-	public List<BqVo> alllist(int d_num){
-		return sqlSessionTemplate.selectList(NAMESPACE + ".alllist",d_num);
+	public List<BqVo> alllist(String b_phone){
+		return sqlSessionTemplate.selectList(NAMESPACE + ".alllist",b_phone);
 	}
 	//사업자 전체 문의 조회
 	public List<BqVo> listAll(){
@@ -52,8 +52,8 @@ public class BqDao {
 			public List<DetailVo> getbqlist(String b_phone){
 			return sqlSessionTemplate.selectList(NAMESPACE+".getbqlist",b_phone);
 		}
-			//사업자 메뉴등록
-			public int menuinsert(MenuVo vo){
-			return sqlSessionTemplate.insert(NAMESPACE+".menuinsert",vo);
+	//사업자 메뉴등록
+	public int menuinsert(MenuVo vo){
+	return sqlSessionTemplate.insert(NAMESPACE+".menuinsert",vo);
 		}
 }

@@ -33,8 +33,8 @@ public class BqService {
 	public int getdnum(String b_phone){
 		return bqDao.getdnum(b_phone);
 	}
-	public List<BqVo> alllist(int d_num){
-		return bqDao.alllist(d_num);
+	public List<BqVo> alllist(String b_phone){
+		return bqDao.alllist(b_phone);
 	}
 	//사업자 전체  문의 조회
 	public List<BqVo> listAll(){

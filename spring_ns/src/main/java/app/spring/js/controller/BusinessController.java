@@ -47,7 +47,7 @@ public class BusinessController {
 			String id = (String) session.getAttribute("a_id");
 			BusinessVo vo2=service.getState(vo);
 			String state=vo2.getB_state();
-			  session.setAttribute("businessphone", vo.getB_phone());
+			 session.setAttribute("businessphone", vo.getB_phone());
 			DetailVo vo31=service.getbd(vo.getB_phone());
 		    int r_state3=service.getrstate(vo31);
 

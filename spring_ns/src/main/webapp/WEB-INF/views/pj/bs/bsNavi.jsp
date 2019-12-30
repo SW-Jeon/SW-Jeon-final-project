@@ -4,9 +4,6 @@
 <nav class="nav navbar-nav" style="float: left;">
 		 <ul class="sidebar navbar-nav" >
 		      <li class="nav-item">
-		        	<a class="nav-link  active" href="#"><i class="fas fa-portrait mr-2 ml-2" ></i><span>관리</span></a>
-		      </li>
-		      <li class="nav-item">
 		       		<a class="nav-link" href="${cp }/pj/bs/BqList"><i class="fas fa-bell mr-2 ml-2"></i><span>문의 목록</span></a>
 		      </li>     
 		     <li class="nav-item">

@@ -21,15 +21,17 @@
 				<thead>
 					<tr  class="table-success">
 						<th class="to">글번호</th>
+						<th class="to">업체명</th>
 						<th class="to">제목</th>
 						<th class="to">답변상태</th>
 						<th class="to">작성일</th>
 					</tr>
 				</thead>
-		    <c:forEach var="vo" items="${alllist}">		
+		    <c:forEach var="vo" items="${alllist}" varStatus="vs" >		
 				<tbody>
 						<tr class="table-light">
-							<td class="con">${ vo.bq_num}</td>
+							<td class="con">${ vs.index+1}</td>
+							<td class="con">${vo.d_sname}</td>
 							<td class="con"><a href="${cp }/pj/bs/bqcontent?bq_num=${ vo.bq_num}" data-toggle="tooltip" data-original-title="Detail" >${ vo.bq_title}</a></td>
 						<c:choose>
 								<c:when test="${vo.bq_state =='1' }">
