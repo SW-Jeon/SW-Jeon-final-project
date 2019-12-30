@@ -13,7 +13,7 @@
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-		<h1 class="text-info text-center mb-5">낭만 매거진</h1>
+		<h1 class="text-info text-center pt-3 mb-5">낭만 매거진</h1>
 			<button class="btn btn-primary mb-3" onclick="location.href='${cp }/admin/Story' "><i class="fas fa-marker"> 글쓰기</i></button>
 			<table class="table table-hover table-striped">
 				<thead>

@@ -7,9 +7,9 @@
 
 	<div id="con">
         <!-- Page Content -->
-        <h1>Blank Page</h1>
+        <h1 class="text-info text-center pt-3 mb-3">Blank Page</h1>
         <hr>
-        <img src="${cp}/resources/maincss/images/logo/logo-1.png" style="height: 700px; text-align: center;">	
+        <img src="${cp}/resources/maincss/images/logo/logo-1.png" style="height: 700px;">	
       </div >
 </div>
  

@@ -6,7 +6,7 @@
 <jsp:include page="/WEB-INF/views/admin/adminNavi.jsp"/> 
 
 <section class="mypage-cont col-md-10" style="margin-top: 80px; float: right;">
-	<h1 class="text-info text-center mb-5">공지사항 수정</h1>
+	<h1 class="text-info text-center pt-3 mb-5">공지사항 수정</h1>
 	<form role="form" method="post" action="${cp}/admin/infoUpdate" >
 		<input type="hidden"  name="i_num" value="${vo.i_num }">
 			<div class="form-group">

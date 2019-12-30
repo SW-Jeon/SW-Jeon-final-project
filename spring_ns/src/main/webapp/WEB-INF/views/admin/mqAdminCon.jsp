@@ -7,7 +7,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-info text-center">회원님 문의 내역</h1>
+						<h1 class="text-info text-center pt-3 mb-5">회원님 문의 내역</h1>
 					
 						<div class="form-group">
 							<label for="mq_title">제목</label><input type="text" class="form-control" value="${ vo1.mq_title}" readonly="readonly">

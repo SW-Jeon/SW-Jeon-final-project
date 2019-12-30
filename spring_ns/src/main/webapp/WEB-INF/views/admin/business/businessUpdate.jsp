@@ -6,7 +6,7 @@
 <jsp:include page="/WEB-INF/views/admin/adminNavi.jsp"/> 
 
 <section class="mypage-cont col-md-10" style="margin-top: 80px; float: right;">
-	<h1 class="text-info text-center mb-5">업체 상태 변경</h1>
+	<h1 class="text-info text-center pt-3 mb-5 ">업체 상태 변경</h1>
 	<form role="form" method="post" action="${cp}/admin/bnUpdate" >
 		<input type="hidden"  name="b_num" value="${vo.b_num }">
 			<div class="form-group">

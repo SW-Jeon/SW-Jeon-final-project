@@ -7,7 +7,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12 m-5">
-			<h1 class="text-info text-center mb-3">회원정보 수정</h1>
+			<h1 class="text-info text-center pt-3 mb-5">회원정보 수정</h1>
 			<form role="form" method="post" action="${cp}/memUpdate1" style="width: 80%; padding-left: 250px;">
 			
 				<div class="form-group">

@@ -9,7 +9,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-		<h1 class="text-info text-center">등록된 광고 목록</h1>
+		<h1 class="text-info text-center pt-3 mb-5">등록된 광고 목록</h1>
 		<table class="table table-hover table-striped">
 			<thead>
 					<tr  class="table-success">

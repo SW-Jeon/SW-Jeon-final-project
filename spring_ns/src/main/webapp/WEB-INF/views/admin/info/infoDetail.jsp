@@ -8,7 +8,7 @@
 	<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-info text-center">공 지 사 항</h1>
+						<h1 class="text-info text-center pt-3 mb-5">공 지 사 항</h1>
 						<div class="form-group">
 							<label for="i_title">제목</label><input type="text" class="form-control" value="${ vo.i_title}" readonly="readonly">
 						</div>
