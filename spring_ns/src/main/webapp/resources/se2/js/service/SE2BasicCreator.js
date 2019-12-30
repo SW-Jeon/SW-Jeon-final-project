@@ -27,7 +27,6 @@ window.createSEditor2 = function(elIRField, htParams, elSeAppContainer){
 	var oIRTextarea = elIRField?elIRField:jindo.$$.getSingle("TEXTAREA.blind", elEditingArea);
 	var oHTMLSrc = jindo.$$.getSingle("TEXTAREA.se2_input_htmlsrc", elEditingArea);
 	var oTextArea = jindo.$$.getSingle("TEXTAREA.se2_input_text", elEditingArea);
-	
 	if(!htParams){ 
 		htParams = {}; 
 		htParams.fOnBeforeUnload = null;
@@ -39,6 +38,7 @@ window.createSEditor2 = function(elIRField, htParams, elSeAppContainer){
 	var oEditor = new nhn.husky.HuskyCore(htParams);
 	oEditor.registerPlugin(new nhn.husky.CorePlugin(htParams?htParams.fOnAppLoad:null));	
 	oEditor.registerPlugin(new nhn.husky.StringConverterManager());
+	
 	if(htParams.bSkipXssFilter !== true){
 		// 보안 필터링 플러그인 (TODO:소스분리 및 블랙리스트 옵션 추가)
 		oEditor.registerPlugin({

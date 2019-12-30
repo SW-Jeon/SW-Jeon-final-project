@@ -1,5 +1,6 @@
 package app.spring.js.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import app.spring.js.service.BqService;
 
 import app.spring.vo.BqVo;
+import app.spring.vo.DetailVo;
+import app.spring.vo.MenuVo;
 
 @Controller
 public class BqController {
@@ -67,4 +70,28 @@ public class BqController {
 				return ".pj.result";
 			}
 		}
+		// 사업자 메뉴등록
+				@RequestMapping(value="/pj/bs/bqmenu",method=RequestMethod.GET)
+				public String BqmenuinsertForm(Model model,HttpSession session){
+					try{				
+					String b_phone=(String)session.getAttribute("phonenum");
+					List<DetailVo> bqlist=service.getbqlist(b_phone);
+					model.addAttribute("bqlist",bqlist);
+					return ".bs.menuinsert";
+				}catch(Exception e){
+					return ".pj.result";
+				}
+				}
+				@RequestMapping(value="/pj/bs/bqmenuinsertok",method=RequestMethod.POST)
+				public String BqmenuinsertokForm(Model model,HttpSession session,MenuVo vo){
+					try{
+					     service.menuinsert(vo);
+					     model.addAttribute("code","success");
+					}catch(Exception ex){
+						ex.printStackTrace();
+						model.addAttribute("code","fail");
+						return ".pj.result";
+					}
+					return ".pj.result";
+				}
 }

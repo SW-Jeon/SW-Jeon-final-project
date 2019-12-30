@@ -1,5 +1,6 @@
 package app.spring.js.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import app.spring.vo.BqVo;
+import app.spring.vo.DetailVo;
+import app.spring.vo.MenuVo;
 
 @Repository
 public class BqDao {
@@ -45,4 +48,12 @@ public class BqDao {
 	public BqVo detail(int bq_num){
 		return sqlSessionTemplate.selectOne(NAMESPACE+".bqdetail",bq_num);
 	}
+	//사업자 업체조회
+			public List<DetailVo> getbqlist(String b_phone){
+			return sqlSessionTemplate.selectList(NAMESPACE+".getbqlist",b_phone);
+		}
+			//사업자 메뉴등록
+			public int menuinsert(MenuVo vo){
+			return sqlSessionTemplate.insert(NAMESPACE+".menuinsert",vo);
+		}
 }

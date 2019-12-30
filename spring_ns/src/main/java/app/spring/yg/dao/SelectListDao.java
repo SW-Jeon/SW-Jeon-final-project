@@ -41,4 +41,10 @@ public class SelectListDao {
 	public int fooddelete(String m_phone){
 		return sqlSessionTemplate.delete(NAMESPACE+".fooddelete",m_phone);
 	}
+	public int foodautodel(Map<String, Object>values){
+		return sqlSessionTemplate.delete(NAMESPACE+".foodautodel",values);
+	}
+	public int searchcount(Map<String, Object>values){
+		return  sqlSessionTemplate.selectOne(NAMESPACE+".searchCount",values);
+	}
 }

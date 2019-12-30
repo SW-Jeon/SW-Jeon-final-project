@@ -54,19 +54,19 @@ function openZipSearch() {
 					</label>
 				</div>
 				<div>
-					휴무일(d_holi)
+					휴무일
 					<input type="text" name="d_holi" class="form-control input-lg" placeholder="">
 				</div>
 				<div>
-					영업시간(d_time)
+					영업시간
 					<input type="text" name="d_time" class="form-control input-lg" placeholder="">
 				</div>
 				<div>
-					음식점 전화번호(d_phone)
+					음식점 전화번호
 					<input type="text" name="d_phone" class="form-control input-lg" placeholder="">
 				</div>
 				<div>
-					음식점 주소(d_addr	)<br>
+					음식점 주소<br>
 					우편번호 : <input type="text" name="zip" style="width:80px; height:26px;" />
 					<button type="button" style="width:60px; height:32px;" onclick="openZipSearch()">검색</button><br>
 					주소 : <input type="text" name="d_addr" style="width:300px; height:30px;" readonly  class="form-control input-lg"/><br>

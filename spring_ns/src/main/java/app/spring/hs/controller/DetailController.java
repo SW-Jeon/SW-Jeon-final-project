@@ -69,13 +69,11 @@ public class DetailController {
 			}
 			return mv;
 		}
-		
 		@RequestMapping(value="/pj/bs/bqdetailupload",method=RequestMethod.GET)
 		public String detailForm(DetailVo vo){
 			return ".bs.bqdetailupload";
 		}
-		
-		@RequestMapping(value = "/pj/bs/bqdetailupload",method=RequestMethod.POST)
+		@RequestMapping(value="/pj/bs/bqdetailupload",method=RequestMethod.POST)
 	    public String detailupload(String d_sname, String d_kind, String d_park, String d_holi, String d_time, String d_phone,
 	    		String d_addr,@RequestParam (required=false) List<MultipartFile> file) throws IOException {
 	         HashMap<String,Object> map=new HashMap<String, Object>();

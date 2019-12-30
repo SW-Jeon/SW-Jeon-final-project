@@ -39,4 +39,12 @@
   	<select id="bqdetail" parameterType="int" resultType="bq">
   		select * from bq where bq_num=#{bq_num}
   	</select>
+  	<!-- 사업체 업체메뉴 리스트-->
+  	<select id="getbqlist" parameterType="String" resultType="app.spring.vo.DetailVo">
+  		select d.d_num,d.d_sname from business b,detail d where b.b_phone=#{b_phone} and d.b_num=b.b_num
+  	</select>
+  	<!-- 사업체 메뉴 등록-->
+  	<insert id="menuinsert" parameterType="app.spring.vo.MenuVo" >
+  		insert into menu values(0,#{d_num},#{me_name},#{me_pay})
+  	</insert>
   </mapper>
