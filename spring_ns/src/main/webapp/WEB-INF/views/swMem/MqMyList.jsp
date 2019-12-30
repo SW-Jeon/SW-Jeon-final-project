@@ -17,7 +17,7 @@
 			<div class="row">
 				<div class="col-md-12 " style="margin-top:80px; float: right;">
 				<h1 class="text-info text-center">나의 문의 목록</h1>
-					<button class="btn btn-primary" onclick="location.href='${cp }/swMem/memQuestion' " style=" float: right;">문의하기</button>
+					<button class="btn btn-primary mb-3" onclick="location.href='${cp }/swMem/memQuestion?m_phone=${vo.m_phone}' " style=" float: right;">문의하기</button>
 					<table class="table table-hover table-striped  text-center">
 						<thead>
 							<tr  class="table-success">

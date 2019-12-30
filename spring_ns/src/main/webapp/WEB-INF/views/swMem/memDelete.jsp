@@ -9,10 +9,10 @@
 			<!-- 네비바 -->
 			<jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp" />
 			<section class="mypage-cont col-md-10" style="margin-top: 80px; float: right;">
-				<h1 class="text-info text-center ">회원탈퇴</h1>
-				<h3 class="text-danger text-center mb-5">( 탈퇴를 신중하게 선택바랍니다. )</h3>
-				<img src="${cp }/resources/maincss/images/logo/secret.png" style="float: left; width: 30%;">
-				<form role="form" method="post" action="${cp}/memDelete" style="width: 70%; float: right;">
+				<h1 class="text-info text-center ">계정 탈퇴</h1>
+				<h3 class="text-danger text-center mb-5">( 탈퇴를 신중하게 선택 바랍니다. )</h3>
+				<img src="${cp }/resources/maincss/images/logo/secret.png" style="float: left; width: 25%;">
+				<form role="form" method="post" action="${cp}/memDelete" style="width: 75%; float: right;">
 					<div class="form-group">
 						<label for="m_phone">전화번호</label><input type="text" class="form-control" name="m_phone" value="${vo.m_phone}" readonly="readonly">
 					</div>

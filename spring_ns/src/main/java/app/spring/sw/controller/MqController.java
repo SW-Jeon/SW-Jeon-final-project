@@ -26,8 +26,9 @@ public class MqController {
 		
 		//글쓰기 폼에서 값 전달 받아 등록
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.POST )
-		public String MqInsert(MqVo vo,Model model){
+		public String MqInsert(MqVo vo,Model model,String m_phone){
 			try{
+				model.addAttribute("vo", MemService.getInfo(m_phone));
 				service.insert(vo);
 				return "redirect:/swMem/mqMyList";
 			}catch (Exception e) {
@@ -43,7 +44,6 @@ public class MqController {
 			try {
 				model.addAttribute("vo", MemService.getInfo(m_phone));
 				List<MqVo> listMy=service.listMy(m_phone);
-				model.addAttribute("m_phone", m_phone);
 				model.addAttribute("listMy", listMy);	
 				return ".swMem.MqMyList";
 			} catch (Exception e) {
