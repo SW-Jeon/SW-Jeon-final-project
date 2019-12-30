@@ -4,9 +4,12 @@
 <c:forEach var="vo" items="${list }">
 <div class="container-fluid">
 	<div class="row">
+			<div class="col-md-10">
+			<img src="${cp }/resources/maincss/images/logo/non.png" width="200px" height="200px">
+			${vo.r_content }
+		</div>
 		<div class="col-md-2">
 			${vo.m_phone }<br>
-			
 			<c:choose>
 				<c:when test="${ vo.r_score==1 }">
 					<img src="${cp}/resources/score/star1.png" >
@@ -23,12 +26,7 @@
 				<c:when test="${ vo.r_score==5 }">
 					<img src="${cp}/resources/score/star5.png">
 				</c:when>
-			</c:choose>
-			
-		</div>
-		<div class="col-md-10">
-			${vo.r_content }<br>
-			<img src="${cp }/resources/maincss/images/logo/non.png" width="200px" height="200px">
+			</c:choose>		
 		</div>
 	</div>
 </div>

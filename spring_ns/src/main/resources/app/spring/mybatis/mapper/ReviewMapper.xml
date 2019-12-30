@@ -18,7 +18,7 @@
   	
   	<!--  리뷰 리스트  출력할거 -->
   	<select id="list2"  resultType="review" parameterType="int">
-     	select rpad(substr(m_phone,1,7),length(m_phone),'*') m_phone,r_score,r_content,r_pic from review where d_num=#{d_num}
+     	select rpad(substr(m_phone,1,7),length(m_phone),'*') m_phone,r_score,r_content,r_pic,r_regdate from review where d_num=#{d_num}
   	</select>
   	
   	

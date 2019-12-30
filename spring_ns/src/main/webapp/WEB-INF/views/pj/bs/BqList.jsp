@@ -5,7 +5,6 @@
 	.to{font-size: 1.7em; font-weight: bold; text-align: center;}
 	.con{font-size: 1.2em; text-align: center;}
 </style>
-
 <div>
 	<!-- 네비바 -->
 	<jsp:include page="/WEB-INF/views/pj/bs/bsNavi.jsp"/> 

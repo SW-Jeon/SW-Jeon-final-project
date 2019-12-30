@@ -100,7 +100,7 @@ public class BusinessController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
-			return ".sw	Mem.result";
+			return ".swMem.result";
 		}
 	}
 
@@ -114,7 +114,7 @@ public class BusinessController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("code", "fail");
-			return ".sw	Mem.result";
+			return ".swMem.result";
 		}
 	}
 

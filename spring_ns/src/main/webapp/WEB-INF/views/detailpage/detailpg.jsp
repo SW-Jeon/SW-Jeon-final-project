@@ -152,11 +152,10 @@ window.addEventListener('scroll',function(e){
 	</div>
 	<hr>
 	<c:forEach var="vo3" items="${list3}">
-					<div class="container-fluid">
+					<div class="container-fluid" style="margin-left: 100px;">
 					<div class="row">
-						<div class="col-md-2">
-							${vo3.m_phone }<br>
-				
+					<div class="col-md-2" style="text-align: center;">
+					<img src="${cp }/resources/maincss/images/logo/logo.png"  style="width: 200px;height: 150px;">	<br>
 							<c:choose>
 								<c:when test="${ vo3.r_score==1 }">
 									<img src="${cp}/resources/score/star1.png" >
@@ -173,14 +172,16 @@ window.addEventListener('scroll',function(e){
 								<c:when test="${ vo3.r_score==5 }">
 									<img src="${cp}/resources/score/star5.png">
 								</c:when>
-							</c:choose>
-							
+							</c:choose>					
+						</div>			
+						<div class="col-md-10" style="margin-top: 30px;">
+							${vo3.r_regdate}<br>
+							${vo3.r_content }<br><br>
+							<img src="${cp}/resources/upload/${vo3.r_pic }" width="100px" height="100px">
 						</div>
-						<div class="col-md-10">
-							${vo3.r_content }<br>
-							<img src="${cp}/resources/upload/${vo3.r_pic }" width="200px" height="200px">
-						</div>
+						
 					</div>
+					<br>
 				</div>
 			</c:forEach>
 			
