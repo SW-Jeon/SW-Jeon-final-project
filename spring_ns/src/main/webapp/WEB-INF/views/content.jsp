@@ -1,28 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style type="text/css">
-	*{margin: 0px;padding: 0px;}
-	#imgslide{width:980px;height: 200px;position: absolute;left:0px;}
-</style>
 <script src="${cp }/resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		var i=1;
+		// setInterval(function() {
+		//	var a=parseInt($("#imgslide").css("left"));
+		//	$("#imgslide").animate({
+		//		left:a-1430
+		//	},1000,function(){
+		//	});
+		//}, 2000)
+		//setInterval(function() {
+		//var left=parseInt($("#imglist").css("left"));
+		//$("#imglist").animate({
+		//	left:left-1430
+		//},1000,function(){
+		//	$("#imglist #img"+i++).remove();
+		//	$("#imglist ul").append("<li><img src='${cp }/resources/main/a"+i+".jpg' id='img"+i+"' style='width: 1430px;'></li>");
+		//	$(this).css("left",0);
+		//	if(i>2) i=1;
+		//});
+	//}, 2000)
 		setInterval(function() {
-				i=-4;
-				$("#imgslide").css("left","800px");
-			var a=parseInt($("#imgslide").css("left"));
-			$("#imgslide").animate({
-				left:a-140
-			},1000,function(){
-				i++;
+			//.slideUp(실행시간,애니메이션수행이 완료되면 호출되는 function)
+			$("#box1").fadeIn(500,function(){
+				//alert("숨기기 완료!");
+				$("#img1 img").prop("src","${cp }/resources/main/a" + i++ +".jpg");
+				if(n>20) n=1;
+			}1000,function(){
 			});
-		}, 2000)
+		});
 	});
 </script>
 <!-- content.jsp -->
 <div>
-	 <!-- Icons Grid -->
-	 <img src="${cp }/resources/main/a11.jpg" id="imgslide" style="width: 1430px;">
+	<div id="img1" style="position: relative">
+			<ul style="float:left; list-style: none;">
+				<li><img src="${cp }/resources/main/a1.jpg" id="img1" style="width: 1430px;"></li>
+				<li><img src="${cp }/resources/main/a2.jpg" id="img2" style="width: 1430px;"></li>
+			</ul>
+		</div>
   <section class="features-icons bg-light text-center">
   
     <div class="container">

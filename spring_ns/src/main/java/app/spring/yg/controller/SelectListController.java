@@ -21,7 +21,8 @@ import app.spring.yg.service.SelectListService;
 public class SelectListController {
 	@Autowired SelectListService service;
 	@RequestMapping(value="/searchList")	
-	public ModelAndView searchList(String keyword,String standard,String pri,String food,String park,@RequestParam(value="pagenum",defaultValue="1")int pagenum,HttpSession session){
+	public ModelAndView searchList(String keyword,String standard,String pri,String food,String park,
+			@RequestParam(value="pagenum",defaultValue="1")int pagenum,HttpSession session){
 		Map<String, Object> values=new HashMap<String, Object>();
 		values.put("keyword", keyword);
 		if(standard==null){
