@@ -18,7 +18,7 @@ public class ZzimDao {
 	public int delete(int d_num){
 		return sqlsessionTemplate.delete(NAMESPACE+".delete",d_num);
 	}
-	public List<ZzimVo> select(String m_phone){
-		return sqlsessionTemplate.selectList(NAMESPACE+".select",m_phone);
+	public ZzimVo select(ZzimVo vo){
+		return sqlsessionTemplate.selectOne(NAMESPACE+".select",vo);
 	}
 }
