@@ -56,7 +56,10 @@
   		select count(*) from blog where m_phone=#{m_phone}
   	</select>
   	<select id="searchbloglist" resultType="blog">
-  		select * from blog
+  		select * from blog b left outer join editor e on b.bl_name=e.bl_name group by b.bl_name order by b.bl_name desc limit 3;
+  	</select>
+  	<select id="searchmybloginfo" resultType="blog">
+  		select * from blog where m_phone=#{m_phone}
   	</select>
   	<select id="bloginfo" parameterType="String" resultType="bloginfo">
   		select * from blog b inner join editor e on b.bl_name=e.bl_name where m_phone=#{m_phone}
@@ -73,4 +76,13 @@
   	<update id="updateeditor" parameterType="editor">
   		update editor set ed_title=#{ed_title},ed_content=#{ed_content} where ed_num=#{ed_num};
   	</update>
+  	<select id="searchtext" parameterType="int" resultType="editor">
+  		select * from editor where ed_num=#{ed_num}
+  	</select>
+  	<select id="bloginfo2" parameterType="String" resultType="bloginfo">
+  		select * from blog b inner join editor e on b.bl_name=e.bl_name where b.bl_name=#{bl_name}
+  	</select>
+  	<select id="searchyourbloginfo" resultType="blog">
+  		select * from blog where bl_name=#{bl_name}
+  	</select>
 </mapper>

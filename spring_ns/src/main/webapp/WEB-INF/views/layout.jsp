@@ -55,10 +55,6 @@
 	
 <!-- Bootstrap core JavaScript -->
   <script src="${cp }/resources/maincss/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'yg' of https://github.com/SW-Jeon/final-project.git
   <script src="${cp }/resources/maincss/js/popper.min.js"></script>
   <script src="${cp }/resources/maincss/js/bootstrap.min.js"></script>
   <script src="${cp }/resources/maincss/js/plugins.js"></script>

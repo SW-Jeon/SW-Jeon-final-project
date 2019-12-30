@@ -38,7 +38,7 @@
 	        <ul class="nav navbar-nav mr-auto "  id="navi">
 				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="color:black;">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="color:black;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="color:black;">낭만스토리</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/bloglist"  style="color:black;">낭만스토리</a></li>
 			</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
@@ -178,7 +178,7 @@
 					<br></div>
 					<c:forEach var="i" items="${flist }">
 					<div style="text-align: left;" onclick="action1('${i.d_sname}','${i.d_num }')">
-					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 120px;">
+					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 150px;">
 					<c:choose>
 						<c:when test="${empty i.p_pic }">
 							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/logo/non.png">

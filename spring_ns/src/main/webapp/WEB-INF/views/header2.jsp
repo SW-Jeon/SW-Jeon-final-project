@@ -71,7 +71,14 @@
 				</c:otherwise>
 			</c:choose>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
-				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> 나의 블로그</i></a>
+				<c:choose>
+				<c:when test="${check !=1 }">
+					<a class="btn btn-block btn-lg btn-danger "  href="${cp}/blogproinsertpage" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> 나의 블로그</i></a>
+				</c:when>
+				<c:otherwise>
+					<a class="btn btn-block btn-lg btn-danger "  href="${cp}/blogpage" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> 나의 블로그</i></a>
+				</c:otherwise>
+			</c:choose>
 			</div>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
@@ -153,7 +160,7 @@
 					<br></div>
 					<c:forEach var="i" items="${flist }">
 					<div style="text-align: left;" onclick="action1('${i.d_sname}','${i.d_num }')">
-					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 120px;">
+					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 150px;">
 					<c:choose>
 						<c:when test="${empty i.p_pic }">
 							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/logo/non.png">

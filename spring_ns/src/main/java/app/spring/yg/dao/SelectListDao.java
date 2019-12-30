@@ -71,4 +71,16 @@ public class SelectListDao {
 	public int updateeditor(EditorVo vo){
 		return sqlSessionTemplate.update(NAMESPACE+".updateeditor",vo);
 	}
+	public BlogVo searchmybloginfo(String m_phone){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".searchmybloginfo", m_phone);
+	}
+	public EditorVo searchtext(int ed_num){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".searchtext",ed_num);
+	}
+	public List<BlogInfoVo> bloginfo2(String bl_name){
+		return sqlSessionTemplate.selectList(NAMESPACE+".bloginfo2",bl_name);
+	}
+	public BlogVo searchyourbloginfo(String bl_name){
+		return sqlSessionTemplate.selectOne(NAMESPACE+".searchyourbloginfo",bl_name);
+	}
 }
