@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
-  
-  <configuration>
-  		<typeAliases>
-  				<typeAlias type="app.spring.vo.MemVo" alias="mem"/>
-  				<typeAlias type="app.spring.vo.DetailVo" alias="detailmap"/>
-  				<typeAlias type="app.spring.vo.BusinessVo" alias="business"/>
-  				<typeAlias type="app.spring.vo.ReviewVo" alias="review"/>
-  				<typeAlias type="app.spring.vo.FindimgVo" alias="findimg"/>
-  				<typeAlias type="app.spring.vo.BqVo" alias="bq"/>
-  				<typeAlias type="app.spring.vo.MqVo" alias="mq"/>
-  				<typeAlias type="app.spring.vo.FoodVo" alias="food"/>
-				<typeAlias type="app.spring.vo.FindmenuVo" alias="findmenu"/>
-				<typeAlias type="app.spring.vo.ZzimVo" alias="zzim"/>
-				<typeAlias type="app.spring.vo.ReportVo" alias="report"/>
-				<typeAlias type="app.spring.vo.SearchListVo" alias="searchList"/>
-				<typeAlias type="app.spring.vo.ZzimListVo" alias="zzimlists"/>
-				<typeAlias type="app.spring.vo.ZzimPageVo" alias="zzimlistss"/>
-				<typeAlias type="app.spring.vo.AdminVo" alias="admin"/>
-				<typeAlias type="app.spring.vo.InfoVo" alias="info"/>
-				<typeAlias type="app.spring.vo.AdVo" alias="ad"/>
-				<typeAlias type="app.spring.vo.PayVo" alias="pay"/>
-				<typeAlias type="app.spring.vo.StoryVo" alias="story"/>
-				<typeAlias type="app.spring.vo.Criteria" alias="cri"/>
-				<typeAlias type="app.spring.vo.ReportNameVO" alias="reportName"/>
-				<typeAlias type="app.spring.vo.AdVo" alias="advo"/>
-				<typeAlias type="app.spring.vo.AdpicVo" alias="pivo"/>
-				<typeAlias type="app.spring.vo.AdvertiserVo" alias="adver"/>
-				<typeAlias type="app.spring.vo.PayVo" alias="payin"/>
-				<typeAlias type="app.spring.vo.AdlistVo" alias="adlists"/>
-				<typeAlias type="app.spring.vo.AdPageVo" alias="adlistss"/>
-  		</typeAliases>
-  		<mappers>
-  			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/DetailMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/BusinessMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/SelectListMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/ReviewMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/ReportMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/BqMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/MqMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/ZzimMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/AdminMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/StoryMapper.xml"/>
-  			<mapper resource="app/spring/mybatis/mapper/AdMapper.xml"/>
-   		</mappers>		
-  </configuration> 
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="app.spring.vo.MemVo" alias="mem" />
+		<typeAlias type="app.spring.vo.DetailVo" alias="detailmap" />
+		<typeAlias type="app.spring.vo.BusinessVo" alias="business" />
+		<typeAlias type="app.spring.vo.ReviewVo" alias="review" />
+		<typeAlias type="app.spring.vo.FindimgVo" alias="findimg" />
+		<typeAlias type="app.spring.vo.BqVo" alias="bq" />
+		<typeAlias type="app.spring.vo.MqVo" alias="mq" />
+		<typeAlias type="app.spring.vo.FoodVo" alias="food" />
+		<typeAlias type="app.spring.vo.FindmenuVo" alias="findmenu" />
+		<typeAlias type="app.spring.vo.ZzimVo" alias="zzim" />
+		<typeAlias type="app.spring.vo.ReportVo" alias="report" />
+		<typeAlias type="app.spring.vo.SearchListVo" alias="searchList" />
+		<typeAlias type="app.spring.vo.ZzimListVo" alias="zzimlists" />
+		<typeAlias type="app.spring.vo.ZzimPageVo" alias="zzimlistss" />
+		<typeAlias type="app.spring.vo.AdminVo" alias="admin" />
+		<typeAlias type="app.spring.vo.InfoVo" alias="info" />
+		<typeAlias type="app.spring.vo.AdVo" alias="ad" />
+		<typeAlias type="app.spring.vo.PayVo" alias="pay" />
+		<typeAlias type="app.spring.vo.StoryVo" alias="story" />
+		<typeAlias type="app.spring.vo.Criteria" alias="cri" />
+		<typeAlias type="app.spring.vo.ReportNameVO" alias="reportName" />
+		<typeAlias type="app.spring.vo.AdVo" alias="advo" />
+		<typeAlias type="app.spring.vo.AdpicVo" alias="pivo" />
+		<typeAlias type="app.spring.vo.AdvertiserVo" alias="adver" />
+		<typeAlias type="app.spring.vo.PayVo" alias="payin" />
+		<typeAlias type="app.spring.vo.AdlistVo" alias="adlists" />
+		<typeAlias type="app.spring.vo.AdPageVo" alias="adlistss" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="app/spring/mybatis/mapper/MemMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/DetailMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/BusinessMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/SelectListMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/ReviewMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/ReportMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/BqMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/MqMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/ZzimMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/AdminMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/StoryMapper.xml" />
+		<mapper resource="app/spring/mybatis/mapper/AdMapper.xml" />
+	</mappers>
+</configuration> 
