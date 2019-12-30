@@ -13,22 +13,22 @@
 		       		<a class="nav-link" href="${cp }/admin/infoList"><i class="fas fa-feather-alt mr-2 ml-2" ></i><span>공지사항</span></a>
 		      </li>
 		       <li class="nav-item">
-		       		<a class="nav-link" href="${cp }/admin/storyList"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>낭만매거진</span></a>
+		       		<a class="nav-link" href="${cp }/admin/storyList"><i class="fas fa-globe mr-2 ml-2"></i><span>낭만매거진</span></a>
 		      </li>   
 		       <li class="nav-item">
-		       		<a class="nav-link" href="${cp }/admin/businessList"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>사업체 목록</span></a>
+		       		<a class="nav-link" href="${cp }/admin/businessList"><i class="ffas fa-clipboard-list mr-2 ml-2"></i><span>사업체 목록</span></a>
 		      </li>  
 		       <li class="nav-item">
-		       		<a class="nav-link" href="${cp }/admin/bsCare"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체신고관리</span></a>
+		       		<a class="nav-link" href="${cp }/admin/bsCare"><i class="fas fa-bell mr-2 ml-2"></i><span>업체신고관리</span></a>
 		      </li>  
 		       <li class="nav-item">
-		       		<a class="nav-link" href="${cp }/admin/bsBlack"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>Blacklist(업체)</span></a>
+		       		<a class="nav-link" href="${cp }/admin/bsBlack"><i class="fas fa-bomb mr-2 ml-2"></i><span>Blacklist(업체)</span></a>
 		      </li>  
 		        <li class="nav-item">
-		       		<a class="nav-link" href="${cp }/insertform"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고</span></a>
+		       		<a class="nav-link" href="${cp }/insertform"><i class="fas fa-audio-description mr-2 ml-2"></i><span>광고</span></a>
 		      </li>
 		      <li class="nav-item">
-		      	<a class="nav-link" href="${cp }/adlist"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>광고목록</span></a>
+		      	<a class="nav-link" href="${cp }/adlist"><i class="fas fa-book mr-2 ml-2"></i><span>광고목록</span></a>
 		      </li>   
 		</ul>
 </nav> 
