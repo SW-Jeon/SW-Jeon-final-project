@@ -7,7 +7,7 @@
 	width: 100px;
 	height: 450px;
 	left: 1800px;
-	top: 500px;
+	top: 300px;
 	position: absolute;
 	text-align: center;
 	z-index: 999;
@@ -68,7 +68,7 @@ table tr td { text-align: center; font-size:1.2em; font-weight: bolder;}
 
 #next {
 	position: relative;
-	left: 1370px;
+	left: 1340px;
 	top: 150px;
 	z-index: 1;
 }
@@ -76,7 +76,7 @@ table tr td { text-align: center; font-size:1.2em; font-weight: bolder;}
 <script>
 window.addEventListener('scroll',function(e){
 	var sc=window.scrollY;
-	if(sc>=200){
+	if(sc>=250){
 		var tag=document.getElementById("tag"); 
 		var ttop=tag.style.top;
 		
@@ -87,11 +87,11 @@ window.addEventListener('scroll',function(e){
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-	<div style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
+	<div style="width: 1870px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
 		<a href="javascript:behind()"><img src="${cp }/resources/images/test/button1.png" id="return"></a> 
 		<a href="javascript:next()"><img src="${cp }/resources/images/test/button2.png" id="next"></a>
-		<div style="width: 1460px; height: 400px; left: 0px; position: relative; overflow: hidden" id="imageinfo">
+		<div style="width: 1430px; height: 400px; left: 0px; position: relative; overflow: hidden" id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
 					<div style="left: 200px;">
