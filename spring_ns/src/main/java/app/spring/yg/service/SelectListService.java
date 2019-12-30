@@ -69,4 +69,16 @@ public class SelectListService {
 	public int updateeditor(EditorVo vo){
 		return dao.updateeditor(vo);
 	}
+	public BlogVo searchmybloginfo(String m_phone){
+		return dao.searchmybloginfo(m_phone);
+	}
+	public EditorVo searchtext(int ed_num){
+		return dao.searchtext(ed_num);
+	}
+	public List<BlogInfoVo> bloginfo2(String bl_name){
+		return dao.bloginfo2(bl_name);
+	}
+	public BlogVo searchyourbloginfo(String bl_name){
+		return dao.searchyourbloginfo(bl_name);
+	}
 }

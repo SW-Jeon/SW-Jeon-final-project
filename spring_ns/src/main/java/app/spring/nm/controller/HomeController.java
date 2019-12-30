@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import app.spring.vo.BlogVo;
 import app.spring.vo.DetailVo;
 import app.spring.yg.service.SelectListService;
 
@@ -29,7 +30,8 @@ public class HomeController {
 			session.setAttribute("flist", flist);
 			session.setAttribute("count", count);
 		}
+		List<BlogVo> blist=service2.searchbloglist();
+		model.addAttribute("blist", blist);
 		return ".main";
-
 	}
 }

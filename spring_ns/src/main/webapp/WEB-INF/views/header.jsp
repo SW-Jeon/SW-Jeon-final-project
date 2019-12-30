@@ -177,7 +177,7 @@
 					<br></div>
 					<c:forEach var="i" items="${flist }">
 					<div style="text-align: left;" onclick="action1('${i.d_sname}','${i.d_num }')">
-					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 120px;">
+					<div style="float: left; margin-left: 20px; margin-right: 20px; width: 150px;">
 					<c:choose>
 						<c:when test="${empty i.p_pic }">
 							<img style="width:100px;height: 100px;" src="${cp }/resources/maincss/images/logo/non.png">

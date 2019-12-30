@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글수정</title>
 <script type="text/javascript" src="${cp }/resources/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
 window.onload=function(){
@@ -30,7 +30,6 @@ var oEditors = [];
 
 		 // 에디터의 내용에 대한 값 검증은 이곳에서
 		 // document.getElementById("ir1").value를 이용해서 처리한다.
-		 alert(document.getElementById("ir1").value);
 
 		 try {
 		     elClickedObj.form.submit();
@@ -44,12 +43,11 @@ var oEditors = [];
 </head>
 <body>
 <br>
-<form method="post" action="${cp }/bloginsert" name="writefrm" id="writefrm" enctype="multipart/form-data">
-<span>제목:</span>&nbsp&nbsp&nbsp<input type="text" name="title" style="width: 670px;"><br><br>
-<input type="text" name="bl_name" value="${bl_name }">
-<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자"></textarea>
-<input type="file" name="file1"><br>
-<input type="submit" class="btn btn-primary mt-3" id="writebtn" name="writebtn" value="저장">
+<form method="post" action="${cp }/blogupdateok" name="writefrm" id="writefrm">
+<span>제목:</span>&nbsp&nbsp&nbsp<input type="text" name="ed_title" style="width: 670px;" value="${vo.ed_title }"><br><br>
+<input type="hidden" name="ed_num" value="${vo.ed_num }">
+<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자" >${vo.ed_content}</textarea>
+<input type="submit" class="btn btn-primary mt-3" id="writebtn" name="writebtn" value="수정">
 <input type="button" class="btn btn-primary mt-3" id="writebtn2" name="writebtn2" value="취소">
 </form>
 </body>
