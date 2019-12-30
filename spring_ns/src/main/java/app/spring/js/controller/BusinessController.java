@@ -143,10 +143,4 @@ public class BusinessController {
 			return ".sw	Mem.result";
 		}
 	}
-	//에디터페이지
-	@RequestMapping(value = "/yg/test", method = RequestMethod.GET)
-	public String road(BusinessVo vo) {
-		return ".yg.editor";
-
-	}
 }
