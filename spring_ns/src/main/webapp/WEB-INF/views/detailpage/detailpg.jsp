@@ -68,7 +68,7 @@ table tr td { text-align: center; font-size:1.2em; font-weight: bolder;}
 
 #next {
 	position: relative;
-	left: 1780px;
+	left: 1370px;
 	top: 150px;
 	z-index: 1;
 }

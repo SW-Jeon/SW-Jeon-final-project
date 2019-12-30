@@ -17,7 +17,7 @@ public class ZzimService {
 	public int delete(int d_num){
 		return dao.delete(d_num);
 	}
-	public List<ZzimVo> select(String m_phone){
-		return dao.select(m_phone);
+	public ZzimVo select(ZzimVo vo){
+		return dao.select(vo);
 	}
 }

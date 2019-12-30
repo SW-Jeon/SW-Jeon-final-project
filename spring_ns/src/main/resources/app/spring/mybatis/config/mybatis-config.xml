@@ -30,6 +30,7 @@
 				<typeAlias type="app.spring.vo.PayVo" alias="payin"/>
 				<typeAlias type="app.spring.vo.AdlistVo" alias="adlists"/>
 				<typeAlias type="app.spring.vo.AdPageVo" alias="adlistss"/>
+				<typeAlias type="app.spring.vo.PicVo" alias="imglist"/>
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>
@@ -46,5 +47,8 @@
   			<mapper resource="app/spring/mybatis/mapper/InfoMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/StoryMapper.xml"/>
   			<mapper resource="app/spring/mybatis/mapper/AdMapper.xml"/>
+  			<mapper resource="app/spring/mybatis/mapper/MainMapper.xml"/>
    		</mappers>		
   </configuration> 
+
+

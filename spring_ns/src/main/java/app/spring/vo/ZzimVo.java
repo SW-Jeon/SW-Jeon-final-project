@@ -10,7 +10,9 @@ public class ZzimVo {
 		this.di_num = di_num;
 		this.d_num = d_num;
 		this.m_phone = m_phone;
+		
 	}
+	
 	public int getDi_num() {
 		return di_num;
 	}
@@ -29,5 +31,6 @@ public class ZzimVo {
 	public void setM_phone(String m_phone) {
 		this.m_phone = m_phone;
 	}
+	
 	
 }
