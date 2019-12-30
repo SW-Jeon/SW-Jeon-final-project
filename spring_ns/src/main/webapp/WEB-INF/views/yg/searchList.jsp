@@ -164,7 +164,7 @@ function action11(m){
 
 <hr><hr style="border-top:1px solid black;"><br>
 </div>
-<hr>
+
 <c:choose>
 	<c:when test="${not empty list }">
 <jsp:include page="/WEB-INF/views/api/api.jsp" flush="false"/><br>
@@ -242,7 +242,7 @@ function action11(m){
 	</c:when>
 	<c:otherwise>
 	<div class="col-md-12" style="text-align: center;">
-		<img style="width:800px;" src="${cp }/resources/maincss/images/logo/a34.png"  onclick="location.href=${cp}/"><br>
+		<img style=" float: left;" src="${cp }/resources/maincss/images/logo/a34.png"  onclick="location.href=${cp}/">
 	</div>
 	</c:otherwise>
 </c:choose>
