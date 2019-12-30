@@ -25,7 +25,7 @@ function gogo(bl_name){
 <div class="col-md-7" style="float: right; position: static;">
 <c:choose>
 <c:when test="${empty list }">
-	<h1>작성된 글이 없습니다.</h1>
+	<img src="${cp }/resources/maincss/images/logo/nono.png" style="width: 780px;">
 </c:when>
 <c:otherwise>
 <c:forEach var="i" items="${list }">

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.hs.service.DetailService;
 import app.spring.sw.service.MemService;
+import app.spring.vo.BlogVo;
 import app.spring.vo.DetailVo;
 import app.spring.vo.FindimgVo;
 import app.spring.vo.FindmenuVo;
@@ -47,6 +48,8 @@ public class Mem_LoginController {
 			session.setAttribute("flist", flist);
 			session.setAttribute("count", count);
 			session.setAttribute("check", check);
+			List<BlogVo> blist=service2.searchbloglist();
+			model.addAttribute("blist", blist);
 			return ".main";
 		}else if(!(phone.equals(m_phone) && pwd.equals(m_pwd))){
 			model.addAttribute("code", "no");

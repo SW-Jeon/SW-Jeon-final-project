@@ -54,10 +54,12 @@ public class BlogController {
 			model.addAttribute("title", title);
 			model.addAttribute("ir1", ir1);
 		}
-		return ".yg.result2";
+			model.addAttribute("code", "success");
+			return ".swMem.result";
 	}catch(IOException ie){
 		ie.printStackTrace();
-		return ".main";
+		model.addAttribute("code", "fail");
+		return ".swMem.result";
 	}
 	}
 	@RequestMapping(value="/blogproinsertpage")
