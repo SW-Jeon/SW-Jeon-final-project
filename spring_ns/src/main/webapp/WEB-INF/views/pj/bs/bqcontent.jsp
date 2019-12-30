@@ -17,6 +17,9 @@
 							<label for="bq_content">내용</label><input type="text" class="form-control" value="${ vo.bq_content}" readonly="readonly">
 						</div>
 						<div class="form-group">
+							<label for="bq_reply">답변</label><input type="text" class="form-control" value="${ vo.bq_reply}" readonly="readonly">
+						</div>
+						<div class="form-group">
 							<label for="bq_date">작성일</label><input type="text" class="form-control" value="${vo.bq_date}" readonly="readonly">
 						</div>
 						<button class="btn btn-primary" onclick="location.href='${cp }/' ">홈으로</button>

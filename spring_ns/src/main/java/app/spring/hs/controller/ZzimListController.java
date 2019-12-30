@@ -2,14 +2,11 @@ package app.spring.hs.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.servlet.ModelAndView;
 
 import app.spring.hs.service.DetailService;
@@ -28,9 +25,9 @@ public class ZzimListController {
 	@Autowired private ZzimListService service;
 	@Autowired private ZzimService service1;
 	@Autowired private DetailService service2;
+	
 	@RequestMapping("/zzimlists")
 	public ModelAndView zzimlists(Criteria cri,HttpSession session) throws Exception{
-		
 		System.out.println(cri.getPage()+","+cri.getPerPageNum());
 		ZzimPageVo vo=new ZzimPageVo();
 		vo.setCri(cri);

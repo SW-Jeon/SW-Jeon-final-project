@@ -42,9 +42,9 @@
           </form>
         </div>
         <ul class="navbar-nav " >
-				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.3em; color:black;">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="font-size: 1.3em; color:black;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.3em; color:black;">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="color:black;">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style=" color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style=" color:black;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
@@ -70,7 +70,9 @@
 					</div>
 				</c:otherwise>
 			</c:choose>
-			
+			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> 나의 블로그</i></a>
+			</div>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
 			</div>		

@@ -32,7 +32,7 @@ public class BqController {
 				BqVo vo1=new BqVo(0,d_num,vo.getBq_title(),vo.getBq_content(),null,null,"1");
 				service.insert(vo1);
 				model.addAttribute("code","success");
-				return ".pj.result";
+				return "redirect:/pj/bs/BqList";
 			}catch(Exception e){
 				e.printStackTrace();
 				model.addAttribute("code","fail");
@@ -44,7 +44,7 @@ public class BqController {
 		public String listBq(Model model,HttpSession session){
 			try{
 				
-				String b_phone=(String)session.getAttribute("phonenum");
+				String b_phone=(String)session.getAttribute("b_phone");
 				int d_num=service.getdnum(b_phone);
 				session.setAttribute("d_num",d_num);
 				List<BqVo> list=service.alllist(d_num);

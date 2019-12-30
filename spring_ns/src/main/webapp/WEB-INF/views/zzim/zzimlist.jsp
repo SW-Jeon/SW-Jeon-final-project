@@ -2,37 +2,34 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
-	table th{
-		text-align: center;
-		background-color: yellow;
-	}
-	table tr td{
-		text-align: center;
-	}
+	.to{font-size: 1.7em; font-weight: bold; text-align: center;}
+	.con{font-size: 1.2em; text-align: center;}
 </style>
-<script>
-	
-</script>
+
 <div>
 	<input type="hidden" name="path" id="path">
-	<table style="border: 1px solid black; margin-left: 50px; margin-top: 100px;" >
-		<th>업체사진</th>
-		<th>업체이름</th>
-		<th>전화번호</th>
-		<th>주소</th>
-		<th>상세페이지로가기</th>
-		<th>삭제</th>
+	<table class="table table-hover table-striped  text-center">
+		<thead>
+			<tr  class="table-success">
+				<th class="to">업체사진</th>
+				<th class="to">업체이름</th>
+				<th class="to">전화번호</th>
+				<th class="to">주소</th>
+				<th class="to">상세페이지로가기</th>
+				<th class="to">삭제</th>
+			</tr>
+		</thead>
 		<c:forEach var="vo" items="${list }">
-		
-		
-		<tr>
-			<td><img src="${cp }/resources/maincss/images/test/${vo.p_pic }" style="width: 100px;height: 100px;"></td>
-			<td>${vo.d_sname }</td>
-			<td>${vo.d_phone }</td>
-			<td>${vo.d_addr }</td>
-			<td><a href="${cp }/zzimdetail?name=${vo.d_sname}">이동</a></td>
-			<td><a href="${cp }/zzimdel?d_num=${vo.d_num}">삭제</a></td>
-		</tr>
+		<tbody>
+			<tr class="table-light">
+				<td class="con"><img src="${cp }/resources/maincss/images/test/${vo.p_pic }" style="width: 100px;height: 100px;"></td>
+				<td class="con">${ vo.d_sname}</td>
+				<td class="con">${ vo.d_phone}</td>
+				<td class="con">${ vo.d_addr}</td>
+				<td class="con"><a href="${cp }/zzimdetail?d_sname=${vo.d_sname}" data-toggle="tooltip" data-original-title="Go" >이동</a></td>
+				<td class="con"><a href="${cp }/zzimdel?d_num=${vo.d_num}" data-toggle="tooltip" data-original-title="Remove" ><i class="fa fa-times" style="color: red;"></i></a></td>				
+			</tr>
+		</tbody>
 		</c:forEach>
 	</table>
 	<ul class="btn-group pagination">

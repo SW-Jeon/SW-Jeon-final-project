@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!-- footer.jsp -->
+
  <style>
- 	#foo div ul li a{font-size: 1.4em; color: #FFFFFF;}
- </style>
+#foo div ul li a{color: #FFFFFF;}
+</style>
 <div id="foo"> 
 <div class="container " >
       <div class="col-lg-10 text-center">
           <ul class="list-inline mb-1">
             <li class="list-inline-item mt-3">
  			<c:choose>	
-				<c:when test="${empty sessionScope.a_id}">           
+				<c:when test="${empty sessionScope.id}">           
                     <a href="${cp }/admin/adminLogin">운영자</a>
              	</c:when>
              	<c:otherwise>
@@ -30,16 +31,13 @@
              </c:choose>
              </li>
             <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="${cp }/admin/info">회사소개</a>
+             <li class="list-inline-item mt-2">
+              <a  data-toggle="modal" data-target="#bsModal">사업자 등록</a>
             </li>
-            <li class="list-inline-item">&sdot;</li>
           </ul>
           
           <ul class="list-inline mb-2   ">
-            <li class="list-inline-item mt-2">
-              <a  data-toggle="modal" data-target="#bsModal">사업자 문의</a>
-            </li>
+           
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="${cp }/yg/test">Contact</a>
@@ -90,7 +88,7 @@
 						<label for="b_name">비밀번호</label>
 						<input type="password" name="b_pwd" class="form-control input-lg" placeholder="Ex)숫자와 영문5자이상으로"><br>
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer text-center mx-auto">
 						<button type="submit" class="btn btn-primary">등록</button>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
 					</div>		
@@ -112,10 +110,9 @@
 				if( data==1){
 					//1: 아이디가 중복되는 문구
 					$("#b_bnum").text("이미 등록된 번호입니다");
-					$("#b_bnum").css("color", "red");
+					$("#b_bnum").css("color","red");
 					$("#submit").attr("disabled", true);
-				}	
-					)
+				})
 				}, error: function(){
 					console.log("실패");
 				}

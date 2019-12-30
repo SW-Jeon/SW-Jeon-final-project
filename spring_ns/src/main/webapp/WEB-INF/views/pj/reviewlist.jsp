@@ -28,7 +28,7 @@
 		</div>
 		<div class="col-md-10">
 			${vo.r_content }<br>
-			<img src="${cp}/resources/upload/${vo.r_pic }" width="200px" height="200px">
+			<img src="${cp }/resources/maincss/images/logo/non.png" width="200px" height="200px">
 		</div>
 	</div>
 </div>
