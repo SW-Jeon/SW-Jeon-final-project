@@ -3,12 +3,12 @@
 <script src="${cp }/resources/js/jquery-3.4.1.js"></script>
 <style>
 	#img{
-		width: 1440px; height: 400px; position: relative; overflow: hidden; top: 30px;
+		width: 1440px; height: 300px; position: relative; overflow: hidden; top: 30px;
 	}
 	#img1{
-		width: 2880px;height: 400px;position: absolute;left: 0px;
+		width: 2880px;height: 300px;position: absolute;left: 0px;
 	}
-	#img1 ul li img{width: 141px;height: 396px;margin: 2px;}
+	#img1 ul li img{width: 141px;height: 296px;margin: 2px;}
 	#img1 ul li{float: left;list-style: none;position: absolute;}
 	
 </style>
