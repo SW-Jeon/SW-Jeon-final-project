@@ -30,7 +30,9 @@
 				<typeAlias type="app.spring.vo.AdlistVo" alias="adlists"/>
 				<typeAlias type="app.spring.vo.AdPageVo" alias="adlistss"/>
 				<typeAlias type="app.spring.vo.PicVo" alias="imglist"/>
+				<typeAlias type="app.spring.vo.BlogVo" alias="blog" />
 				<typeAlias type="app.spring.vo.BlogInfoVo" alias="bloginfo" />
+				<typeAlias type="app.spring.vo.EditorVo" alias="editor" />
   		</typeAliases>
   		<mappers>
   			<mapper resource="app/spring/mybatis/mapper/MemMapper.xml"/>
