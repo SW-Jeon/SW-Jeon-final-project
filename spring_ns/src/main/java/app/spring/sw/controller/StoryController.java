@@ -18,7 +18,7 @@ public class StoryController {
 	@Autowired AdminService adService;
 	@Autowired StoryService  stService;
 	
-	//글쓰기폼 이동
+	//낭만 매거진 글쓰기 창으로 이동
 	@RequestMapping(value = "/admin/Story", method = RequestMethod.GET)
 	public String insertForm(AdminVo vo,Model model){
 		model.addAttribute("vo", adService.getInfo(vo));
@@ -38,7 +38,7 @@ public class StoryController {
 		}
 	}
 	
-	//글삭제
+	//낭만 매거진 목록에서 글삭제하기
 	@RequestMapping(value = "/admin/storyDelete", method = RequestMethod.GET)
 	public String Delete(Model model,int s_num,StoryVo vo){
 		try {
@@ -51,7 +51,7 @@ public class StoryController {
 		}
 	}
 	
-	//글조회
+	//낭만 매거진 전체 목록조회
 	@RequestMapping(value="/admin/storyList",method=RequestMethod.GET )
 	public String listAll(Model model){
 		try{
@@ -65,7 +65,7 @@ public class StoryController {
 		}
 	}
 	
-	//글 상세내용
+	//낭만 매거진 상세내용
 	@RequestMapping(value = "/admin/storyDetail", method = RequestMethod.GET)
 	public String Detail(Model model,int s_num){
 			try{
@@ -78,7 +78,7 @@ public class StoryController {
 			}
 		}
 	
-		//글수정
+		//낭만 매거진 수정
 		@RequestMapping(value = "/admin/storyUpdate", method = RequestMethod.GET )
 		public String updateForm(int s_num,Model model){
 			try {
@@ -103,7 +103,7 @@ public class StoryController {
 			}
 		}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//글조회(회원용)
+		//낭만 매거진 조회(회원용)
 		@RequestMapping(value="/swMem/storyList",method=RequestMethod.GET )
 		public String list(Model model){
 			try{
@@ -116,7 +116,7 @@ public class StoryController {
 				return ".swMem.result";
 			}
 		}
-		// 글 상세내용 조회(회원용)
+		// 낭만 매거진 상세내용 조회(회원용)
 		@RequestMapping(value="/swMem/storyDetail",method=RequestMethod.GET )
 		public String detail(Model model, int s_num){
 			try {

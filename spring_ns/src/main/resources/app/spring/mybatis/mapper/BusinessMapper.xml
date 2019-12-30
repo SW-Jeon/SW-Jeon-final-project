@@ -38,4 +38,14 @@
 		select * from business where b_phone=#{b_phone} and b_pwd=#{b_pwd}
 	</select>
 	
+	<!--  bd얻어오기-->
+	<select id="getbd" parameterType="String" resultType="app.spring.vo.DetailVo">
+		select b.b_num,d.d_num from business b,detail d where b.b_num=d.b_num and b.b_phone=#{phone}
+	</select>
+	
+	<!--  rstate얻어오기-->
+	<select id="getrstate" parameterType="app.spring.vo.DetailVo" resultType="int">
+		select r.re_state from business b,detail d,report r where r.re_state>=4 and b.b_num=d.b_num and d.b_num=#{b_num} and d.d_num=#{d_num} group by re_state
+	</select>
+	
   </mapper>

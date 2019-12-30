@@ -17,8 +17,12 @@ var oEditors = [];
  	fCreator: "createSEditor2"
 	});
 	var btn = document.getElementById("writebtn");
+	var btn2 = document.getElementById("writebtn2");
 	btn.onclick = function(){
 		submitContents(btn);
+	}
+	btn2.onclick = function(){
+		back();
 	}
 	function submitContents(elClickedObj) {
 		 // 에디터의 내용이 textarea에 적용된다.
@@ -32,13 +36,20 @@ var oEditors = [];
 		     elClickedObj.form.submit();
 		 } catch(e) {}
 	}
+	function back() {
+		history.go(-1);
+	}
 }
 </script>
 </head>
 <body>
-<form action="#" name="writefrm" id="writefrm">
-<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 value 값을 지정하지 않으시면 됩니다.</textarea>
-<input type="button" id="writebtn" name="writebtn" value="저장">
+<br>
+<form method="post" action="${cp }/bloginsert" name="writefrm" id="writefrm" enctype="multipart/form-data">
+<span>제목:</span>&nbsp&nbsp&nbsp<input type="text" name="title" style="width: 670px;"><br><br>
+<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자"></textarea>
+<input type="file" name="file1"><br>
+<input type="submit" class="btn btn-primary mt-3" id="writebtn" name="writebtn" value="저장">
+<input type="button" class="btn btn-primary mt-3" id="writebtn2" name="writebtn2" value="취소">
 </form>
 </body>
 </html>

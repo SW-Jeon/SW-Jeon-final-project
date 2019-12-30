@@ -51,20 +51,13 @@
 
 table {
 	border-collapse: separate;
-	border-spacing: 0 20px;
+	border-spacing: 0 15px;
 	width: 600px;
 }
 
-table tr th {
-	border: 1px solid yellow;
-	text-align: center;
-	background-color: pink;
-}
+table tr th { text-align: center;  font-weight: 400;}
 
-table tr td {
-	text-align: center;
-	border-bottom: 1px solid black;
-}
+table tr td { text-align: center; font-size:1.2em; font-weight: bolder;}
 
 #return {
 	position: relative;
@@ -89,44 +82,36 @@ window.addEventListener('scroll',function(e){
 		
 		tag.style.top=ttop+"px";
 		tag.style.position="fixed";
-		
 	}
-	
 });
-	
 </script>
 <div>
 	<input type="hidden" value="${name }" name="">
-	<a href="${cp }/chatgo">채팅ㄱ</a>
-	<div
-		style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
+	<div style="width: 1900px; height: 400px; position: relative; left: 5px; overflow: hidden;">
 		<!-- <input type="button" id="return" onclick="behind()"> -->
-		<a href="javascript:behind()"><img
-			src="${cp }/resources/images/test/button1.png" id="return"></a> <a
-			href="javascript:next()"><img
-			src="${cp }/resources/images/test/button2.png" id="next"></a>
-		<div
-			style="width: 2660px; height: 400px; left: 0px; position: relative;"
-			id="imageinfo">
+		<a href="javascript:behind()"><img src="${cp }/resources/images/test/button1.png" id="return"></a> 
+		<a href="javascript:next()"><img src="${cp }/resources/images/test/button2.png" id="next"></a>
+		<div style="width: 1460px; height: 400px; left: 0px; position: relative; overflow: hidden" id="imageinfo">
 			<c:forEach var="im" items="${list1 }">
 				<ul style="padding: 0px;">
 					<div style="left: 200px;">
-						<li style="margin-left: 10px" name="lili"><img
-							src="${cp }/resources/maincss/images/test/${im.p_pic }"></li>
+						<li style="margin-left: 10px" name="lili">
+							<img src="${cp }/resources/maincss/images/test/${im.p_pic }">
+						</li>
 					</div>
 				</ul>
 			</c:forEach>
 		</div>
 	</div>
-	<h1 style="text-align: center;">${name }</h1>
-	<div id="map"
-		style="left: 60%; width: 600px; height: 500px; top: 200px; position: relative; max-width: 100%;"></div>
-	<div
-		style="margin-top: -300px; margin-bottom: 100px; margin-left: 100px; position: relative; width: 700px; max-width: 100%;">
+	<h1 class="text-dark text-center mb-3 mt-3">${name }</h1>
+	<hr>
+	<div id="map" style="left: 60%; width: 600px; height: 500px;  position: relative; max-width: 100%;"></div>
+	<div style="margin-top: -500px; margin-bottom: 100px; margin-left: 100px; padding:0px; position: relative; width: 700px; max-width: 100%;">
+
 		<table style="color: black;">
 			<c:forEach var="vo" items="${list }">
 				<tr>
-					<th>카테고리</th>
+					<th >카테고리</th>
 					<td>${vo.d_kind }</td>
 				</tr>
 				<tr>
@@ -165,7 +150,7 @@ window.addEventListener('scroll',function(e){
 		</table>
 		<input type="hidden" value="${phone }" id="mphone">
 	</div>
-
+	<hr>
 	<c:forEach var="vo3" items="${list3}">
 					<div class="container-fluid">
 					<div class="row">
@@ -193,7 +178,7 @@ window.addEventListener('scroll',function(e){
 						</div>
 						<div class="col-md-10">
 							${vo3.r_content }<br>
-							<img src="${cp}/resources/upload/${vo.r_pic }" width="200px" height="200px">
+							<img src="${cp}/resources/upload/${vo3.r_pic }" width="200px" height="200px">
 						</div>
 					</div>
 				</div>
@@ -211,22 +196,38 @@ window.addEventListener('scroll',function(e){
 						<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜
 					</a>
 				</div>
+				<div id="main1">
+			<c:forEach var="vo" items="${list }">
+			<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal">
+				<img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png">낭만리뷰
+			</a>
+			</c:forEach>
+			</div>
+			
+			<div id="foot">
+			<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal">
+			<img style="width: 100px; height: 100px;"
+				src="${cp }/resources/images/test/report.png">신고하기
+			</a>
+			</div>
+			
 			</c:when>
 			<c:otherwise>
 				<div id="main" onclick="zzim()">
 					<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜
 				</div>
-			</c:otherwise>
-		</c:choose>
-		<div id="main1">
+				<div id="main1">
 			<c:forEach var="vo" items="${list }">
 				<a href="${cp }/pj/review?d_num=${vo.d_num}"><img title="리뷰쓰러가기" style="width: 100px; height: 100px;"src="${cp }/resources/images/test/review.png"></a>낭만리뷰
 			</c:forEach>
-		</div>
-		<div id="foot" onclick="report()">
+			</div>
+			<div id="foot" onclick="report()">
 			<img style="width: 100px; height: 100px;"
 				src="${cp }/resources/images/test/report.png">신고하기
-		</div>
+			</div>
+			</c:otherwise>
+		</c:choose>
+		
 	</div>
 
 	<!-- Login Form  모달창 -->
@@ -269,7 +270,7 @@ window.addEventListener('scroll',function(e){
 	</div>
 	<!-- //Login Form -->
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=088923eb526168e58ebc5d418c534e8b&libraries=services"></script>
 	<script>
 		function zzim() {
 			var d_num=parseInt(document.getElementById("dnum").value);
@@ -289,7 +290,6 @@ window.addEventListener('scroll',function(e){
 		var y=(window.screen.height/2)-(200/2);
 		function report(){
 			var kk;
-			alert(dnum);
 			kk=window.open('${cp}/report?dnum='+dnum,'_blank','width=500,height=500,left='+x+',top='+y);
 			kk.focus();
 		}

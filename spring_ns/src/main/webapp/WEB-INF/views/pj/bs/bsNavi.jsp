@@ -8,10 +8,10 @@
 		      </li>
 		      <li class="nav-item">
 		       		<a class="nav-link" href="${cp }/pj/bs/BqList"><i class="fas fa-bell mr-2 ml-2"></i><span>문의 목록</span></a>
-		      </li>      
+		      </li>     
 		     <li class="nav-item">
 		       		<a class="nav-link" href="${cp }/pj/bs/bqdetailupload"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>업체 등록</span></a>
-		      </li>
+		      </li>	 
 		      <li class="nav-item">
 		       		<a class="nav-link" href="${cp }/pj/bs/bqmenu"><i class="fas fa-feather-alt mr-2 ml-2"></i><span>메뉴 등록</span></a>
 		      </li>

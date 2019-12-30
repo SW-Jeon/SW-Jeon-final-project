@@ -10,12 +10,12 @@
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-		<h1 class="text-info text-center mb-5">공 지 사 항</h1>
+		<h1 class="text-info text-center mb-5 mt-3">공 지 사 항</h1>
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr  class="table-success">
 						<th class="to">글번호</th>
-						<th class="to" style="width: 900px; ">제목</th>
+						<th class="to" >제목</th>
 						<th class="to">작성일</th>
 						<th class="to">조회수</th>
 					</tr>

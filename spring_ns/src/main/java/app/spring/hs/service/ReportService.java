@@ -46,4 +46,14 @@ public class ReportService {
 	public int getUpdate(ReportNameVO vo){
 		return Rdao.getUpdate(vo);
 	}
+	
+	//신고 업체 상태 조회
+	public ReportVo getState(ReportVo vo){
+		return Rdao.getState(vo);
+	}
+	
+	//업체 경고에서 업체 정지 상태변경하기
+	public int getStop(ReportNameVO vo){
+		return Rdao.getStop(vo);
+	}		
 }

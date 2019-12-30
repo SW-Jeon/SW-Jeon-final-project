@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 
 import app.spring.js.dao.BusinessDao;
 import app.spring.vo.BusinessVo;
+import app.spring.vo.DetailVo;
 
 @Service
 public class BusinessService {
-	@Autowired private BusinessDao bDao;
+	@Autowired
+	private BusinessDao bDao;
 
 	// 사업자 등록
 	public int insert(BusinessVo vo) {
@@ -45,5 +47,15 @@ public class BusinessService {
 	// 사업자 로그인
 	public BusinessVo getState(BusinessVo vo) {
 		return bDao.getState(vo);
+	}
+
+	// b_num과 d_num얻어오기
+	public DetailVo getbd(String phone) {
+		return bDao.getbd(phone);
+	}
+
+	// r_tate얻어오기
+	public int getrstate(DetailVo vo) {
+		return bDao.getrstate(vo);
 	}
 }

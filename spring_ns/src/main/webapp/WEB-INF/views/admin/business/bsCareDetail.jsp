@@ -20,9 +20,6 @@
 			<div class="form-group">
 				<label for="m_phone">회원전화번호</label><input type="text" class="form-control" value="${vo.m_phone}" readonly="readonly">
 			</div>
-			<div class="form-group">
-				<label for="re_state">신고 상태</label> <input type="text" class="form-control" value="${vo.re_state}" readonly="readonly">
-			</div>
 		</div>
 	</div>
 </div>

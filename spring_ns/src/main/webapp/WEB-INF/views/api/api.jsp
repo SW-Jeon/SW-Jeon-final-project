@@ -9,7 +9,7 @@
 <input type="hidden" name="hoho" value="${vo.d_kind }">
 <input type="hidden" name="dodo" value="${vo.d_num }">
 </c:forEach>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2cb81b6c831f4782c514d837a70bcf33&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=088923eb526168e58ebc5d418c534e8b&libraries=services"></script>
 <script>
 var mapContainer = document.getElementById("map");
 var coordXY   = document.getElementById("coordXY");

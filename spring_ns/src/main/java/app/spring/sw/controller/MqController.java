@@ -2,6 +2,8 @@ package app.spring.sw.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.MemService;
 import app.spring.sw.service.MqService;
+import app.spring.vo.MemVo;
 import app.spring.vo.MqVo;
 
 @Controller
@@ -26,11 +29,11 @@ public class MqController {
 		
 		//글쓰기 폼에서 값 전달 받아 등록
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.POST )
-		public String MqInsert(MqVo vo,Model model){
+		public String MqInsert(MqVo vo,Model model,MemVo vo1){
 			try{
+				model.addAttribute("vo", MemService.getInfo(vo1.getM_phone()));
 				service.insert(vo);
-				model.addAttribute("code", "success");
-				return ".swMem.result";
+				return "redirect:/swMem/mqMyList";
 			}catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("code", "fail");
@@ -40,11 +43,11 @@ public class MqController {
 		
 		//글 목록조회(회원용)
 		@RequestMapping(value="/swMem/mqMyList",method=RequestMethod.GET )
-		public String listMy(Model model,String m_phone){
+		public String listMy(Model model,HttpSession session){
 			try {
+				String m_phone= (String)session.getAttribute("m_phone");
 				model.addAttribute("vo", MemService.getInfo(m_phone));
 				List<MqVo> listMy=service.listMy(m_phone);
-				model.addAttribute("m_phone", m_phone);
 				model.addAttribute("listMy", listMy);	
 				return ".swMem.MqMyList";
 			} catch (Exception e) {

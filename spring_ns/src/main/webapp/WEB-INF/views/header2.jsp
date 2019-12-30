@@ -19,7 +19,7 @@
 </script>
 <style>
 	ul li{margin: 0px;}
-	ul li a{margin: 0px;}
+	ul li a{margin: 0px; font-weight: bolder; font-size: 1.2em;}
 </style>
 <nav class="navbar navbar-expand-lg  border-bottom " style="background-color: #F2F2F2;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,22 +29,22 @@
 		<div class="logo">
 				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>
 		</div>
-		 <div class="col-md-3 col-lg-2 col-xl-6">
+		 <div class="col-md-3 col-lg-2 col-xl-5">
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
-            <div class="form-row"  style="width: 750px;">
+            <div class="form-row"  style="width: 730px;">
               <div class="col-md-9 mb-2 ">
                 <input type="text" class="form-control form-control-lg" placeholder="지역이나 식당명 또는 음식명으로 맛집을 검색하세요." name="keyword">
               </div>
-              <div class="col-md-3 ">
-                <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass">검색하세요.</i></button>
+              <div class="col-md-1.5 ">
+                <button type="submit" class="btn btn-block btn-lg btn-danger"><i class="fa fa-compass"> Go</i></button>
               </div>
             </div>
           </form>
         </div>
         <ul class="navbar-nav " >
-				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="font-size: 1.3em; color:black;">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style="font-size: 1.3em; color:black;">낭만매거진</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"  style="font-size: 1.3em; color:black;">낭만스토리</a></li>
+				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="color:black;">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="${cp }/swMem/storyList"  style=" color:black;">낭만매거진</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"  style=" color:black;">낭만스토리</a></li>
 		</ul>
 		<c:choose>	
 			<c:when test="${empty sessionScope.m_phone}">
@@ -70,7 +70,9 @@
 					</div>
 				</c:otherwise>
 			</c:choose>
-			
+			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
+				<a class="btn btn-block btn-lg btn-danger "  href="#" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> 나의 블로그</i></a>
+			</div>
 			<div class="col-lg-1 col-sm-3 col-md-1 mr-2 ">
 				<a class="btn btn-block btn-lg btn-danger "  href="${cp}/swMem/mypage?m_phone=${m_phone}" style="width:150px; height: 60px;"><i class ="fas fa-address-card"><br> MyHOME</i></a>
 			</div>		

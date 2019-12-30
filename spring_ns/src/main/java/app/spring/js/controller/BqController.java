@@ -1,6 +1,5 @@
 package app.spring.js.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -35,7 +34,7 @@ public class BqController {
 				BqVo vo1=new BqVo(0,d_num,vo.getBq_title(),vo.getBq_content(),null,null,"1");
 				service.insert(vo1);
 				model.addAttribute("code","success");
-				return ".pj.result";
+				return "redirect:/pj/bs/BqList";
 			}catch(Exception e){
 				e.printStackTrace();
 				model.addAttribute("code","fail");
@@ -47,7 +46,7 @@ public class BqController {
 		public String listBq(Model model,HttpSession session){
 			try{
 				
-				String b_phone=(String)session.getAttribute("phonenum");
+				String b_phone=(String)session.getAttribute("b_phone");
 				int d_num=service.getdnum(b_phone);
 				session.setAttribute("d_num",d_num);
 				List<BqVo> list=service.alllist(d_num);
@@ -73,15 +72,16 @@ public class BqController {
 		// 사업자 메뉴등록
 				@RequestMapping(value="/pj/bs/bqmenu",method=RequestMethod.GET)
 				public String BqmenuinsertForm(Model model,HttpSession session){
-					try{				
-					String b_phone=(String)session.getAttribute("phonenum");
+					try{
+						
+					String b_phone=(String)session.getAttribute("businessphone");
 					List<DetailVo> bqlist=service.getbqlist(b_phone);
 					model.addAttribute("bqlist",bqlist);
 					return ".bs.menuinsert";
 				}catch(Exception e){
 					return ".pj.result";
 				}
-				}
+			}
 				@RequestMapping(value="/pj/bs/bqmenuinsertok",method=RequestMethod.POST)
 				public String BqmenuinsertokForm(Model model,HttpSession session,MenuVo vo){
 					try{

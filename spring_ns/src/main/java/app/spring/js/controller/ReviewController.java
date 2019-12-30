@@ -48,7 +48,7 @@ public class ReviewController {
 	public String fileupload(int d_num,String r_content,String star_input, Date r_regdate,
 			MultipartFile file1,HttpSession session){
 		//업로드할 폴더의 절대경로 얻어오기
-		String uploadPath="C:/Users/JHTA/git/final-project2/spring_ns/src/main/webapp/resources/upload";
+		String uploadPath="C:/Users/JHTA/git/final-project/spring_ns/src/main/webapp/resources/upload";
 	//	System.out.println(star_input);
 	//	System.out.println(uploadPath);
 		String m_phone=(String)session.getAttribute("m_phone");

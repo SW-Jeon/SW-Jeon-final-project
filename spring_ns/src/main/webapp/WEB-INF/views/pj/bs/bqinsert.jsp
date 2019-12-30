@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- MqInsert -->
-<div >
-<jsp:include page="/WEB-INF/views/pj/bs/bsNavi.jsp"/>
-	<!-- mypage area -->
+<!-- BqInsert -->
 
-		<!-- contents -->
+<jsp:include page="/WEB-INF/views/pj/bs/bsNavi.jsp"/>
 		<div class="con ">
 			<!-- 네비바 -->
-			  
-			<section class="mypage-cont col-md-10" style="margin-top: 80px; float: right;">
-				<h1 class="text-info text-center" style="margin-right: 500px;">사업자 문의</h1>
-				<form role="form" method="post" action="${cp}/pj/bs/bqinsert" style="width: 70%; ">
+			<section class="mypage-cont col-md-10" style="margin-top: 30px; float: right;">
+				<h1 class="text-info text-center mb-5" >사업자 문의</h1>
+				<form role="form" method="post" action="${cp}/pj/bs/bqinsert" >
 					<input type="hidden" class="form-control" name="b_num" value=${num }>
 					<div class="form-group">
 						<label for="mq_title">제목</label><input type="text" class="form-control" name="bq_title">
@@ -28,4 +24,3 @@
 			</section>
 			<!-- //contents -->
 		</div>
-</div>

@@ -75,9 +75,7 @@ public class ReportController {
 			return ".swMem.result";
 		}
 	}
-	
-	
-	
+
 	// 신고 전체리스트
 	@RequestMapping(value = "/admin/bsCare", method = RequestMethod.GET)
 	public String list(Model model, String d_sname) {
@@ -105,6 +103,7 @@ public class ReportController {
 		}
 	}
 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// 신고 3번이상 당한업체 조회
 	@RequestMapping(value = "/admin/bsBlack", method = RequestMethod.GET)
 	public String blacklist(Model model) {
@@ -118,16 +117,39 @@ public class ReportController {
 			return ".swMem.result";
 		}
 	}
-	//블랙리트스 3회이상 업체 경고로 상태변경
-		@RequestMapping(value="/admin/bsBlackUpdate",method = RequestMethod.GET)
-		public String update1(Model model,ReportNameVO vo){
-			try{
-				service.getUpdate(vo);
-				return "redirect:/admin/bsCare";
-			} catch (Exception e) {
-				e.printStackTrace();
-				model.addAttribute("code", "fail");
-				return ".swMem.result";
-			}
+
+	// 블랙리스트 3회이상 업체 경고로 상태변경
+	@RequestMapping(value = "/admin/bsBlackUpdate", method = RequestMethod.GET)
+	public String update1(Model model, ReportNameVO vo) {
+		try {
+			service.getUpdate(vo);
+			return "redirect:/admin/bsCare";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
 		}
+	}
+
+	// 블랙리스트 업체 경고에서 업체 정지 상태변경
+	@RequestMapping(value = "/admin/bsStopUpdate", method = RequestMethod.GET)
+	public String updateStop(Model model, ReportNameVO vo) {
+		try {
+			service.getStop(vo);
+			return "redirect:/admin/bsCare";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("code", "fail");
+			return ".swMem.result";
+		}
+	}
+	
+	//블랙리스트에서 경고된 업체 상태 변경
+	@RequestMapping(value="/admin/BackUpdate", method = RequestMethod.GET)
+	public String upForm(Model model, int d_num){
+		model.addAttribute("vo",service.getThree());
+		return ".admin.business.bsBlackBack";
+	}
+	
+
 }
