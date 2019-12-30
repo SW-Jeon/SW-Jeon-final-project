@@ -18,8 +18,8 @@ public class AdService {
 @Autowired private AdDao dao;
 	public int adinsert(AdVo vo,HashMap<String, Object> maps){
 		 dao.adinsert(vo);
-		 
-		 int ad_num=dao.adnum();
+		 int ad_vernum=vo.getAd_vernum();
+		 int ad_num=dao.adnum(ad_vernum);
 		 PayVo pvo = new PayVo(0, (Integer)maps.get("ad_pay"), ad_num);
 		 dao.payinsert(pvo);
 		 
@@ -38,8 +38,8 @@ public class AdService {
 	public int advernum(String ad_name){
 		return dao.advernum(ad_name);
 	}
-	public int adnum(){
-		return dao.adnum();
+	public int adnum(int ad_vernum){
+		return dao.adnum(ad_vernum);
 	}
 	
 }

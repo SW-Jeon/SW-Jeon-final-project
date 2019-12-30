@@ -33,8 +33,8 @@ public class AdDao {
 	public int advernum(String ad_name){
 		return sqlsessionTemplate.selectOne(NAMESPACE+".advernum",ad_name);
 	}
-	public int adnum(){
-		return sqlsessionTemplate.selectOne(NAMESPACE+".adnum");
+	public int adnum(int ad_vernum){
+		return sqlsessionTemplate.selectOne(NAMESPACE+".adnum",ad_vernum);
 	}
 	public int payinsert(PayVo vo){
 		return sqlsessionTemplate.insert(NAMESPACE+".payinsert",vo);

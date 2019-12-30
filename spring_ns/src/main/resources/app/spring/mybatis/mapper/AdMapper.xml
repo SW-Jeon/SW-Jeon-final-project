@@ -17,8 +17,8 @@
 	<select id="advernum" resultType="int">
 		select ad_vernum from advertiser where ad_name=#{ad_name}
 	</select>
-	<select id="adnum" resultType="int">
-		select a.ad_num from ad a,advertiser t where a.ad_vernum=t.ad_vernum
+	<select id="adnum" resultType="int" parameterType="int">
+		select a.ad_num from ad a,advertiser t where a.ad_vernum=t.ad_vernum and t.ad_vernum=#{ad_vernum}
 	</select>
 	<insert id="payinsert" parameterType="payin">
 		insert into pay values(0,#{ad_pay},#{ad_num})
