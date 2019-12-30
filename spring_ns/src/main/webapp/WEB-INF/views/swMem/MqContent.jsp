@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- MqContent  -->
-
 <div class="mypage-wrap mx-auto">
 	<!-- mypage area -->
 	<div class="mypage-area ">
@@ -12,7 +11,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="text-info text-center">나의 문의 내역</h1>
+						<h1 class="text-info text-center mt-5">나의 문의 내역</h1>
 						<div class="form-group">
 							<label for="mq_title">제목</label><input type="text" class="form-control" value="${ vo1.mq_title}" readonly="readonly">
 						</div>

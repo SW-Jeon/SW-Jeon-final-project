@@ -15,7 +15,7 @@
 		      <jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/>
 		  <div class="container-fluid" >
 			<div class="row">
-				<div class="col-md-12 " style="margin-top:80px; float: right;">
+				<div class="col-md-12 " style="margin-top:50px; float: right;">
 				<h1 class="text-info text-center mb-5">나의 문의</h1>
 					<button class="btn btn-primary mb-3" onclick="location.href='${cp }/swMem/memQuestion?m_phone=${vo.m_phone}' " style=" float: right;">문의하기</button>
 					<table class="table table-hover table-striped  text-center">
