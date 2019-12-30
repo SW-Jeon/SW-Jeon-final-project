@@ -1,9 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="${cp }/resources/js/jquery-3.4.1.js"></script>
+<style>
+	#img{
+		width: 1440px; height: 400px; position: relative; overflow: hidden; top: 30px;
+	}
+	#img1{
+		width: 2880px;height: 400px;position: absolute;left: 0px;
+	}
+	#img1 ul li img{width: 141px;height: 396px;margin: 2px;}
+	#img1 ul li{float: left;list-style: none;position: absolute;}
+	
+</style>
 <script type="text/javascript">
-	$(document).ready(function(){
-		var i=1;
+		$(function (){
+			$("#img1 ul li").each(function(n){
+				var left=144*n;
+				$(this).css("left",left);
+			});
+			setInterval(function(){
+				$("#img1 ul li").each(function(){
+					var left=parseInt($(this).css("left"));
+					var moveLeft=left-144;
+					$(this).animate({left:moveLeft},500,function(){
+						if(moveLeft<=-1440){
+							$(this).css({left:1440});
+						}
+					});
+				});
+			},2000);
+		})
+	
+		//var i=1;
 		// setInterval(function() {
 		//	var a=parseInt($("#imgslide").css("left"));
 		//	$("#imgslide").animate({
@@ -22,26 +50,30 @@
 		//	if(i>2) i=1;
 		//});
 	//}, 2000)
-		setInterval(function() {
+	/*	setInterval(function() {
 			//.slideUp(실행시간,애니메이션수행이 완료되면 호출되는 function)
-			$("#box1").fadeIn(500,function(){
+			$("#img1").fadeIn(500,function(){
 				//alert("숨기기 완료!");
 				$("#img1 img").prop("src","${cp }/resources/main/a" + i++ +".jpg");
-				if(n>20) n=1;
+				if(i>20) i=1;
 			}1000,function(){
 			});
 		});
-	});
+	});*/
+	
 </script>
 <!-- content.jsp -->
 <div>
-	<div id="img1" style="position: relative">
-			<ul style="float:left; list-style: none;">
-				<li><img src="${cp }/resources/main/a1.jpg" id="img1" style="width: 1430px;"></li>
-				<li><img src="${cp }/resources/main/a2.jpg" id="img2" style="width: 1430px;"></li>
+	<h1 class="text-info ml-3 mt-3">낭만 맛집 리스트</h1>
+<div id="img">
+	<div id="img1">
+			<ul>
+				<c:forEach var="i" begin="1" end="20">
+				<li><img src="${cp }/resources/maincss/images/mainimg/${i }.jpg"></li>
+				</c:forEach>
 			</ul>
 		</div>
-
+</div>
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">

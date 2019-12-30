@@ -13,7 +13,7 @@
 	      <!-- 네비바 -->
 		      <jsp:include page="/WEB-INF/views/swMem/mypageNavi.jsp"/>
 
-			<div class="container-fluid">
+	<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12 " style="margin-top: 80px; float: right;">
 						<input type="hidden" name="path" id="path">
