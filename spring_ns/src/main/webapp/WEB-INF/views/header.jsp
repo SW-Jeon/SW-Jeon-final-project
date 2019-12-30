@@ -20,7 +20,7 @@
 </script>
 <style>
 	ul li{margin: 0px;  }
-	ul li a{margin: 0px; }
+	ul li a{margin: 0px; font-weight: bolder; font-size: 1.2em;}
 	#navi{color:black;}	
 	#backimg{z-index: 1; position: relative; width: 100%; height: 100%; }
  	#backimg:after{background-image:url("${cp}/resources/maincss/images/logo/bb.jpg") ; width: 100%; height: 100%; top:0; left:0;  
@@ -79,8 +79,8 @@
 </nav>
 
 <!-- Navigation -->
-<div id="backimg">
-	<nav class="navbar static-top">
+<div id="backimg" >
+	<nav class="navbar static-top mb-2">
 		<div class="col-md-2 ml-5" style="float: left; " >
 			<div class="logo">
 				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images" ></a>

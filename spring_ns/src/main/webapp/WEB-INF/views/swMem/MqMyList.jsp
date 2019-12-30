@@ -7,8 +7,6 @@
 </style>
 
 <div class="mypage-wrap  mx-auto">
-
-
    <!-- mypage area -->
 		<div class="mypage-area ">
 		<!-- contents -->
