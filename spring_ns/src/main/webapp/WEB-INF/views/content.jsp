@@ -1,75 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<style>
-	.slide{
-		position: relative;
-		width: 250px;
-		height: 150px;
-		margin: 0 auto;
-		padding: 0;
-		overflow: hidden;
-		
-	}
-	.slide ul{
-		position: absolute;
-		margin: 0px;
-		padding: 0;
-		list-style: none;
-	}
-	.slide ul li{
-		float:left;
-		width: 250px;
-		height: 150px;
-		margin: 0;
-		padding: 0;
-	}
-	.slide ul li img{
-		width: 250px;
-		height: 150px;
-	}
-</style>
-<script>
-	
+<script src="${cp }/resources/js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
 	$(document).ready(function(){
-		var $slide = $(".slide").find("ul");
-		var slideWidth=$slide.children().outerWidth();
-		var slideHeight=$slide.children().outerHeight();
-		var length=$slide.children().length;
-		var rollingId;
-		rollingId=setInterval(function() {rollingStart();},3000);
-		function rollingStart(){
-			$slide.css("width",(slideWidth+length) +"px");
-			$slide.css("height",slideHeight+"px");
-			$slide.animate({left:-slideWidth},1500,function(){
-				$(this).append("<li>"+$(this).find("li:first").html()+"</li>");
-				$(this).find("li:first").remove();
-				$(this).css("left",0);
+		var i=1;
+		// setInterval(function() {
+		//	var a=parseInt($("#imgslide").css("left"));
+		//	$("#imgslide").animate({
+		//		left:a-1430
+		//	},1000,function(){
+		//	});
+		//}, 2000)
+		//setInterval(function() {
+		//var left=parseInt($("#imglist").css("left"));
+		//$("#imglist").animate({
+		//	left:left-1430
+		//},1000,function(){
+		//	$("#imglist #img"+i++).remove();
+		//	$("#imglist ul").append("<li><img src='${cp }/resources/main/a"+i+".jpg' id='img"+i+"' style='width: 1430px;'></li>");
+		//	$(this).css("left",0);
+		//	if(i>2) i=1;
+		//});
+	//}, 2000)
+		setInterval(function() {
+			//.slideUp(실행시간,애니메이션수행이 완료되면 호출되는 function)
+			$("#box1").fadeIn(500,function(){
+				//alert("숨기기 완료!");
+				$("#img1 img").prop("src","${cp }/resources/main/a" + i++ +".jpg");
+				if(n>20) n=1;
+			}1000,function(){
 			});
-			
-		}
+		});
 	});
-		
 </script>
 <!-- content.jsp -->
 <div>
-	 <!-- Icons Grid -->
+	<div id="img1" style="position: relative">
+			<ul style="float:left; list-style: none;">
+				<li><img src="${cp }/resources/main/a1.jpg" id="img1" style="width: 1430px;"></li>
+				<li><img src="${cp }/resources/main/a2.jpg" id="img2" style="width: 1430px;"></li>
+			</ul>
+		</div>
   <section class="features-icons bg-light text-center">
+  
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>Fully Responsive</h3>
+            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>Bootstrap 4 Ready</h3>
+            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-            <div class="slide">
-            <ul>
-            <c:forEach var="i" begin="1" end="20">
-            	
-              <li><img src="${cp }/resources/maincss/images/mainimg/${i }.jpg"></li>
-              
-              </c:forEach>
-              </ul>
-              </div>
+              <i class="icon-check m-auto text-primary"></i>
             </div>
+            <h3>Easy to Use</h3>
+            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
           </div>
         </div>
       </div>
@@ -79,14 +79,7 @@
   <!-- Image Showcases -->
   <section class="showcase">
     <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('${cp}/resources/img/bg-showcase-1.jpg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-        </div>
-      </div>
+   
       <div class="row no-gutters">
         <div class="col-lg-6 text-white showcase-img" style="background-image: url('${cp}/resources/img/bg-showcase-2.jpg');"></div>
         <div class="col-lg-6 my-auto showcase-text">
@@ -125,7 +118,7 @@
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="${cp}/resources/maincss/images/logo/non.png" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="${cp}/resources/maincss/images/test/계림1.jpg" alt="">
             <h5>Sarah W.</h5>
             <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
           </div>
