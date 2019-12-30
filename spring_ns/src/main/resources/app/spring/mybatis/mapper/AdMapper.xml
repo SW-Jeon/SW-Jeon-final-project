@@ -15,7 +15,7 @@
 		insert into advertiser values(0,#{ad_name})
 	</insert>
 	<select id="advernum" resultType="int">
-		select ad_vernum from advertiser where ad_name=#{ad_num}
+		select ad_vernum from advertiser where ad_name=#{ad_name}
 	</select>
 	<select id="adnum" resultType="int">
 		select a.ad_num from ad a,advertiser t where a.ad_vernum=t.ad_vernum

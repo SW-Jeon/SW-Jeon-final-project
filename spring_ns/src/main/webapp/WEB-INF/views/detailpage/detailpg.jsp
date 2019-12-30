@@ -35,7 +35,7 @@
 }
 
 #imageinfo ul div li img {
-	width: 370px;
+	width: 360px;
 	height: 400px;
 	margin: 0px;
 	display: inline-block;
@@ -92,20 +92,22 @@ window.addEventListener('scroll',function(e){
 		<a href="javascript:behind()"><img src="${cp }/resources/images/test/button1.png" id="return"></a> 
 		<a href="javascript:next()"><img src="${cp }/resources/images/test/button2.png" id="next"></a>
 		<div style="width: 1430px; height: 400px; left: 0px; position: relative; overflow: hidden" id="imageinfo">
+			<ul style="padding: 0px;">
 			<c:forEach var="im" items="${list1 }">
-				<ul style="padding: 0px;">
+			
 					<div style="left: 200px;">
 						<li style="margin-left: 10px" name="lili">
 							<img src="${cp }/resources/maincss/images/test/${im.p_pic }">
 						</li>
 					</div>
-				</ul>
+				
 			</c:forEach>
+			</ul>
 		</div>
 	</div>
 	<h1 class="text-dark text-center mb-3 mt-3">${name }</h1>
 	<hr>
-	<div id="map" style="left: 60%; width: 600px; height: 500px;  position: relative; max-width: 100%;"></div>
+	<div id="map" style="left: 50%; width: 600px; height: 500px;  position: relative; max-width: 100%;"></div>
 	<div style="margin-top: -500px; margin-bottom: 100px; margin-left: 100px; padding:0px; position: relative; width: 700px; max-width: 100%;">
 
 		<table style="color: black;">
