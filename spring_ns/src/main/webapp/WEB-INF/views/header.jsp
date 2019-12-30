@@ -21,18 +21,19 @@
 <style>
 	ul li{margin: 0px;  }
 	ul li a{margin: 0px; }
- #navi{color:black;}	
+	#navi{color:black;}	
+	#backimg{z-index: 1; position: relative; width: 100%; height: 100%; }
+ 	#backimg:after{background-image:url("${cp}/resources/maincss/images/logo/bb.jpg") ; width: 100%; height: 100%; top:0; left:0;  
+ 	position:absolute; z-index:-1 ;content:""; opacity: 0.3!important; filter:alpha(opacity=30);}
 </style>
 
-<nav class="navbar navbar-expand-lg  border-bottom  navbar-dark " style="background-color: #F2F2F2;">
-
+<nav class="navbar navbar-expand-lg  border-bottom  navbar-dark " style="background-color: #F2F2F2; padding: 0px;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">NangMan</span>
 	</button>
 	<div class="collapse navbar-collapse mx-auto" id="navbarColor01">	
 	<!-- brand/logo -->
-		<a  class="navbar-brand"href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>
-		
+		<a  class="navbar-brand"href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logoTop.png" alt="logo images"  ></a>	
 	<!-- Links -->
 	        <ul class="nav navbar-nav mr-auto "  id="navi">
 				<li class="nav-item "><a class="nav-link active " href="${cp }/swMem/InfoList" style="color:black;">공지사항</a></li>
@@ -78,13 +79,13 @@
 </nav>
 
 <!-- Navigation -->
-<nav class="navbar navbar-light bg-light static-top">
+<div id="backimg">
+	<nav class="navbar static-top">
 		<div class="col-md-2 ml-5" style="float: left; " >
 			<div class="logo">
 				<a href="${cp}/"><img src="${cp }/resources/maincss/images/logo/logo.png" alt="logo images" ></a>
 			</div>
 		</div>
-
         <div class="col-md-6 col-lg-15 col-xl-7 text-right">
           <form action="${cp }/searchList" name="sh" method="post" onsubmit="return lengthcheck()">
             <div class="form-row"  style="width: 800px; padding: 20px; position: relative; left: -230px;">
@@ -97,8 +98,8 @@
             </div>
           </form>
         </div>
-</nav>
-
+	</nav>
+</div>
 <!-- Login Form  모달창 -->
         <div class="accountbox-wrapper">
             <div class="accountbox text-left">

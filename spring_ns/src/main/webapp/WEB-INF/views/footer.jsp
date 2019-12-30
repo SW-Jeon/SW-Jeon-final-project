@@ -88,7 +88,7 @@
 						<label for="b_name">비밀번호</label>
 						<input type="password" name="b_pwd" class="form-control input-lg" placeholder="Ex)숫자와 영문5자이상으로"><br>
 					</div>
-					<div class="modal-footer">
+					<div class="modal-footer text-center mx-auto">
 						<button type="submit" class="btn btn-primary">등록</button>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
 					</div>		

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import app.spring.sw.service.MemService;
 import app.spring.sw.service.MqService;
+import app.spring.vo.MemVo;
 import app.spring.vo.MqVo;
 
 @Controller
@@ -26,9 +27,9 @@ public class MqController {
 		
 		//글쓰기 폼에서 값 전달 받아 등록
 		@RequestMapping(value="/swMem/memQuestion",method=RequestMethod.POST )
-		public String MqInsert(MqVo vo,Model model,String m_phone){
+		public String MqInsert(MqVo vo,Model model,MemVo vo1){
 			try{
-				model.addAttribute("vo", MemService.getInfo(m_phone));
+				model.addAttribute("vo", MemService.getInfo(vo1.getM_phone()));
 				service.insert(vo);
 				return "redirect:/swMem/mqMyList";
 			}catch (Exception e) {
