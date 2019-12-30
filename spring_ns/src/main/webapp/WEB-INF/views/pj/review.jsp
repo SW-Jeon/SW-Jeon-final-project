@@ -70,7 +70,8 @@ star-input>.input.focus{outline:1px dotted #ddd;}
     	//	if( this.checked){
 	      //      alert(this.value);
      	 // }
-    	//});
+    	//});111
+    	
     //}		
 </script>
 </body>
