@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 <script>
@@ -19,7 +18,7 @@
 <div id="con">
         <!-- Page Content -->
         <section class="mypage-cont col-md-10" style="margin-top: 30px; float: right;">
-					<h1 class="text-info text-center mb-3 " >사업자 문의</h1>
+					<h1 class="text-info text-center mb-3 " >업체등록</h1>
 					<form method="post" action="${cp }/pj/bs/bqdetailupload" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="d_sname">상호</label>
