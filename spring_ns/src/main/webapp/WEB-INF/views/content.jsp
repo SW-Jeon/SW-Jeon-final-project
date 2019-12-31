@@ -89,7 +89,7 @@
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
           	<c:choose>
           		<c:when test="${empty vo.bl_profile }">
-          			<img class="img-fluid rounded-circle mb-3" src="${cp }/resources/maincss/images/logo/nono.png" style="height: 200px;" onclick="gogosing('${vo.bl_name }')"><br>
+          			<img class="img-fluid rounded-circle mb-3" src="${cp }/resources/maincss/images/logo/non.png" style="height: 200px;" onclick="gogosing('${vo.bl_name }')"><br>
           		</c:when>
           		<c:otherwise>
           			<img class="img-fluid rounded-circle mb-3" src="${cp}/resources/imgpro/${vo.bl_profile }" style="height: 200px;" onclick="gogosing('${vo.bl_name }')"><br>

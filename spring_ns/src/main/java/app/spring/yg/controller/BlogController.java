@@ -54,7 +54,7 @@ public class BlogController {
 			model.addAttribute("title", title);
 			model.addAttribute("ir1", ir1);
 			EditorVo vo=new EditorVo(0, bl_name, title, ir1, null, null, 0);
-			service.inserteditor(vo);
+			service.inserteditor2(vo);
 		}
 			model.addAttribute("code", "success");
 			return ".swMem.result";
@@ -89,11 +89,10 @@ public class BlogController {
 			service.insertblogname(vo);
 			model.addAttribute("blogname", blogname);
 			model.addAttribute("r_pic", r_pic);
-			
 		}	else{
 			String m_phone=(String)session.getAttribute("m_phone");
 			BlogVo vo=new BlogVo(blogname, m_phone, null);
-			service.insertblogname(vo);
+			service.insertblogname2(vo);
 			model.addAttribute("blogname", blogname);
 		}
 			session.setAttribute("check", 1);

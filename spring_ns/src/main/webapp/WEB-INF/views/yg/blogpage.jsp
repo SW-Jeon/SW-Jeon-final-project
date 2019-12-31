@@ -32,14 +32,14 @@ function gogo(bl_name){
 <div class="col-md-7" style="float: right; position: static;">
 <c:choose>
 <c:when test="${empty list }">
-	<img src="${cp }/resources/maincss/images/logo/nono.png" style="width: 780px;">
+	<img src="${cp }/resources/maincss/images/logo/non.png" style="width: 780px;">
 </c:when>
 <c:otherwise>
 <c:forEach var="i" items="${list }">
 	<h2>${i.ed_title }</h2><hr style="border: solid 1px black;"><br>
 	<c:choose>
 		<c:when test="${empty i.ed_pic }">
-			<img src="${cp }/resources/maincss/images/logo/nono.png" style="width: 500px;"><br><br>
+			<img src="${cp }/resources/maincss/images/logo/non.png" style="width: 500px;"><br><br>
 		</c:when>
 		<c:otherwise>
 			<img src="${cp}/resources/blogimg/${i.ed_pic }" style="width: 500px;"><br><br>

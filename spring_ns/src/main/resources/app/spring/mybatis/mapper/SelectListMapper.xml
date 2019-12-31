@@ -67,8 +67,14 @@
   	<insert id="insertblogname" parameterType="blog">
   		insert into blog values(#{bl_name},#{m_phone},#{bl_profile})
   	</insert>
+  	<insert id="insertblogname2" parameterType="blog">
+  		insert into blog values(#{bl_name},#{m_phone},null)
+  	</insert>
   	<insert id="inserteditor" parameterType="editor">
   		insert into editor values(0,#{bl_name},#{ed_title},#{ed_content},#{ed_pic},now(),0);
+  	</insert>
+  	<insert id="inserteditor2" parameterType="editor">
+  		insert into editor values(0,#{bl_name},#{ed_title},#{ed_content},null,now(),0);
   	</insert>
   	<delete id="blogdelete" parameterType="int">
   		delete from editor where ed_num=#{ed_num};
