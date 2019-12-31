@@ -7,6 +7,8 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -29,9 +31,10 @@ public class InsertAddController {
 		return ".admin.addtable.addinsert";
 	}
 	@RequestMapping("/insertadd")
-	public String insert(List<MultipartFile> files,String ad_site,int dates,String ad_name,AdvertiserVo vo1,int ad_pay){
+	public String insert(List<MultipartFile> files,HttpServletRequest req,String ad_site,int dates,String ad_name,AdvertiserVo vo1,int ad_pay){
 		HashMap<String,Object> maps=new HashMap<String, Object>();
-		String uploadPath="/upload";
+		String uploadPath=req.getSession().getServletContext().getRealPath("/resources/upload");
+		
 		Date ad_date=service.addate(dates);
 		service.adverinsert(vo1);
 		int ad_vernum=service.advernum(ad_name);
