@@ -80,14 +80,21 @@
 </div>
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
-    <h1 class="text-info ml-3 mt-3">낭만 맛집 리스트</h1>
+    <h1 class="text-info ml-3 mt-3">낭만 스토리</h1>
     <div class="container">
    
       <div class="row">
       <c:forEach var="vo" items="${blist }">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="${cp}/resources/imgpro/${vo.bl_profile }" style="height: 200px;" onclick="gogosing('${vo.bl_name }')"><br>
+          	<c:choose>
+          		<c:when test="${empty vo.bl_profile }">
+          			<img class="img-fluid rounded-circle mb-3" src="${cp }/resources/maincss/images/logo/nono.png" style="height: 200px;" onclick="gogosing('${vo.bl_name }')"><br>
+          		</c:when>
+          		<c:otherwise>
+          			<img class="img-fluid rounded-circle mb-3" src="${cp}/resources/imgpro/${vo.bl_profile }" style="height: 200px;" onclick="gogosing('${vo.bl_name }')"><br>
+          		</c:otherwise>
+          	</c:choose>
             <h5>${vo.bl_name }</h5>
           </div>
         </div>

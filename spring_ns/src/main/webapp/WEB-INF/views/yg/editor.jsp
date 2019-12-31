@@ -30,7 +30,6 @@ var oEditors = [];
 
 		 // 에디터의 내용에 대한 값 검증은 이곳에서
 		 // document.getElementById("ir1").value를 이용해서 처리한다.
-		 alert(document.getElementById("ir1").value);
 
 		 try {
 		     elClickedObj.form.submit();
@@ -44,13 +43,23 @@ var oEditors = [];
 </head>
 <body>
 <br>
-<form method="post" action="${cp }/bloginsert" name="writefrm" id="writefrm" enctype="multipart/form-data">
-<span>제목:</span>&nbsp&nbsp&nbsp<input type="text" name="title" style="width: 670px;"><br><br>
-<input type="text" name="bl_name" value="${bl_name }">
-<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자"></textarea>
-<input type="file" name="file1"><br>
-<input type="submit" class="btn btn-primary mt-3" id="writebtn" name="writebtn" value="저장">
-<input type="button" class="btn btn-primary mt-3" id="writebtn2" name="writebtn2" value="취소">
+<h1 class="text-info text-center mt-5 mb-5">블로그 작성</h1>
+<form method="post" action="${cp }/bloginsert" name="writefrm" id="writefrm" enctype="multipart/form-data" style="padding-left: 330px;">
+	<input type="hidden" name="bl_name" value="${bl_name }">
+	<div class="form-group">
+		<label for="title">제목</label><input type="text" class="form-control" name="title" style="width: 60%;">
+	</div>
+	<div class="">
+	<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="file1">파일올리기</label><br>
+		<input type="file" name="file1">
+	</div>
+	<div class="form-group mt-3" style="padding-left: 330px;">
+		<button type="submit" class="btn btn-primary" id="writebtn">저장</button>
+		<button type="reset" class="btn btn-danger" id="writebtn2" >취소</button>
+	</div>
 </form>
 </body>
 </html>

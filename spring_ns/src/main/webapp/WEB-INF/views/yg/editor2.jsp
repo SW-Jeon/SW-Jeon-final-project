@@ -43,12 +43,19 @@ var oEditors = [];
 </head>
 <body>
 <br>
-<form method="post" action="${cp }/blogupdateok" name="writefrm" id="writefrm">
-<span>제목:</span>&nbsp&nbsp&nbsp<input type="text" name="ed_title" style="width: 670px;" value="${vo.ed_title }"><br><br>
-<input type="hidden" name="ed_num" value="${vo.ed_num }">
-<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자" >${vo.ed_content}</textarea>
-<input type="submit" class="btn btn-primary mt-3" id="writebtn" name="writebtn" value="수정">
-<input type="button" class="btn btn-primary mt-3" id="writebtn2" name="writebtn2" value="취소">
-</form>
+<h1 class="text-info text-center mt-5 mb-5">블로그 수정</h1>
+	<form method="post" action="${cp }/blogupdateok" name="writefrm" id="writefrm" style="padding-left: 330px;">
+		<input type="hidden" name="ed_num" value="${vo.ed_num }">
+		<div class="form-group">
+			<label for="ed_title">제목</label><input type="text" class="form-control" name="ed_title"  value="${vo.ed_title }" style="width: 60%;">
+		</div>
+		<div class="">
+		<textarea name="ir1" id="ir1" rows="10" cols="100" placeholder="500자" >${vo.ed_content}</textarea>
+		</div>
+		<div class="form-group mt-3" style="padding-left: 330px;">
+			<button type="submit" class="btn btn-primary" id="writebtn">저장</button>
+			<button type="reset" class="btn btn-danger" id="writebtn2" >취소</button>
+		</div>
+	</form>
 </body>
 </html>
