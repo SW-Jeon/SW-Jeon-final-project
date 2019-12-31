@@ -190,11 +190,14 @@ window.addEventListener('scroll',function(e){
 			
 	<div id="tag" style="cursor: pointer;">
 
-		<div id="top">
-			<img title="블로그보러가기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리
-		</div>
+		
 		<c:choose>
 			<c:when test="${empty sessionScope.m_phone }">
+			<div id="top">
+				<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal">
+					<img title="블로그보러가기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리
+				</a>
+			</div>
 				<div id="main">
 					<a class="modal-trigger" href="#" data-toggle="modal" data-target="#Modal"> 
 						<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만찜
@@ -217,6 +220,13 @@ window.addEventListener('scroll',function(e){
 			
 			</c:when>
 			<c:otherwise>
+			
+				<div id="top">
+				<a href="${cp}/blogproinsertpage ">
+					<img title="블로그보러가기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/blog.png">낭만스토리
+				</a>
+				
+			</div>
 				<div id="main" onclick="zzim()">
 					<img title="찜하기" style="width: 100px; height: 100px;" src="${cp }/resources/images/test/zzim.png">낭만 찜
 				</div>
@@ -316,9 +326,7 @@ window.addEventListener('scroll',function(e){
 		self.close();
 		window.open('${cp}/infoclose','_blank','status=no,height=200,width=500,left='+x+',top='+y);
 	}
-	
-	
-		function zzim() {
+	function zzim() {
 			var d_num=parseInt(document.getElementById("dnum").value);
 			var m_phone=document.getElementById("mphone").value;
 			var win;
