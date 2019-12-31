@@ -63,6 +63,12 @@ public class SelectListService {
 	public int inserteditor(EditorVo vo){
 		return dao.inserteditor(vo);
 	}
+	public int insertblogname2(BlogVo vo){
+		return dao.insertblogname2(vo);
+	}
+	public int inserteditor2(EditorVo vo){
+		return dao.inserteditor2(vo);
+	}
 	public int blogdelete(int ed_num){
 		return dao.blogdelete(ed_num);
 	}

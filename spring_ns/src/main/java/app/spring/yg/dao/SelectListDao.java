@@ -65,6 +65,12 @@ public class SelectListDao {
 	public int inserteditor(EditorVo vo){
 		return sqlSessionTemplate.insert(NAMESPACE+".inserteditor",vo);
 	}
+	public int insertblogname2(BlogVo vo){
+		return sqlSessionTemplate.insert(NAMESPACE+".insertblogname2",vo);
+	}
+	public int inserteditor2(EditorVo vo){
+		return sqlSessionTemplate.insert(NAMESPACE+".inserteditor2",vo);
+	}
 	public int blogdelete(int ed_num){
 		return sqlSessionTemplate.delete(NAMESPACE+".blogdelete", ed_num);
 	}
