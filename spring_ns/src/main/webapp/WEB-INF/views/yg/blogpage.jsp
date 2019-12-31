@@ -16,7 +16,14 @@ function gogo(bl_name){
 <br>
 <div class="col-md-5" style="float: left; text-align: center; position: fixed;">
 <h1>${vo.bl_name }</h1><br>
-<img src="${cp}/resources/imgpro/${vo.bl_profile }" style="width: 200px; height:200px; border-radius: 50%">
+<c:choose>
+	<c:when test="${empty vo.bl_profile }">
+		<img src="${cp }/resources/maincss/images/logo/non.png" style="width: 200px; height:200px; border-radius: 50%">
+	</c:when>
+	<c:otherwise>
+		<img src="${cp}/resources/imgpro/${vo.bl_profile }" style="width: 200px; height:200px; border-radius: 50%">
+	</c:otherwise>
+</c:choose>
 <br>
 <c:if test="${vo.m_phone eq sessionScope.m_phone }">
 	<input type="button" class="btn btn-primary mt-3 " id="writebtn" name="writebtn" value="글쓰러 가기" onclick="gogo('${vo.bl_name}')">
@@ -30,7 +37,14 @@ function gogo(bl_name){
 <c:otherwise>
 <c:forEach var="i" items="${list }">
 	<h2>${i.ed_title }</h2><hr style="border: solid 1px black;"><br>
-	<img src="${cp}/resources/blogimg/${i.ed_pic }" style="width: 500px;"><br><br>
+	<c:choose>
+		<c:when test="${empty i.ed_pic }">
+			<img src="${cp }/resources/maincss/images/logo/nono.png" style="width: 500px;"><br><br>
+		</c:when>
+		<c:otherwise>
+			<img src="${cp}/resources/blogimg/${i.ed_pic }" style="width: 500px;"><br><br>
+		</c:otherwise>
+	</c:choose>
 	${i.ed_content }
 	<hr style="border: solid 1px grey;">
 	<c:if test="${vo.m_phone eq sessionScope.m_phone }">

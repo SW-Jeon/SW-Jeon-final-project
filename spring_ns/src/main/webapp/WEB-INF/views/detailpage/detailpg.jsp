@@ -107,7 +107,7 @@ window.addEventListener('scroll',function(e){
 	</div>
 	<h1 class="text-dark text-center mb-3 mt-3">${name }</h1>
 	<br>
-	<div id="map" style="left: 60%; width: 600px; height: 500px;  position: relative; max-width: 100%;"></div>
+	<div id="map" style="left: 53%; width: 600px; height: 500px;  position: relative; max-width: 100%;"></div>
 
 	<div style="margin-top: -500px; margin-bottom: 100px; margin-left: 100px; padding:0px; position: relative; width: 700px; max-width: 100%;">
 

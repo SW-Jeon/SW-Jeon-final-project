@@ -18,12 +18,21 @@ window.onload=function(){
 }
 </script>
 </head>
-<body>
+<body >
+
+<h1 class="text-info text-center mt-5 mb-5">블로그 만들기</h1>
 <form method="post" action="${cp }/blogproinsert" name="writefrm" id="writefrm" enctype="multipart/form-data">
-<span>블로그네임:</span>&nbsp&nbsp&nbsp<input type="text" name="blogname" style="width: 670px;"><br><br>
-<span>대표이미지등록:</span><input type="file" name="file1"><br>
-<input type="submit" class="btn btn-primary mt-3" value="등록">
-<input type="button" class="btn btn-primary mt-3" id="writebtn2" value="취소">
+	<div class="form-group">
+		<label for="blogname">블로그 이름</label><input type="text" class="form-control" name="blogname">
+	</div>
+	<div class="form-group">
+		<label for="file1">대표이미지 등록</label><br>
+		<input type="file" name="file1">
+	</div>
+	<div class="form-group text-center">
+		<button type="submit" class="btn btn-primary">문의하기</button>
+		<button type="reset" class="btn btn-danger" id="writebtn2" >취소</button>
+	</div>
 </form>
 </body>
 </html>

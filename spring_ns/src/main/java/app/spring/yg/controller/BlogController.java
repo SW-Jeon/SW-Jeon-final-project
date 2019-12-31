@@ -53,6 +53,8 @@ public class BlogController {
 		}	else{
 			model.addAttribute("title", title);
 			model.addAttribute("ir1", ir1);
+			EditorVo vo=new EditorVo(0, bl_name, title, ir1, null, null, 0);
+			service.inserteditor(vo);
 		}
 			model.addAttribute("code", "success");
 			return ".swMem.result";
@@ -82,7 +84,6 @@ public class BlogController {
 			FileCopyUtils.copy(fis, fos);
 			fis.close();
 			fos.close();
-			System.out.println("에러아님");
 			String m_phone=(String)session.getAttribute("m_phone");
 			BlogVo vo=new BlogVo(blogname, m_phone, r_pic);
 			service.insertblogname(vo);
@@ -90,8 +91,10 @@ public class BlogController {
 			model.addAttribute("r_pic", r_pic);
 			
 		}	else{
+			String m_phone=(String)session.getAttribute("m_phone");
+			BlogVo vo=new BlogVo(blogname, m_phone, null);
+			service.insertblogname(vo);
 			model.addAttribute("blogname", blogname);
-			System.out.println("에러");
 		}
 			session.setAttribute("check", 1);
 			model.addAttribute("code", "success");

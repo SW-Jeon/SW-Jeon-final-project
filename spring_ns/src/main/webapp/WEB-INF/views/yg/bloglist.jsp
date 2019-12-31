@@ -11,7 +11,14 @@
 <table class="table table-hover table-striped">
 	<c:forEach var="vo" items="${list }">
 		<tr>
-		<td><img src="${cp}/resources/imgpro/${vo.bl_profile }" style="width: 200px; height:200px; border-radius: 50%"></td>
+		<c:choose>
+			<c:when test="${empty vo.bl_profile }">
+				<td><img src="${cp }/resources/maincss/images/logo/non.png" style="width: 200px; height:200px; border-radius: 50%">
+			</c:when>
+			<c:otherwise>
+				<td><img src="${cp}/resources/imgpro/${vo.bl_profile }" style="width: 200px; height:200px; border-radius: 50%"></td>
+			</c:otherwise>
+		</c:choose>
 		</tr>
 	</c:forEach>
 </table>
