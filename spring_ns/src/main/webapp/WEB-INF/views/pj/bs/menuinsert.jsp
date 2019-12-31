@@ -19,7 +19,7 @@
 				<label for="me_name">음식 이름</label><input type="text" class="form-control" name="me_name" placeholder="음식 이름 입력하세요.">
 			</div>
 			<div class="form-group">
-				<label for="me_pay">제목</label><input type="text" class="form-control" name="me_pay"  placeholder="가격을 입력하세요.">
+				<label for="me_pay">가격</label><input type="text" class="form-control" name="me_pay"  placeholder="가격을 입력하세요.">
 			</div>
 			<div class="form-group text-center">
 		         	<button type="submit" class="btn btn-primary ">등록</button>
